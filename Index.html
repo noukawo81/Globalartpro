@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Pi Sandbox App</title>
+  <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+  <script>
+    // Activation du mode sandbox
+    Pi.init({ version: "2.0", sandbox: true });
+
+    // Connexion utilisateur Pi
+    async function connectPi() {
+      try {
+        const scopes = ['username', 'payments'];
+        const auth = await Pi.authenticate(scopes, onIncompletePaymentFound);
+        document.getElementById("result").innerText =
+          "Connecté à Pi : " + auth.user.username;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    function onIncompletePaymentFound(payment) {
+      console.log("Paiement incomplet trouvé", payment);
+    }
+  </script>
+</head>
+<body>
+  <h1>Bienvenue dans mon App Sandbox Pi 🚀</h1>
+  <button onclick="connectPi()">Se connecter avec Pi</button>
+  <p id="result"></p>
+</body>
+</html>
