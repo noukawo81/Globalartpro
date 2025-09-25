@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditions d’Utilisation | Terms of Service | GlobalArtPro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      background: #fafafa;
+      color: #333;
+    }
+    h1, h2 {
+      color: #5a2d82;
+    }
+    .lang {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 2px solid #ccc;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Conditions Générales d’Utilisation</h1>
+  <p><strong>Date de mise à jour :</strong> 17 août 2025</p>
+
+  <h2>1. Objet</h2>
+  <p>GlobalArtPro est une plateforme permettant de vendre, acheter et promouvoir l’art (physique, numérique, NFT) et d’utiliser la cryptomonnaie <strong>Art Coin</strong>.</p>
+
+  <h2>2. Obligations des utilisateurs</h2>
+  <p>Respecter la loi, les droits d’auteur, ne pas publier de contenu frauduleux ou offensant, ne pas utiliser la plateforme pour des activités illégales.</p>
+
+  <h2>3. Propriété intellectuelle</h2>
+  <p>Les artistes gardent leurs droits. GlobalArtPro obtient une licence limitée pour afficher et promouvoir les œuvres.</p>
+
+  <h2>4. Transactions</h2>
+  <p>Paiements sécurisés en Art Coin ou autres devises. Frais transparents. Médiation en cas de litige.</p>
+
+  <h2>5. Limitation de responsabilité</h2>
+  <p>Pas de garantie absolue d’absence d’erreurs. Non responsable des pertes dues à une mauvaise utilisation.</p>
+
+  <h2>6. Résiliation</h2>
+  <p>Compte suspendu ou supprimé en cas de violation.</p>
+
+  <h2>7. Contact</h2>
+  <p>📧 support@globalartpro.com</p>
+
+  <div class="lang">
+    <h1>Terms of Service</h1>
+    <p><strong>Last updated:</strong> August 17, 2025</p>
+
+    <h2>1. Purpose</h2>
+    <p>GlobalArtPro is a platform to sell, buy, and promote art (physical, digital, NFTs) and to use the cryptocurrency <strong>Art Coin</strong>.</p>
+
+    <h2>2. User Obligations</h2>
+    <p>Comply with laws, respect copyrights, do not post fraudulent or offensive content, and do not use the platform for illegal activities.</p>
+
+    <h2>3. Intellectual Property</h2>
+    <p>Artists retain full rights. GlobalArtPro has a limited license to display and promote artworks.</p>
+
+    <h2>4. Transactions</h2>
+    <p>Secure payments in Art Coin or other currencies. Transparent fees. Mediation in case of dispute.</p>
+
+    <h2>5. Limitation of Liability</h2>
+    <p>No absolute guarantee of error-free service. Not responsible for financial losses from misuse.</p>
+
+    <h2>6. Termination</h2>
+    <p>Accounts may be suspended or deleted if terms are violated.</p>
+
+    <h2>7. Contact</h2>
+    <p>📧 support@globalartpro.com</p>
+  </div>
+
+  <footer>
+    © 2025 GlobalArtPro – Tous droits réservés / All rights reserved.
+  </footer>
+</body>
+</html>

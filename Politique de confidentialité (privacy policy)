@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politique de Confidentialité | Privacy Policy | GlobalArtPro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      background: #fafafa;
+      color: #333;
+    }
+    h1, h2 {
+      color: #5a2d82;
+    }
+    .lang {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 2px solid #ccc;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Politique de Confidentialité</h1>
+  <p><strong>Date de mise à jour :</strong> 17 août 2025</p>
+
+  <p>Chez <strong>GlobalArtPro</strong>, nous respectons et protégeons vos données personnelles. Cette politique explique quelles informations nous collectons, comment nous les utilisons et comment nous les sécurisons.</p>
+
+  <h2>1. Informations collectées</h2>
+  <ul>
+    <li>Données d’inscription (nom, e-mail, pays...)</li>
+    <li>Transactions (achats, ventes, paiements en Art Coin...)</li>
+    <li>Données techniques (IP, appareil, cookies...)</li>
+    <li>Contenu partagé (œuvres, NFT...)</li>
+  </ul>
+
+  <h2>2. Utilisation</h2>
+  <p>Amélioration des services, sécurisation des transactions, connexion artistes-musées, respect des obligations légales.</p>
+
+  <h2>3. Partage</h2>
+  <p>Jamais vendu. Partage limité aux partenaires techniques, musées (avec accord), ou autorités légales.</p>
+
+  <h2>4. Vos droits</h2>
+  <p>Accès, modification, suppression, refus marketing.</p>
+
+  <h2>5. Contact</h2>
+  <p>📧 support@globalartpro.com</p>
+
+  <div class="lang">
+    <h1>Privacy Policy</h1>
+    <p><strong>Last updated:</strong> August 17, 2025</p>
+
+    <p>At <strong>GlobalArtPro</strong>, we respect and protect your personal data. This policy explains what information we collect, how we use it, and how we keep it safe.</p>
+
+    <h2>1. Information Collected</h2>
+    <ul>
+      <li>Registration data (name, email, country...)</li>
+      <li>Transactions (purchases, sales, payments in Art Coin...)</li>
+      <li>Technical data (IP, device, cookies...)</li>
+      <li>Shared content (artworks, NFTs...)</li>
+    </ul>
+
+    <h2>2. Use</h2>
+    <p>To improve services, secure transactions, connect artists and museums, and comply with legal obligations.</p>
+
+    <h2>3. Sharing</h2>
+    <p>Never sold. Shared only with technical partners, museums (with your consent), or legal authorities.</p>
+
+    <h2>4. Your Rights</h2>
+    <p>Access, correction, deletion, opt-out from marketing.</p>
+
+    <h2>5. Contact</h2>
+    <p>📧 support@globalartpro.com</p>
+  </div>
+
+  <footer>
+    © 2025 GlobalArtPro – Tous droits réservés / All rights reserved.
+  </footer>
+</body>
+</html>
