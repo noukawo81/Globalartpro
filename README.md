@@ -8,7 +8,7 @@ GlobalArtPro est un espace innovant qui relie artistes, musées, collectionneurs
 La plateforme offre :  
 - Un **marketplace** pour œuvres physiques et numériques.  
 - La **création et l’échange de NFT**.  
-- L’utilisation de la cryptomonnaie **Art Coin** pour des transactions rapides et transparentes.  
+- L’utilisation de la cryptomonnaie ***pi coin*** et le Token **Art Coin** pour des transactions rapides et transparentes.  
 - Un espace de **connexion avec les musées** et de mise en valeur des cultures mondiales.  
 
 Notre mission est de **donner de la valeur à l’art et aux artistes** grâce à la technologie et à la blockchain.  
