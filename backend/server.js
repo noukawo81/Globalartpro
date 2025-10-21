@@ -4,6 +4,10 @@ import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
 
+const app = express();
+app.use(express.json());
+
+// --- Routes GAP Studio ---
 const router = express.Router();
 const replicate = new Replicate({ auth: process.env.REPLICATE_API_TOKEN });
 
@@ -15,20 +19,16 @@ router.get("/test", (req, res) => {
   res.json({ message: "Backend OK" });
 });
 
-// Route de génération IA sans OpenAI
 router.post("/generate", async (req, res) => {
   const { prompt, type } = req.body;
-
   try {
     if (type === "replicate-image") {
-      // Génération d'image avec Replicate (Stable Diffusion)
       const output = await replicate.run(
         "stability-ai/stable-diffusion",
         { input: { prompt } }
       );
       res.json({ imageUrl: output[0] });
     } else if (type === "murf-tts") {
-      // Génération voix avec Murf AI
       const murfRes = await axios.post(
         "https://api.murf.ai/v1/speech/generate",
         {
@@ -41,7 +41,6 @@ router.post("/generate", async (req, res) => {
       );
       res.json({ audioUrl: murfRes.data.audio_url });
     } else if (type === "musique") {
-      // Audio de test
       res.json({
         audioUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
       });
@@ -53,16 +52,12 @@ router.post("/generate", async (req, res) => {
   }
 });
 
-// --- 🚀 Intégration du paiement Pi Wallet ---
 router.post("/pi-payment", async (req, res) => {
   try {
     const { amount, userWallet, itemName } = req.body;
-
     if (!amount || !userWallet || !itemName) {
       return res.status(400).json({ success: false, message: "Champs manquants" });
     }
-
-    // Simulation de transaction (plus tard, tu utiliseras l'API officielle Pi)
     const transaction = {
       from: userWallet,
       to: process.env.PI_APP_WALLET,
@@ -71,9 +66,7 @@ router.post("/pi-payment", async (req, res) => {
       status: "pending",
       date: new Date(),
     };
-
     console.log("💰 Nouvelle transaction Pi :", transaction);
-
     res.json({
       success: true,
       message: "Paiement Pi en cours...",
@@ -85,4 +78,11 @@ router.post("/pi-payment", async (req, res) => {
   }
 });
 
-export default router;
+// --- Utilisation des routes ---
+app.use("/api/gapstudio", router);
+
+// --- Lancement du serveur ---
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`🚀 Serveur backend lancé sur le port ${PORT}`);
+});
