@@ -1,0 +1,13 @@
+# Secrets
+.env
+backend/.env
+frontend/.env
+
+# Node
+node_modules/
+npm-debug.log*
+.DS_Store
+
+# Build
+dist/
+build/
