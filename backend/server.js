@@ -165,33 +165,24 @@ for (const p of possibleClientPaths) {
 console.log("DEBUG: checked client paths:", possibleClientPaths, "selected =", clientStaticPath);
 
 if (clientStaticPath) {
+  // lister le contenu pour debug si besoin
+  try {
+    console.log("DEBUG: client static files:", fs.readdirSync(clientStaticPath));
+  } catch (e) {
+    console.error("DEBUG: erreur lecture dossier clientStaticPath:", e);
+  }
+
   app.use(express.static(clientStaticPath));
-
-  // Remplacement robuste du catch-all (évite PathError lié à "/*")
-  app.use((req, res, next) => {
-    // ne servir index.html que pour les requêtes GET qui acceptent du HTML
-    if (req.method !== "GET") return next();
-    const accept = (req.headers.accept || "");
-    if (!accept.includes("text/html")) return next();
-
-    res.sendFile(path.join(clientStaticPath, "index.html"), (err) => {
-      if (err) return next(err);
-    });
+  app.get("/*", (req, res) => {
+    res.sendFile(path.join(clientStaticPath, "index.html"));
   });
 } else {
-// ...existing code...
-// middleware d'erreur final
-app.use((err, req, res, next) => {
-  console.error("Unhandled error:", err);
-  res.status(err.status || 500).json({ error: "Internal Server Error" });
-});
-  // si pas de build local, rediriger la racine vers le frontend déployé (Netlify...)
+  // route racine simple si pas de build/dist frontend
   app.get("/", (req, res) => {
-    const front = process.env.FRONTEND_URL;
-    if (front) return res.redirect(front);
     res.send("API GlobalArtPro — backend actif. Utilise /api/gapstudio ou /api/transactions");
   });
 }
+
 // --- Lancement du serveur ---
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

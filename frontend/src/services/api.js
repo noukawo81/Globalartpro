@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// URL utilisée au build via VITE_API_URL ; fallback vers ton backend déployé
 const BASE =
   import.meta.env.VITE_API_URL ||
   "https://globalartpro-backend-production.up.railway.app/api/gapstudio";
