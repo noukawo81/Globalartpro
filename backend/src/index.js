@@ -10,7 +10,7 @@ import artcRoutes from './routes/artc.js';
 import gapstudioRoutes from './routes/gapstudio.js';
 import artistsRoutes from './routes/artists.js';
 import marketplaceRoutes from './routes/marketplace.js';
-console.log('artistsRoutes type', typeof artistsRoutes, !!artistsRoutes && artistsRoutes.stack && artistsRoutes.stack.length);
+// artistsRoutes loaded
 
 const app = express();
 app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
@@ -53,28 +53,7 @@ const PORT = process.env.PORT || 3000;
 // Export app for tests; only start server if not running under tests
 if (process.env.NODE_ENV !== 'test') {
   const server = app.listen(PORT, () => {
-    console.log(`🚀 Backend running on http://localhost:${PORT}`);
-    console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
-  console.log(`📊 Health check: http://localhost:${PORT}/api/health`);
-  // list mounted routers
-  try {
-    console.log('Router stack:');
-    if (app && app._router && Array.isArray(app._router.stack)) {
-      app._router.stack.forEach((layer, i) => {
-        const info = {
-          i,
-          name: layer.name,
-          path: layer.route ? Object.keys(layer.route.paths || {}) : undefined,
-          regexp: layer.regexp && layer.regexp.source,
-        };
-        console.log(info);
-      });
-    } else {
-      console.log('No router stack available yet');
-    }
-  } catch (e) {
-    console.error('Error listing routes', e);
-  }
+    // server started
   });
 }
 

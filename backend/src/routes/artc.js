@@ -67,7 +67,7 @@ router.post('/mine', (req, res) => {
 
 router.post('/transfer', jwtAuth, ownerAuth({ body: 'fromUserId' }), (req, res) => {
   try {
-    console.log('artc transfer request', { body: req.body, user: req.user });
+    // artc transfer request received
     const { fromUserId, toUserId, amount } = req.body;
     if (!fromUserId || !toUserId || typeof amount !== 'number') return res.status(400).json({ error: 'fromUserId, toUserId and numeric amount required' });
     // validate ownership: fromUserId must be the authenticated user

@@ -4,7 +4,7 @@ import ownerAuth from '../middleware/ownerAuth.js';
 import artistDB from '../lib/artistDB.js';
 import minioClient from '../lib/minioClient.js';
 
-console.log('Loading artists route');
+// artists route loaded
 const router = express.Router();
 
 // Param handler: attach artist if it exists
