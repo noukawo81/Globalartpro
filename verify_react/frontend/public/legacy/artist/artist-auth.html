@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Connexion & Inscription – GlobalArtPro</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #eee;
+    }
+
+    .container {
+      max-width: 420px;
+      margin: 2em auto;
+      padding: 1.5em;
+      background: #1b1b1b;
+      border-radius: 12px;
+      box-shadow: 0 0 12px #0007;
+    }
+
+    h2 {
+      text-align: center;
+      color: gold;
+      margin-bottom: 1em;
+    }
+
+    label {
+      display: block;
+      margin-top: 1em;
+    }
+
+    input, select, textarea {
+       width: 100%;
+       padding: 0.8em;
+       margin-top: 0.3em;
+       border-radius: 6px;
+       border: 1px solid #444;
+       background: #222;
+       color: #eee;
+    }
+
+    textarea {
+      min-height: 90px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 1.5em;
+      padding: 0.9em;
+      background: linear-gradient(90deg, #6a11cb, #ffd700);
+      border: none;
+      border-radius: 8px;
+      color: #111;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1.5em;
+    }
+
+    .tabs button {
+      width: 48%;
+      background: #333;
+      color: gold;
+    }
+
+    .tabs button.active {
+      background: gold;
+      color: #111;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h2>Espace Artiste – GlobalArtPro</h2>
+
+  <!-- ONGLET -->
+  <div class="tabs">
+    <button id="tabSignup" class="active" onclick="showSignup()">S’inscrire</button>
+    <button id="tabLogin" onclick="showLogin()">Se connecter</button>
+  </div>
+
+  <!-- FORMULAIRE D'INSCRIPTION -->
+<form id="signupForm">
+  
+  <label>Nom</label>
+  <input id="regLastName" type="text" required>
+
+  <label>Prénom</label>
+  <input id="regFirstName" type="text" required>
+
+  <label>Email</label>
+  <input id="regEmail" type="email" required>
+
+  <label>Mot de passe</label>
+  <input id="regPass" type="password" required>
+
+  <label>Bio (optionnel)</label>
+  <textarea id="regBio"></textarea>
+
+  <label>Domaine artistique</label>
+  <select id="regDomain" required class="input-field">
+    <option value="">Choisir...</option>
+    <option value="peinture">Peinture & Arts visuels</option>
+    <option value="musique">Musique</option>
+    <option value="sculpture">Sculpture</option>
+    <option value="photographie">Photographie</option>
+    <option value="mode">Mode & Design textile</option>
+    <option value="danse">Danse & Performance</option>
+    <option value="cinema">Cinéma & Vidéo</option>
+    <option value="litterature">Littérature & Écriture</option>
+    <option value="digital">Art numérique / Digital Art</option>
+    <option value="architecture">Architecture & Design</option>
+  </select>
+
+    <button type="submit">Créer mon compte</button>
+  </form>
+
+  <!-- FORMULAIRE DE CONNEXION -->
+  <form id="loginForm" class="hidden">
+    <label>Email</label>
+    <input id="loginEmail" type="email" required>
+
+    <label>Mot de passe</label>
+    <input id="loginPass" type="password" required>
+
+    <button type="submit">Connexion</button>
+  </form>
+
+</div>
+
+<script src="artist-auth.js"></script>
+</body>
+</html>

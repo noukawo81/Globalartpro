@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-family: Poppins, Arial, sans-serif;
+    background: #f4f4f4;
+    transition: 0.3s;
+}
+
+/* HEADER */
+.header {
+    background: #111;
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+.logo span { color: #ff0055; }
+
+.menu a {
+    color: #ccc;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.menu a:hover { color: white; }
+
+.dark-btn {
+    padding: 8px 14px;
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* TITRE */
+.title-section {
+    text-align: center;
+    padding: 30px 20px;
+}
+.title-section h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* FILTRES */
+.filter-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+.filter-section select {
+    padding: 10px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    background: white;
+    font-size: 14px;
+}
+
+/* GALERIE */
+.gallery {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.gallery-item {
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+/* LIGHTBOX */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.88);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 5px 30px black;
+}
+
+/* MODE SOMBRE */
+.dark body {
+    background: #1f1f1f;
+    color: #eee;
+}
+.dark .gallery-item {
+    box-shadow: 0 3px 8px rgba(255,255,255,0.1);
+}

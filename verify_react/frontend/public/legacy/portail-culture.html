@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portail des Arts & Cultures du Monde - GlobalArtPro</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background: #0d0d0d;
+    color: #fff;
+  }
+
+  /* Hero section */
+  .hero {
+    background: url("https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    border-bottom: 3px solid #ffcc00;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 0 15px #000;
+  }
+  .hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    line-height: 1.6;
+    text-shadow: 0 0 10px #000;
+  }
+
+  /* Categories */
+  .categories {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  .categories h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #ffcc00;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .card {
+    background: #161616;
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid #333;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    border-color: #ffcc00;
+  }
+  .card h3 {
+    margin-top: 0.5rem;
+    color: #ffcc00;
+  }
+  #gallery-grid {
+  margin-top: 1rem;
+}
+
+.gallery-card {
+  background: #1a1a1a;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #333;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.gallery-card:hover {
+  border-color: #ffcc00;
+  transform: translateY(-5px);
+}
+
+.gallery-card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.audio-card button {
+  background: #ffcc00;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+  /* Live */
+  .live-section {
+    padding: 2rem 1rem;
+    background: #111;
+    margin-top: 3rem;
+    border-top: 2px solid #ffcc00;
+  }
+  .live-section h2 {
+    color: #ffcc00;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .live-box {
+    background: #161616;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #333;
+    text-align: center;
+  }
+
+  /* Acoin Purchase */
+  .acoin {
+    padding: 2rem;
+    text-align: center;
+    background: #0f0f0f;
+    border-top: 2px solid #ffcc00;
+  }
+  .acoin h2 {
+    color: #ffcc00;
+  }
+  .acoin button {
+    background: #ffcc00;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .acoin button:hover {
+    background: #e6b800;
+  }
+
+  footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    background: #111;
+    color: #aaa;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Portail des Arts & Cultures du Monde</h1>
+  <p>Explore les traditions, musiques, danses, rituels et patrimoines des peuples du monde.  
+  Un espace unique, profondément enraciné dans la diversité culturelle mondiale.</p>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories">
+  <h2>Galerie Culturelle Mondiale</h2>
+  <div id="gallery-grid" class="grid"></div>
+
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?auto=format&fit=crop&w=600&q=80" width="100%">
+      <h3>Danses Traditionnelles</h3>
+      <p>Rituels, cérémonies, patrimoine gestuel.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?auto=format&fit=crop&w=600&q=80" width="100%">
+      <h3>Musiques Ancestrales</h3>
+      <p>Tambours, flûtes, chants et instruments du monde.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1545237651-7a424c1d1aa4?auto=format&fit=crop&w=600&q=80" width="100%">
+      <h3>Arts Visuels</h3>
+      <p>Masques, sculptures, peintures, symboles.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1532498551838-4d1ecbe43aa1?auto=format&fit=crop&w=600&q=80" width="100%">
+      <h3>Rituels & Héritage</h3>
+      <p>Spirituel, sacré, identités et savoirs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE -->
+<section class="live-section">
+  <h2>Live Culture</h2>
+  <div class="live-box">
+    <p>Retransmissions en direct des peuples du monde.</p>
+    <p>Bientôt disponible avec pi coin.</p>
+  </div>
+</section>
+
+<!-- ACOIN -->
+<section class="acoin">
+  <h2>Accès Premium en pi coin</h2>
+  <p>Accéder aux archives, rituels sacrés, lives exclusifs.</p>
+
+  <button onclick="enterPremium()">Entrer avec 0,00005 pi</button>
+
+  <div id="premium-content" style="display:none; margin-top:2rem;">
+    <h3>Archives Premium</h3>
+    <p>Contenus sacrés – réservé aux membres pi coin.</p>
+  </div>
+</section>
+
+<footer>
+  © 2025 GlobalArtPro – Tous droits réservés
+</footer>
+<script src="js/portal.js"></script>
+</body>
+</html>

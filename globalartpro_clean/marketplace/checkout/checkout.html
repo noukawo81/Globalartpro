@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - GlobalArtPro Marketplace</title>
+
+    <!-- Styles généraux -->
+    <link rel="stylesheet" href="styles/global.css">
+
+    <!-- Style marketplace (déjà créé) -->
+    <link rel="stylesheet" href="styles/marketplace.css">
+
+    <!-- Style spécifique pour Checkout -->
+    <style>
+        .checkout-container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 25px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            font-family: Poppins, sans-serif;
+        }
+
+        .checkout-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #4b0082;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .checkout-section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .order-list {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .order-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+        }
+
+        .order-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        .order-info {
+            flex: 1;
+        }
+
+        .order-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: #4b0082;
+        }
+
+        /* Résumé total */
+        .summary-box {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+        }
+
+        .summary-total {
+            font-size: 22px;
+            font-weight: 700;
+            color: #4b0082;
+        }
+
+        /* Formulaire */
+        .checkout-form input,
+        .checkout-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .pay-btn {
+            width: 100%;
+            background: #4b0082;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.25s;
+        }
+
+        .pay-btn:hover {
+            background: #360061;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="checkout-container">
+
+        <h1 class="checkout-title">Paiement & Validation</h1>
+
+        <!-- SECTION 1 : RECAP PRODUITS -->
+        <div class="checkout-section">
+            <h3 class="section-title">Votre commande</h3>
+
+            <div class="order-list" id="orderList">
+                <!-- Les produits seront injectés ici -->
+            </div>
+        </div>
+
+        <!-- SECTION 2 : RESUME TOTAL -->
+        <div class="checkout-section">
+            <h3 class="section-title">Résumé</h3>
+
+            <div class="summary-box">
+                <div class="summary-row">
+                    <span>Sous-total :</span>
+                    <strong id="subtotal">0 pi</strong>
+                </div>
+                <div class="summary-row">
+                    <span>Frais de service :</span>
+                    <strong id="fees">0 pi</strong>
+                </div>
+                <hr>
+                <div class="summary-row">
+                    <span class="summary-total">Total :</span>
+                    <span class="summary-total" id="total">0 pi</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3 : FORMULAIRE CLIENT -->
+        <div class="checkout-section">
+            <h3 class="section-title">Informations du client</h3>
+
+            <form class="checkout-form" id="checkoutForm">
+                <input type="text" id="name" placeholder="Nom complet" required>
+                <input type="tel" id="phone" placeholder="Téléphone WhatsApp" required>
+                <input type="email" id="email" placeholder="Adresse email" required>
+                <textarea id="notes" placeholder="Instructions ou message (optionnel)" rows="4"></textarea>
+
+                <button type="submit" class="pay-btn">Valider et Payer</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Checkout JS -->
+    <link rel="stylesheet" href="checkout.css">
+<script src="checkout.js" defer></script>
+
+</body>
+</html>

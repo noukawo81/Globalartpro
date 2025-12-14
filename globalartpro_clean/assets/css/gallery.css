@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.filters select {
+    padding: .7rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.gallery {
+    column-count: 3;
+    column-gap: 20px;
+    padding: 20px;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    background: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.gallery-item img,
+.gallery-item video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.lightbox.hidden {
+    display: none;
+}
+
+#lightboxClose {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.lightbox img,
+.lightbox video {
+    max-width: 80%;
+    max-height: 60%;
+    border-radius: 10px;
+}
+
+.lightbox audio {
+    width: 60%;
+}
+
+.lightbox h3,
+.lightbox p {
+    color: white;
+    margin-top: 1rem;
+    text-align: center;
+}
+.gallery-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.gallery-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(230, 230, 255, 0.4);
+    transition: 0.2s ease;
+}
+
+.gallery-action-btn:hover {
+    background: rgba(150, 80, 255, 0.3);
+}
+
+.gallery-action-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.gap-watermark {
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    background: rgba(130, 0, 255, 0.8);
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: lowercase;
+    opacity: 0.9;
+}

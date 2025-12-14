@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlobalArtPro - Dashboard Analytics</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #141E30, #243B55);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
+      font-size: 2.2rem;
+    }
+
+    /* Cercle central */
+    .circle-dashboard {
+      width: 260px;
+      height: 260px;
+      margin: 0 auto;
+      background: radial-gradient(circle, #ffcc00 0%, #ffaa00 60%, #ff9900 100%);
+      border-radius: 50%;
+      box-shadow: 0 0 30px rgba(255, 200, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: black;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .circle-dashboard p {
+      margin: 4px 0;
+      font-size: 1.1rem;
+    }
+
+    /* Grille des cartes */
+    .analytics-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.4rem;
+      border-radius: 10px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Bouton retour */
+    .back-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background: #ffcc00;
+      color: black;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #ffaa00;
+    }
+  </style>
+
+</head>
+<body>
+
+  <h1>Dashboard Analytics</h1>
+
+  <div class="circle-dashboard">
+    <h2>GlobalArtPro</h2>
+    <p>Artistes : <span id="kpi-artistes">0</span></p>
+    <p>Œuvres : <span id="kpi-oeuvres">0</span></p>
+    <p>Transactions : <span id="kpi-transactions">0</span></p>
+  </div>
+
+  <div class="analytics-grid">
+    <div class="card">
+      <h3>Pays actifs</h3>
+      <p>38 pays</p>
+    </div>
+
+    <div class="card">
+      <h3>Top Artistes</h3>
+      <p>+12% ce mois</p>
+    </div>
+
+    <div class="card">
+      <h3>Revenus</h3>
+      <p>5200 Acoin</p>
+    </div>
+
+    <div class="card">
+      <h3>Visites plateforme</h3>
+      <p>27 000 vues</p>
+    </div>
+
+    <div class="card">
+      <h3>Galeries créées</h3>
+      <p>740 galeries</p>
+    </div>
+
+    <div class="card">
+      <h3>ArtCoin utilisé</h3>
+      <p>14 800</p>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-btn">Retour à l'accueil</a>
+  
+  <script>
+    function animateKPI(id, value, duration = 1200) {
+      let start = 0;
+      let element = document.getElementById(id);
+      let increment = value / (duration / 16);
+
+      let interval = setInterval(() => {
+        start += increment;
+        if (start >= value) {
+          start = value;
+          clearInterval(interval);
+        }
+        element.innerText = Math.floor(start);
+      }, 16);
+    }
+
+    animateKPI("kpi-artistes", 1200);
+    animateKPI("kpi-oeuvres", 3500);
+    animateKPI("kpi-transactions", 18400);
+  </script>
+
+</body>
+</html>

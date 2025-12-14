@@ -1,0 +1,8 @@
+.wallet-home { padding: 12px; }
+.wallet-hero { margin-bottom: 12px; }
+.wallet-grid { display: grid; grid-template-columns: 1fr 360px; gap: 16px; }
+.wallet-grid .left { display: grid; gap: 12px; }
+.wallet-grid .right { position: sticky; top: 20px; }
+.wa-balance-card { background: #fff; padding: 12px; border-radius: 10px; }
+.wa-tx-item { background: #fff; }
+.wallet-tx-list h1, .wallet-home h1 { margin: 8px 0 12px 0 }

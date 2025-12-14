@@ -1,0 +1,34 @@
+[
+  {
+    "type": "image",
+    "title": "Danse Bamiléké",
+    "description": "Danse cérémonielle traditionnelle du Cameroun.",
+    "src": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80",
+    "country": "Cameroun",
+    "culture": "Bamiléké"
+  },
+  {
+    "type": "image",
+    "title": "Masque Baoulé",
+    "description": "Art visuel ancestral de Côte d'Ivoire.",
+    "src": "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=800&q=80",
+    "country": "Côte d'Ivoire",
+    "culture": "Baoulé"
+  },
+  {
+    "type": "audio",
+    "title": "Flûte sacrée Fang",
+    "description": "Musique traditionnelle du Gabon.",
+    "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    "country": "Gabon",
+    "culture": "Fang"
+  },
+  {
+    "type": "image",
+    "title": "Sculpture Yoruba",
+    "description": "Symbole spirituel du Nigeria.",
+    "src": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+    "country": "Nigeria",
+    "culture": "Yoruba"
+  }
+]

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Artiste – GlobalArtPro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #eee;
+            display: flex;
+        }
+
+        /* MENU LATÉRAL */
+        .sidebar {
+            width: 240px;
+            background: #1a1a1a;
+            height: 100vh;
+            padding: 1.5em 1em;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-right: 1px solid #333;
+        }
+
+        .sidebar h2 {
+            color: gold;
+            text-align: center;
+            margin-bottom: 1.5em;
+        }
+
+        .sidebar button {
+            width: 100%;
+            background: #222;
+            border: none;
+            padding: 0.9em;
+            margin-bottom: 0.6em;
+            border-radius: 6px;
+            color: #eee;
+            font-size: 1em;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .sidebar button.active,
+        .sidebar button:hover {
+            background: gold;
+            color: #111;
+        }
+
+        /* CONTENU */
+        .content {
+            margin-left: 260px;
+            padding: 1.5em;
+            width: 100%;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .card {
+            background: #1c1c1c;
+            padding: 1.3em;
+            border-radius: 10px;
+            margin-bottom: 1.5em;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8em;
+            margin-top: 0.4em;
+            background: #222;
+            border: 1px solid #333;
+            color: #eee;
+            border-radius: 6px;
+        }
+
+        button.primary {
+            background: linear-gradient(90deg,#6a11cb,#ffd700);
+            border: none;
+            width: 100%;
+            padding: 1em;
+            border-radius: 8px;
+            font-size: 1.1em;
+            margin-top: 1em;
+            cursor: pointer;
+            color: #111;
+            font-weight: bold;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 1em;
+        }
+
+        .stat-box {
+            background:#222;
+            padding:1.2em;
+            border-radius:8px;
+            text-align:center;
+        }
+
+        .stat-box h3 {
+            font-size:2em;
+            color:gold;
+        }
+
+        .作品 {
+            display:flex;
+            gap:1em;
+            flex-wrap:wrap;
+        }
+
+        .oeuvre {
+            width:180px;
+            background:#222;
+            padding:1em;
+            border-radius:8px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU LATÉRAL -->
+    <div class="sidebar">
+        <h2>GlobalArtPro</h2>
+
+        <button onclick="showSection('home')" class="active">Accueil</button>
+        <button onclick="showSection('addArtwork')">Ajouter une œuvre</button>
+        <button onclick="showSection('myArtworks')">Mes œuvres</button>
+        <button onclick="showSection('profile')">Mon profil</button>
+        <button onclick="logout()" style="margin-top:2em;background:#922;">Déconnexion</button>
+    </div>
+
+
+    <!-- CONTENU -->
+    <div class="content">
+
+        <!-- Accueil -->
+        <div id="home" class="section active">
+            <h1 id="welcomeTitle">Bienvenue</h1>
+
+            <div class="card stats-grid">
+                <div class="stat-box">
+                    <h3 id="statOeuvres">0</h3>
+                    <p>Œuvres publiées</p>
+                </div>
+
+                <div class="stat-box">
+                    <h3 id="statVues">0</h3>
+                    <p>Vues totales</p>
+                </div>
+
+                <div class="stat-box">
+                    <h3 id="statLikes">0</h3>
+                    <p>Likes</p>
+                </div>
+            </div>
+              <h3>Ajouter une œuvre</h3>
+<form id="addArtworkForm">
+    <label>Titre de l’œuvre</label>
+    <input type="text" id="artTitle" placeholder="Titre" required>
+
+    <label>Description</label>
+    <textarea id="artDesc" placeholder="Description de l’œuvre"></textarea>
+
+    <label>Importer une image</label>
+    <input type="file" id="artImage" accept="image/*" required>
+
+    <button type="submit">Ajouter l’œuvre</button>
+</form>
+    
+</form>
+
+<hr style="margin:2em 0;border-color:#444;">
+
+
+<h3>Mes œuvres</h3>
+<div id="myArtworks"></div>
+
+<hr style="margin:2em 0;border-color:#444;">
+
+<h3>GAP Gallery</h3>
+<div id="gapGallery"></div>
+            
+        </div>
+              
+
+        <!-- Ajouter une œuvre -->
+        <div id="addArtwork" class="section">
+        <h1>Ajouter une œuvre</h1>
+
+            <div class="card">
+                <label>Titre</label>
+                <input id="artTitle" type="text">
+
+                <label>Description</label>
+                <textarea id="artDesc"></textarea>
+
+                <label>URL de l'image</label>
+                <input id="artImage" type="url">
+
+                <button class="primary" onclick="saveArtwork()">Publier l'œuvre</button>
+            </div>
+            
+        </div>
+
+        <!-- Mes œuvres -->
+        <div id="myArtworks" class="section">
+            <h1>Mes œuvres</h1>
+
+            <div id="artList" class="作品"></div>
+        </div>
+
+        <!-- Profil -->
+        <div id="profile" class="section">
+            <h1>Mon Profil</h1>
+
+            <div class="card">
+                <p><strong>Nom :</strong> <span id="pNom"></span></p>
+                <p><strong>Prénom :</strong> <span id="pPrenom"></span></p>
+                <p><strong>Email :</strong> <span id="pEmail"></span></p>
+                <p><strong>Rôle :</strong> <span id="pRole"></span></p>
+                <p><strong>Bio :</strong></p>
+                <p id="pBio"></p>
+            </div>
+        </div>
+
+    </div>
+
+
+<script>
+// VÉRIFICATION DE L’UTILISATEUR CONNECTÉ
+const user = JSON.parse(localStorage.getItem("GAP_loggedUser"));
+if (!user) {
+    window.location.href = "artist-auth.html";
+}
+
+// AFFICHER LES INFORMATIONS DE L'ARTISTE
+document.getElementById("welcomeTitle").innerText = "Bienvenue, " + user.prenom + " !";
+document.getElementById("pNom").innerText = user.nom;
+document.getElementById("pPrenom").innerText = user.prenom;
+document.getElementById("pEmail").innerText = user.email;
+document.getElementById("pRole").innerText = user.role;
+document.getElementById("pBio").innerText = user.bio || "Aucune biographie";
+
+// CHANGEMENT DE SECTION
+function showSection(id) {
+    document.querySelectorAll(".section").forEach(s => s.classList.remove("active"));
+    document.querySelectorAll(".sidebar button").forEach(b => b.classList.remove("active"));
+
+    document.getElementById(id).classList.add("active");
+
+    event.target.classList.add("active");
+}
+
+// SAUVEGARDE D’UNE ŒUVRE
+function saveArtwork() {
+    const title = document.getElementById("artTitle").value.trim();
+    const desc = document.getElementById("artDesc").value.trim();
+    const img = document.getElementById("artImage").value.trim();
+
+    if (!title || !img) {
+        alert("Veuillez remplir au moins le titre et l'image.");
+        return;
+    }
+
+    let artworks = JSON.parse(localStorage.getItem("GAP_artworks")) || [];
+
+    artworks.push({
+        owner: user.email,
+        title,
+        desc,
+        img,
+        createdAt: new Date().toISOString(),
+        views: 0,
+        likes: 0
+    });
+
+    localStorage.setItem("GAP_artworks", JSON.stringify(artworks));
+
+    alert("Œuvre publiée !");
+    document.getElementById("artTitle").value = "";
+    document.getElementById("artDesc").value = "";
+    document.getElementById("artImage").value = "";
+    loadMyArtworks();
+}
+
+// AFFICHER LES ŒUVRES
+function loadMyArtworks() {
+    let artworks = JSON.parse(localStorage.getItem("GAP_artworks")) || [];
+    artworks = artworks.filter(a => a.owner === user.email);
+
+    document.getElementById("statOeuvres").innerText = artworks.length;
+
+    const list = document.getElementById("artList");
+    list.innerHTML = "";
+
+    artworks.forEach(a => {
+        list.innerHTML += `
+          <div class="oeuvre">
+            <img src="${a.img}" style="width:100%;border-radius:6px;">
+            <h4>${a.title}</h4>
+            <p style="font-size:0.9em;color:#ccc">${a.desc}</p>
+          </div>
+        `;
+    });
+}
+
+loadMyArtworks();
+
+
+// DÉCONNEXION
+function logout() {
+    localStorage.removeItem("GAP_loggedUser");
+    window.location.href = "artist-auth.html";
+}
+</script>
+<script>
+// Charger l’utilisateur connecté
+const currentUser = JSON.parse(localStorage.getItem("GAP_loggedUser")) || null;
+
+// Récupérer toutes les œuvres
+function getArtworks() {
+    return JSON.parse(localStorage.getItem("GAP_artworks")) || [];
+}
+
+// Sauvegarder les œuvres
+function saveArtworks(list) {
+    localStorage.setItem("GAP_artworks", JSON.stringify(list));
+}
+
+
+// ------------------------------
+// AJOUT D’ŒUVRE
+// ------------------------------
+document.getElementById("addArtworkForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const title = document.getElementById("artTitle").value.trim();
+    const desc = document.getElementById("artDesc").value.trim();
+    const file = document.getElementById("artImage").files[0];
+
+    if (!file) {
+        alert("Veuillez importer une image.");
+        return;
+    }
+
+    // Convertir l’image en Base64
+    const base64 = await toBase64(file);
+
+    const artworks = getArtworks();
+
+    artworks.push({
+        id: Date.now(),
+        userEmail: currentUser.email,
+        title,
+        desc,
+        image: base64,
+        createdAt: new Date().toISOString()
+    });
+
+    saveArtworks(artworks);
+
+    alert("Œuvre ajoutée avec succès !");
+    this.reset();
+    loadMyArtworks();
+    loadGallery();
+});
+
+
+// Convertir fichier image en Base64 (obligatoire pour stockage local)
+function toBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
+}
+
+
+
+// ------------------------------
+// AFFICHER LES ŒUVRES DE L’ARTISTE
+// ------------------------------
+function loadMyArtworks() {
+    const container = document.getElementById("myArtworks");
+    const artworks = getArtworks().filter(a => a.userEmail === currentUser.email);
+
+    if (!artworks.length) {
+        container.innerHTML = "<p>Aucune œuvre pour l’instant.</p>";
+        return;
+    }
+
+    container.innerHTML = artworks.map(a => `
+        <div style="margin-bottom:1.5em;background:#222;padding:1em;border-radius:8px;">
+            <img src="${a.image}" style="width:100%;border-radius:6px;">
+            <h4>${a.title}</h4>
+            <p>${a.desc}</p>
+
+            <button onclick="editArtwork(${a.id})" style="margin-right:10px;">Modifier</button>
+            <button onclick="deleteArtwork(${a.id})" style="background:#b22;color:#fff;">Supprimer</button>
+        </div>
+    `).join("");
+}
+
+
+
+// ------------------------------
+// SUPPRIMER UNE ŒUVRE
+// ------------------------------
+function deleteArtwork(id) {
+    if (!confirm("Confirmer la suppression ?")) return;
+
+    let artworks = getArtworks();
+    artworks = artworks.filter(a => a.id !== id);
+
+    saveArtworks(artworks);
+    loadMyArtworks();
+    loadGallery();
+}
+
+
+
+// ------------------------------
+// MODIFIER UNE ŒUVRE
+// ------------------------------
+function editArtwork(id) {
+    const artworks = getArtworks();
+    const art = artworks.find(a => a.id === id);
+
+    const newTitle = prompt("Nouveau titre :", art.title);
+    if (!newTitle) return;
+
+    const newDesc = prompt("Nouvelle description :", art.desc);
+
+    art.title = newTitle;
+    art.desc = newDesc || "";
+
+    saveArtworks(artworks);
+    loadMyArtworks();
+    loadGallery();
+}
+
+
+
+// ------------------------------
+// GAP GALLERY : TOUTES LES ŒUVRES
+// ------------------------------
+function loadGallery() {
+    const container = document.getElementById("gapGallery");
+    const artworks = getArtworks();
+
+    if (!artworks.length) {
+        container.innerHTML = "<p>Aucune œuvre dans la galerie.</p>";
+        return;
+    }
+
+    container.innerHTML = artworks.map(a => `
+        <div style="margin-bottom:1.5em;background:#222;padding:1em;border-radius:8px;">
+            <img src="${a.image}" style="width:100%;border-radius:6px;">
+            <h4>${a.title}</h4>
+            <p>${a.desc}</p>
+            <small style="color:#888;">Artiste : ${a.userEmail}</small>
+        </div>
+    `).join("");
+}
+
+
+// Charger automatiquement
+window.addEventListener("DOMContentLoaded", () => {
+    if (currentUser) {
+        loadMyArtworks();
+        loadGallery();
+    }
+});
+</script>
+</body>
+</html>

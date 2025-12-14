@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "type": "image",
+    "title": "Danse du village",
+    "text": "Une danse rituelle capturée hier soir.",
+    "media": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80",
+    "country": "Cameroun",
+    "likes": 12,
+    "comments": ["Magnifique!", "Force et beauté"]
+  },
+  {
+    "id": 2,
+    "type": "image",
+    "title": "Masque ancestral",
+    "text": "Masque de la cérémonie Baoulé.",
+    "media": "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80",
+    "country": "Côte d'Ivoire",
+    "likes": 8,
+    "comments": ["Superbe conservation"]
+  },
+  {
+    "id": 3,
+    "type": "text",
+    "title": "Histoire locale",
+    "text": "Récit d'une ancienne fête de pluie — une tradition transmise par les anciens.",
+    "media": "",
+    "country": "Sénégal",
+    "likes": 3,
+    "comments": []
+  }
+]

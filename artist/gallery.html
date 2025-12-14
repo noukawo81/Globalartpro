@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Galerie – GlobalArtPro</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">GLOBAL<span>ART</span>PRO</div>
+
+    <nav class="menu">
+        <a href="../index.html">Accueil</a>
+        <a href="globeContainer">Découvrir</a>
+        <a href="artist-auth.html">S'inscrire</a>
+    </nav>
+
+    <button id="darkToggle" class="dark-btn">Mode sombre</button>
+</header>
+
+
+<!-- TITRE -->
+<section class="title-section">
+    <h1>Galerie Internationale</h1>
+    <p>Explore les arts physiques, numériques, musées virtuels et créations du monde entier.</p>
+</section>
+
+
+<!-- FILTRES -->
+<section class="filter-section">
+    <select id="categoryFilter">
+        <option value="all">Toutes les catégories</option>
+        <option value="art-physique">Art physique</option>
+        <option value="art-numerique">Art numérique</option>
+        <option value="musee3d">Musée 3D</option>
+        <option value="sculpture">Sculptures</option>
+        <option value="peinture">Peintures</option>
+        <option value="photo">Photographie</option>
+        <option value="artisanat">Artisanat & Textiles</option>
+        <option value="nft">NFT / Web3</option>
+        <option value="africain">Art africain traditionnel</option>
+        <option value="architecture">Architecture & Modèles 3D</option>
+        <option value="exposition">Collections spéciales</option>
+        <option value="japonais">Art japonais</option>
+        <option value="indien">Art indien</option>
+        <option value="chinois">Art chinois</option>
+        <option value="russe">Art russe</option>
+    </select>
+
+    <select id="continentFilter">
+        <option value="all">Tous les continents</option>
+        <option value="afrique">Afrique</option>
+        <option value="europe">Europe</option>
+        <option value="asie">Asie</option>
+        <option value="amerique">Amérique</option>
+        <option value="oceanie">Océanie</option>
+    </select>
+</section>
+
+
+<!-- GALERIE -->
+<section class="gallery" id="galleryContainer">
+    <!-- Images injectées automatiquement via gallery.js -->
+</section>
+
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <img id="lightbox-img" src="">
+</div>
+
+<!-- GALERIE PAR DÉFAUT -->
+<section class="gallery-grid">
+
+    <div class="gallery-item">
+        <img src="./images/galerie/masque-africain.jpg" alt="">
+        <p>Art Africain</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="./images/galerie/temple-japonais.jpg" alt="">
+        <p>Art Japonais</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="./images/galerie/danse-bollywood.jpg" alt="">
+        <p>Art Indien</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="./images/galerie/nature-chine.jpg" alt="">
+        <p>Art Chinois</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="./images/galerie/cathédrale-russie.jpg" alt="">
+        <p>Art Russe</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="./images/galerie/poterie.jpg" alt="">
+        <p>Poterie</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="./images/galerie/peinture.jpg" alt="">
+        <p>Peinture</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="./images/galerie/sculpture.jpg" alt="">
+        <p>Sculpture</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="./images/galerie/graffiti.jpg" alt="">
+        <p>Graffiti</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="./images/galerie/textile.jpg" alt="">
+        <p>Textile</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="./images/galerie/calligraphie.jpg" alt="">
+        <p>Calligraphie</p>
+    </div>
+
+    <div class="gallery-item">
+        <img src="./images/galerie/fresque.jpg" alt="">
+        <p>Fresque</p>
+    </div>
+
+</section>
+<script src="gallery.js"></script>
+
+</body>
+</html>

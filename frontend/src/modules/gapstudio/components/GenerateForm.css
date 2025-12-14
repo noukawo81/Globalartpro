@@ -1,0 +1,91 @@
+/* Conteneur principal */
+.generate-form-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+  font-family: "Inter", sans-serif;
+}
+
+/* Titre */
+.generate-form-container h2 {
+  margin-bottom: 16px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #111827;
+  text-align: center;
+}
+
+/* Labels */
+.generate-form-container label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+  color: #374151;
+}
+
+/* Champs */
+.generate-form-container input,
+.generate-form-container textarea,
+.generate-form-container select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #f9fafb;
+  transition: all 0.2s ease;
+}
+
+.generate-form-container input:focus,
+.generate-form-container textarea:focus,
+.generate-form-container select:focus {
+  outline: none;
+  border-color: #6366f1; /* Indigo */
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Bouton */
+.generate-form-container button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #4f46e5, #6366f1);
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.generate-form-container button:hover {
+  opacity: 0.9;
+}
+
+/* Section résultat */
+.result-preview {
+  margin-top: 22px;
+  padding: 16px;
+  background: #f3f4f6;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+.result-preview h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .generate-form-container {
+    padding: 16px;
+  }
+}

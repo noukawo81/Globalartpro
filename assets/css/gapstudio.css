@@ -1,0 +1,134 @@
+/* GAP Studio IA – Style principal */
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0a0a;
+  color: #f0f0f0;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+.gap-header {
+  width: 100%;
+  background: linear-gradient(135deg, #181818, #0f0f0f);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.gap-logo {
+  font-size: 26px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff7300, #ffd200);
+  background-clip: text;          /* >>> Ajout standard */
+  -webkit-background-clip: text;  /* >>> Ancien compatible */
+  color: transparent;
+}
+
+.gap-nav a {
+  color: #d8d8d8;
+  margin-left: 25px;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.gap-nav a:hover {
+  color: #fff;
+}
+
+/* HERO SECTION */
+.hero {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #ff8800, #ffcc00);
+  background-clip: text;          /* >>> Ajout standard */
+  -webkit-background-clip: text;  /* >>> Ancien compatible */
+  color: transparent;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #c0c0c0;
+  margin-bottom: 40px;
+}
+
+.hero button {
+  background: linear-gradient(90deg, #ff6a00, #ffb800);
+  border: none;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero button:hover {
+  transform: scale(1.08);
+}
+
+/* MODULE CARDS */
+.module-section {
+  padding: 60px 30px;
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-gap: 25px;
+}
+
+.module-card {
+  background: #141414;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.module-card:hover {
+  transform: scale(1.03);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.module-card h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.module-card p {
+  color: #adadad;
+  font-size: 14px;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 60px;
+  padding: 40px;
+  background: #0d0d0d;
+  text-align: center;
+  font-size: 14px;
+  color: #a0a0a0;
+}

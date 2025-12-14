@@ -1,0 +1,108 @@
+body {
+    background: #111;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 40px;
+    color: #fff;
+}
+
+.certificate {
+    width: 900px;
+    margin: auto;
+    padding: 40px;
+    border: 6px solid #D4AF37;
+    background: #0A0A0A;
+    box-shadow: 0px 0px 25px rgba(212,175,55,0.5);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    color: #D4AF37;
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.header p {
+    color: #ccc;
+}
+
+.label {
+    font-size: 18px;
+    color: #ccc;
+    text-transform: uppercase;
+}
+
+#certName {
+    font-size: 38px;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.description {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ccc;
+    text-align: justify;
+}
+
+#certLevel {
+    text-align: center;
+    margin-top: 30px;
+    color: #D4AF37;
+    font-size: 26px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.footer .left,
+.footer .right {
+    width: 30%;
+    font-size: 14px;
+}
+
+.qr {
+    text-align: center;
+}
+/* --- signature + seal layout --- */
+.signature-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 420px;      /* limite la largeur pour éviter overflow */
+  margin: 0 auto;
+  padding-bottom: 8px;   /* espace pour le seal */
+  overflow: visible;     /* on laisse visible pour le chevauchement */
+}
+
+/* SVG signature : s'adapte à la largeur du conteneur */
+.signature-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Cachet : positionné sur la partie droite/basse de la signature */
+.seal-svg {
+  position: absolute;
+  right: 8px;
+  bottom: -6px;         /* remonte ou descend selon l'effet souhaité */
+  width: 120px;         /* taille par défaut, ajuste si besoin */
+  height: 120px;
+  opacity: 0.95;
+  pointer-events: none; /* non-interactif */
+  transform: translate(0, 0);
+}
+
+/* Adaptation mobile (réduire le seal) */
+@media (max-width: 480px) {
+  .seal-svg { width: 90px; height: 90px; right: 6px; bottom: -4px; }
+  .signature-wrap { max-width: 320px; }
+  .signature-svg text tspan { font-size: 18px; } /* si besoin */
+}

@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>GAP Studio — GlobalArtPro (Image · Son · Texte · NFT)</title>
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0b0b10;
+    --card:#0f1220;
+    --muted:#bfc0d6;
+    --accent1:#6a11cb; /* violet */
+    --accent2:#ffd700; /* gold */
+    --glass: rgba(255,255,255,0.04);
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:Inter,system-ui,Arial,sans-serif;
+    background: linear-gradient(180deg,#03030a 0%, #0b0b10 50%);
+    color:#e8e8ee;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.4;
+  }
+
+  /* Layout */
+  .wrap{max-width:1200px;margin:32px auto;padding:28px;}
+  header{display:flex;align-items:center;gap:18px;margin-bottom:20px}
+  .logo{
+    width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,var(--accent1),var(--accent2));
+    display:flex;align-items:center;justify-content:center;font-weight:800;color:#071;box-shadow:0 6px 24px rgba(106,17,203,0.12);
+  }
+  header h1{font-size:20px;margin:0}
+  header p{margin:0;color:var(--muted);font-size:13px}
+
+  /* Main grid */
+  .grid{display:grid;grid-template-columns: 1fr 420px;gap:20px;}
+  @media (max-width:980px){ .grid{grid-template-columns:1fr;} .rightCol{order:-1} }
+
+  /* Studio cards */
+  .card{background:linear-gradient(180deg,var(--card), #0b0f1a);padding:18px;border-radius:var(--radius);box-shadow:0 6px 30px rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.03)}
+  .title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+  .title h2{margin:0;font-size:16px}
+  .controls{display:flex;gap:8px;align-items:center}
+
+  /* inputs */
+  .field{display:block;width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+  .row{display:flex;gap:10px}
+  .small{width:120px}
+  button.btn{
+    border:0;padding:10px 12px;border-radius:10px;font-weight:600;cursor:pointer;background:linear-gradient(90deg,var(--accent1),var(--accent2));
+    color:#0b0b10;box-shadow:0 8px 20px rgba(106,17,203,0.14)
+  }
+  button.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+  /* preview */
+  .preview{display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;min-height:260px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);overflow:hidden}
+  .preview img{max-width:100%;max-height:420px;object-fit:contain;border-radius:8px}
+  .thumbs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+
+  /* sections */
+  .section{margin-bottom:18px}
+
+  /* side column */
+  .rightCol .card{margin-bottom:16px}
+  .stat{display:flex;justify-content:space-between;align-items:center;padding:8px 10px;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.02)}
+  .stat strong{color:var(--accent2)}
+
+  /* features grid */
+  .miniGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+  .feature{padding:10px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid rgba(255,255,255,0.03)}
+  .feature h4{margin:0 0 6px 0;font-size:14px}
+  .muted{color:var(--muted);font-size:13px}
+
+  /* watermark */
+  .watermark{
+    position:absolute;right:8px;bottom:8px;background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:6px 8px;border-radius:6px;color:#0b0b10;font-weight:700;font-size:12px;opacity:0.95
+  }
+
+  footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+  a.link{color:var(--accent2);text-decoration:none;font-weight:600}
+
+  /* micro */
+  .muted-block{color:var(--muted);font-size:13px}
+  .badge{background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:999px;font-weight:700;color:var(--accent2)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="logo">gap</div>
+    <div>
+      <h1>GAP Studio — GlobalArtPro</h1>
+      <p>Image · Son · Texte · NFT — Studio IA orienté art & culture mondiale</p>
+    </div>
+    <div style="margin-left:auto;display:flex;gap:12px;align-items:center">
+      <div class="badge">ARTC <strong style="margin-left:6px">0</strong></div>
+      <button class="ghost" id="btn-login">Connect</button>
+    </div>
+  </header>
+
+  <main class="grid">
+    <!-- LEFT : big studio -->
+    <section class="leftCol">
+
+      <!-- HERO / QUICK PROMPT -->
+      <div class="card section">
+        <div class="title">
+          <h2>Quick Image Studio — Text → Image</h2>
+          <div class="controls">
+            <select id="styleSelect" class="field small">
+              <option value="photoreal">Photo réaliste</option>
+              <option value="traditional">Traditionnel (culture)</option>
+              <option value="surreal">Surréaliste</option>
+              <option value="futuristic">Futuriste</option>
+              <option value="digital">Art numérique</option>
+            </select>
+            <select id="cultureSelect" class="field small" title="Filtre culturel">
+              <option value="">Any culture</option>
+              <option value="african">African motifs</option>
+              <option value="asian">Asian motifs</option>
+              <option value="latin">Latin American</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;flex-direction:column">
+          <textarea id="prompt" class="field" rows="3" placeholder="Décris l’image que tu veux produire — ex : 'Masque bamiléké, textures bois, ornement futuriste, dramatic light'"></textarea>
+
+          <div class="row">
+            <input id="width" class="field small" placeholder="W" value="1024">
+            <input id="height" class="field small" placeholder="H" value="1024">
+            <input id="nVariants" class="field small" placeholder="Variantes" value="1">
+            <button id="genImage" class="btn">Générer image</button>
+            <button id="upscale" class="ghost">Upscale</button>
+          </div>
+
+          <div class="muted-block">Coût estimé : <strong id="estCost">0.25 PI</strong> · Modèle recommandé : <span id="modelSlug">stable-diffusion-v1-5</span></div>
+        </div>
+
+        <div class="section" style="margin-top:14px;">
+          <div class="preview card" id="imagePreview">
+            <div class="muted-block">Aucune image — génère pour visualiser.</div>
+          </div>
+
+          <div style="display:flex;gap:8px;justify-content:center;margin-top:10px">
+            <button id="downloadImage" class="ghost">Télécharger</button>
+            <button id="addToGallery" class="ghost">Ajouter à GAP Gallery</button>
+            <button id="mintBtn" class="btn">Créer NFT</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SOUND MODULE -->
+      <div class="card section">
+        <div class="title">
+          <h2>GAP Sound — Générateur audio</h2>
+          <div class="muted">MP3 export · loops · ambiance</div>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-direction:column">
+          <input id="audioPrompt" class="field" placeholder="Ex : 'calm flute + soft percussion, 60s, West African mood'">
+          <div class="row">
+            <select id="audioStyle" class="field small">
+              <option>Traditional</option><option>Ambient</option><option>Rhythmic</option>
+            </select>
+            <input id="audioDuration" class="field small" value="30">
+            <button id="genAudio" class="btn">Générer audio</button>
+          </div>
+          <div id="audioPreview" class="muted-block" style="margin-top:10px">Aucun audio</div>
+        </div>
+      </div>
+
+      <!-- TEXT MODULE -->
+      <div class="card section">
+        <div class="title">
+          <h2>GAP Text — Description & Titres</h2>
+          <div class="muted">Bio, légende Instagram, description d’œuvre</div>
+        </div>
+
+        <div style="display:flex;gap:10px;flex-direction:column">
+          <input id="textSeed" class="field" placeholder="Sujet / mot-clé (ex : 'masque bamiléké')">
+          <select id="textType" class="field small">
+            <option value="title">Titre</option>
+            <option value="description" selected>Description</option>
+            <option value="bio">Bio courte</option>
+            <option value="caption">Caption réseaux</option>
+          </select>
+          <div style="display:flex;gap:8px">
+            <button id="genText" class="btn">Générer texte</button>
+            <button id="translateText" class="ghost">Traduire</button>
+          </div>
+          <textarea id="textResult" rows="4" class="field" placeholder="Résultat..."></textarea>
+        </div>
+      </div>
+
+      <!-- NFT / Publish -->
+      <div class="card section">
+        <div class="title">
+          <h2>Mint & Publish</h2>
+          <div class="muted">Préparer une image pour la marketplace / certificate</div>
+        </div>
+
+        <div style="display:flex;gap:8px;flex-direction:column">
+          <input id="nftTitle" class="field" placeholder="Titre NFT">
+          <input id="nftPrice" class="field small" placeholder="Prix en ARTC">
+          <div style="display:flex;gap:8px">
+            <button id="mintNftBtn" class="btn">Mint NFT (simulé)</button>
+            <button id="publishBtn" class="ghost">Publier sur Marketplace</button>
+          </div>
+          <div id="mintResult" class="muted-block" style="margin-top:8px"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RIGHT : status / history / quick actions -->
+    <aside class="rightCol">
+      <div class="card section">
+        <div class="title"><h2>Studio quick stats</h2><div class="muted">Usage & sécurité</div></div>
+        <div class="stat"><div>API model</div><strong id="statModel">stable-diffusion-v1-5</strong></div>
+        <div style="height:10px"></div>
+        <div class="stat"><div>Requests today</div><strong id="statReq">0</strong></div>
+        <div style="height:10px"></div>
+        <div class="stat"><div>Credits</div><strong id="statCredits">0.00 PI</strong></div>
+        <div style="height:10px"></div>
+        <div class="stat"><div>ArtCoin (ARTC)</div><strong id="statARTC">0</strong></div>
+      </div>
+
+      <div class="card section">
+        <div class="title"><h2>Recent creations</h2><div class="muted">Prévisualisations</div></div>
+        <div id="recentGrid" class="thumbs"></div>
+      </div>
+
+      <div class="card section">
+        <div class="title"><h2>Modules rapides</h2><div class="muted">Raccourcis</div></div>
+        <div class="miniGrid">
+          <div class="feature"><h4>Image AI</h4><div class="muted">Prompt → image</div></div>
+          <div class="feature"><h4>Sound AI</h4><div class="muted">Audio génératif</div></div>
+          <div class="feature"><h4>Text AI</h4><div class="muted">Descriptions</div></div>
+          <div class="feature"><h4>Mint</h4><div class="muted">NFT / Certificate</div></div>
+        </div>
+      </div>
+
+      <div class="card section">
+        <div class="title"><h2>Docs & sécurité</h2><div class="muted">Liens utiles</div></div>
+        <div class="muted-block" style="font-size:13px">
+          • Vérifie <a class="link" href="#" target="_blank">API keys</a><br>
+          • Utilise HTTPS pour production<br>
+          • Ne stocke pas de clés dans client
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer>
+    <div class="muted">GAP Studio • GlobalArtPro — Built for artists. Need a backend hook? update <code>API_BASE</code> in the script.</div>
+  </footer>
+</div>
+
+<script>
+/*
+  GAP Studio — front-end demo JS
+  - Remplace API_BASE par ton endpoint réel.
+  - Chaque fonction simule le comportement et gère l'UI.
+*/
+const API_BASE = "/api/Gapstudio"; // <-- remplace par ton backend complet en production
+
+// Helpers UI
+const el = id => document.getElementById(id);
+const setText = (id, v) => el(id) && (el(id).textContent = v);
+
+// state
+let recent = [];
+
+// Image generation
+el('genImage').addEventListener('click', async () => {
+  const prompt = el('prompt').value.trim();
+  if (!prompt) return alert('Écris un prompt.');
+  setText('statReq', parseInt(document.getElementById('statReq').textContent||0) + 1);
+  // show loading
+  const preview = el('imagePreview');
+  preview.innerHTML = '<div class="muted-block">Génération en cours…</div>';
+  try {
+    // Example POST payload — adaptes les routes au backend
+    const payload = {
+      prompt,
+      width: parseInt(el('width').value)||1024,
+      height: parseInt(el('height').value)||1024,
+      style: el('styleSelect').value,
+      culture: el('cultureSelect').value,
+      n: parseInt(el('nVariants').value)||1
+    };
+
+    // Call backend (placeholder) — replace path if needed
+    const res = await fetch(`${API_BASE}/generate-image`, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    });
+
+    if (!res.ok) {
+      const txt = await res.text();
+      throw new Error('Server error: ' + txt);
+    }
+
+    // backend returns { images: [base64-or-url,...] }
+    const data = await res.json();
+
+    // sample handling if backend returns urls
+    const imgUrl = (data && (data.images?.[0] || data.image || data.url)) || null;
+    if (!imgUrl) throw new Error('No image in response');
+
+    preview.innerHTML = `<div style="position:relative;width:100%"><img src="${imgUrl}" alt="generated" /><div class="watermark">gap</div></div>`;
+    recent.unshift(imgUrl);
+    updateRecent();
+    // enable download / mint
+    el('downloadImage').onclick = () => downloadImage(imgUrl);
+    el('addToGallery').onclick = () => addToGallery(imgUrl);
+    el('mintBtn').onclick = () => openMintFlow(imgUrl);
+
+  } catch (err) {
+    console.error(err);
+    preview.innerHTML = `<div class="muted-block">Erreur: ${err.message}</div>`;
+  }
+});
+
+function downloadImage(url){
+  // download helper: create hidden link
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'gap-image';
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+}
+
+function addToGallery(url){
+  // simple local demo: add to recent gallery and localStorage
+  let g = JSON.parse(localStorage.getItem('GAP_gallery')||'[]');
+  g.unshift({url, created: new Date().toISOString()});
+  localStorage.setItem('GAP_gallery', JSON.stringify(g));
+  alert('Ajouté à GAP Gallery (local demo).');
+  updateRecent();
+}
+
+function openMintFlow(url){
+  // open a small prompt to set NFT info
+  const title = prompt('Titre du NFT','Untitled GAP Art');
+  if (!title) return;
+  // mint call
+  mintNft({image:url,title});
+}
+
+async function mintNft({image,title,price=0}){
+  setText('mintResult','Mint en cours...');
+  try {
+    const payload = {image, title, price};
+    // adapt route
+    const res = await fetch(`${API_BASE}/mint-nft`, {
+      method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)
+    });
+    if(!res.ok) throw new Error('mint failed');
+    const data = await res.json();
+    setText('mintResult','Minté — tx: ' + (data.tx || 'local-demo'));
+    // reward ARTC demo
+    const artc = parseInt(el('statARTC').textContent || 0) + 1;
+    setText('statARTC', artc);
+  } catch(err){
+    setText('mintResult','Erreur mint: ' + err.message);
+  }
+}
+
+// AUDIO generation
+el('genAudio').addEventListener('click', async () => {
+  const prompt = el('audioPrompt').value.trim();
+  if(!prompt) return alert('Prompt audio requis');
+  el('audioPreview').textContent = 'Génération audio en cours...';
+  try {
+    const res = await fetch(`${API_BASE}/generate-audio`, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({prompt, style: el('audioStyle').value, duration: el('audioDuration').value})
+    });
+    if(!res.ok) throw new Error('audio failed');
+    const data = await res.json();
+    const url = data.audio || data.url;
+    el('audioPreview').innerHTML = `<audio controls src="${url}"></audio>`;
+  } catch(err){ el('audioPreview').textContent = 'Erreur: '+err.message }
+});
+
+// TEXT generation
+el('genText').addEventListener('click', async () => {
+  const seed = el('textSeed').value.trim();
+  if(!seed) return alert('Mot-clé requis');
+  el('textResult').value = 'Génération...';
+  try {
+    const res = await fetch(`${API_BASE}/generate-text`, {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({seed, type: el('textType').value})
+    });
+    if(!res.ok) throw new Error('text failed');
+    const data = await res.json();
+    el('textResult').value = data.text || data.result || '';
+  } catch(err){ el('textResult').value = 'Erreur: '+err.message }
+});
+
+// Mint NFT button (from right column)
+el('mintNftBtn').addEventListener('click', () => {
+  const url = recent[0];
+  if(!url) return alert('Aucune image récente');
+  openMintFlow(url);
+});
+
+function updateRecent(){
+  const grid = el('recentGrid');
+  grid.innerHTML = '';
+  recent.slice(0,6).forEach(u => {
+    const img = document.createElement('img');
+    img.src = u;
+    img.style.width='70px'; img.style.height='70px'; img.style.objectFit='cover'; img.style.borderRadius='8px';
+    grid.appendChild(img);
+  });
+}
+
+// mock: load persisted gallery into recent
+(function init(){
+  const g = JSON.parse(localStorage.getItem('GAP_gallery')||'[]');
+  recent = g.map(x => x.url);
+  updateRecent();
+})();
+
+// simple upload watermark implementation (client-side draw)
+async function watermarkImage(url, text='gap'){
+  // returns blob URL
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.src = url;
+  await img.decode();
+  const canvas = document.createElement('canvas');
+  canvas.width = img.width;
+  canvas.height = img.height;
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(img,0,0);
+  // watermark bottom-right
+  const pad = Math.round(Math.max(img.width,img.height)*0.02);
+  ctx.font = `${Math.round(Math.max(img.width,img.height)*0.035)}px sans-serif`;
+  ctx.textBaseline = 'bottom';
+  ctx.fillStyle = 'rgba(106,17,203,0.9)';
+  ctx.fillText(text, canvas.width - pad - ctx.measureText(text).width, canvas.height - pad);
+  return canvas.toDataURL('image/jpeg',0.95);
+}
+
+// fallback handlers for demo buttons
+el('downloadImage').addEventListener('click', () => {
+  alert('Cliquez sur "Générer image" puis "Télécharger".');
+});
+
+// small UX: login button
+el('btn-login').addEventListener('click', () => alert('Connexion: implémente Pi Wallet / Auth ici.'));
+
+// End of script
+</script>
+</body>
+</html>

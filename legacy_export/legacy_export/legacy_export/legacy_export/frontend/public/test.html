@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <link rel="icon" href="/favicon.ico" />  
+  <head><meta charset="utf-8"><title>Test GAP Studio</title></head>
+  <body>
+    <button id="btnGenerate">Générer image</button>
+    <button id="btnPay">Simuler paiement</button>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const btnGenerate = document.getElementById('btnGenerate')
+        const btnPay = document.getElementById('btnPay')
+
+        if (btnGenerate) {
+          btnGenerate.addEventListener('click', async () => {
+            try {
+              const res = await fetch('/api/gapstudio/generate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt: 'Un lion', type: 'replicate-image' })
+              })
+              const data = await res.json()
+              console.log(data)
+            } catch (err) {
+              console.error(err)
+            }
+          })
+        }
+
+        if (btnPay) {
+          btnPay.addEventListener('click', async () => {
+            try {
+              const res = await fetch('/api/gapstudio/pi-payment', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ amount: 1.23, userWallet: 'pi_wallet_address', itemName: 'Test' })
+              })
+              const data = await res.json()
+              console.log(data)
+            } catch (err) {
+              console.error(err)
+            }
+          })
+        }
+      })
+    </script>
+  </body>
+</html>

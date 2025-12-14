@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Générer un Certificat</title>
+<link rel="stylesheet" href="css/certificat.css">
+</head>
+
+<body>
+
+<div class="certificate" style="border-color:#0057FF">
+<h2>Générateur de Certificat GlobalArtPro</h2>
+
+<label>Nom complet :</label>
+<input id="name" type="text">
+
+<label>Niveau du certificat :</label>
+<select id="level">
+<option>Certificat d’Honneur – Niveau Bronze</option>
+<option>Certificat d’Honneur – Niveau Argent</option>
+<option>Certificat d’Honneur – Niveau Or</option>
+<option>Certificat d’Honneur – Niveau Diamant</option>
+</select>
+
+<br><br>
+<button onclick="generate()">Générer</button>
+</div>
+
+<script>
+function generate() {
+    const name = document.getElementById("name").value;
+    const level = document.getElementById("level").value;
+
+    if (!name) { alert("Entrer un nom"); return; }
+
+    const id = "GAP-CERT-2025-" + Math.floor(Math.random() * 99999);
+    const date = new Date().toLocaleDateString("fr-FR");
+    const hash = btoa(name + id + date);
+
+    const url = "certificat-template.html?name=" + encodeURIComponent(name)
+        + "&level=" + encodeURIComponent(level)
+        + "&id=" + encodeURIComponent(id)
+        + "&date=" + encodeURIComponent(date)
+        + "&hash=" + encodeURIComponent(hash);
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>

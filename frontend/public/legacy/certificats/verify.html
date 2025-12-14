@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Vérification de Certificat</title>
+<style>
+body {
+    background:#111;
+    color:white;
+    text-align:center;
+    font-family:Poppins;
+    padding:40px;
+}
+.box {
+    border:2px solid #D4AF37;
+    padding:20px;
+    width:500px;
+    margin:auto;
+}
+</style>
+</head>
+<body>
+
+<h1>Vérification du Certificat</h1>
+<div class="box">
+<p>ID :</p>
+<h2 id="cid"></h2>
+
+<p>Status : <strong style="color:#0f0">Certificat authentique</strong></p>
+<p>Fondation GlobalArtPro</p>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+document.getElementById("cid").textContent = params.get("id");
+</script>
+
+</body>
+</html>

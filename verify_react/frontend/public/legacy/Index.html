@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+ <html lang="fr">
+ <head>
+   <meta charset="UTF-8">
+   <title>GlobalArtPro</title>
+   <style>
+     body {
+       margin: 0;
+       font-family: Arial, sans-serif;
+       background: linear-gradient(to right,#141E30, #243B55); 
+       color: white;
+       background: linear-gradient(to right,#141E30, #243B55);
+       color: #fff;
+       text-align: center;
+       min-height: 100vh;
+     }
+     header {
+       padding: 2rem;
+       padding: 2rem 1rem 1rem 1rem;
+     }
+     header h1 {
+       font-size: 2.5rem;
+       margin: 0;
+       color: gold;
+       letter-spacing: 2px;
+     }
+     header p {
+       font-size: 1.2rem;
+       color: #ddd;
+       color: #eee;
+       margin-bottom: 1rem;
+     }
+     #langSwitcher {
+       margin: 1rem 0;
+       padding: 0.5rem;
+       border-radius: 6px;
+       border: none;
+       font-size: 1rem;
+     }
+     .buttons {
+       margin: 2rem 0;
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;       
+       gap: 1rem;
+     }
+     .buttons a {
+       display: inline-block;
+       margin: 0.5rem;
+     }
+     nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+nav a, nav button {
+  flex: 1 1 180px;
+  min-width: 160px;
+  margin: 0.5rem;
+}
+     nav a, nav button {
+       background: gold;
+       color: #2d0066;
+       padding: 1rem 2rem;
+       background: #ffcc00;
+       color: #000;
+       border-radius: 12px;
+       text-decoration: none;
+       font-weight: bold;
+       font-size: 1.1rem;
+       box-shadow: 0 2px 8px #0002;   
+       transition: background 0.2s;
+       border: none;
+       cursor: pointer;
+       margin-bottom: 0.5rem;
+     }
+     nav a:hover, nav button:hover {
+       background: #fff;
+       color: #6a11cb;
+     }
+     body {
+  background: radial-gradient(circle at 50% 30%, #0D0D1A 70%, #141E30 100%);
+  color: #fff;
+}
+.join-btn {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0px gold; }
+  50% { box-shadow: 0 0 25px gold; }
+  100% { box-shadow: 0 0 0px gold; }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 24px 4px #ffd70099, 0 0 32px 8px #6a11cb55; }
+  100% { box-shadow: 0 0 48px 12px #ffd700cc, 0 0 64px 16px #6a11cb99; }
+}
+.symbol-anim {
+  font-size: 2.2em;
+  animation: symbolPulse 1.8s infinite alternate;
+  filter: drop-shadow(0 0 8px #ffd70088);
+}
+.symbol-anim:nth-child(2) { animation-delay: 0.3s; }
+.symbol-anim:nth-child(3) { animation-delay: 0.6s; }
+.symbol-anim:nth-child(4) { animation-delay: 0.9s; }
+.symbol-anim:nth-child(5) { animation-delay: 1.2s; }
+@keyframes symbolPulse {
+  0% { transform: scale(1) rotate(0deg);}
+  100% { transform: scale(1.18) rotate(12deg);}
+}
+
+@keyframes auraSpin {
+  0% { transform: translate(-50%, -50%) rotate(0deg);}
+  100% { transform: translate(-50%, -50%) rotate(360deg);}
+}
+#energyBar {
+  background: linear-gradient(90deg, #6a11cb 0%, #ffd700 100%);
+  box-shadow: 0 0 12px #ffd70055;
+}
+#energyFill {
+  background: linear-gradient(90deg, #ffd700 0%, #6a11cb 100%);
+  box-shadow: 0 0 16px #ffd70099;
+}
+.artc-mining-card {
+  max-width: 720px;
+  margin: 1.5rem auto;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 1.2rem;
+  border-radius: 12px;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+}
+.mining-header { display:flex; align-items:center; gap:1rem; }
+.mining-logo { width:60px; height:60px; border-radius:50%; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,0.4); }
+.mining-body { margin-top:0.8rem; }
+.balance-row { font-size:1.2rem; margin-bottom:0.6rem; }
+#artcBalance { color:#ffd700; margin-left:0.6rem; }
+.mining-status { margin-bottom:0.8rem; color:#ddd; }
+.btn-mine {
+  padding: 0.9rem 1.6rem;
+  border-radius: 10px;
+  border: 2px solid rgba(255,255,255,0.06);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight:700;
+}
+.btn-mine.active { background: linear-gradient(90deg,#6a11cb,#a04df9); border-color: #6a11cb; color: #fff; }
+.btn-mine.locked { background: #b93a3a; border-color:#7a1f1f; color:#fff; }
+.mining-message { margin-top:0.6rem; color:#ffd700; font-weight:600; }
+.mining-info { margin-top:1rem; color:#cfcfcf; font-size:0.95rem; }
+     section {
+       margin: 2rem 0;
+     }
+     #pi-network button {
+       margin: 0.5rem;
+       padding: 0.7rem 1.5rem;        
+       border: none;
+       border-radius: 8px;
+       background: gold;
+       color: #2d0066;
+       font-weight: bold;
+       transition: 0.3s;
+       cursor: pointer;
+       font-size: 1rem;
+       transition: background 0.2s;   
+     }
+     .buttons a:hover {
+       background: #ffaa00;
+     }
+     .kpi-icon {
+  font-size: 2.2em;
+  margin-bottom: 0.2em;
+  display: block;
+  transition: transform 0.3s;
+}
+.kpi-card:hover .kpi-icon {
+  transform: scale(1.18) rotate(-8deg);
+}
+  
+ #gapStudioTabs button.active {       
+   background: gold;
+   color: #2d0066;
+   opacity: 1;
+ }
+     #pi-network button:hover {       
+       background: #fff;
+       color: #6a11cb;
+     }
+     .card {
+       background: rgba(255,255,255,0.07);
+       border-radius: 16px;
+       margin: 1rem auto;
+       padding: 1.5rem;
+       max-width: 700px;
+       box-shadow: 0 2px 16px #0001;  
+     }
+     footer {
+       margin-top: 3rem;
+       padding: 1rem;
+       background: rgba(255, 255, 255, 0.1);
+       font-size: 0.9rem;
+       background: rgba(255,255,255,0.08);
+       font-size: 0.95rem;
+       color: #eee;
+     }
+     .landing-btns {
+   margin: 2.5rem 0 1.5rem 0;
+   display: flex;
+   justify-content: center;
+   gap: 2rem;
+   animation: fadeInBounce 1.2s cubic-bezier(.23,1.13,.55,.99);
+ }
+ 
+ @keyframes fadeInBounce {
+   0% { opacity: 0; transform: translateY(40px) scale(0.95);}
+   60% { opacity: 1; transform: translateY(-10px) scale(1.05);}
+   80% { transform: translateY(4px) scale(0.98);}
+   100% { opacity: 1; transform: translateY(0) scale(1);}
+ }
+ .partner-anim {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: partnerBounce 2s infinite alternate;
+}
+.partner-anim:nth-child(2) { animation-delay: 0.5s; }
+.partner-anim:nth-child(3) { animation-delay: 1s; }
+
+@keyframes partnerBounce {
+  0% { transform: translateY(0);}
+  60% { transform: translateY(-18px) scale(1.08);}
+  100% { transform: translateY(0);}
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+.kpi-card {
+  animation: fadeInUp 0.8s cubic-bezier(.23,1.13,.55,.99);
+}
+.kpi-card:nth-child(2) { animation-delay: 0.2s; }
+.kpi-card:nth-child(3) { animation-delay: 0.4s; }
+.kpi-card:nth-child(4) { animation-delay: 0.6s; }
+ /* Stroke Animation */
+ .btn-stroke {
+   position: relative;
+   background: linear-gradient(90deg, #ffd700 0%, #6a11cb 100%);
+   color: #2d0066;
+   font-size: 1.2rem;
+   padding: 1.1rem 2.7rem;
+   border: none;
+   border-radius: 16px;
+   font-weight: bold;
+   overflow: hidden;
+   z-index: 1;
+   box-shadow: 0 2px 12px #0002;      
+   cursor: pointer;
+   transition: color 0.3s;
+ }
+ .btn-stroke:before {
+   content: "";
+   position: absolute;
+   inset: 0;
+   border-radius: 16px;
+   border: 3px solid #ffd700;
+   z-index: 2;
+   pointer-events: none;
+   animation: strokeDraw 1.2s cubic-bezier(.23,1.13,.55,.99) 0.2s both;     
+ }
+ @keyframes strokeDraw {
+   0% { border-color: transparent; }  
+   60% { border-color: #ffd700; }     
+   100% { border-color: #ffd700; }    
+ }
+ .btn-stroke:hover, .btn-stroke:focus {
+   color: #fff;
+   background: linear-gradient(90deg, #6a11cb 0%, #ffd700 100%);
+ }
+ .btn-stroke:after {
+   content: "";
+   position: absolute;
+   inset: 0;
+   border-radius: 16px;
+   background: linear-gradient(90deg, #ffd700 0%, #6a11cb 100%);
+   opacity: 0;
+   transition: opacity 0.3s;
+   z-index: 1;
+ }
+ .btn-stroke:hover:after, .btn-stroke:focus:after {
+ opacity: 0.25;
+ }
+ 
+ /* Glassmorphism + Glow */
+ .btn-glass {
+   position: relative;
+   background: rgba(255,255,255,0.18);
+   color: #6a11cb;
+   font-size: 1.2rem;
+   padding: 1.1rem 2.7rem;
+   border: none;
+   border-radius: 16px;
+   font-weight: bold;
+   box-shadow: 0 4px 24px 0 rgba(106,17,203,0.18), 0 0 16px 2px #ffd70055;  
+   backdrop-filter: blur(8px);        
+   border: 2px solid rgba(255,255,255,0.25);
+   cursor: pointer;
+   overflow: hidden;
+   transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+ }
+ .btn-glass:hover, .btn-glass:focus {
+   background: rgba(255,255,255,0.32);
+   color: #2d0066;
+   box-shadow: 0 6px 32px 0 #ffd70099, 0 0 24px 4px #6a11cb55;
+ }
+ 
+ #svgWorldMap g path, #svgWorldMap ellipse {
+   transition: opacity 0.2s, filter 0.2s;
+ }
+ #svgWorldMap {
+   animation: fadeInBounce 1.2s cubic-bezier(.23,1.13,.55,.99);
+ }
+ .kpi-card {
+  background: rgba(255,255,255,0.13);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #0002;
+  padding: 1.2em 2em;
+  text-align: center;
+  min-width: 120px;
+  transition: transform 0.2s;
+  font-family: 'Poppins', Inter, sans-serif;
+}
+.kpi-card:hover { transform: scale(1.05); }
+.kpi-value { font-size: 2.1em; font-weight: bold; color: #ffd700; }
+.kpi-label { font-size: 1em; color: #eee; margin-top: 0.3em; }
+.dashboard-header select, .dashboard-header input[type="search"] {
+  background: rgba(255,255,255,0.08);
+  color: #ffd700;
+  border: none;
+  font-size: 1em;
+  margin-left: 0.5em;
+}
+
+.circle-kpi {
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 110px; height: 110px;
+  background: rgba(255,255,255,0.13);
+  border-radius: 50%;
+  box-shadow: 0 2px 16px #0002;
+  text-align: center;
+  transform: translate(-50%,-50%) rotate(var(--angle)) translate(140px) rotate(calc(-1 * var(--angle)));
+  transition: box-shadow 0.2s, transform 0.3s;
+  cursor: pointer;
+  font-family: 'Poppins', Inter, Arial, sans-serif;
+  z-index: 1;
+  animation: fadeInUp 1s;
+}
+.circle-kpi:hover {
+  box-shadow: 0 4px 24px #ffd70099, 0 0 24px 4px #6a11cb55;
+  transform: translate(-50%,-50%) rotate(var(--angle)) translate(140px) scale(1.08) rotate(calc(-1 * var(--angle)));
+}
+.circle-kpi .kpi-icon { font-size: 2em; margin-top: 0.3em; color: #ffd700; }
+.circle-kpi .kpi-value { font-size: 1.3em; font-weight: bold; color: #ffd700; }
+.circle-kpi .kpi-label { font-size: 0.95em; color: #eee; margin-top: 0.2em; }
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+ .dashboard-table {
+   margin-top: 1em;
+   overflow-x: auto;
+ }
+ .dashboard-table table {
+   width: 100%;
+   border-collapse: collapse;
+ }
+ .dashboard-table th {
+   background: rgba(255,255,255,0.08);
+   color: #ffd700;
+   text-align: left;
+ }
+ .dashboard-table td {
+   color: #eee;
+ }
+.dashboard-table tr:hover { background: rgba(255,255,255,0.13); }
+ #cultureTooltip {
+   position: absolute;
+   background: rgba(0,0,0,0.85);      
+   color: #ffd700;
+   padding: 0.4em 1em;
+   border-radius: 8px;
+   pointer-events: none;
+   font-size: 1.1em;
+   z-index: 1000;
+   display: none;
+ }
+ .btn-icon {
+   display: inline-block;
+   font-size: 1.5em;
+   margin-right: 0.6em;
+   vertical-align: middle;
+   animation: iconBounce 1.2s infinite alternate cubic-bezier(.23,1.13,.55,.99);
+ }
+ .icon-palette { animation-delay: 0.1s; }
+ .icon-star { animation-delay: 0.4s; }
+ 
+ @keyframes iconBounce {
+   0% { transform: translateY(0) scale(1);}
+   60% { transform: translateY(-8px) scale(1.15);}
+   100% { transform: translateY(0) scale(1);}
+ }
+ @keyframes floatPhrase {
+   0% { transform: translateY(0);}
+   100% { transform: translateY(-20px);}
+ }
+ 
+   </style>
+   <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+   <script src="https://unpkg.com/globe.gl"></script>
+   <script src="https://unpkg.com/three"></script>
+   <style>
+.admin-only {
+    display: none;
+}
+</style>
+ </head>
+ <body>
+  <header>
+     <h1 data-key="welcome">🌍 Bienvenue sur GlobalArtPro</h1>
+     <p data-key="subtitle">La plateforme mondiale des artistes - Art, Culture & Innovation</p>
+     
+     <section id="pi-network" class="card">
+  <h2>Interagir avec Pi Network</h2>
+  <button id="btnConnectPi">Connecter Pi Wallet</button>
+  <button onclick="showCreateArtwork()">Créer une œuvre</button>
+  <button onclick="showBuyArtwork()">Acheter une œuvre</button>
+  <button class="admin-only" onclick="window.location.href='certificats/generate-certificat.html'">
+    Générer certificat GlobalArtPro
+</button>
+  <button onclick="showHistory()">Voir historique NFT</button>
+</section>
+   <button class="btn-secondary" onclick="window.location.href='artist/gallery.html'">
+     Découvrir les artistes
+</button>
+   <button class="btn-primary join-btn" onclick="window.location.href='artist/artist-auth.html'">
+  ✨ Rejoindre maintenant
+</button>
+ </div>
+   </header>
+<nav>
+ <nav class="main-nav">
+   <a href="marketplace/marketplace.html" data-key="marketplace">Marketplace</a>
+   <a href="#" data-key="museum">Musées virtuels</a>
+   <a href="community/community.html">Communauté</a>
+   <a href="#" data-key="mining">Minage Art Coin</a>
+   <a href="#" data-key="transactions">Transactions Crypto</a>
+   <!-- ... -->
+ </nav>
+ <nav class="dashboard-nav">
+   <a href="artist/artist-auth.html" class="btn-stroke">Espace Artiste</a>    
+   <a href="#" id="btnAdmin" data-key="adminDashboard">Admin</a>
+   <a href="artist/gallery.html">Galerie</a>
+   <a href="#" onclick="scrollToSection('cultureSection');return false;">Culture du Monde</a>
+   <a href="Gapstudio/Gapstudio-home.html">Créer avec GAP Studio</a>
+   <a href="dashboard.html">📊 Dashboard Analytics</a>
+   <button id="btnScanner" type="button" data-key="scanner">Scanner RA</button>
+   <button id="btnChallenges" type="button" data-key="challenges">Challenges créatifs</button>
+   <a href="#donateSection" style="background:#fff;color:#6a11cb;font-weight:bold;">Soutenir</a>
+ </nav>
+</div>
+ <section id="cultureSection" class="card">
+   <div id=" Container" style="width:100%;max-width:700px;height:400px;margin:2rem auto;"></div>
+   <div id="cultureInfo"></div>       
+   <div id="culturePhrases" style="position:relative;min-height:40px;"></div>
+   <div id="artistsByCountry" style="margin-top:2rem;"></div>
+   <div id="globeContainer" style="width:100%; height:500px;"></div>
+   <section class="buttons">
+   <a href="portail-culture.html">🌍 Portail des Arts & Traditions du Monde</a>
+   <!-- Histoires & traditions intégrées ici -->
+   <div id="storiesSection">
+   <h2>📚 Histoires & traditions</h2> 
+   <div id="sharedCultureFormZone"></div>
+   <div id="sharedCultureList"></div> 
+   <div style="margin-bottom:1rem;">
+     <label for="storyRegion">Choisir une région :</label>
+     <select id="storyRegion" onchange= "renderStories()">
+       <option value="all">Toutes</option>
+       <option value="Afrique">Afrique
+</option>
+       <option value="Europe">Europe</option>
+       <option value="Asie">Asie</option>
+       <option value="Amériques">Amériques</option>
+       <option value="Océanie">Océanie</option>
+     </select>
+   </div>
+   <div id="storiesList"></div>       
+ </div>
+ </section>
+ <section id="donateSection" class="card">
+   <h2>Soutenir l’Art et les Artistes 🎨✨</h2>
+   <p>
+     Votre contribution aide à faire vivre GlobalArtpro, soutenir les artistes du monde entier et développer notre écosystème.<br>
+     Vous pouvez faire un don en Pi Coin ou en Art Coin.<br>
+     Chaque geste compte et fait grandir la communauté artistique mondiale. 
+   </p>
+   <button onclick="showDonateModal('pi')">Faire un don en Pi Coin</button> 
+   <button onclick="showDonateModal('art')">Faire un don en Art Coin</button>
+   <div id="donateModal" style="display:none;margin-top:1rem;"></div>       
+   <div id="donorWall" style="margin-top:2rem;">
+     <h3>Mur des donateurs</h3>       
+     <ul id="donorList" style="list-style:none;padding:0;"></ul>
+   </div>
+  <div id="donationPopup" class="card" style="display:none;padding:1.5rem;margin-top:1rem;">
+    
+    <h3 id="donTitle"></h3>
+
+    <!-- Deep Link -->
+    <div style="margin-top:1rem;">
+        <h4>1. Envoyer via Deep Link</h4>
+        <a id="deepLinkBtn" href="#" target="_blank" class="dona-btn">Ouvrir dans le Wallet</a>
+    </div>
+
+    <!-- QR Code -->
+    <div style="margin-top:1.5rem;text-align:center;">
+        <h4>2. Scanner le QR Code</h4>
+        <img id="qrImage" src="" alt="QR Code" style="width:180px;height:180px;border-radius:10px;">
+    </div>
+
+    <!-- Adresse + Copier -->
+    <div style="margin-top:1.5rem;">
+        <h4>3. Adresse du portefeuille</h4>
+        <input id="walletAddress" type="text" readonly style="width:100%;padding:0.6rem;border-radius:6px;border:1px solid #ccc;">
+        <button onclick="copyWalletAddress()" class="copy-btn" style="margin-top:0.5rem;">Copier l’adresse</button>
+    </div>
+
+    <div style="margin-top:1.5rem;text-align:right;">
+        <button onclick="closeDonateModal()" class="copy-btn">Fermer</button>
+    </div>
+
+</div>
+ </section>
+ <section id="partnersSection" class="card">
+  <h2>Partenaires & Collaborations 🤝</h2>
+  <p>
+    Nous croyons que l’art a le pouvoir de rassembler.<br>
+    GlobalArtpro s’ouvre aux collaborations avec entreprises, musées, ONG et particuliers passionnés par la culture.<br>
+    Devenez partenaire et bénéficiez d’une visibilité unique dans un écosystème artistique et innovant.
+  </p>
+  <div id="partnerLogos" style="display:flex;justify-content:center;gap:2em;margin:2em 0;">
+    <div class="partner-anim">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Googlelogo.png" alt="Google" style="width:80px;">
+      <p>Google Arts</p>
+    </div>
+    <div class="partner-anim">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Microsoft_logo.png" alt="Microsoft" style="width:80px;">
+      <p>Microsoft Culture</p>
+    </div>
+    <div class="partner-anim">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/UNESCO_logo.svg" alt="UNESCO" style="width:80px;">
+      <p>UNESCO</p>
+    </div>
+  </div>
+  <button onclick="document.getElementById('partnerForm').style.display='block'">Devenir partenaire</button>
+  <div id="partnerForm" style="display:none;margin-top:1rem;">
+    <h3>Formulaire de partenariat</h3>
+    <form id="partnerRegisterForm" onsubmit="registerPartner(event)">
+      <input type="text" id="partnerUsername" placeholder="Nom d'utilisateur" required style="margin-bottom:0.5em;width:90%;"><br>
+      <input type="text" id="partnerFullName" placeholder="Nom complet" required style="margin-bottom:0.5em;width:90%;"><br>
+      <input type="email" id="partnerEmail" placeholder="Email" required style="margin-bottom:0.5em;width:90%;"><br>
+      <input type="password" id="partnerPassword" placeholder="Mot de passe" required style="margin-bottom:0.5em;width:90%;"><br>
+      <button type="submit">S'enregistrer</button>
+      <button type="button" onclick="document.getElementById('partnerForm').style.display='none'">Annuler</button>
+    </form>
+    <div id="partnerSuccess" style="color:gold;margin-top:1em;"></div>
+  </div>
+</section>
+<!-- Minage ARTC — début -->
+<section id="artc-mining" class="artc-mining-card">
+  <div class="mining-header">
+    <img src="image/logo globalartpro.jpeg" alt="Logo" class="mining-logo">
+    <h2>Minage Art Coin (ARTC)</h2>
+  </div>
+
+  <div class="mining-body">
+    <div class="balance-row">
+      <span>Solde ARTC :</span>
+      <strong id="artcBalance">0</strong>
+    </div>
+
+    <div class="mining-status" id="miningStatus">
+      <div>État : <span id="miningState">Inactif</span></div>
+      <div>Temps restant : <span id="miningCountdown">—</span></div>
+    </div>
+
+    <div class="mining-controls">
+      <button id="btnStartMine" class="btn-mine">⛏️ Commencer le minage</button>
+      <div id="miningMessage" class="mining-message"></div>
+    </div>
+
+    <div class="mining-info">
+      <small>Chaque session dure 24 heures. Récompense : <strong id="rewardAmount">1 ARTC</strong></small>
+    </div>
+  </div>
+</section>
+<!-- Minage ARTC — fin -->
+  <footer>
+    &copy; 2024 GlobalArtPro - Tous droits réservés | <a href="#privacy" style="color:#ffd700;">Politique de confidentialité</a> | <a href="#terms" style="color:#ffd700;">Conditions d'utilisation</a>
+  </footer>
+ 
+<script>
+function fillCountrySelect(selectId) {
+  const select = document.getElementById(selectId);
+  select.innerHTML = ""; // Vide le select
+  continentsData.forEach(continent => {
+    // Groupe de pays par continent
+    const optgroup = document.createElement("optgroup");
+    optgroup.label = continent.name;
+    continent.pays.forEach(pays => {
+      const option = document.createElement("option");
+      option.value = pays;
+      option.textContent = pays;
+      optgroup.appendChild(option);
+    });
+    select.appendChild(optgroup);
+  });
+}  
+ </script>
+ <script>
+ // Affiche la fiche détaillée d'une œuvre
+ function showArtworkDetail(artId) {
+   const art = artworks.find(a => a.id === artId);
+   if (!art) return;
+   const html = `
+     <img src="${art.image}" alt="${art.title.fr}" style="width:180px;height:180px;object-fit:cover;border-radius:12px;float:right;margin-left:1rem;">  
+     <h3>${art.title.fr}</h3>
+   <p><strong>Artiste :</strong> <a href="#" onclick="window.showArtistProfile(${art.id});return false;" style="color:gold;">${art.artist.name}</a></p> 
+     <p><strong>Année :</strong> ${art.year}</p>
+     <p><strong>Type :</strong> ${art.type}</p>
+     <p><strong>Dimensions :</strong> ${art.dimensions}</p>
+     <p><strong>Technique :</strong> ${art.technique.fr}</p>
+     <p><strong>Inspiration :</strong> <em>${art.inspiration.fr}</em></p>   
+     <p><strong>“${art.quote.fr}”</strong></p>
+     <p><strong>Authenticité :</strong> ${art.authenticity}</p>
+     <p><strong>Édition :</strong> ${art.edition}</p>
+     <p><strong>Provenance :</strong> ${art.provenance}</p>
+     <p><strong>Statut :</strong> ${art.status.fr}</p>
+     <p><strong>Prix :</strong> ${art.price} Pi (~$${art.priceUSD})</p>     
+     <p><strong>Mode de vente :</strong> ${art.saleMode.fr}</p>
+     <div style="clear:both"></div>   
+     <div style="margin-top:1rem;">   
+       <button onclick="addReaction(${art.id}, 'like')">👍</button>
+       <button onclick="addReaction(${art.id}, 'love')">❤️</button>
+       <button onclick="addReaction(${art.id}, 'bravo')">👏</button>        
+       <button onclick="addReaction(${art.id}, 'inspire')">🎨</button>      
+       <span id="reactions-detail-${art.id}"></span>
+     </div>
+     <div style="margin-top:1rem;">
+       <input type="text" id="comment-detail-input-${art.id}" placeholder="Laisser un commentaire..." style="width:70%;">
+       <button onclick="addDetailComment(${art.id})">💬</button>
+       <ul id="comments-detail-${art.id}" style="list-style:none;padding:0;margin:0.5rem 0 0 0;"></ul>
+     </div>
+   `;
+   document.getElementById("artworkDetail").innerHTML = html;
+   document.getElementById("artworkDetailSection").style.display = "block"; 
+   renderDetailReactions(artId);
+   renderDetailComments(artId);       
+ }
+ 
+ // Réactions et commentaires pour la fiche détaillée
+ function renderDetailReactions(artId) {
+   const r = reactionsData[artId] || {like:0, love:0, bravo:0, inspire:0};
+   document.getElementById(`reactions-detail-${artId}`).innerHTML =  `👍 ${r.like} ❤️ ${r.love} 👏 ${r.bravo} 🎨 ${r.inspire}`;
+   }
+ function addDetailComment(artId) {   
+   const input = document.getElementById(`comment-detail-input-${artId}`);
+   const val = input.value.trim();
+   if (!val) return;
+   if (!commentsData[artId]) commentsData[artId] = [];
+   commentsData[artId].push({text: val, date: new Date().toLocaleString()});
+   input.value = "";
+   renderDetailComments(artId);
+ }
+ function renderDetailComments(artId) {
+   const ul = document.getElementById(`comments-detail-${artId}`);
+   const list = commentsData[artId] ||
+ [];
+   ul.innerHTML = list.map(c =>
+     `<li style="background:rgba(255,255,255,0.07);margin:0.2rem 0;padding:0.3rem;border-radius:6px;">
+       <span>${c.text}</span>
+       <span style="float:right;font-s
+ize:0.8em;color:#ccc;">${c.date}</span>
+     </li>`
+   ).join('');
+ }
+ function renderArtistsByContinent() {
+  let html = "<h3>Artistes par continent</h3>";
+  continentsData.forEach(continent => {
+    html += `<div style="background:${continent.color};color:#fff;padding:1em;margin-bottom:1em;border-radius:10px;">
+      <h4>${continent.name}</h4>
+      <ul style="columns:2;">`;
+    artists.filter(a => a.continent === continent.name).forEach(a => {
+      html += `<li><strong>${a.name}</strong> (${a.pays})</li>`;
+    });
+    html += "</ul></div>";
+  });
+  document.getElementById("expoContinentList").innerHTML = html;
+}
+ function showArtistProfile(artId) {  
+   // On cherche l'artiste qui possède cette œuvre
+   const artist = artists.find(a => a.artworks.includes(artId));
+   if (!artist) return;
+   // Galerie des œuvres (miniatures cliquables)
+   const gallery = artist.artworks.map(id => {
+     const art = artworks.find(a => a.id === id);
+     if (!art) return "";
+     return `
+       <div style="display:inline-block;margin:0.5rem;">
+         <img src="${art.image}" alt="${art.title.fr}" style="width:90px;height:90px;object-fit:cover;border-radius:8px;box-shadow:0 2px 8px #0002;">   
+         <br>
+         <a href="#" onclick="window.showArtworkDetail(${art.id});return false;" style="color:gold;text-decoration:none;font-size:0.95em;">${art.title.fr}</a>
+       </div>
+     `;
+   }).join('');
+   const html = `
+  <img src="${artist.avatar || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(artist.name)}"
+       alt="${artist.name}"
+       style="width:100px;height:100px;border-radius:50%;box-shadow:0 2px 8px #0003;margin-bottom:1rem;">
+  <h3>${artist.name}</h3>
+  <p>${artist.bio || ""}</p>
+  ${artist.website ? `<p><a href="${artist.website}" target="_blank">Site web</a></p>` : ""}
+  ${artist.socials.instagram ? `<a href="${artist.socials.instagram}" target="_blank">Instagram</a> ` : ""}
+  ${artist.socials.twitter ? `<a href="${artist.socials.twitter}" target="_blank">Twitter</a>` : ""}
+  <h4>Galerie</h4>
+  <div style="text-align:center;">
+    ${gallery || "<em>Aucune œuvre en ligne.</em>"}
+  </div>
+  <div style="clear:both"></div>
+`;
+   document.getElementById("artistProfile").innerHTML = html;
+   document.getElementById("artistProfileSection").style.display = "block";
+ }
+ window.showArtistProfile = showArtistProfile;
+ window.showArtworkDetail = showArtworkDetail;
+ </script>
+ <script>
+ // Stockage local pour la démo       
+ let registeredArtists = JSON.parse(localStorage.getItem("registeredArtists") || "[]");
+ let currentArtist = JSON.parse(localStorage.getItem("currentArtist") || "null");
+ 
+ function registerArtist(e) {
+   e.preventDefault();
+   const name = document.getElementById("regName").value.trim();
+   const email = document.getElementById("regEmail").value.trim();
+   const pass = document.getElementById("regPass").value;
+   const bio = document.getElementById("regBio").value.trim();
+   const role = document.getElementById("regRole").value;
+   const avatar = document.getElementById("regAvatar").value.trim();
+   if (registeredArtists.find(a => a.name === name)) {
+     alert("Ce nom d'artiste existe déjà !");
+     return;
+   }
+   if (registeredArtists.find(a => a.email === email)) {
+     alert("Cet email est déjà utilisé !");
+     return;
+   }
+   const artist = { name, email, pass, bio, role };
+   registeredArtists.push(artist);    
+   localStorage.setItem("registeredArtists", JSON.stringify(registeredArtists));
+   alert("Inscription réussie ! Vous pouvez maintenant vous connecter.");
+   document.getElementById("registerForm").reset();
+ }
+ 
+ function loginArtist(e) {
+   e.preventDefault();
+   const name = document.getElementById("loginName").value.trim();
+   const pass = document.getElementById("loginPass").value;
+   const artist = registeredArtists.find(a => a.name === name && a.pass === pass);
+   if (!artist) {
+     alert("Nom ou mot de passe incorrect !");
+     return;
+   }
+   currentArtist = artist;
+   localStorage.setItem("currentArtist", JSON.stringify(currentArtist));    
+   showArtistWelcome();
+ }
+ 
+ function showArtistWelcome() {       
+   document.getElementById("authForms").style.display = "none";
+   document.getElementById("artistWelcome").style.display = "block";        
+  document.getElementById("artistWelcome").innerHTML = `
+     <img src="${currentArtist.avatar || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(currentArtist.name)}"
+       alt="Avatar"
+       style="width:80px;height:80px;border-radius:50%;box-shadow:0 2px 8px #0003;margin-bottom:1rem;">
+     <h3>Bienvenue, ${currentArtist.name} !</h3> 
+     <p>Rôle : <strong>${currentArtist.role}</strong></p>
+     <p>${currentArtist.bio || ""}</p>
+     <button onclick="logoutArtist()">Se déconnecter</button>
+     <hr>
+     <h4>Ajouter une œuvre</h4>       
+     <form id="addArtworkForm" onsubmit="addArtwork(event)">
+       <input type="text" id="artTitle" placeholder="Titre de l'œuvre" required><br>
+       <input type="text" id="artType" placeholder="Type (ex: Peinture, NFT...)" required><br>
+       <input type="number" id="artYear" placeholder="Année" required value=""><br>
+       <input type="text" id="artImage" placeholder="URL de l'image" required><br>
+       <button type="submit">Ajouter</button>
+     </form>
+     <div id="myArtworks"></div> 
+         
+   `;
+ }
+  
+ function logoutArtist() {
+   currentArtist = null;
+   localStorage.removeItem("currentArtist");
+   document.getElementById("artistWelcome").style.display = "none";
+   document.getElementById("authForms").style.display = "block";
+ }
+ 
+ // Affiche l'accueil si déjà connecté
+ if (currentArtist) showArtistWelcome();
+ function addArtwork(e) {
+   e.preventDefault();
+   const title = document.getElementById("artTitle").value.trim();
+   const type = document.getElementById("artType").value.trim();
+   const year = document.getElementById("artYear").value.trim();
+   const image = document.getElementById("artImage").value.trim();
+   // Génère un nouvel ID unique      
+   const newId = artworks.length ? Math.max(...artworks.map(a => a.id)) + 1 : 1;
+   // Ajoute l’œuvre à la liste globale
+   artworks.push({
+     id: newId,
+     title: { fr: title },
+     artist: { name: currentArtist.name, profile: "#" },
+     year: year,
+     type: type,
+     dimensions: "",
+     technique: { fr: "" },
+     inspiration: { fr: "" },
+     quote: { fr: "" },
+     authenticity: "",
+     edition: "",
+     provenance: "",
+     status: { fr: "Disponible" },    
+     price: 0,
+     priceUSD: 0,
+     saleMode: { fr: "" },
+     lastBid: null,
+     views: 0,
+     favorites: 0,
+     comments: 0,
+     image: image
+   });
+   // Ajoute l’ID de l’œuvre à l’artiste courant (en mémoire)
+   let artistObj = artists.find(a => a.name === currentArtist.name);        
+   if (artistObj) {
+     artistObj.artworks.push(newId);  
+   } else {
+     // Si l'artiste n'existe pas encore dans artists, on l'ajoute
+     artists.push({
+       id: artists.length ? Math.max(...artists.map(a => a.id)) + 1 : 1,    
+       name: currentArtist.name,      
+       bio: currentArtist.bio,        
+       avatar: "",
+       website: "",
+       socials: {},
+       artworks: [newId]
+     });
+   }     
+ }
+  </script>
+  <script>
+  function renderMyArtworks() {
+  if (!currentArtist) {
+    document.getElementById("myArtworks").innerHTML = "<p>Connectez-vous pour voir vos œuvres.</p>";
+    return;
+  }
+  let artistObj = artists.find(a => a.name === currentArtist.name);
+  if (!artistObj || !artistObj.artworks.length) {
+    document.getElementById("myArtworks").innerHTML = "<p>Aucune œuvre ajoutée.</p>";
+    return;
+  }
+
+  // Génère le HTML de la liste des œuvres
+  let html = "<ul>";
+  html += artistObj.artworks.map(id => {
+    const art = artworks.find(a => a.id === id);
+    if (!art) return "";
+    return `<li>
+      <strong>${art.title.fr}</strong> (${art.year}) 
+      <button onclick="editArtwork(${art.id})">Modifier</button>       
+      <button onclick="deleteArtwork(${art.id})" style="color:red;">Supprimer</button>
+    </li>`;
+  }).join('');
+  html += "</ul>";
+  html += `<div id="editArtworkZone"></div>`;
+  document.getElementById("myArtworks").innerHTML = html;
+}
+ 
+ function deleteArtwork(artId) {      
+   if (!confirm("Supprimer cette œuvre ?")) return;
+   // Retire l’œuvre du tableau artworks
+   const idx = artworks.findIndex(a => a.id === artId);
+   if (idx !== -1) artworks.splice(idx, 1);
+   // Retire l’ID de l’œuvre de l’artiste
+   let artistObj = artists.find(a => a.name === currentArtist.name);
+   if (artistObj) {
+     artistObj.artworks = artistObj.artworks.filter(id => id !== artId);
+   }      
+ }
+ </script>
+ <script>
+ // Affiche la section admin quand on clique sur "Admin"
+   document.getElementById("btnAdmin").onclick = function() {
+   document.getElementById("adminSection").style.display = "block";
+   renderAdmin();
+   window.scrollTo(0, document.body.scrollHeight);
+ };
+ 
+ // Rendu du back-office admin        
+ function renderAdmin() {
+   // Liste des artistes
+   let htmlArtists = "<h3>Comptes artistes</h3><ul>";
+   registeredArtists.forEach((a, i) => {
+     htmlArtists += `<li>
+       <strong>${a.name}</strong> (${a.email}) - Rôle: ${a.role}
+       <button onclick="validateArtist(${i})">Valider</button>
+       <button onclick="deleteArtist(${i})" style="color:red;">Supprimer</button>
+     </li>`;
+   });
+   htmlArtists += "</ul>";
+   document.getElementById("adminArtists").innerHTML = htmlArtists;
+ 
+   // Liste des œuvres
+   let htmlArtworks = "<h3>Œuvres en ligne</h3><ul>";
+   artworks.forEach((art, i) => {     
+     htmlArtworks += `<li>
+       <strong>${art.title.fr}</strong> par ${art.artist.name} (${art.year})
+       <button onclick="deleteArtworkAdmin(${art.id})" style="color:red;">Supprimer</button>
+     </li>`;
+   });
+   htmlArtworks += "</ul>";
+   document.getElementById("adminArtworks").innerHTML = htmlArtworks;       
+ }
+ 
+ // Valider un artiste (exemple : on ajoute un champ validé)
+ function validateArtist(index) {     
+   registeredArtists[index].validated = true;
+   localStorage.setItem("registeredArtists", JSON.stringify(registeredArtists));
+   alert("Artiste validé !");
+   renderAdmin();
+ }
+ 
+ // Supprimer un compte artiste       
+ function deleteArtist(index) {       
+   if (!confirm("Supprimer ce compte artiste ?")) return;
+   // Supprime aussi ses œuvres       
+   const artistName = registeredArtists[index].name;
+   let artistObj = artists.find(a => a.name === artistName);
+   if (artistObj) {
+     artistObj.artworks.forEach(id => {
+       const idx = artworks.findIndex(a => a.id === id);
+       if (idx !== -1) artworks.splice(idx, 1);
+     });
+     // Supprime l'artiste du tableau artists
+     artists.splice(artists.indexOf(artistObj), 1);
+   }
+   registeredArtists.splice(index, 1);
+   localStorage.setItem("registeredArtists", JSON.stringify(registeredArtists));
+       
+ }
+ 
+ // Supprimer une œuvre (admin)       
+ function deleteArtworkAdmin(artId) { 
+   if (!confirm("Supprimer cette œuvre ?")) return;
+   const idx = artworks.findIndex(a => a.id === artId);
+   if (idx !== -1) artworks.splice(idx, 1);
+   // Retire l’ID de l’œuvre de l’artiste
+   artists.forEach(artist => {        
+     artist.artworks = artist.artworks.filter(id => id !== artId);
+   });     
+ }
+ </script>
+ <script>
+ function scrollToSection(id) {       
+   const el = document.getElementById(id);
+   if (el) el.scrollIntoView({behavior: "smooth"});
+ }
+ </script>
+ <script>
+ function showCulture(region) {       
+   const infos = {
+     "Afrique": "<h3>Afrique</h3><p>Découvrez la richesse des cultures africaines, de l’art ancestral aux créations contemporaines.</p>",
+     "Europe": "<h3>Europe</h3><p>Un patrimoine artistique et architectural unique, berceau de nombreux mouvements culturels.</p>",
+     "Asie": "<h3>Asie</h3><p>Des traditions millénaires, une diversité d’expressions artistiques et spirituelles fascinantes.</p>",
+     "Amériques": "<h3>Amériques</h3><p>Un mélange vibrant de cultures autochtones, africaines, européennes et modernes.</p>",
+     "Océanie": "<h3>Océanie</h3><p>Des arts aborigènes aux influences polynésiennes, une créativité insulaire à découvrir.</p>"
+   };
+   document.getElementById("cultureInfo").innerHTML = infos[region] || "<p>Région non trouvée.</p>";
+ }
+ </script>
+ <script>
+ const svgRegions = {
+   afrique: "Afrique",
+   europe: "Europe",
+   asie: "Asie",
+   ameriques: "Amériques",
+   oceanie: "Océanie"
+ };
+ 
+ const tooltip = document.getElementById("cultureTooltip");
+ 
+ Object.keys(svgRegions).forEach(id => {
+   const el = document.getElementById(id);
+   if (el) {
+     el.addEventListener("mouseenter", e => {
+       el.style.opacity = "0.7";      
+       el.style.filter = "drop-shadow(0 0 8px #ffd700)";
+       tooltip.textContent = svgRegions[id];
+       tooltip.style.display = "block";
+     });
+     el.addEventListener("mousemove", e => {
+       tooltip.style.left = (e.pageX + 15) + "px";
+       tooltip.style.top = (e.pageY - 10) + "px";
+     });
+     el.addEventListener("mouseleave", () => {
+       el.style.opacity = "1";        
+       el.style.filter = "";
+       tooltip.style.display = "none";
+     });
+     el.addEventListener("click", () => {
+       showCulture(svgRegions[id]);   
+     });
+   }
+ });
+ </script>
+ <script>
+   // Regroupe les artistes par pays  
+   function renderArtistsByCountry(selectedCountry = null) {
+  const byCountry = {};
+  artists.forEach(a => {
+    const pays = a.Pays || a.pays;
+    if (!byCountry[pays]) byCountry[pays] = [];
+    byCountry[pays].push(a);
+  });
+
+  let html = "<h3>🎨 Artistes par pays</h3>";
+  html += "<ul style='columns:2;max-width:600px;margin:0 auto;text-align:left;'>";
+  Object.keys(byCountry).sort().forEach(pays => {
+    if (selectedCountry && pays !== selectedCountry) return;
+    html += `<li>
+      <a href="#" onclick="renderArtistsByCountry('${pays}');return false;" style="color:#ffd700;text-decoration:underline;cursor:pointer;">
+        <strong>${pays}</strong>
+      </a> : `;
+    html += byCountry[pays].map(a => `<span style="color:gold;">${a.name}</span>`).join(", ");
+    html += "</li>";
+  });
+  html += "</ul>";
+  if (selectedCountry) {
+    html += `<button onclick="renderArtistsByCountry()" style="margin-bottom:1em;">Tous les pays</button>`;
+  }
+  document.getElementById("artistsByCountry").innerHTML = html;
+}
+ </script>
+ <script>
+ const stories = [
+   {
+     region: "Afrique",
+     title: "Le Lion et le Lièvre",   
+     content: "Une légende populaire d’Afrique de l’Ouest où le lièvre, rusé, déjoue la force du lion grâce à son intelligence."
+   },
+   {
+     region: "Europe",
+     title: "La Dame Blanche",        
+     content: "Une histoire de fantôme présente dans de nombreux pays d’Europe, symbole de mystère et de traditions locales."
+   },
+   {
+     region: "Asie",
+     title: "La Légende du Dragon",   
+     content: "En Chine, le dragon est un symbole de puissance et de chance, célébré lors de nombreuses fêtes traditionnelles."
+   },
+   {
+     region: "Amériques",
+     title: "Le Colibri messager",
+     content: "Chez les peuples d’Amérique du Sud, le colibri est porteur de messages entre les mondes, symbole de joie et de vie."
+   },
+   {
+     region: "Océanie",
+     title: "Le Rêve aborigène",      
+     content: "Les Aborigènes d’Australie racontent le Temps du Rêve, origine du monde et des traditions artistiques."
+   }
+ ];
+ 
+ function renderStories() {
+   const region = document.getElementById("storyRegion").value;
+   let filtered = stories;
+   if (region !== "all") {
+     filtered = stories.filter(s => s.region === region);
+   }
+   document.getElementById("storiesList").innerHTML = filtered.length       
+     ? filtered.map(s => `
+       <div style="margin:1rem 0;padding:1rem;background:rgba(255,255,255,0.08);border-radius:12px;">
+         <h4 style="color:gold;margin-bottom:0.3em;">${s.title}</h4>        
+         <p style="font-size:1.05em;">${s.content}</p>
+         <span style="font-size:0.95em;color:#ffd700;">${s.region}</span>   
+       </div>
+     `).join('')
+     : "<p>Aucune histoire pour cette région.</p>";
+ }
+ renderStories();
+ </script>
+ <script>
+ // Stockage local pour les partages culturels (pour la démo)
+ let sharedCultures = JSON.parse(localStorage.getItem("sharedCultures") || "[]");
+ 
+ // Affiche le formulaire si l'artiste est connecté
+ function renderSharedCultureForm() {if (!currentArtist) {
+     document.getElementById("sharedCultureFormZone").innerHTML = "<p style='color:#ffd700;'>Connectez-vous pour partager une histoire ou une tradition de votre culture !</p>";
+     return;
+   }
+  document.getElementById("sharedCultureFormZone").innerHTML = `
+   <form id="sharedCultureForm" onsubmit="submitSharedCulture(event)">
+     <input type="text" id="cultureTitle" placeholder="Titre (ex: Fête, légende, tradition...)" required style="margin-bottom:0.5em;width:90%;"><br>
+     <textarea id="cultureContent" placeholder="Décrivez cette histoire, coutume ou tradition..." required style="width:90%;height:80px;margin-bottom:0.5em;"></textarea><br>
+     <input type="file" id="cultureFile" accept="image/*,audio/*,video/mp4,video/webm" style="margin-bottom:0.5em;width:90%;"><br>
+     <input type="url" id="cultureMedia" placeholder="Lien vidéo/musique externe (YouTube, SoundCloud...)" style="margin-bottom:0.5em;width:90%;"><br>  
+     <button type="submit">Partager</button>
+   </form>
+ `;
+ }
+ renderSharedCultureForm();
+ 
+ function submitSharedCulture(e) {    
+   e.preventDefault();
+   const title = document.getElementById("cultureTitle").value.trim();      
+   const content = document.getElementById("cultureContent").value.trim();  
+   const media = document.getElementById("cultureMedia").value.trim();      
+   const fileInput = document.getElementById("cultureFile");
+   let fileData = null;
+ 
+   // Gestion upload interne (image/audio/vidéo)
+   if (fileInput.files && fileInput.files[0]) {
+     const file = fileInput.files[0]; 
+     // Limite taille à 10 Mo
+     if (file.size > 10 * 1024 * 1024) {
+       alert("Fichier trop volumineux (max 10 Mo).");
+       return;
+     }
+     const reader = new FileReader(); 
+     reader.onload = function(evt) {  
+       fileData = evt.target.result;  
+       saveSharedCulture(title, content, media, fileData, file.type);
+     };
+     reader.readAsDataURL(file);      
+   } else {
+     saveSharedCulture(title, content, media, null, null);
+   }
+ }
+ function saveSharedCulture(title, content, media, fileData, fileType) {    
+   // Validation du lien externe (YouTube, SoundCloud, etc.)
+   let validLink = false;
+   if (media) {
+     validLink = /(youtube\.com|youtu\.be|soundcloud\.com|vimeo\.com|spotify\.com)/i.test(media);
+     if (!validLink) {
+       alert("Lien externe non reconnu ou non supporté.");
+       return;
+     }
+   }
+   // Ajoute le contenu en attente de validation
+   sharedCultures.push({
+     artist: currentArtist.name,
+     pays: currentArtist.pays || currentArtist.Pays || "—",
+     titre: title,
+     texte: content,
+     media: media,
+     file: fileData,
+     fileType: fileType,
+     date: new Date().toLocaleDateString(),
+     validated: false, // en attente de validation
+     reports: 0
+   });
+   localStorage.setItem("sharedCultures", JSON.stringify(sharedCultures));  
+   document.getElementById("sharedCultureForm").reset();
+   alert("Votre contenu a été soumis et sera publié après validation.");    
+   renderSharedCultureList();
+ }
+ function renderCultureMedia(url) {   
+   // YouTube
+   if (url.includes("youtube.com") || url.includes("youtu.be")) {
+     let videoId = url.split("v=")[1] || url.split("/").pop();
+     videoId = videoId.split("&")[0];
+     return `<div style="margin:0.7em 0;"><iframe width="320" height="180" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe></div>`;
+   }
+   // SoundCloud
+   if (url.includes("soundcloud.com")) {
+     return `<div style="margin:0.7em 0;"><iframe width="320" height="80" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=${encodeURIComponent(url)}"></iframe></div>`;
+   }
+   // Autre média (lien simple)       
+   return `<div style="margin:0.7em 0;"><a href="${url}" target="_blank" style="color:#ffd700;">🎶 Voir le média</a></div>`;
+ }
+ // Affiche la liste des cultures partagées
+ function renderSharedCultureList() { 
+   // Seul l'admin voit tout, les autres voient seulement validated:true    
+   const isAdmin = currentArtist && currentArtist.role === "admin";
+   const list = isAdmin ? sharedCultures : sharedCultures.filter(c => c.validated);
+  if (!list.length) {
+     document.getElementById("sharedCultureList").innerHTML = "<p>Aucune histoire ou tradition partagée pour l’instant.</p>";
+     return;
+   }
+   document.getElementById("sharedCultureList").innerHTML = list.map((c, idx) =>
+     `<div style="margin:1rem 0;padding:1rem;background:rgba(255,255,255,0.08);border-radius:12px;">
+       <h4 style="color:gold;margin-bottom:0.3em;">${c.titre}</h4>
+       <p style="font-size:1.05em;">${c.texte}</p>
+       ${c.file ? renderCultureFile(c.file, c.fileType) : ""}
+       ${c.media ? renderCultureMedia(c.media) : ""}
+       <span style="font-size:0.95em;color:#ffd700;">${c.pays} — par ${c.artist} (${c.date})</span>
+       ${!c.validated && isAdmin ? `<br><button onclick="validateSharedCulture(${idx})">Valider</button>` : ""}   
+       <button onclick="reportSharedCulture(${idx})" style="float:right;color:red;">Signaler</button>
+       <span style="float:right;margin-right:1em;color:#ffd700;">${c.reports > 0 ? "Signalements : " + c.reports : ""}</span>
+     </div>`
+   ).join('');
+ }
+ function renderCultureFile(fileData, fileType) {
+   if (!fileData || !fileType) return "";
+   if (fileType.startsWith("image/")) {
+     return `<div style="margin:0.7em 0;"><img src="${fileData}" alt="media" style="max-width:320px;max-height:180px;border-radius:8px;"></div>`;       
+   }
+   if (fileType.startsWith("audio/")) {
+     return `<div style="margin:0.7em 0;"><audio controls src="${fileData}" style="width:90%;"></audio></div>`;   
+   }
+   if (fileType.startsWith("video/")) {
+     return `<div style="margin:0.7em 0;"><video controls src="${fileData}" style="max-width:320px;max-height:180px;border-radius:8px;"></video></div>`;
+   }
+   return "";
+ }
+ 
+ function validateSharedCulture(idx) {
+   sharedCultures[idx].validated = true;
+   localStorage.setItem("sharedCultures", JSON.stringify(sharedCultures));
+   renderSharedCultureList();
+ }
+ 
+ function reportSharedCulture(idx) {  
+   sharedCultures[idx].reports = (sharedCultures[idx].reports || 0) + 1;
+   localStorage.setItem("sharedCultures", JSON.stringify(sharedCultures));  
+   alert("Merci, le contenu a été signalé.");
+   renderSharedCultureList();
+ }
+ renderSharedCultureList();
+ 
+ // Met à jour le formulaire si connexion/déconnexion
+ window.showArtistWelcome = (function(orig) {
+   return function() {
+     orig.apply(this, arguments);     
+     renderSharedCultureForm();       
+   };
+ })(window.showArtistWelcome);        
+ 
+ window.logoutArtist = (function(orig) {
+   return function() {
+     orig.apply(this, arguments);
+     renderSharedCultureForm();       
+   };
+ })(window.logoutArtist);
+ </script>
+<script>  
+ // ...autres scripts...  
+   
+ const countriesData = [  
+   { name: "Pérou", lat: -9.19, lng: -75.02, code: "PE", continent: "Amériques", color: "#f39c12" },  
+   { name: "France", lat: 46.6, lng: 2.2, code: "FR", continent: "Europe", color: "#2980b9" },  
+   { name: "Sénégal", lat: 14.5, lng: -14.5, code: "SN", continent: "Afrique", color: "#2ecc40" },  
+   { name: "Chine", lat: 35.8, lng: 104.2, code: "CN", continent: "Asie", color: "#e74c3c" }  
+ ];  
+   
+ let globe;  
+ function showGlobe() {  
+   document.getElementById("globeContainer").innerHTML = "";  
+   globe = Globe()  
+   (document.getElementById('globeContainer'))  
+   .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')  
+   .backgroundColor('rgba(0,0,0,0)')    
+   .pointsData(countriesData)  
+   .pointLat('lat')  
+   .pointLng('lng')  
+   .pointAltitude(0.03)  
+   .pointColor(d => d.color)  
+   .pointRadius(0.7)  
+   .onPointClick(country => showCountryCulture(country.name))  
+   // Ajout des labels continents en minuscule  
+   .labelLat('lat')  
+   .labelLng('lng')  
+   .labelsData([  
+     { lat: 0, lng: 20, text: "afrique" },  
+     { lat: 50, lng: 15, text: "europe" },  
+     { lat: 35, lng: 100, text: "asie" },  
+     { lat: 10, lng: -70, text: "amériques" },  
+     { lat: -25, lng: 140, text: "océanie" }  
+   ])  
+   .labelText('text')  
+   .labelSize(1.4)  
+   .labelColor(() => "#fff")  
+   .labelResolution(2)  
+   .labelDotRadius(0)  
+   .labelAltitude(0.06);  
+   }  
+ showGlobe();
+
+ </script>
+ <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const pi = window.Pi;
+  if (pi) {
+    pi.init({
+      appId: "rwfp0wzvmvgafct9vwiwwyfud8ll3hnqhgzundpa2olxhdvdkagujb6tgr5g2rqt", // Mets ici ton vrai App ID Pi Network
+      version: "2.0"
+    });
+  }
+
+  async function connectPiWallet() {
+    if (!pi) {
+      alert("SDK Pi Network non chargé !");
+      return;
+    }
+    try {
+      const scopes = ['payments', 'username', 'wallet_address'];
+      const result = await pi.authenticate(scopes, onIncompletePaymentFound);
+      alert("Connecté avec Pi Network ! Utilisateur : " + result.user.username);
+      localStorage.setItem("piUser", JSON.stringify(result.user));
+    } catch (err) {
+      alert("Erreur de connexion Pi Network : " + err.message);
+    }
+  }
+
+  function onIncompletePaymentFound(payment) {
+    console.log("Paiement Pi incomplet trouvé :", payment);
+  }
+
+  const btnConnect = document.getElementById("btnConnectPi");
+  if (btnConnect) btnConnect.onclick = connectPiWallet;
+});
+</script>
+<script>
+function showDonateModal(type) {
+  let html = "";
+  let label = type === "pi" ? "Pi Coin" : "Art Coin";
+  html = `
+    <h4>Faire un don en ${label}</h4>
+    <p>Entrez l’adresse du portefeuille ${label} :</p>
+    <input type="text" id="walletInput" placeholder="Adresse ${label}" style="width:90%;margin-bottom:0.7em;"><br>
+    <button onclick="generateWalletQR('${type}')">Générer le QR code</button>
+    <div id="walletQR" style="margin:1em 0;"></div>
+    <input type="number" id="donAmount" min="1" placeholder="Montant ${label}" style="width:120px;">
+    <button onclick="confirmDonate('${type}')">Valider le don</button>
+  `;
+  document.getElementById("donateModal").style.display = "block";
+  document.getElementById("donateModal").innerHTML = html;
+}
+
+function generateWalletQR(type) {
+  const wallet = document.getElementById("walletInput").value.trim();
+  if (!wallet) {
+    alert("Merci d’entrer une adresse de portefeuille valide.");
+    return;
+  }
+  document.getElementById("walletQR").innerHTML = "";
+  new QRious({
+    element: document.getElementById("walletQR"),
+    value: wallet,
+    size: 140
+  });
+}
+
+function confirmDonate(type) {
+  const amount = document.getElementById("donAmount").value;
+  const wallet = document.getElementById("walletInput").value.trim();
+  if (!wallet) {
+    alert("Merci d’entrer une adresse de portefeuille valide.");
+    return;
+  }
+  if (!amount || amount <= 0) {
+    alert("Merci d’entrer un montant valide.");
+    return;
+  }
+  alert(`Merci pour votre don de ${amount} ${type === "pi" ? "Pi Coin" : "Art Coin"} à l’adresse ${wallet} !`);
+  document.getElementById("donateModal").style.display = "none";
+  document.getElementById("donateModal").innerHTML = "";
+}
+// DONNÉES PRINCIPALES -------------------------------------------------------
+const donateConfig = {
+    pi: {
+        name: "Pi Coin",
+        address: "GBEDUC25FNKEZSPEVXZJLUZ3CHDVCITZDS6QD6XDRMPNNIG277HSDNIE",
+        deepLink: "pi://pay?address=GBEDUC25FNKEZSPEVXZJLUZ3CHDVCITZDS6QD6XDRMPNNIG277HSDNIE&amount=0",
+        qr: "assets/img/qr-pi.png"
+    },
+    art: {
+        name: "Art Coin (ARTC)",
+        address: "ARTC_WALLET_ADDRESS_A_DEFINIR",
+        deepLink: "#",
+        qr: "assets/img/qr-art-temp.png"
+    }
+};
+
+
+// OUVERTURE DU POPUP -------------------------------------------------------
+function showDonateModal(type) {
+    const config = donateConfig[type];
+    
+    document.getElementById("donTitle").innerText = "Faire un don en " + config.name;
+    document.getElementById("deepLinkBtn").href = config.deepLink;
+    document.getElementById("qrImage").src = config.qr;
+    document.getElementById("walletAddress").value = config.address;
+
+    document.getElementById("donationPopup").style.display = "block";
+
+    // Scroll automatique vers la section
+    document.getElementById("donationPopup").scrollIntoView({ behavior: "smooth" });
+}
+
+
+// FERMETURE ---------------------------------------------------------------
+function closeDonateModal() {
+    document.getElementById("donationPopup").style.display = "none";
+}
+
+
+// COPIER L’ADRESSE --------------------------------------------------------
+function copyWalletAddress() {
+    const input = document.getElementById("walletAddress");
+    navigator.clipboard.writeText(input.value).then(() => {
+        alert("Adresse copiée !");
+    });
+}
+// Donateurs fictifs avec témoignages
+const donorWallData = [
+  {
+    name: "Awa Diop",
+    country: "Sénégal",
+    amount: "50 Pi",
+    message: "Je soutiens GlobalArtPro pour donner une voix aux artistes africains !"
+  },
+  {
+    name: "Lucas Martin",
+    country: "France",
+    amount: "30 Art Coin",
+    message: "Bravo pour cette initiative mondiale, l’art nous unit !"
+  },
+  {
+    name: "Mei Lin",
+    country: "Chine",
+    amount: "100 Pi",
+    message: "L’innovation culturelle est essentielle pour l’avenir."
+  },
+  {
+    name: "Carlos Ruiz",
+    country: "Pérou",
+    amount: "20 Art Coin",
+    message: "Merci de valoriser la diversité artistique sur la planète."
+  },
+  {
+    name: "Mia Tane",
+    country: "Nouvelle-Zélande",
+    amount: "60 Pi",
+    message: "GlobalArtPro inspire la jeunesse créative d’Océanie !"
+  },
+  {
+    name: "John Smith",
+    country: "États-Unis",
+    amount: "80 Art Coin",
+    message: "Je crois en un futur où l’art connecte tous les peuples."
+  }
+];
+</script>
+<script>
+// Fonction d’affichage du mur des donateurs
+function renderDonorWall() {
+  document.getElementById("donorList").innerHTML = donorWallData.map(donor => `
+    <li style="background:rgba(255,255,255,0.07);margin:0.7em 0;padding:1em;border-radius:10px;">
+      <strong style="color:gold;">${donor.name}</strong> (${donor.country})<br>
+      <span style="color:#ffd700;">Don : ${donor.amount}</span><br>
+      <em style="color:#eee;">"${donor.message}"</em>
+    </li>
+  `).join('');
+}
+
+// Appelle la fonction au chargement
+renderDonorWall();
+function registerPartner(e) {
+  e.preventDefault();
+  const username = document.getElementById("partnerUsername").value.trim();
+  const fullname = document.getElementById("partnerFullName").value.trim();
+  const email = document.getElementById("partnerEmail").value.trim();
+  const password = document.getElementById("partnerPassword").value;
+  if (!username || !fullname || !email || !password) {
+    document.getElementById("partnerSuccess").textContent = "Tous les champs sont obligatoires.";
+    return;
+  }
+  // Simulation d'enregistrement
+  document.getElementById("partnerSuccess").textContent = "Merci " + fullname + ", votre demande de partenariat est enregistrée !";
+  document.getElementById("partnerRegisterForm").reset();
+  setTimeout(() => {
+    document.getElementById('partnerForm').style.display = 'none';
+    document.getElementById("partnerSuccess").textContent = "";
+  }, 2500);
+}
+</script>
+<script>
+(function(){
+  // configuration
+  const DURATION_MS = 24 * 60 * 60 * 1000; // 24h
+  const REWARD_AMOUNT = 1;
+  const KEY_LAST_START = "artc_lastStart";
+  const KEY_LAST_AWARDED_START = "artc_lastAwardStart";
+  const KEY_BALANCE = "artc_balance";
+
+  // éléments UI
+  const btn = document.getElementById("btnStartMine");
+  const balanceEl = document.getElementById("artcBalance");
+  const countdownEl = document.getElementById("miningCountdown");
+  const stateEl = document.getElementById("miningState");
+  const msgEl = document.getElementById("miningMessage");
+  const rewardEl = document.getElementById("rewardAmount");
+
+  rewardEl.textContent = REWARD_AMOUNT + " ARTC";
+
+  let timer = null;
+
+  function now(){ return Date.now(); }
+
+  function loadBalance(){
+    const b = parseInt(localStorage.getItem(KEY_BALANCE) || "0", 10);
+    balanceEl.textContent = b;
+    return b;
+  }
+
+  function saveBalance(val){
+    localStorage.setItem(KEY_BALANCE, String(val));
+    balanceEl.textContent = val;
+  }
+
+  function getLastStart(){ return parseInt(localStorage.getItem(KEY_LAST_START) || "0", 10); }
+  function setLastStart(ts){ localStorage.setItem(KEY_LAST_START, String(ts)); }
+
+  function getLastAwardStart(){ return parseInt(localStorage.getItem(KEY_LAST_AWARDED_START) || "0", 10); }
+  function setLastAwardStart(ts){ localStorage.setItem(KEY_LAST_AWARDED_START, String(ts)); }
+
+  function isMiningActive(){
+    const s = getLastStart();
+    if(!s) return false;
+    return (now() - s) < DURATION_MS;
+  }
+
+  function timeRemaining(){
+    const s = getLastStart();
+    if(!s) return 0;
+    const rem = DURATION_MS - (now() - s);
+    return rem > 0 ? rem : 0;
+  }
+
+  function formatDuration(ms){
+    const total = Math.floor(ms / 1000);
+    const h = Math.floor(total / 3600).toString().padStart(2,"0");
+    const m = Math.floor((total % 3600) / 60).toString().padStart(2,"0");
+    const s = (total % 60).toString().padStart(2,"0");
+    return `${h}:${m}:${s}`;
+  }
+
+  function awardIfDue(){
+    const lastStart = getLastStart();
+    if (!lastStart) return;
+    const lastAward = getLastAwardStart();
+    if (lastAward === lastStart) return; // déjà attribué pour cette session
+    if (now() - lastStart >= DURATION_MS) {
+      const current = loadBalance();
+      const newBal = current + REWARD_AMOUNT;
+      setLastAwardStart(lastStart);
+      saveBalance(newBal);
+      msgEl.textContent = `Session terminée — ${REWARD_AMOUNT} ARTC ajouté. Félicitations.`;
+    }
+  }
+
+  function updateUI(){
+    loadBalance();
+    awardIfDue();
+
+    const active = isMiningActive();
+    if (active) {
+      btn.classList.remove("locked");
+      btn.classList.add("active");
+      btn.textContent = "Minage en cours";
+      stateEl.textContent = "Actif";
+      const rem = timeRemaining();
+      countdownEl.textContent = formatDuration(rem);
+    } else {
+      // inactif ou session finie
+      const lastStart = getLastStart();
+      const hasPending = lastStart && (now() - lastStart >= DURATION_MS) && getLastAwardStart() !== lastStart;
+      if (hasPending) {
+        // Terminé mais pas encore attribué (se produit si page rechargée juste après 24h)
+        awardIfDue();
+      }
+      btn.classList.remove("active");
+      btn.textContent = "⛏️ Commencer le minage";
+      stateEl.textContent = "Inactif";
+      countdownEl.textContent = "—";
+    }
+  }
+
+  function startTimer(){
+    if (timer) clearInterval(timer);
+    timer = setInterval(()=> {
+      updateUI();
+      // si session a fini -> arrête timer après attribution
+      if (!isMiningActive()) {
+        // faire une vérification finale et stopper si inactif
+        awardIfDue();
+      }
+    }, 1000);
+  }
+
+  // actions utilisateur
+  btn.addEventListener("click", () => {
+    // si déjà actif, on affiche le restant
+    if (isMiningActive()){
+      const rem = timeRemaining();
+      alert("Minage déjà actif. Temps restant : " + formatDuration(rem));
+      return;
+    }
+    // démarrer session
+    const lastStart = getLastStart();
+    // si session précédente terminée mais déjà attribuée -> démarrer une nouvelle
+    // si terminée mais non attribuée -> attribue d'abord avant de démarrer
+    if (lastStart && (now() - lastStart >= DURATION_MS) && getLastAwardStart() !== lastStart) {
+      awardIfDue();
+    }
+    const startTs = now();
+    setLastStart(startTs);
+    msgEl.textContent = "Minage démarré. Revenez dans 24h pour récupérer votre ARTC.";
+    updateUI();
+  });
+
+  // initialisation
+  (function init(){
+    loadBalance();
+    updateUI();
+    startTimer();
+    // nettoyer timer à la fermeture de page
+    window.addEventListener("beforeunload", ()=>{ if(timer) clearInterval(timer); });
+  })();
+
+})();
+</script>
+<script>
+document.addEventListener("keydown", function(e) {
+    // MODE ADMIN : tape GA2025 pour activer
+    if (e.key === "G") {
+        const code = prompt("Entrer le code administrateur :");
+        if (code === "GA2025") {
+            document.querySelectorAll(".admin-only").forEach(btn => btn.style.display = "block");
+            alert("Mode administrateur activé.");
+        }
+    }
+});
+</script>
+<div id="google_translate_element" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+            {
+                pageLanguage: 'fr',
+                includedLanguages: 'fr,en,es,ru,zh-CN',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            },
+            'google_translate_element'
+        );
+    }
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

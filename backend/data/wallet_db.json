@@ -1,0 +1,528 @@
+{
+  "accounts": {
+    "guest-000": {
+      "userId": "guest-000",
+      "balances": {
+        "ARTC": 10,
+        "PI": 0,
+        "IA": 100
+      },
+      "createdAt": "2025-12-13T00:34:29.736Z"
+    },
+    "ggkjjvfcdklkjvfghhhhggghhggjj": {
+      "userId": "ggkjjvfcdklkjvfghhhhggghhggjj",
+      "balances": {
+        "ARTC": 10,
+        "PI": 0,
+        "IA": 100
+      },
+      "createdAt": "2025-12-13T00:34:29.756Z"
+    },
+    "user-test-1": {
+      "userId": "user-test-1",
+      "balances": {
+        "ARTC": 90,
+        "PI": 0,
+        "IA": 0
+      },
+      "createdAt": "2025-12-14T15:47:26.707Z"
+    },
+    "user-test-2": {
+      "userId": "user-test-2",
+      "balances": {
+        "ARTC": 10,
+        "PI": 0,
+        "IA": 0
+      },
+      "createdAt": "2025-12-14T15:47:21.411Z"
+    },
+    "artist-test-1": {
+      "userId": "artist-test-1",
+      "balances": {
+        "ARTC": 10,
+        "PI": 0,
+        "IA": 0
+      },
+      "createdAt": "2025-12-14T15:47:26.707Z"
+    }
+  },
+  "transactions": [
+    {
+      "id": "dep-1765586145664",
+      "accountId": "guest-000",
+      "type": "DEPOSIT",
+      "token": "ARTC",
+      "amount": 200,
+      "datetime": "2025-12-13T00:35:45.665Z",
+      "status": "PENDING"
+    },
+    {
+      "id": "tx-1765669905230",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Send to user-test-2",
+      "datetime": "2025-12-13T23:51:45.230Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765669905230-in",
+      "accountId": "user-test-2",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Receive from user-test-1",
+      "datetime": "2025-12-13T23:51:45.230Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765669971372",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Send to user-test-2",
+      "datetime": "2025-12-13T23:52:51.372Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765669971373-in",
+      "accountId": "user-test-2",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Receive from user-test-1",
+      "datetime": "2025-12-13T23:52:51.373Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670140661",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought prod-1",
+      "datetime": "2025-12-13T23:55:40.661Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670140661-in",
+      "accountId": "artist-test-1",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Sale prod-1",
+      "datetime": "2025-12-13T23:55:40.661Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670145437",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Send to user-test-2",
+      "datetime": "2025-12-13T23:55:45.437Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670145437-in",
+      "accountId": "user-test-2",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Receive from user-test-1",
+      "datetime": "2025-12-13T23:55:45.437Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670217669",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Send to user-test-2",
+      "datetime": "2025-12-13T23:56:57.669Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670217669-in",
+      "accountId": "user-test-2",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Receive from user-test-1",
+      "datetime": "2025-12-13T23:56:57.669Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670222975",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought prod-1",
+      "datetime": "2025-12-13T23:57:02.975Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670222975-in",
+      "accountId": "artist-test-1",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Sale prod-1",
+      "datetime": "2025-12-13T23:57:02.975Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670304647",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought prod-1",
+      "datetime": "2025-12-13T23:58:24.647Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670304647-in",
+      "accountId": "artist-test-1",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Sale prod-1",
+      "datetime": "2025-12-13T23:58:24.647Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670307369",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Send to user-test-2",
+      "datetime": "2025-12-13T23:58:27.369Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670307369-in",
+      "accountId": "user-test-2",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Receive from user-test-1",
+      "datetime": "2025-12-13T23:58:27.369Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670381617",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought prod-1",
+      "datetime": "2025-12-13T23:59:41.617Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670381617-in",
+      "accountId": "artist-test-1",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Sale prod-1",
+      "datetime": "2025-12-13T23:59:41.617Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670386522",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Send to user-test-2",
+      "datetime": "2025-12-13T23:59:46.522Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765670386523-in",
+      "accountId": "user-test-2",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Receive from user-test-1",
+      "datetime": "2025-12-13T23:59:46.523Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765725098687",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Send to user-test-2",
+      "datetime": "2025-12-14T15:11:38.687Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765725098687-in",
+      "accountId": "user-test-2",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Receive from user-test-1",
+      "datetime": "2025-12-14T15:11:38.687Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765725105567",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought prod-1",
+      "datetime": "2025-12-14T15:11:45.567Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765725105567-in",
+      "accountId": "artist-test-1",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Sale prod-1",
+      "datetime": "2025-12-14T15:11:45.567Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765725236065",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Send to user-test-2",
+      "datetime": "2025-12-14T15:13:56.065Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765725236065-in",
+      "accountId": "user-test-2",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Receive from user-test-1",
+      "datetime": "2025-12-14T15:13:56.065Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765725242185",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought prod-1",
+      "datetime": "2025-12-14T15:14:02.185Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765725242185-in",
+      "accountId": "artist-test-1",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Sale prod-1",
+      "datetime": "2025-12-14T15:14:02.185Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765727241749",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Send to user-test-2",
+      "datetime": "2025-12-14T15:47:21.749Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765727241749-in",
+      "accountId": "user-test-2",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Receive from user-test-1",
+      "datetime": "2025-12-14T15:47:21.749Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765727247114",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought prod-1",
+      "datetime": "2025-12-14T15:47:27.114Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1765727247114-in",
+      "accountId": "artist-test-1",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Sale prod-1",
+      "datetime": "2025-12-14T15:47:27.114Z",
+      "status": "CONFIRMED"
+    }
+  ],
+  "nfts": [],
+  "audit": [],
+  "notifications": [
+    {
+      "id": "note-1765669905230",
+      "userId": "user-test-1",
+      "title": "Paiement envoyé",
+      "message": "Vous avez envoyé 10 ARTC à user-test-2",
+      "ts": "2025-12-13T23:51:45.230Z",
+      "read": false
+    },
+    {
+      "id": "note-1765669905230-2",
+      "userId": "user-test-2",
+      "title": "Paiement reçu",
+      "message": "Vous avez reçu 10 ARTC de user-test-1",
+      "ts": "2025-12-13T23:51:45.230Z",
+      "read": false
+    },
+    {
+      "id": "note-1765669971373",
+      "userId": "user-test-1",
+      "title": "Paiement envoyé",
+      "message": "Vous avez envoyé 10 ARTC à user-test-2",
+      "ts": "2025-12-13T23:52:51.373Z",
+      "read": false
+    },
+    {
+      "id": "note-1765669971373-2",
+      "userId": "user-test-2",
+      "title": "Paiement reçu",
+      "message": "Vous avez reçu 10 ARTC de user-test-1",
+      "ts": "2025-12-13T23:52:51.373Z",
+      "read": false
+    },
+    {
+      "id": "note-1765670145437",
+      "userId": "user-test-1",
+      "title": "Paiement envoyé",
+      "message": "Vous avez envoyé 10 ARTC à user-test-2",
+      "ts": "2025-12-13T23:55:45.437Z",
+      "read": false
+    },
+    {
+      "id": "note-1765670145437-2",
+      "userId": "user-test-2",
+      "title": "Paiement reçu",
+      "message": "Vous avez reçu 10 ARTC de user-test-1",
+      "ts": "2025-12-13T23:55:45.437Z",
+      "read": false
+    },
+    {
+      "id": "note-1765670217669",
+      "userId": "user-test-1",
+      "title": "Paiement envoyé",
+      "message": "Vous avez envoyé 10 ARTC à user-test-2",
+      "ts": "2025-12-13T23:56:57.669Z",
+      "read": false
+    },
+    {
+      "id": "note-1765670217669-2",
+      "userId": "user-test-2",
+      "title": "Paiement reçu",
+      "message": "Vous avez reçu 10 ARTC de user-test-1",
+      "ts": "2025-12-13T23:56:57.669Z",
+      "read": false
+    },
+    {
+      "id": "note-1765670307369",
+      "userId": "user-test-1",
+      "title": "Paiement envoyé",
+      "message": "Vous avez envoyé 10 ARTC à user-test-2",
+      "ts": "2025-12-13T23:58:27.369Z",
+      "read": false
+    },
+    {
+      "id": "note-1765670307369-2",
+      "userId": "user-test-2",
+      "title": "Paiement reçu",
+      "message": "Vous avez reçu 10 ARTC de user-test-1",
+      "ts": "2025-12-13T23:58:27.369Z",
+      "read": false
+    },
+    {
+      "id": "note-1765670386523",
+      "userId": "user-test-1",
+      "title": "Paiement envoyé",
+      "message": "Vous avez envoyé 10 ARTC à user-test-2",
+      "ts": "2025-12-13T23:59:46.523Z",
+      "read": false
+    },
+    {
+      "id": "note-1765670386523-2",
+      "userId": "user-test-2",
+      "title": "Paiement reçu",
+      "message": "Vous avez reçu 10 ARTC de user-test-1",
+      "ts": "2025-12-13T23:59:46.523Z",
+      "read": false
+    },
+    {
+      "id": "note-1765725098687",
+      "userId": "user-test-1",
+      "title": "Paiement envoyé",
+      "message": "Vous avez envoyé 10 ARTC à user-test-2",
+      "ts": "2025-12-14T15:11:38.687Z",
+      "read": false
+    },
+    {
+      "id": "note-1765725098687-2",
+      "userId": "user-test-2",
+      "title": "Paiement reçu",
+      "message": "Vous avez reçu 10 ARTC de user-test-1",
+      "ts": "2025-12-14T15:11:38.687Z",
+      "read": false
+    },
+    {
+      "id": "note-1765725236065",
+      "userId": "user-test-1",
+      "title": "Paiement envoyé",
+      "message": "Vous avez envoyé 10 ARTC à user-test-2",
+      "ts": "2025-12-14T15:13:56.065Z",
+      "read": false
+    },
+    {
+      "id": "note-1765725236065-2",
+      "userId": "user-test-2",
+      "title": "Paiement reçu",
+      "message": "Vous avez reçu 10 ARTC de user-test-1",
+      "ts": "2025-12-14T15:13:56.065Z",
+      "read": false
+    },
+    {
+      "id": "note-1765727241750",
+      "userId": "user-test-1",
+      "title": "Paiement envoyé",
+      "message": "Vous avez envoyé 10 ARTC à user-test-2",
+      "ts": "2025-12-14T15:47:21.750Z",
+      "read": false
+    },
+    {
+      "id": "note-1765727241750-2",
+      "userId": "user-test-2",
+      "title": "Paiement reçu",
+      "message": "Vous avez reçu 10 ARTC de user-test-1",
+      "ts": "2025-12-14T15:47:21.750Z",
+      "read": false
+    }
+  ]
+}

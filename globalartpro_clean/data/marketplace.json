@@ -1,0 +1,169 @@
+[
+  {
+    "title": "Masque Baoulé Ancestral",
+    "artist": "Kouadio Yves",
+    "description": "Masque traditionnel sculpté à la main, symbole de protection spirituelle.",
+    "price": 18000,
+    "category": "Sculpture",
+    "country": "Côte d'Ivoire",
+    "culture": "Baoulé",
+    "type": "image",
+    "src": "assets/marketplace/baoule-mask.jpg"
+  },
+  {
+    "title": "Peinture Dogon – Gardiens du Ciel",
+    "artist": "Massa Doumbia",
+    "description": "Peinture représentant la cosmologie Dogon et la connexion entre ciel et terre.",
+    "price": 25000,
+    "category": "Peinture",
+    "country": "Mali",
+    "culture": "Dogon",
+    "type": "image",
+    "src": "assets/marketplace/dogon-art.jpg"
+  },
+  {
+    "title": "Tissu Bogolan Premium",
+    "artist": "Awa Diallo",
+    "description": "Motifs traditionnels teints à la main avec pigments naturels.",
+    "price": 12000,
+    "category": "Textile",
+    "country": "Mali",
+    "culture": "Bamana",
+    "type": "image",
+    "src": "assets/marketplace/bogolan.jpg"
+  },
+  {
+    "title": "Sculpture Fang du Gardien",
+    "artist": "Ntoutoume Alain",
+    "description": "Statuette Fang représentant un ancêtre protecteur.",
+    "price": 30000,
+    "category": "Sculpture",
+    "country": "Gabon",
+    "culture": "Fang",
+    "type": "image",
+    "src": "assets/marketplace/fang-guardian.jpg"
+  },
+  {
+    "title": "Masque Bamiléké Royal",
+    "artist": "Teckeu N.",
+    "description": "Masque coloré utilisé lors des cérémonies royales.",
+    "price": 22000,
+    "category": "Sculpture",
+    "country": "Cameroun",
+    "culture": "Bamiléké",
+    "type": "image",
+    "src": "assets/marketplace/bamileke-mask.jpg"
+  },
+
+  {
+    "title": "Chant Sacré Ewondo",
+    "artist": "Mendo Pascal",
+    "description": "Chant traditionnel de guérison et d'ouverture spirituelle.",
+    "price": 5000,
+    "category": "Audio Culturel",
+    "country": "Cameroun",
+    "culture": "Ewondo",
+    "type": "audio",
+    "src": "assets/marketplace/ewondo-chant.mp3"
+  },
+  {
+    "title": "Flûte Soudanaise du Nil",
+    "artist": "Hasan Youssef",
+    "description": "Mélodie douce jouée avec une flûte artisanale soudanaise.",
+    "price": 4000,
+    "category": "Musique",
+    "country": "Soudan",
+    "culture": "Nubienne",
+    "type": "audio",
+    "src": "assets/marketplace/nile-flute.mp3"
+  },
+  {
+    "title": "Ambiance du Marché de Lomé",
+    "artist": "Studio Togo Sound",
+    "description": "Enregistrement naturel d’un marché populaire du Togo.",
+    "price": 3000,
+    "category": "Ambiance",
+    "country": "Togo",
+    "culture": "Ewe",
+    "type": "audio",
+    "src": "assets/marketplace/lome-market.mp3"
+  },
+  {
+    "title": "Tambours Guerriers Massaï",
+    "artist": "Olorun Music",
+    "description": "Rythmes traditionnels utilisés pour les rites de passage.",
+    "price": 7000,
+    "category": "Musique Traditionnelle",
+    "country": "Kenya",
+    "culture": "Massaï",
+    "type": "audio",
+    "src": "assets/marketplace/maasai-drums.mp3"
+  },
+  {
+    "title": "Chant Spirituel Béti",
+    "artist": "Nanga Marie",
+    "description": "Chant féminin sacré utilisé dans les rituels d’unité.",
+    "price": 4500,
+    "category": "Audio Culturel",
+    "country": "Cameroun",
+    "culture": "Béti",
+    "type": "audio",
+    "src": "assets/marketplace/beti-spirit.mp3"
+  },
+
+  {
+    "title": "Danse Guerrière Zoulou",
+    "artist": "Zulu Heritage Group",
+    "description": "Performance dynamique en costumes traditionnels.",
+    "price": 10000,
+    "category": "Vidéo",
+    "country": "Afrique du Sud",
+    "culture": "Zoulou",
+    "type": "video",
+    "src": "assets/marketplace/zulu-dance.mp4"
+  },
+  {
+    "title": "Rituel Mossi – Appel des Ancêtres",
+    "artist": "Ouattara Groupe",
+    "description": "Documentaire court sur un rituel Mossi authentique.",
+    "price": 9500,
+    "category": "Vidéo Documentaire",
+    "country": "Burkina Faso",
+    "culture": "Mossi",
+    "type": "video",
+    "src": "assets/marketplace/mossi-ritual.mp4"
+  },
+  {
+    "title": "Performance Griot Mandingue",
+    "artist": "Diarra Keïta",
+    "description": "Poésie orale mandingue accompagnée de kora.",
+    "price": 11000,
+    "category": "Vidéo Performance",
+    "country": "Guinée",
+    "culture": "Mandingue",
+    "type": "video",
+    "src": "assets/marketplace/manding-griot.mp4"
+  },
+  {
+    "title": "Danse du Feu – Bassa",
+    "artist": "Groupe Traditionnel Bassa",
+    "description": "Danse spectaculaire autour du feu, symbole de purification.",
+    "price": 13000,
+    "category": "Vidéo Culturelle",
+    "country": "Cameroun",
+    "culture": "Bassa",
+    "type": "video",
+    "src": "assets/marketplace/bassa-fire-dance.mp4"
+  },
+  {
+    "title": "Rituel Yoruba de la Forêt",
+    "artist": "Oshun Spirit Team",
+    "description": "Rituel de connexion aux esprits de la forêt Yoruba.",
+    "price": 14000,
+    "category": "Vidéo Sacrée",
+    "country": "Nigéria",
+    "culture": "Yoruba",
+    "type": "video",
+    "src": "assets/marketplace/yoruba-forest.mp4"
+  }
+]

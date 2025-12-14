@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Certificat GlobalArtPro</title>
+<link rel="stylesheet" href="css/certificat.css">
+</head>
+
+<body>
+
+<div class="certificate">
+
+    <!-- ========================= -->
+    <!-- 1. SCELLÉ OFFICIEL (CACHEE OR) -->
+    <!-- ========================= -->
+
+    <div class="seal-container">
+        <svg width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#F7E27A"/>
+                    <stop offset="100%" stop-color="#D4AF37"/>
+                </linearGradient>
+            </defs>
+
+            <circle cx="140" cy="140" r="130" fill="none" stroke="url(#gold)" stroke-width="10"/>
+            
+            <path d="M90 110 L140 50 L190 110 L140 170 Z"
+                  fill="none" stroke="url(#gold)" stroke-width="8" stroke-linejoin="round"/>
+
+            <text x="140" y="225" font-family="Poppins" font-size="28"
+                  fill="url(#gold)" text-anchor="middle">
+                GLOBALARTPRO
+            </text>
+        </svg>
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- 2. EN-TÊTE / IDENTITÉ -->
+    <!-- ========================= -->
+
+    <div class="header">
+        <h1>CERTIFICAT OFFICIEL GLOBALARTPRO</h1>
+        <p>Délivré par la Fondation GlobalArtPro</p>
+    </div>
+
+    <div class="logo-container">
+        <img src="logo-globalartpro.svg" alt="Logo GlobalArtPro">
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- 3. CONTENU PRINCIPAL -->
+    <!-- ========================= -->
+
+    <div class="content">
+        <p class="label">Ce certificat atteste que</p>
+
+        <h2 id="certName">[Nom Prénom]</h2>
+
+        <p class="description">
+            a démontré un engagement exceptionnel, une participation active  
+            et une contribution significative au développement de l’écosystème artistique mondial.
+        </p>
+
+        <p class="description">
+            En reconnaissance de son influence, de son travail,  
+            et de son impact positif au sein de la communauté,  
+            GlobalArtPro lui décerne le :
+        </p>
+
+        <h3 id="certLevel">Certificat d’Honneur – Niveau Or</h3>
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- 4. PIED DE PAGE (INFOS / QR / SIGNATURE) -->
+    <!-- ========================= -->
+
+    <div class="footer">
+
+        <!-- Informations -->
+        <div class="left">
+            <p>Numéro du certificat :</p>
+            <span id="certID">GAP-CERT-2025-0001</span><br><br>
+
+            <p>Hash de validation :</p>
+            <span id="certHash">[HASH]</span>
+        </div>
+
+        <!-- QR Code -->
+        <div class="qr">
+            <div id="qrcode"></div>
+            <p>Scan pour vérification</p>
+        </div>
+
+        <!-- Signature officielle (révisée) -->
+<div class="right">
+  <p>Délivré le :</p>
+  <span id="certDate">[JJ/MM/AAAA]</span><br><br>
+
+  <p>Signature :</p>
+
+  <div class="signature-wrap">
+    <!-- SVG signature redimensionnable et texte sur deux lignes -->
+    <svg class="signature-svg" viewBox="0 0 460 160" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Signature fondateur">
+      <defs>
+        <linearGradient id="goldSig" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#F7E27A"/>
+          <stop offset="100%" stop-color="#D4AF37"/>
+        </linearGradient>
+      </defs>
+
+      <!-- décor calligraphique -->
+      <path d="M40 90 Q90 10 160 80 T300 70 Q360 65 420 20"
+            stroke="url(#goldSig)" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+      <!-- Nom sur deux lignes (s'assure qu'on voit tout) -->
+      <text x="230" y="110" text-anchor="middle" font-family="Poppins" font-size="20" fill="url(#goldSig)">
+        <tspan x="230" dy="0">M. TeKeu NouKawo</tspan>
+        <tspan x="230" dy="26">MitteRand</tspan>
+      </text>
+
+      <text x="230" y="148" text-anchor="middle" font-family="Poppins" font-size="14" fill="#888">
+        Fondateur – GlobalArtPro
+      </text>
+    </svg>
+
+    <!-- Cachet / seal : placé de façon absolue pour chevaucher la signature -->
+    <svg class="seal-svg" viewBox="0 0 450 450" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="goldSeal" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#F7E27A"/>
+          <stop offset="100%" stop-color="#D4AF37"/>
+        </linearGradient>
+      </defs>
+
+      <circle cx="225" cy="225" r="200" fill="none" stroke="url(#goldSeal)" stroke-width="14"/>
+      <circle cx="225" cy="225" r="165" fill="none" stroke="url(#goldSeal)" stroke-width="6"/>
+
+      <!-- Texte circulaire simplifié (placé statiquement) -->
+      <text x="225" y="225" font-family="Poppins" font-size="18" fill="url(#goldSeal)" text-anchor="middle">
+        ● GLOBALARTPRO ● CERTIFICATION ●
+      </text>
+
+      <path d="M225 120 L290 190 L225 260 L160 190 Z"
+            fill="none" stroke="url(#goldSeal)" stroke-width="8" stroke-linejoin="round"/>
+      <circle cx="225" cy="190" r="10" fill="url(#goldSeal)"/>
+    </svg>
+  </div>
+</div>
+</div>
+
+</div>
+
+
+<!-- ========================= -->
+<!-- SCRIPTS -->
+<!-- ========================= -->
+
+<script src="js/qrcode.min.js"></script>
+<script>
+    const params = new URLSearchParams(window.location.search);
+
+    document.getElementById("certName").textContent = params.get("name");
+    document.getElementById("certLevel").textContent = params.get("level");
+    document.getElementById("certID").textContent = params.get("id");
+    document.getElementById("certDate").textContent = params.get("date");
+    document.getElementById("certHash").textContent = params.get("hash");
+
+    new QRCode(document.getElementById("qrcode"), {
+        text: "https://globalartpro.com/certificats/verify.html?id=" + params.get("id"),
+        width: 120,
+        height: 120
+    });
+</script>
+
+</body>
+</html>

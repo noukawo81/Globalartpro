@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Communauté — GlobalArtPro</title>
+  <link rel="stylesheet" href="community.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Communauté — GlobalArtPro</h1>
+    <div class="top-actions">
+      <select id="filterCountry"><option value="all">Tous pays</option></select>
+      <select id="filterType">
+        <option value="all">Tous types</option>
+        <option value="text">Texte</option>
+        <option value="image">Image</option>
+        <option value="audio">Audio</option>
+        <option value="video">Vidéo</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="composer">
+      <textarea id="postText" placeholder="Partagez une histoire, tradition, photo..."></textarea>
+      <div class="composer-row">
+        <input type="file" id="postMedia" accept="image/*,video/*,audio/*" />
+        <button id="btnPublish">Publier</button>
+      </div>
+      <small class="hint">Image max ~8MB (traitée côté client). Le post restera local (MVP) ; on peut ensuite connecter l’API.</small>
+    </section>
+
+    <section id="feed" class="feed">
+      <!-- posts injected ici -->
+    </section>
+  </main>
+
+  <!-- Modale lightbox simple -->
+  <div id="lightbox" class="lightbox hidden">
+    <div class="lb-inner">
+      <button id="lbClose" class="close">✕</button>
+      <div id="lbMedia"></div>
+      <h3 id="lbTitle"></h3>
+      <p id="lbText"></p>
+    </div>
+  </div>
+
+  <script src="community.js" type="module"></script>
+</body>
+</html>
