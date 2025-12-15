@@ -66,7 +66,6 @@ export default function ArtistList() {
     const mockToken = `mock-${id}`;
     api.setToken(mockToken);
     localStorage.setItem('ga_token', mockToken);
-    localStorage.setItem('token', mockToken); // backward compatibility
     localStorage.setItem("artistId", id);
     try { setArtistId(String(id)); } catch (e) {}
     localStorage.setItem('currentUser', JSON.stringify(user));
@@ -100,7 +99,6 @@ export default function ArtistList() {
         if (serverToken) {
           api.setToken(serverToken);
           localStorage.setItem('ga_token', serverToken);
-          localStorage.setItem('token', serverToken);
         }
         localStorage.setItem('artistId', serverUser.id);
         try { setArtistId(String(serverUser.id)); } catch (e) {}
@@ -139,7 +137,6 @@ export default function ArtistList() {
       api.setToken(res.token);
       localStorage.setItem('artistId', serverUser.id);
       try { setArtistId(String(serverUser.id)); } catch (e) {}
-      localStorage.setItem('token', res.token);
       localStorage.setItem('ga_token', res.token);
       localStorage.setItem('currentUser', JSON.stringify(serverUser));
       login(res);
@@ -156,7 +153,6 @@ export default function ArtistList() {
     const mockToken = `mock-${foundLocal.id}`;
     api.setToken(mockToken);
     localStorage.setItem('ga_token', mockToken);
-    localStorage.setItem('token', mockToken); // backward compatibility
     localStorage.setItem("artistId", foundLocal.id);
     try { setArtistId(String(foundLocal.id)); } catch (e) {}
     localStorage.setItem('currentUser', JSON.stringify(foundLocal));

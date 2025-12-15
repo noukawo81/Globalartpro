@@ -9,7 +9,7 @@ export function AuthProvider({ children }) {
 
   // On mount, load persisted auth state
   React.useEffect(() => {
-    const token = localStorage.getItem('ga_token') || localStorage.getItem('token');
+    const token = localStorage.getItem('ga_token');
     if (token) api.setToken(token);
     try {
       const current = localStorage.getItem('currentUser');
@@ -31,11 +31,11 @@ export function AuthProvider({ children }) {
       }
       try { localStorage.setItem('currentUser', JSON.stringify(u)); } catch (e) {}
     }
-    // set token from userData, fallback to stored token
-    const token = userData?.token || localStorage.getItem('token') || localStorage.getItem('ga_token');
+    // set token from userData (use canonical key `ga_token` only)
+    const token = userData?.token || localStorage.getItem('ga_token');
     if (token) {
       api.setToken(token);
-      try { localStorage.setItem('ga_token', token); localStorage.setItem('token', token); } catch (e) {}
+      try { localStorage.setItem('ga_token', token); } catch (e) {}
     }
   };
   const logout = () => {
