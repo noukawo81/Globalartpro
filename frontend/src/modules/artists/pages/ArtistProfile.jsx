@@ -261,11 +261,10 @@ export default function ArtistProfile() {
 
     setArtist(updated);
     // mettre à jour le contexte d'auth si c'est le profil courant
+    // Important: ne pas modifier le token d'auth lors d'une simple mise à jour de profil.
     if (isCurrentArtist) {
-      const mockToken = `mock-${updated.id}`;
-      api.setToken(mockToken);
-      localStorage.setItem('ga_token', mockToken);
-      setAuthUser({ user: updated, token: mockToken });
+      // Met à jour uniquement les données utilisateur dans le contexte sans toucher au token
+      setAuthUser({ user: updated });
       try { setArtistId(String(updated.id)); } catch (e) {}
       localStorage.setItem("artistId", updated.id);
     }
