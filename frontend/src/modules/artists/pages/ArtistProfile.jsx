@@ -15,7 +15,22 @@ export default function ArtistProfile() {
   async function fetchArtistData() {
     setLoading(true);
 
-    // 1) Try to read from localStorage artists list
+    // 1) FIRST: Try to fetch from backend API (source of truth)
+    try {
+      const res = await api.getArtist(id);
+      if (res && res.artist) {
+        const apiArtist = res.artist;
+        apiArtist.socials = apiArtist.socials || { youtube: "", website: "", facebook: "", tiktok: "" };
+        apiArtist.artworks = apiArtist.artworks || [];
+        setArtist(apiArtist);
+        setLoading(false);
+        return;
+      }
+    } catch (e) {
+      console.warn('Backend fetch failed, trying fallback sources', e);
+    }
+
+    // 2) FALLBACK: Try from localStorage (offline support)
     try {
       const list = JSON.parse(localStorage.getItem("artists") || "[]");
       const found = list.find((a) => String(a.id) === String(id));
@@ -29,7 +44,7 @@ export default function ArtistProfile() {
       // ignore parse errors
     }
 
-    // 2) If viewing current logged-in artist, prefer auth user
+    // 3) FALLBACK: Use auth user data if viewing self
     if (authUser && String(authUser.id) === String(id)) {
       authUser.socials = authUser.socials || { youtube: "", website: "", facebook: "", tiktok: "" };
       setArtist(authUser);
@@ -37,21 +52,18 @@ export default function ArtistProfile() {
       return;
     }
 
-    // 3) Fallback mock profile for unknown ids (keeps previous behaviour)
+    // 4) LAST RESORT: Default mock profile
     const mockData = {
       id,
-      name: "John Doe",
+      name: "Artiste Inconnu",
       avatar: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=500",
-      description:
-        "Artiste peintre spécialisé dans le surréalisme moderne et l’expressionnisme africain.",
+      description: "Cet artiste n'a pas encore rempli son profil.",
       country: "Cameroun",
       socials: { youtube: "", website: "", facebook: "", tiktok: "" },
       artworks: [],
     };
-    setTimeout(() => {
-      setArtist(mockData);
-      setLoading(false);
-    }, 200); // Simulation API
+    setArtist(mockData);
+    setLoading(false);
   }
 
   useEffect(() => {
