@@ -79,6 +79,7 @@ export default function ArtistProfile() {
   const [showEdit, setShowEdit] = useState(false);
   const [showSecurity, setShowSecurity] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [message, setMessage] = useState("");
   const [editForm, setEditForm] = useState({
     name: "",
     avatar: "",
@@ -284,6 +285,36 @@ export default function ArtistProfile() {
     setShowEdit(false);
   }
 
+  async function handleMediaUpload(file) {
+  if (!file) return;
+  try {
+    const fd = new FormData();
+    fd.append('file', file);
+    const res = await api.uploadArtistMedia(artist.id, fd);
+    // backend: { media: { id, title, url, ... } }
+    if (res && res.media) {
+      const m = res.media;
+      setArtist((a) => ({ ...a, media: [...(a.media||[]), { id: m.id, url: m.url, title: m.title || file.name, mime: file.type, createdAt: m.createdAt || new Date().toISOString() }] }));
+      setMessage('Upload réussi.');
+    }
+  } catch (e) {
+    setMessage('Upload échoué.');
+  }
+}
+
+async function shareMediaToMarketplace(mediaId, title = 'Œuvre', price = 0) {
+  if (!api.getToken || !api.getToken()) { setMessage('Connexion requise pour mettre en vente.'); alert('Veuillez vous connecter.'); return; }
+  try {
+    const payload = { artistId: artist.id, mediaId, title, price };
+    const res = await api.createListing(payload);
+    if (res && res.listing) setMessage('Partagé sur le marketplace.');
+    else setMessage(res?.error || 'Échec du partage.');
+  } catch (e) {
+    console.error('createListing error', e);
+    setMessage(e?.response?.data?.error || e?.message || 'Échec du partage.');
+  }
+}
+
   if (loading) {
     return <p style={{ padding: 20 }}>Chargement du profil...</p>;
   }
@@ -324,11 +355,18 @@ export default function ArtistProfile() {
         <div style={styles.resourcesCard}>
           <h3>Ressources & Portfolio</h3>
           <div style={styles.galleryGrid}>
-            {artist.artworks.map((a) => (
-              <div key={a.id} style={styles.thumb} onClick={() => window.open(a.src || a.image, '_blank')}>
-                {a.type === 'image' && (<img src={a.src || a.image} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />)}
-                {a.type === 'video' && (<video src={a.src} style={{ width: '100%', height: '100%', objectFit: 'cover' }} controls />)}
+            {([...(artist.media||[]), ...(artist.artworks||[])]).map((a) => (
+              <div key={a.id} style={styles.thumb} onClick={() => window.open(a.url || a.src || a.image, '_blank')}>
+                {(!a.type || a.type === 'image') && (<img src={a.url || a.src || a.image} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />)}
+                {a.type === 'video' && (<video src={a.url || a.src} style={{ width: '100%', height: '100%', objectFit: 'cover' }} controls />)}
                 {a.type === 'audio' && (<div style={{ padding: 8 }}>🎵 {a.title || 'Audio'}</div>)}
+
+                {isCurrentArtist && (
+                  <div style={{ position: 'absolute', bottom: 6, left: 6, display: 'flex', gap: 6 }}>
+                    <button style={styles.smallButton} onClick={(e) => { e.stopPropagation(); shareMediaToMarketplace(a.id, a.title || 'Œuvre', 1); }}>➕ Mettre en vente</button>
+                    <button style={styles.smallButton} onClick={(e) => { e.stopPropagation(); if (!api.getToken || !api.getToken()) { setMessage('Connexion requise pour partager.'); alert('Veuillez vous connecter.'); return; } api.shareToPortal({ artistId: artist.id, mediaId: a.id, title: a.title || 'Partage' }).then(() => setMessage('Partagé sur le portail.')).catch((err) => { console.error('portal share error', err); setMessage(err?.response?.data?.error || 'Échec du partage.'); }); }}>🌍 Partager</button>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -371,6 +409,8 @@ export default function ArtistProfile() {
           )}
         </div>
       </div>
+
+      {message && <div style={{ padding: 12, background: '#fff5c7', borderRadius: 6, margin: '12px 0' }}>{message}</div>}
 
       {/* Bloc C - Outils & Services GlobalArtPro */}
       <div style={styles.servicesSection}>
@@ -503,6 +543,7 @@ export default function ArtistProfile() {
 }
 
 const styles = {
+  editInput: { width: "100%", padding: "0.6em", borderRadius: 6, border: "1px solid #ccc", background: "#fff", color: "#111", },
   page: { padding: '20px', maxWidth: 1100, margin: '0 auto', color: '#111', fontFamily: 'system-ui, sans-serif' },
   headerGrid: { display: 'grid', gridTemplateColumns: '1fr 420px', gap: 20, alignItems: 'start', marginBottom: 24 },
   identityCard: { display: 'flex', gap: 12, alignItems: 'flex-start', background: '#fff', padding: 16, borderRadius: 12, boxShadow: '0 6px 18px rgba(0,0,0,0.06)' },
@@ -544,7 +585,7 @@ const styles = {
   },
   dropzone: { border: '2px dashed #ddd', borderRadius: 10, padding: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 90, cursor: 'pointer', background: '#fafafa' },
   modalRow: { display: 'flex', gap: 12, marginBottom: 12, alignItems: 'center' },
-  modalInput: { flex: 1, padding: 10, borderRadius: 8, border: '1px solid #ddd' },
+  modalInput: { flex: 1, padding: 10, borderRadius: 8, border: '1px solid #ddd', background: '#fff', color: '#111', caretColor: '#111', WebkitTextFillColor: '#111' },
   modalButtons: { display: 'flex', gap: 10, justifyContent: 'flex-end', marginTop: 12 },
   saveButton: { padding: '10px 14px', background: '#ffd700', border: 'none', borderRadius: 8, cursor: 'pointer', fontWeight: 700 },
   cancelButton: { padding: '10px 14px', background: '#eee', border: '1px solid #ddd', borderRadius: 8, cursor: 'pointer' },

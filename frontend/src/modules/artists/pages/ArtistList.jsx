@@ -40,90 +40,34 @@ export default function ArtistList() {
       return;
     }
 
-    const existing = JSON.parse(localStorage.getItem("artists") || "[]");
-    if (existing.find((a) => a.email === signup.email)) {
-      setError("Un compte existe déjà avec cet email.");
-      return;
-    }
-
-    const id = Date.now().toString();
-    const user = {
-      id,
-      name: `${signup.firstName} ${signup.lastName}`.trim(),
-      email: signup.email,
-      password: signup.password,
-      bio: signup.bio,
-      domain: signup.domain,
-      styles: signup.styles.split(",").map((s) => s.trim()).filter(Boolean),
-      avatar: signup.avatar || "https://via.placeholder.com/150",
-      portfolio: signup.portfolio,
-      createdAt: new Date().toISOString(),
-    };
-
-    saveUserToStorage(user);
-
-    // Create & set mock token and persist it
-    const mockToken = `mock-${id}`;
-    api.setToken(mockToken);
-    localStorage.setItem('ga_token', mockToken);
-    localStorage.setItem("artistId", id);
-    try { setArtistId(String(id)); } catch (e) {}
-    localStorage.setItem('currentUser', JSON.stringify(user));
-    // Update React auth context with token (AuthContext reads token from userData)
-    login({ user, token: mockToken });
-
-    // Try to register backend user (optional, best-effort) and reconcile local id
-    api.register(user.name, user.email, user.password, 'artist').then((res) => {
-      // Structure: { user, token } or user object
-      const serverUser = res && (res.user || res) || null;
-      const serverToken = res?.token || res?.token || null;
-      if (serverUser && serverUser.id) {
-        // Update local artists list to use server id (replace UUID like timestamp id)
-        try {
-          const list = JSON.parse(localStorage.getItem('artists') || '[]');
-          const idx = list.findIndex((a) => String(a.id) === String(id));
-          const updatedUser = { ...list[idx], ...serverUser };
-          // remove old entry by old id
-          if (idx >= 0) list.splice(idx, 1);
-          // push / upsert with new server id
-          const existingServerIdx = list.findIndex((a) => String(a.id) === String(serverUser.id));
-          if (existingServerIdx >= 0) {
-            list[existingServerIdx] = { ...list[existingServerIdx], ...updatedUser };
-          } else {
-            list.push({ ...updatedUser, id: serverUser.id });
-          }
-          localStorage.setItem('artists', JSON.stringify(list));
-        } catch (e) { console.warn('Failed to reconcile local artist id with server id', e); }
-
-        // Persist server token & id
-        if (serverToken) {
+    // Register via backend (no local fallback)
+    api.register(`${signup.firstName} ${signup.lastName}`.trim(), signup.email, signup.password, 'artist')
+      .then((res) => {
+        const serverUser = res && (res.user || res) || null;
+        const serverToken = res?.token || null;
+        if (serverUser && serverUser.id && serverToken) {
           api.setToken(serverToken);
-          localStorage.setItem('ga_token', serverToken);
+          try { localStorage.setItem('ga_token', serverToken); } catch (e) {}
+          try { localStorage.setItem('artistId', serverUser.id); } catch (e) {}
+          try { localStorage.setItem('currentUser', JSON.stringify(serverUser)); } catch (e) {}
+          try { setArtistId(String(serverUser.id)); } catch (e) {}
+          login({ user: serverUser, token: serverToken });
+          navigate(`/artist/${serverUser.id}`);
+        } else {
+          setError('Inscription échouée : réponse serveur invalide.');
         }
-        localStorage.setItem('artistId', serverUser.id);
-        try { setArtistId(String(serverUser.id)); } catch (e) {}
-        localStorage.setItem('currentUser', JSON.stringify(serverUser));
-        // Update auth context to server user
-        login({ user: serverUser, token: serverToken || mockToken });
-      }
-    }).catch(() => {});
-
-    // redirect to artist dashboard (prefer id in URL)
-    // navigate using local id (server id may come later and will be reconciled)
-    const redirectId = artistId || id;
-    try { setArtistId(String(redirectId)); } catch (e) {}
-    navigate(`/artist/${redirectId}/dashboard`);
+      })
+      .catch(() => {
+        setError('Inscription échouée : impossible de contacter le serveur.');
+      });
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
-    const users = JSON.parse(localStorage.getItem("artists") || "[]");
-    const foundLocal = users.find((u) => u.email === loginForm.email && u.password === loginForm.password);
+    // No local fallback by default; try backend login first
     try {
-      // Try backend login first
       const res = await api.login(loginForm.email, loginForm.password);
-      // res: { user, token }
       const serverUser = res.user || res;
       // Upsert into local artists list so profile pages work locally
       try {
@@ -140,25 +84,39 @@ export default function ArtistList() {
       localStorage.setItem('ga_token', res.token);
       localStorage.setItem('currentUser', JSON.stringify(serverUser));
       login(res);
-      navigate(`/artist/${serverUser.id}/dashboard`);
+      navigate(`/artist/${serverUser.id}`);
       return;
     } catch (err) {
-      // fallback to local storage method
-    }
-    if (!foundLocal) {
-      setError("Email ou mot de passe incorrect.");
+      // If no response (network error), offer offline/dev fallback
+      if (!err || !err.response) {
+        setError("Impossible de contacter le serveur backend. Démarrez-le (`cd backend && npm run dev`) ou utilisez le mode démo ci-dessous.");
+      } else {
+        setError('Email ou mot de passe incorrect.');
+      }
       return;
     }
-    // Create & set mock token and persist it
-    const mockToken = `mock-${foundLocal.id}`;
-    api.setToken(mockToken);
-    localStorage.setItem('ga_token', mockToken);
-    localStorage.setItem("artistId", foundLocal.id);
-    try { setArtistId(String(foundLocal.id)); } catch (e) {}
-    localStorage.setItem('currentUser', JSON.stringify(foundLocal));
-    // Update React auth context with token
-    login({ user: foundLocal, token: mockToken });
-    navigate(`/artist/${foundLocal.id}/dashboard`);
+  };
+
+  // Dev/offline login helper (useful lorsque le backend est indisponible)
+  const mockLogin = () => {
+    const id = `dev-user-${Date.now()}`;
+    const user = { id, name: 'Mode Démo', email: loginForm.email || 'dev@example.com', role: 'artist' };
+    const token = `mock-${Date.now()}`;
+    try { api.setToken(token); } catch (e) {}
+    try { localStorage.setItem('ga_token', token); } catch (e) {}
+    try { localStorage.setItem('currentUser', JSON.stringify(user)); } catch (e) {}
+    try { localStorage.setItem('artistId', id); } catch (e) {}
+    try { setArtistId(String(id)); } catch (e) {}
+    // Upsert into local artists list
+    try {
+      const list = JSON.parse(localStorage.getItem('artists') || '[]');
+      const idx = list.findIndex((a) => String(a.id) === String(id));
+      const obj = { id, name: user.name, email: user.email };
+      if (idx >= 0) list[idx] = { ...list[idx], ...obj }; else list.push(obj);
+      localStorage.setItem('artists', JSON.stringify(list));
+    } catch (e) {}
+    login({ user, token });
+    navigate(`/artist/${id}`);
   };
 
   return (
@@ -317,6 +275,9 @@ export default function ArtistList() {
             <button type="submit" style={styles.button}>
               Connexion
             </button>
+            <div style={{ marginTop: 8 }}>
+              <button type="button" onClick={mockLogin} style={{ ...styles.button, background: '#374151', color: '#fff' }}>Mode démo (hors-ligne)</button>
+            </div>
           </form>
         )}
 

@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import QRPayment from '@/modules/wallet/components/QRPayment.jsx';
 import walletAPI from '@/modules/wallet/services/wallet.api.js';
 import { api } from '@/services/api.js';
+import { useAuth } from '@/core/hooks/useAuth.js';
 
 export default function WalletPayment() {
   const [amount, setAmount] = useState(0.00005);
   const [token, setToken] = useState('PI');
-  const userId = localStorage.getItem('ga_user_id') || 'guest-000';
+  const { user: authUser } = useAuth();
+  const storedUser = authUser || JSON.parse(localStorage.getItem('currentUser') || '{}');
+  const userId = storedUser?.id || 'guest-000';
 
   async function deposit() {
     try {

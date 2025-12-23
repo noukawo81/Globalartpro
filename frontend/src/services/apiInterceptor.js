@@ -1,9 +1,9 @@
 import axios from "axios";
-import ENV from "../config/env.js";
+import CONST from "../app/constants.jsx";
 
 const API = axios.create({
-  baseURL: ENV.API_BASE_URL,
-  timeout: ENV.API_TIMEOUT,
+  baseURL: CONST.API_URL || CONST.API_BASE,
+  timeout: CONST.API_TIMEOUT,
   headers: { "Content-Type": "application/json" },
 });
 
@@ -21,8 +21,8 @@ API.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem(ENV.JWT_STORAGE_KEY);
-      localStorage.removeItem(ENV.USER_STORAGE_KEY);
+      localStorage.removeItem(CONST.JWT_STORAGE_KEY);
+      localStorage.removeItem(CONST.USER_STORAGE_KEY);
       window.location.href = "/login";
     }
     return Promise.reject(error);

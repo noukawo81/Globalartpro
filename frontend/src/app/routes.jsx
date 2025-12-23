@@ -18,8 +18,13 @@ import StudioDashboard from "@/modules/gapstudio/pages/StudioDashboard.jsx";
 
 import UserDashboard from "@/modules/dashboard/pages/UserDashboard.jsx";
 import AdminDashboard from "@/modules/dashboard/pages/AdminDashboard.jsx";
+import AdminExhibitions from "@/modules/admin/pages/AdminExhibitions.jsx"; 
 
 import PortalCulture from "@/modules/culture/pages/PortalCulture.jsx";
+
+/* Museum */
+import MuseumHome from "@/modules/museum/pages/MuseumHome.jsx";
+import MuseumItem from "@/modules/museum/pages/MuseumItem.jsx";
 import WalletHome from "@/modules/wallet/pages/WalletHome.jsx";
 import WalletTransactions from "@/modules/wallet/pages/WalletTransactions.jsx";
 import WalletNotifications from "@/modules/wallet/pages/WalletNotifications.jsx";
@@ -64,6 +69,9 @@ export default function AppRoutes() {
         <Route path="/gapstudio/dashboard" element={<StudioDashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
 
+        <Route path="/museum" element={<MuseumHome />} />
+        <Route path="/museum/:id" element={<MuseumItem />} />
+
         <Route path="/legacy/:page" element={<LegacyIframe />} />
 
         <Route path="/manifeste" element={<Manifeste />} />
@@ -91,6 +99,7 @@ export default function AppRoutes() {
       {/* ---------------- DASHBOARD ADMIN ---------------- */}
       <Route element={<DashboardLayout />}>
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/exhibitions" element={<ProtectedRoute><AdminExhibitions /></ProtectedRoute>} />
       </Route>
 
     </Routes>

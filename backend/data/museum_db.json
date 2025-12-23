@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "id": "m-item-1",
+      "title": "Rituel du matin",
+      "artistId": "artist-test-1",
+      "artistName": "Amina Sow",
+      "description": "Une étude lumineuse sur les rituels quotidiens, combinant médias traditionnels et numériques.",
+      "imageUrl": "https://picsum.photos/seed/m1/800/600",
+      "thumbnailUrl": "https://picsum.photos/seed/m1/400/300",
+      "year": 2023,
+      "medium": "Peinture numérique & collage",
+      "tags": ["culture", "rituel", "identité"],
+      "status": "exhibit",
+      "createdAt": "2025-12-23T00:00:00.000Z"
+    },
+    {
+      "id": "m-item-2",
+      "title": "Fragments d'archive",
+      "artistId": "artist-test-2",
+      "artistName": "Kwame Diop",
+      "description": "Assemblage photographique retraçant des fragments de mémoire collective.",
+      "imageUrl": "https://picsum.photos/seed/m2/800/600",
+      "thumbnailUrl": "https://picsum.photos/seed/m2/400/300",
+      "year": 2021,
+      "medium": "Photographie assemblée",
+      "tags": ["mémoire", "archive"],
+      "status": "candidate",
+      "createdAt": "2025-12-10T00:00:00.000Z"
+    },
+    {
+      "id": "m-item-3",
+      "title": "Lignes convergentes",
+      "artistId": "artist-test-3",
+      "artistName": "Sophie M.",
+      "description": "Série abstraite inspirée par les villes en transformation.",
+      "imageUrl": "https://picsum.photos/seed/m3/800/600",
+      "thumbnailUrl": "https://picsum.photos/seed/m3/400/300",
+      "year": 2024,
+      "medium": "Technique mixte",
+      "tags": ["urbain", "abstraction"],
+      "status": "exhibit",
+      "createdAt": "2025-11-01T00:00:00.000Z"
+    }
+  ],
+  "likes": [],
+  "comments": [
+    {
+      "id": "c-1766531519694",
+      "userId": "user-test-2",
+      "itemId": "m-item-1",
+      "content": "Nice work!",
+      "parentId": null,
+      "createdAt": "2025-12-23T23:11:59.694Z"
+    }
+  ],
+  "audit": []
+}

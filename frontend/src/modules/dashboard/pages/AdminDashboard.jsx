@@ -76,6 +76,7 @@ export default function AdminDashboard() {
           </select>
           <input placeholder="Rechercher un utilisateur, rôle..." value={query} onChange={(e) => setQuery(e.target.value)} />
           <button className="btn primary" onClick={() => downloadCSV('users.csv', users)}>Exporter Utilisateurs</button>
+          <a href="/admin/exhibitions" className="btn" style={{ marginLeft: 8 }}>Gérer Expositions</a>
         </div>
       </header>
 
