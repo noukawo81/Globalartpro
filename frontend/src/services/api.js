@@ -136,6 +136,22 @@ export const api = {
   exhibitMuseumItem: (id) =>
     API.post(`/museum/${id}/exhibit`).then((r) => r.data),
 
+  // Admin
+  adminGetMuseum: (params = {}) =>
+    API.get('/museum/admin/list', { params }).then((r) => r.data),
+
+  adminUpdateMuseumItem: (id, payload) =>
+    API.put(`/museum/admin/${id}`, payload).then((r) => r.data),
+
+  adminToggleVisibility: (id) =>
+    API.post(`/museum/admin/${id}/toggle-visibility`).then((r) => r.data),
+
+  adminArchiveItem: (id) =>
+    API.post(`/museum/admin/${id}/archive`).then((r) => r.data),
+
+  adminDeleteItem: (id) =>
+    API.delete(`/museum/admin/${id}`).then((r) => r.data),
+
   // ---- Certificates ----
   generateCertificate: (holderName, certLevel) =>
     API.post("/certificates/generate", { holderName, certLevel }).then((r) => r.data),

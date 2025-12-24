@@ -48,6 +48,45 @@ export function getItem(id) {
   return { ...item, likesCount: likes.length, comments: comments.sort((a,b)=> new Date(a.createdAt) - new Date(b.createdAt)) };
 }
 
+export function updateItem(id, patch = {}) {
+  const db = readDB();
+  db.items = db.items || [];
+  const it = db.items.find((i) => String(i.id) === String(id));
+  if (!it) return null;
+  // allow only specific fields to be updated
+  const allowed = ['title','description','tags','year','medium','imageUrl','thumbnailUrl','status','price','category','access'];
+  allowed.forEach((k) => {
+    if (typeof patch[k] !== 'undefined') it[k] = patch[k];
+  });
+  it.updatedAt = new Date().toISOString();
+  writeDB(db);
+  return it;
+}
+
+export function archiveItem(id) {
+  const db = readDB();
+  db.items = db.items || [];
+  const it = db.items.find((i) => String(i.id) === String(id));
+  if (!it) return null;
+  it.status = 'archived';
+  it.updatedAt = new Date().toISOString();
+  writeDB(db);
+  return it;
+}
+
+export function deleteItem(id) {
+  const db = readDB();
+  db.items = db.items || [];
+  const idx = db.items.findIndex((i) => String(i.id) === String(id));
+  if (idx === -1) return false;
+  db.items.splice(idx, 1);
+  // also remove likes and comments for item
+  db.likes = (db.likes || []).filter((l) => String(l.itemId) !== String(id));
+  db.comments = (db.comments || []).filter((c) => String(c.itemId) !== String(id));
+  writeDB(db);
+  return true;
+}
+
 export function toggleLike(userId, itemId) {
   const db = readDB();
   db.likes = db.likes || [];
@@ -74,4 +113,4 @@ export function addComment(userId, itemId, content, parentId = null) {
   return c;
 }
 
-export default { readDB, writeDB, ensureItem, listItems, getItem, toggleLike, addComment };
+export default { readDB, writeDB, ensureItem, listItems, getItem, toggleLike, addComment, updateItem, archiveItem, deleteItem };

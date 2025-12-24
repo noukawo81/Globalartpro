@@ -38,6 +38,13 @@
           "type": "image",
           "url": "file://C:\\Users\\hp\\globalartpro\\backend\\data\\uploads\\artist-test-1\\1766531561372.txt",
           "createdAt": "2025-12-23T23:12:41.391Z"
+        },
+        {
+          "id": "m-1766535477877",
+          "title": "test.txt",
+          "type": "image",
+          "url": "file://C:\\Users\\hp\\globalartpro\\backend\\data\\uploads\\artist-test-1\\1766535477858.txt",
+          "createdAt": "2025-12-24T00:17:57.877Z"
         }
       ]
     },
@@ -128,8 +135,8 @@
   ],
   "invites": {
     "artist-test-1": {
-      "token": "invite-artist-test-1-1766531558348",
-      "createdAt": "2025-12-23T23:12:38.349Z"
+      "token": "invite-artist-test-1-1766535477018",
+      "createdAt": "2025-12-24T00:17:57.020Z"
     }
   }
 }

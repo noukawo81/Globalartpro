@@ -19,6 +19,7 @@ import StudioDashboard from "@/modules/gapstudio/pages/StudioDashboard.jsx";
 import UserDashboard from "@/modules/dashboard/pages/UserDashboard.jsx";
 import AdminDashboard from "@/modules/dashboard/pages/AdminDashboard.jsx";
 import AdminExhibitions from "@/modules/admin/pages/AdminExhibitions.jsx"; 
+import AdminMuseum from "@/modules/admin/pages/AdminMuseum.jsx";
 
 import PortalCulture from "@/modules/culture/pages/PortalCulture.jsx";
 
@@ -100,6 +101,7 @@ export default function AppRoutes() {
       <Route element={<DashboardLayout />}>
         <Route path="/admin" element={<AdminDashboard />} />
         <Route path="/admin/exhibitions" element={<ProtectedRoute><AdminExhibitions /></ProtectedRoute>} />
+        <Route path="/admin/museum" element={<ProtectedRoute><AdminMuseum /></ProtectedRoute>} />
       </Route>
 
     </Routes>
