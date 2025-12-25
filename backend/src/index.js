@@ -10,19 +10,23 @@ import artcRoutes from './routes/artc.js';
 import gapstudioRoutes from './routes/gapstudio.js';
 import artistsRoutes from './routes/artists.js';
 import marketplaceRoutes from './routes/marketplace.js';
-// artistsRoutes loaded
+
+// Route registrations - group by responsibility
 
 const app = express();
 app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
 app.use(express.json({ limit: '50mb' }));
+// Core auth & wallet routes first
+app.use('/api/auth', authRoutes);
+app.use('/api/wallet', walletRoutes);
+
+// Marketplace / artc / gapstudio / artists
+app.use('/api/marketplace', marketplaceRoutes);
 app.use('/api/artc', artcRoutes);
 app.use('/api/gapstudio', gapstudioRoutes);
 app.use('/api/artists', artistsRoutes);
-app.use('/api/marketplace', marketplaceRoutes);
 
-// Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/wallet', walletRoutes);
+// Portal & notifications
 app.use('/api/portal', portalRoutes);
 app.use('/api/notifications', notificationsRoutes);
 

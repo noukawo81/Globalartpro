@@ -1,6 +1,7 @@
 import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import artistDB from '../lib/artistDB.js';
 
 const router = express.Router();
 const users = [];
@@ -22,6 +23,15 @@ router.post('/register', async (req, res) => {
       created_at: new Date()
     };
     users.push(user);
+    // If registering as an artist, create an artist entry so /artist/:id is available
+    if (role === 'artist') {
+      try {
+        artistDB.upsertArtist({ id: user.id, name, email, createdAt: new Date().toISOString() });
+      } catch (e) {
+        // don't break registration on artist DB failure, just log
+        console.error('failed to create artist entry on register', e);
+      }
+    }
     
     const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET || 'secret', { expiresIn: '7d' });
     res.json({ user: { id: user.id, name, email, role }, token });
