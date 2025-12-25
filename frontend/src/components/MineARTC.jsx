@@ -131,7 +131,7 @@ export default function MineARTC() {
         setMiningMessage('Non autorisé (401) — reconnectez-vous et réessayez.');
         alert('Erreur 401 : accès non autorisé. Veuillez vous reconnecter.');
         // clear invalid token to force re-login
-        try { api.clearToken(); } catch (e) {}
+        try { api.clearToken(); } catch (e) { console.error(e); }
       } else {
         setMiningMessage(serverErr || 'Impossible de démarrer la session (erreur serveur)');
         alert(serverErr || 'Impossible de démarrer la session (erreur serveur)');

@@ -22,8 +22,8 @@ API.interceptors.response.use(
     const status = err?.response?.status;
     if (status === 401) {
       // Clear stored token and axios header
-      try { localStorage.removeItem('ga_token'); } catch (e) {}
-      try { delete API.defaults.headers.common['Authorization']; } catch (e) {}
+      try { localStorage.removeItem('ga_token'); } catch (err) { console.error(err); }
+      try { delete API.defaults.headers.common['Authorization']; } catch (err) { console.error(err); }
       // Friendly prompt
       alert('Session expirée ou non autorisée (401). Veuillez vous reconnecter.');
     }

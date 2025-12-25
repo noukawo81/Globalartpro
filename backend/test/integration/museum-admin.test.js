@@ -4,6 +4,9 @@ import fs from 'fs';
 import path from 'path';
 import app from '../../src/index.js';
 import { JWT_SECRET } from '../../src/middleware/jwtAuth.js';
+import { jest } from '@jest/globals';
+
+jest.setTimeout(20000);
 
 function makeToken(id, role = 'visitor') {
   return jwt.sign({ id, role }, JWT_SECRET);
@@ -18,8 +21,24 @@ beforeAll(() => {
   mdb.items = mdb.items || [];
   if (!mdb.items.find(i => i.id === 'm-admin-1')) {
     mdb.items.push({ id: 'm-admin-1', title: 'Admin Test Item', artistId: 'artist-test-1', status: 'draft', createdAt: new Date().toISOString() });
-    fs.writeFileSync(mfile, JSON.stringify(mdb, null, 2), 'utf8');
   }
+  // add a set of items to test pagination and status filtering
+  for (let i=0;i<12;i++) {
+    const id = `m-pub-${i}`;
+    if (!mdb.items.find(it=>it.id === id)) {
+      mdb.items.push({ id, title: `Public ${i}`, artistId: `artist-${i%3}`, status: 'public', category: 'photographie', tags: ['archive','urban'], createdAt: new Date().toISOString() });
+    }
+  }
+  for (let i=0;i<4;i++) {
+    const id = `m-draft-${i}`;
+    if (!mdb.items.find(it=>it.id === id)) {
+      mdb.items.push({ id, title: `Draft ${i}`, artistId: `artist-${i%2}`, status: 'draft', category: 'peinture', tags: ['rituel'], createdAt: new Date().toISOString() });
+    }
+  }
+  // extra items with specific tag/category for tests
+  if (!mdb.items.find(it=>it.id === 'm-cat-1')) mdb.items.push({ id: 'm-cat-1', title: 'Cat Spec', artistId: 'artist-x', status: 'public', category: 'photographie', tags: ['special','archive'], createdAt: new Date().toISOString() });
+  if (!mdb.items.find(it=>it.id === 'm-tag-1')) mdb.items.push({ id: 'm-tag-1', title: 'Tag Spec', artistId: 'artist-x', status: 'public', category: 'mixed', tags: ['rituel','identity'], createdAt: new Date().toISOString() });
+  fs.writeFileSync(mfile, JSON.stringify(mdb, null, 2), 'utf8');
 });
 
 describe('Museum Admin endpoints', () => {

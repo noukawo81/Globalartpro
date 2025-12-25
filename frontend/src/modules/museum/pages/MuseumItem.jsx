@@ -10,16 +10,16 @@ export default function MuseumItem() {
 
   useEffect(() => {
     setLoading(true);
-    api.getMuseumItem(id).then((r) => { setItem(r.item); setLoading(false); }).catch((e) => setLoading(false));
+    api.getMuseumItem(id).then((r) => { setItem(r.item); setLoading(false); }).catch(() => setLoading(false));
   }, [id]);
 
   const handleLike = async () => {
-    try { await api.likeMuseumItem(id); const r = await api.getMuseumItem(id); setItem(r.item); } catch (e) { alert('Erreur like'); }
+    try { await api.likeMuseumItem(id); const r = await api.getMuseumItem(id); setItem(r.item); } catch { alert('Erreur like'); }
   };
 
   const handleComment = async () => {
     if (!content || content.trim().length === 0) return;
-    try { await api.commentMuseumItem(id, content); const r = await api.getMuseumItem(id); setItem(r.item); setContent(''); } catch (e) { alert('Erreur commentaire'); }
+    try { await api.commentMuseumItem(id, content); const r = await api.getMuseumItem(id); setItem(r.item); setContent(''); } catch { alert('Erreur commentaire'); }
   };
 
   if (loading) return <div style={{padding:20}}>Chargement...</div>;

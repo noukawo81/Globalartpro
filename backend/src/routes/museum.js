@@ -7,11 +7,29 @@ const router = express.Router();
 
 // List items: optional ?status=candidate|exhibit
 router.get('/', (req, res) => {
-  const status = req.query.status || null;
-  const limit = parseInt(req.query.limit || '100', 10);
-  const offset = parseInt(req.query.offset || '0', 10);
-  const items = museumDB.listItems({ status, limit, offset });
-  res.json({ items });
+  try {
+    const status = req.query.status || null;
+    const q = req.query.q || null;
+    const category = req.query.category || null;
+    const tags = req.query.tags ? String(req.query.tags).split(',').map(s=>s.trim()).filter(Boolean) : null;
+
+    const limit = parseInt(req.query.limit || '100', 10);
+    const offset = parseInt(req.query.offset || '0', 10);
+
+    // load all and filter, then slice to honor pagination while returning total
+    let items = museumDB.listItems({ status: null, limit: 100000, offset: 0 });
+    if (status) items = items.filter(i => i.status === status);
+    if (q) items = items.filter(i => (i.title || '').toLowerCase().includes(String(q).toLowerCase()) || (i.artistName || '').toLowerCase().includes(String(q).toLowerCase()));
+    if (category) items = items.filter(i => String(i.category || '').toLowerCase() === String(category).toLowerCase());
+    if (tags && tags.length) items = items.filter(i => Array.isArray(i.tags) && tags.every(t => i.tags.includes(t)));
+
+    const total = items.length;
+    const sliced = items.slice(offset, offset + limit);
+    res.json({ items: sliced, total });
+  } catch (e) {
+    console.error('museum list error', e);
+    res.status(500).json({ error: 'server error', detail: e.message });
+  }
 });
 
 // Get details for an item
@@ -52,11 +70,15 @@ router.get('/admin/list', jwtAuth, (req, res) => {
     if (!req.user || req.user.role !== 'admin') return res.status(403).json({ error: 'admin required' });
     const status = req.query.status || null;
     const q = req.query.q || null;
+    const category = req.query.category || null;
+    const tags = req.query.tags ? String(req.query.tags).split(',').map(s=>s.trim()).filter(Boolean) : null;
     const limit = parseInt(req.query.limit || '100', 10);
     const offset = parseInt(req.query.offset || '0', 10);
     let items = museumDB.listItems({ status: null, limit: 100000, offset: 0 });
     if (status) items = items.filter(i => i.status === status);
     if (q) items = items.filter(i => (i.title || '').toLowerCase().includes(String(q).toLowerCase()) || (i.artistName || '').toLowerCase().includes(String(q).toLowerCase()));
+    if (category) items = items.filter(i => String(i.category || '').toLowerCase() === String(category).toLowerCase());
+    if (tags && tags.length) items = items.filter(i => Array.isArray(i.tags) && tags.every(t => i.tags.includes(t)));
     const sliced = items.slice(offset, offset + limit);
     res.json({ items: sliced, total: items.length });
   } catch (e) {

@@ -6,23 +6,31 @@ export default function MuseumHome() {
   const [items, setItems] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [page, setPage] = useState(1);
+  const [pageSize, _setPageSize] = useState(9);
+  const [total, setTotal] = useState(0);
+  const [toast, setToast] = useState({ open: false, message: '', type: 'info' });
 
-  useEffect(() => {
+  const load = async (p = page, limit = pageSize) => {
     setLoading(true);
-    api.getMuseum({ status: 'exhibit' }).then((r) => {
-      setItems(r.items || []);
-      setLoading(false);
-    }).catch((e) => { setError(e); setLoading(false); });
-  }, []);
+    try {
+      const res = await api.getMuseum({ status: 'exhibit', limit, offset: (p-1)*limit });
+      setItems(res.items || []);
+      setTotal(res.total || 0);
+    } catch (e) { setError(e); }
+    setLoading(false);
+  };
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => { load(); }, [page, pageSize]);
 
   const handleLike = async (id) => {
     try {
       await api.likeMuseumItem(id);
-      // refresh single item state
-      const res = await api.getMuseum({ status: 'exhibit' });
-      setItems(res.items || []);
+      setToast({ open: true, message: "J'aime enregistré", type: 'success' });
+      load();
     } catch (e) {
-      alert('Erreur lors du like');
+      setToast({ open: true, message: 'Erreur lors du like', type: 'error' });
     }
   };
 
@@ -38,6 +46,17 @@ export default function MuseumHome() {
           <MuseumCard key={it.id} item={it} onLike={handleLike} />
         ))}
       </div>
+
+      <div style={{ marginTop: 12, display: 'flex', gap: 8, alignItems: 'center' }}>
+        <div>Total: {total}</div>
+        <div>
+          <button disabled={page <= 1} onClick={()=> setPage(p => Math.max(1, p-1))}>Prev</button>
+          <span style={{ margin: '0 8px' }}>Page {page} / {Math.max(1, Math.ceil((total || 0) / pageSize))}</span>
+          <button disabled={page >= Math.max(1, Math.ceil((total || 0) / pageSize))} onClick={()=> setPage(p => p+1)}>Next</button>
+        </div>
+      </div>
+
+      <Toast open={toast.open} message={toast.message} type={toast.type} onClose={() => setToast({ ...toast, open: false })} />
     </div>
   );
 }

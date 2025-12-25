@@ -45,6 +45,41 @@
           "type": "image",
           "url": "file://C:\\Users\\hp\\globalartpro\\backend\\data\\uploads\\artist-test-1\\1766535477858.txt",
           "createdAt": "2025-12-24T00:17:57.877Z"
+        },
+        {
+          "id": "m-1766537960401",
+          "title": "test.txt",
+          "type": "image",
+          "url": "file://C:\\Users\\hp\\globalartpro\\backend\\data\\uploads\\artist-test-1\\1766537960380.txt",
+          "createdAt": "2025-12-24T00:59:20.401Z"
+        },
+        {
+          "id": "m-1766539398402",
+          "title": "test.txt",
+          "type": "image",
+          "url": "file://C:\\Users\\hp\\globalartpro\\backend\\data\\uploads\\artist-test-1\\1766539398242.txt",
+          "createdAt": "2025-12-24T01:23:18.402Z"
+        },
+        {
+          "id": "m-1766539784616",
+          "title": "test.txt",
+          "type": "image",
+          "url": "file://C:\\Users\\hp\\globalartpro\\backend\\data\\uploads\\artist-test-1\\1766539784585.txt",
+          "createdAt": "2025-12-24T01:29:44.616Z"
+        },
+        {
+          "id": "m-1766541124655",
+          "title": "test.txt",
+          "type": "image",
+          "url": "file://C:\\Users\\hp\\globalartpro\\backend\\data\\uploads\\artist-test-1\\1766541124293.txt",
+          "createdAt": "2025-12-24T01:52:04.655Z"
+        },
+        {
+          "id": "m-1766685519127",
+          "title": "test.txt",
+          "type": "image",
+          "url": "file://C:\\Users\\hp\\globalartpro\\backend\\data\\uploads\\artist-test-1\\1766685517978.txt",
+          "createdAt": "2025-12-25T17:58:39.127Z"
         }
       ]
     },
@@ -135,8 +170,8 @@
   ],
   "invites": {
     "artist-test-1": {
-      "token": "invite-artist-test-1-1766535477018",
-      "createdAt": "2025-12-24T00:17:57.020Z"
+      "token": "invite-artist-test-1-1766685508249",
+      "createdAt": "2025-12-25T17:58:28.250Z"
     }
   }
 }

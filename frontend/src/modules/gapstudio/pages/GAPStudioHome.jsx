@@ -26,7 +26,7 @@ const GAPStudioHome = () => {
 
 
   // Theme (light/dark)
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, _setDarkMode] = useState(false);
   useEffect(() => {
     if (darkMode) document.body.classList.add('gap-dark');
     else document.body.classList.remove('gap-dark');
@@ -161,7 +161,7 @@ const GAPStudioHome = () => {
   // copy prompt
   // removed copyPrompt per request
 
-  const usePreset = (p) => {
+  const applyPreset = (p) => {
     setPrompt(p.prompt);
     setStyle('digital');
   };
@@ -250,7 +250,7 @@ const GAPStudioHome = () => {
 
             <div style={{ display: 'flex', gap: 8, marginBottom: 8, alignItems: 'center' }}>
               <select className="field small" defaultValue="" onChange={(e) => {
-                const id = e.target.value; if (!id) return; const p = PRESETS.find(x => x.id === id); if (p) usePreset(p);
+                const id = e.target.value; if (!id) return; const p = PRESETS.find(x => x.id === id); if (p) applyPreset(p);
               }}>
                 <option value="">Choisir un preset...</option>
                 {PRESETS.map(p => (

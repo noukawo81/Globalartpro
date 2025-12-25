@@ -40,7 +40,7 @@ export default function ArtistProfile() {
         setLoading(false);
         return;
       }
-    } catch (e) {
+    } catch {
       // ignore parse errors
     }
 
@@ -147,11 +147,11 @@ export default function ArtistProfile() {
         list[idx] = { ...list[idx], ...updated };
         localStorage.setItem("artists", JSON.stringify(list));
       }
-    } catch (e) {}
+    } catch (e) { console.error(e); }
     setArtist(updated);
     if (isCurrentArtist) {
       setAuthUser(updated);
-      try { setArtistId(String(updated.id)); } catch (e) {}
+      try { setArtistId(String(updated.id)); } catch (e) { console.error(e); }
       localStorage.setItem("artistId", updated.id);
     }
   }
@@ -175,7 +175,7 @@ export default function ArtistProfile() {
           list.push(updated);
           localStorage.setItem("artists", JSON.stringify(list));
         }
-      } catch (e) {}
+      } catch (e) { console.error(e); }
       setArtist(updated);
     };
     reader.readAsDataURL(file);
@@ -189,9 +189,9 @@ export default function ArtistProfile() {
       invites[artist.id] = { token, createdAt: new Date().toISOString() };
       localStorage.setItem("invites", JSON.stringify(invites));
       const link = `${window.location.origin}/artist/invite/${token}`;
-      navigator.clipboard?.writeText(link).catch(() => {});
+      navigator.clipboard?.writeText(link).catch((err) => { console.error(err); });
       alert(`Lien d'invitation copié: ${link}`);
-    } catch (e) {
+    } catch {
       alert(`Lien d'invitation: ${token}`);
     }
   }
@@ -202,7 +202,7 @@ export default function ArtistProfile() {
       const res = await api.generateInvite(artist.id);
       const link = res?.link || res?.invite?.link || res?.invite?.token ? `${window.location.origin}/artist/invite/${res?.invite?.token || res.token}` : null;
       if (link) {
-        navigator.clipboard?.writeText(link).catch(() => {});
+        navigator.clipboard?.writeText(link).catch((err) => { console.error(err); });
         alert(`Lien d'invitation copié: ${link}`);
         return;
       }
@@ -220,7 +220,7 @@ export default function ArtistProfile() {
       localStorage.setItem('artists', JSON.stringify(filtered));
       // clear auth if current
       if (isCurrentArtist) {
-        try { setArtistId(null); } catch (e) {}
+        try { setArtistId(null); } catch (e) { console.error(e); }
         localStorage.removeItem('artistId');
         localStorage.removeItem('token');
         localStorage.removeItem('ga_token');
@@ -278,7 +278,7 @@ export default function ArtistProfile() {
     if (isCurrentArtist) {
       // Met à jour uniquement les données utilisateur dans le contexte sans toucher au token
       setAuthUser({ user: updated });
-      try { setArtistId(String(updated.id)); } catch (e) {}
+      try { setArtistId(String(updated.id)); } catch (e) { console.error(e); }
       localStorage.setItem("artistId", updated.id);
     }
 
@@ -297,7 +297,7 @@ export default function ArtistProfile() {
       setArtist((a) => ({ ...a, media: [...(a.media||[]), { id: m.id, url: m.url, title: m.title || file.name, mime: file.type, createdAt: m.createdAt || new Date().toISOString() }] }));
       setMessage('Upload réussi.');
     }
-  } catch (e) {
+  } catch {
     setMessage('Upload échoué.');
   }
 }

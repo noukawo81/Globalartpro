@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import QRPayment from '@/modules/wallet/components/QRPayment.jsx';
 import walletAPI from '@/modules/wallet/services/wallet.api.js';
-import { api } from '@/services/api.js';
 import { useAuth } from '@/core/hooks/useAuth.js';
 
 export default function WalletPayment() {
@@ -15,17 +14,18 @@ export default function WalletPayment() {
     try {
       const res = await walletAPI.deposit(userId, token, Number(amount));
       alert('Demande de dépôt créée: ' + JSON.stringify(res));
-      async function confirmDeposit(txId) {
-        try {
-          if (!txId) return;
-          const res = await walletAPI.confirmDeposit(txId, 'CONFIRMED');
-          alert('Webhook confirmé: ' + JSON.stringify(res));
-        } catch (e) {
-          alert('Erreur webhook: ' + (e?.message || e));
-        }
-      }
     } catch (err) {
       alert('Erreur dépôt: ' + (err?.message || err));
+    }
+  }
+
+  async function confirmDeposit(txId) {
+    try {
+      if (!txId) return;
+      const res = await walletAPI.confirmDeposit(txId, 'CONFIRMED');
+      alert('Webhook confirmé: ' + JSON.stringify(res));
+    } catch (e) {
+      alert('Erreur webhook: ' + (e?.message || e));
     }
   }
 
@@ -40,7 +40,7 @@ export default function WalletPayment() {
         </select>
 
         <label>Montant</label>
-        <input type="number" value={amount} onChange={e => setAmount(e.target.value)} />
+        <input type="number" value={amount} onChange={e => setAmount(Number(e.target.value))} />
         <QRPayment text={`pay:${userId}:${amount} ${token}`} onPay={deposit} />
         <div style={{ marginTop: 8 }}>
           <button onClick={() => confirmDeposit(prompt('Paste txId pour confirmer:'))}>Simuler confirmation (dev)</button>
