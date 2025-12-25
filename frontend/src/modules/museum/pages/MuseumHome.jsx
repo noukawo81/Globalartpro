@@ -30,7 +30,8 @@ export default function MuseumHome() {
       setToast({ open: true, message: "J'aime enregistré", type: 'success' });
       load();
     } catch (e) {
-      setToast({ open: true, message: 'Erreur lors du like', type: 'error' });
+      setToast({ open: true, message: 'Erreur lors du like: ' + (e?.message || String(e)), type: 'error' });
+      console.error('like error', e);
     }
   };
 

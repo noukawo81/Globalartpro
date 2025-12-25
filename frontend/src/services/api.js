@@ -60,10 +60,12 @@ export const api = {
   getArtists: () => API.get("/artists").then((r) => r.data),
   getArtist: (id) => API.get(`/artists/${id}`).then((r) => r.data),
   updateArtist: (id, payload) => API.put(`/artists/${id}`, payload).then((r) => r.data),
-  uploadArtistMedia: (id, formData) => API.post(`/artists/${id}/media`, formData, { headers: { 'Content-Type': 'multipart/form-data' } }).then((r) => r.data),
+  uploadArtistMedia: (id, formData) => API.post(`/artists/${id}/media`, formData).then((r) => r.data),
   createListing: (payload) => API.post('/marketplace/list', payload).then(r => r.data),
   generateInvite: (id) => API.post(`/artists/${id}/invite`).then((r) => r.data),
   getArtworks: () => API.get("/artworks").then((r) => r.data),
+  // Auth helpers
+  getMe: () => API.get('/auth/me').then(r => r.data),
 
   // ---- ARTC (Mining & Token) ----
   getARTCBalance: (userId) => 

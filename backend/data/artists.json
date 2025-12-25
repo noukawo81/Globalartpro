@@ -80,6 +80,20 @@
           "type": "image",
           "url": "file://C:\\Users\\hp\\globalartpro\\backend\\data\\uploads\\artist-test-1\\1766685517978.txt",
           "createdAt": "2025-12-25T17:58:39.127Z"
+        },
+        {
+          "id": "m-1766686867272",
+          "title": "test.txt",
+          "type": "image",
+          "url": "file://C:\\Users\\hp\\globalartpro\\backend\\data\\uploads\\artist-test-1\\1766686867235.txt",
+          "createdAt": "2025-12-25T18:21:07.272Z"
+        },
+        {
+          "id": "m-1766692933346",
+          "title": "test.txt",
+          "type": "image",
+          "url": "file://C:\\Users\\hp\\globalartpro\\backend\\data\\uploads\\artist-test-1\\1766692933314.txt",
+          "createdAt": "2025-12-25T20:02:13.346Z"
         }
       ]
     },
@@ -166,12 +180,30 @@
       "name": "Mitterand Tekeu",
       "email": "globalartpropi@gmail.com",
       "createdAt": "2025-12-23T21:15:03.878Z"
+    },
+    {
+      "id": "user-1766689940686",
+      "name": "Mitterand Tekeu",
+      "email": "globalartpropi@gmail.com",
+      "createdAt": "2025-12-25T19:12:20.687Z"
+    },
+    {
+      "id": "user-1766690415650",
+      "name": "Mitterand Tekeu",
+      "email": "globalartpropi@gmail.com",
+      "createdAt": "2025-12-25T19:20:15.651Z"
+    },
+    {
+      "id": "user-1766691212792",
+      "name": "Mitterand Tekeu",
+      "email": "globalartpropi@gmail.com",
+      "createdAt": "2025-12-25T19:33:32.794Z"
     }
   ],
   "invites": {
     "artist-test-1": {
-      "token": "invite-artist-test-1-1766685508249",
-      "createdAt": "2025-12-25T17:58:28.250Z"
+      "token": "invite-artist-test-1-1766692928354",
+      "createdAt": "2025-12-25T20:02:08.355Z"
     }
   }
 }

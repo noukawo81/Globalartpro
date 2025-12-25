@@ -12,7 +12,7 @@ export default function ArtistProfile() {
   const isCurrentArtist = String(artistId) === String(id);
 
   // Simulation API – tu remplaceras plus tard par ton API réelle
-  async function fetchArtistData() {
+  const fetchArtistData = React.useCallback(async () => {
     setLoading(true);
 
     // 1) FIRST: Try to fetch from backend API (source of truth)
@@ -64,7 +64,7 @@ export default function ArtistProfile() {
     };
     setArtist(mockData);
     setLoading(false);
-  }
+  }, [id, authUser]);
 
   useEffect(() => {
     // Guard against invalid id values caused by bad navigation or races
@@ -73,7 +73,7 @@ export default function ArtistProfile() {
       return;
     }
     fetchArtistData();
-  }, [id]);
+  }, [id, navigate, fetchArtistData]);
 
   // Edit modal state
   const [showEdit, setShowEdit] = useState(false);
@@ -285,25 +285,36 @@ export default function ArtistProfile() {
     setShowEdit(false);
   }
 
-  async function handleMediaUpload(file) {
-  if (!file) return;
-  try {
-    const fd = new FormData();
-    fd.append('file', file);
-    const res = await api.uploadArtistMedia(artist.id, fd);
-    // backend: { media: { id, title, url, ... } }
-    if (res && res.media) {
-      const m = res.media;
-      setArtist((a) => ({ ...a, media: [...(a.media||[]), { id: m.id, url: m.url, title: m.title || file.name, mime: file.type, createdAt: m.createdAt || new Date().toISOString() }] }));
-      setMessage('Upload réussi.');
-    }
-  } catch {
-    setMessage('Upload échoué.');
-  }
-}
+  const [selectedFile, setSelectedFile] = useState(null);
 
+  async function handleMediaUpload(file) {
+    if (!file) return;
+    try {
+      const fd = new FormData();
+      fd.append('file', file);
+      const res = await api.uploadArtistMedia(artist.id, fd);
+      // backend: { media: { id, title, url, ... } }
+      if (res && res.media) {
+        const m = res.media;
+        setArtist((a) => ({ ...a, media: [...(a.media||[]), { id: m.id, url: m.url, title: m.title || file.name, mime: file.type, createdAt: m.createdAt || new Date().toISOString() }] }));
+        setMessage('Upload réussi.');
+      }
+    } catch (err) {
+      console.error('upload error', err);
+      setMessage('Upload échoué.');
+    }
+  }
 async function shareMediaToMarketplace(mediaId, title = 'Œuvre', price = 0) {
   if (!api.getToken || !api.getToken()) { setMessage('Connexion requise pour mettre en vente.'); alert('Veuillez vous connecter.'); return; }
+  // sanity check: validate token with server
+  try {
+    await api.getMe();
+  } catch (err) {
+    console.warn('token validation failed', err);
+    setMessage('Connexion invalide. Veuillez vous reconnecter.');
+    alert('Veuillez vous reconnecter.');
+    return;
+  }
   try {
     const payload = { artistId: artist.id, mediaId, title, price };
     const res = await api.createListing(payload);
@@ -364,7 +375,7 @@ async function shareMediaToMarketplace(mediaId, title = 'Œuvre', price = 0) {
                 {isCurrentArtist && (
                   <div style={{ position: 'absolute', bottom: 6, left: 6, display: 'flex', gap: 6 }}>
                     <button style={styles.smallButton} onClick={(e) => { e.stopPropagation(); shareMediaToMarketplace(a.id, a.title || 'Œuvre', 1); }}>➕ Mettre en vente</button>
-                    <button style={styles.smallButton} onClick={(e) => { e.stopPropagation(); if (!api.getToken || !api.getToken()) { setMessage('Connexion requise pour partager.'); alert('Veuillez vous connecter.'); return; } api.shareToPortal({ artistId: artist.id, mediaId: a.id, title: a.title || 'Partage' }).then(() => setMessage('Partagé sur le portail.')).catch((err) => { console.error('portal share error', err); setMessage(err?.response?.data?.error || 'Échec du partage.'); }); }}>🌍 Partager</button>
+                    <button style={styles.smallButton} onClick={async (e) => { e.stopPropagation(); if (!api.getToken || !api.getToken()) { setMessage('Connexion requise pour partager.'); alert('Veuillez vous connecter.'); return; } try { await api.getMe(); } catch (err) { setMessage('Veuillez vous reconnecter.'); alert('Veuillez vous reconnecter.'); return; } api.shareToPortal({ artistId: artist.id, mediaId: a.id, title: a.title || 'Partage' }).then(() => setMessage('Partagé sur le portail.')).catch((err) => { console.error('portal share error', err); setMessage(err?.response?.data?.error || 'Échec du partage.'); }); }}>🌍 Partager</button>
                   </div>
                 )}
               </div>
@@ -395,14 +406,14 @@ async function shareMediaToMarketplace(mediaId, title = 'Œuvre', price = 0) {
           {isCurrentArtist && (
             <div style={{ marginTop: 12 }}>
               <h4>Ajouter un média (image, vidéo courte, audio)</h4>
-              <form onSubmit={(e) => { e.preventDefault(); const f = e.target.file.files[0]; const title = e.target.title.value || f?.name; const kind = e.target.kind.value; if (f) handleUploadFile(f, title, kind); e.target.reset(); }}>
+              <form onSubmit={(e) => { e.preventDefault(); const title = e.target.title.value || (selectedFile && selectedFile.name); const kind = e.target.kind.value; if (selectedFile) { if (api.getToken && api.getToken()) { handleMediaUpload(selectedFile); } else { handleUploadFile(selectedFile, title, kind); } setSelectedFile(null); e.target.reset(); } else { setMessage('Veuillez sélectionner un fichier avant de télécharger.'); } }}>
                 <input name="title" placeholder="Titre (optionnel)" style={{ marginRight: 8 }} />
                 <select name="kind" defaultValue="image" style={{ marginRight: 8 }}>
                   <option value="image">Image</option>
                   <option value="video">Vidéo courte</option>
                   <option value="audio">Audio</option>
                 </select>
-                <input name="file" type="file" accept="image/*,video/*,audio/*" style={{ marginRight: 8 }} />
+                <input name="file" type="file" accept="image/*,video/*,audio/*" style={{ marginRight: 8 }} onChange={(e)=> setSelectedFile(e.target.files && e.target.files[0])} />
                 <button type="submit">Télécharger</button>
               </form>
             </div>

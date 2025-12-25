@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 import artistDB from '../lib/artistDB.js';
 
 const router = express.Router();
-const users = [];
+import userDB from '../lib/userDB.js';
 
 router.post('/register', async (req, res) => {
   try {
@@ -12,7 +12,10 @@ router.post('/register', async (req, res) => {
     if (!name || !email || !password) {
       return res.status(400).json({ error: 'Missing fields' });
     }
-    
+
+    // reject if email already exists
+    if (userDB.findUserByEmail(email)) return res.status(400).json({ error: 'Email already registered' });
+
     const hashedPassword = await bcrypt.hash(password, 12);
     const user = {
       id: `user-${Date.now()}`,
@@ -20,9 +23,11 @@ router.post('/register', async (req, res) => {
       email,
       password_hash: hashedPassword,
       role,
-      created_at: new Date()
+      created_at: new Date().toISOString()
     };
-    users.push(user);
+
+    userDB.addUser(user);
+
     // If registering as an artist, create an artist entry so /artist/:id is available
     if (role === 'artist') {
       try {
@@ -32,7 +37,7 @@ router.post('/register', async (req, res) => {
         console.error('failed to create artist entry on register', e);
       }
     }
-    
+
     const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET || 'secret', { expiresIn: '7d' });
     res.json({ user: { id: user.id, name, email, role }, token });
   } catch (e) {
@@ -43,16 +48,31 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
-    const user = users.find(u => u.email === email);
+    const user = userDB.findUserByEmail(email);
     if (!user) return res.status(401).json({ error: 'User not found' });
-    
+
     const valid = await bcrypt.compare(password, user.password_hash);
     if (!valid) return res.status(401).json({ error: 'Invalid password' });
-    
+
     const token = jwt.sign({ id: user.id, role: user.role }, process.env.JWT_SECRET || 'secret', { expiresIn: '7d' });
     res.json({ user: { id: user.id, name: user.name, email: user.email, role: user.role }, token });
   } catch (e) {
     res.status(500).json({ error: e.message });
+  }
+});
+
+// Validate token and return server-side user (useful for client sanity checks)
+router.get('/me', (req, res) => {
+  const auth = req.headers.authorization;
+  if (!auth) return res.status(401).json({ error: 'Authorization header required' });
+  const token = auth.replace(/^Bearer\s+/, '').trim();
+  try {
+    const payload = jwt.verify(token, process.env.JWT_SECRET || 'secret');
+    const u = userDB.findUserById(payload.id);
+    if (!u) return res.status(401).json({ error: 'User not found' });
+    return res.json({ user: { id: u.id, name: u.name, email: u.email, role: u.role } });
+  } catch (e) {
+    return res.status(401).json({ error: 'Invalid token' });
   }
 });
 

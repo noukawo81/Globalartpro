@@ -5,7 +5,7 @@ export default function Toast({ message, type = 'info', open = false, onClose = 
     if (!open) return;
     const t = setTimeout(() => onClose(), 3500);
     return () => clearTimeout(t);
-  }, [open]);
+  }, [open, onClose]);
 
   if (!open) return null;
   const bg = type === 'error' ? '#fee2e2' : type === 'success' ? '#ecfccb' : '#e6f0ff';

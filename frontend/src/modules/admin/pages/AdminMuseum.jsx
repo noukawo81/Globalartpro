@@ -17,12 +17,7 @@ export default function AdminMuseum() {
 
    
    
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    fetchItems();
-  }, [page, pageSize, statusFilter, categoryFilter, tagFilter]);
-
-  const fetchItems = async (opts = {}) => {
+const fetchItems = React.useCallback(async (opts = {}) => {
     setLoading(true);
     try {
       const params = {
@@ -40,7 +35,11 @@ export default function AdminMuseum() {
       console.error(err);
       alert('Erreur chargement');
     } finally { setLoading(false); }
-  };
+  }, [query, page, pageSize, statusFilter, categoryFilter, tagFilter]);
+
+  useEffect(() => {
+    fetchItems();
+  }, [fetchItems]);
 
   const handleSearch = async () => {
     setPage(1);
