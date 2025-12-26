@@ -10,21 +10,28 @@ import artcRoutes from './routes/artc.js';
 import gapstudioRoutes from './routes/gapstudio.js';
 import artistsRoutes from './routes/artists.js';
 import marketplaceRoutes from './routes/marketplace.js';
-// artistsRoutes loaded
+import museumRoutes from './routes/museum.js';
+
+// Route registrations - group by responsibility
 
 const app = express();
 app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
 app.use(express.json({ limit: '50mb' }));
+// Core auth & wallet routes first
+app.use('/api/auth', authRoutes);
+app.use('/api/wallet', walletRoutes);
+
+// Marketplace / artc / gapstudio / artists
+app.use('/api/marketplace', marketplaceRoutes);
 app.use('/api/artc', artcRoutes);
 app.use('/api/gapstudio', gapstudioRoutes);
 app.use('/api/artists', artistsRoutes);
-app.use('/api/marketplace', marketplaceRoutes);
 
-// Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/wallet', walletRoutes);
+// Portal & notifications
 app.use('/api/portal', portalRoutes);
 app.use('/api/notifications', notificationsRoutes);
+// Museum (fallback JSON store for local dev)
+app.use('/api/museum', museumRoutes);
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', db: 'memory-based' }));
 
@@ -53,7 +60,11 @@ const PORT = process.env.PORT || 3000;
 // Export app for tests; only start server if not running under tests
 if (process.env.NODE_ENV !== 'test') {
   const server = app.listen(PORT, () => {
-    // server started
+    console.log(`Express server started on port ${PORT} (PID: ${process.pid})`);
+  });
+  server.on('error', (err) => {
+    console.error('Server failed to start:', err);
+    process.exit(1);
   });
 }
 

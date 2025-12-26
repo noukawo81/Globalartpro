@@ -12,10 +12,25 @@ export default function ArtistProfile() {
   const isCurrentArtist = String(artistId) === String(id);
 
   // Simulation API – tu remplaceras plus tard par ton API réelle
-  async function fetchArtistData() {
+  const fetchArtistData = React.useCallback(async () => {
     setLoading(true);
 
-    // 1) Try to read from localStorage artists list
+    // 1) FIRST: Try to fetch from backend API (source of truth)
+    try {
+      const res = await api.getArtist(id);
+      if (res && res.artist) {
+        const apiArtist = res.artist;
+        apiArtist.socials = apiArtist.socials || { youtube: "", website: "", facebook: "", tiktok: "" };
+        apiArtist.artworks = apiArtist.artworks || [];
+        setArtist(apiArtist);
+        setLoading(false);
+        return;
+      }
+    } catch (e) {
+      console.warn('Backend fetch failed, trying fallback sources', e);
+    }
+
+    // 2) FALLBACK: Try from localStorage (offline support)
     try {
       const list = JSON.parse(localStorage.getItem("artists") || "[]");
       const found = list.find((a) => String(a.id) === String(id));
@@ -25,11 +40,11 @@ export default function ArtistProfile() {
         setLoading(false);
         return;
       }
-    } catch (e) {
+    } catch {
       // ignore parse errors
     }
 
-    // 2) If viewing current logged-in artist, prefer auth user
+    // 3) FALLBACK: Use auth user data if viewing self
     if (authUser && String(authUser.id) === String(id)) {
       authUser.socials = authUser.socials || { youtube: "", website: "", facebook: "", tiktok: "" };
       setArtist(authUser);
@@ -37,22 +52,19 @@ export default function ArtistProfile() {
       return;
     }
 
-    // 3) Fallback mock profile for unknown ids (keeps previous behaviour)
+    // 4) LAST RESORT: Default mock profile
     const mockData = {
       id,
-      name: "John Doe",
+      name: "Artiste Inconnu",
       avatar: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?w=500",
-      description:
-        "Artiste peintre spécialisé dans le surréalisme moderne et l’expressionnisme africain.",
+      description: "Cet artiste n'a pas encore rempli son profil.",
       country: "Cameroun",
       socials: { youtube: "", website: "", facebook: "", tiktok: "" },
       artworks: [],
     };
-    setTimeout(() => {
-      setArtist(mockData);
-      setLoading(false);
-    }, 200); // Simulation API
-  }
+    setArtist(mockData);
+    setLoading(false);
+  }, [id, authUser]);
 
   useEffect(() => {
     // Guard against invalid id values caused by bad navigation or races
@@ -61,12 +73,13 @@ export default function ArtistProfile() {
       return;
     }
     fetchArtistData();
-  }, [id]);
+  }, [id, navigate, fetchArtistData]);
 
   // Edit modal state
   const [showEdit, setShowEdit] = useState(false);
   const [showSecurity, setShowSecurity] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
+  const [message, setMessage] = useState("");
   const [editForm, setEditForm] = useState({
     name: "",
     avatar: "",
@@ -134,11 +147,11 @@ export default function ArtistProfile() {
         list[idx] = { ...list[idx], ...updated };
         localStorage.setItem("artists", JSON.stringify(list));
       }
-    } catch (e) {}
+    } catch (e) { console.error(e); }
     setArtist(updated);
     if (isCurrentArtist) {
       setAuthUser(updated);
-      try { setArtistId(String(updated.id)); } catch (e) {}
+      try { setArtistId(String(updated.id)); } catch (e) { console.error(e); }
       localStorage.setItem("artistId", updated.id);
     }
   }
@@ -162,7 +175,7 @@ export default function ArtistProfile() {
           list.push(updated);
           localStorage.setItem("artists", JSON.stringify(list));
         }
-      } catch (e) {}
+      } catch (e) { console.error(e); }
       setArtist(updated);
     };
     reader.readAsDataURL(file);
@@ -176,9 +189,9 @@ export default function ArtistProfile() {
       invites[artist.id] = { token, createdAt: new Date().toISOString() };
       localStorage.setItem("invites", JSON.stringify(invites));
       const link = `${window.location.origin}/artist/invite/${token}`;
-      navigator.clipboard?.writeText(link).catch(() => {});
+      navigator.clipboard?.writeText(link).catch((err) => { console.error(err); });
       alert(`Lien d'invitation copié: ${link}`);
-    } catch (e) {
+    } catch {
       alert(`Lien d'invitation: ${token}`);
     }
   }
@@ -189,7 +202,7 @@ export default function ArtistProfile() {
       const res = await api.generateInvite(artist.id);
       const link = res?.link || res?.invite?.link || res?.invite?.token ? `${window.location.origin}/artist/invite/${res?.invite?.token || res.token}` : null;
       if (link) {
-        navigator.clipboard?.writeText(link).catch(() => {});
+        navigator.clipboard?.writeText(link).catch((err) => { console.error(err); });
         alert(`Lien d'invitation copié: ${link}`);
         return;
       }
@@ -207,7 +220,7 @@ export default function ArtistProfile() {
       localStorage.setItem('artists', JSON.stringify(filtered));
       // clear auth if current
       if (isCurrentArtist) {
-        try { setArtistId(null); } catch (e) {}
+        try { setArtistId(null); } catch (e) { console.error(e); }
         localStorage.removeItem('artistId');
         localStorage.removeItem('token');
         localStorage.removeItem('ga_token');
@@ -261,18 +274,57 @@ export default function ArtistProfile() {
 
     setArtist(updated);
     // mettre à jour le contexte d'auth si c'est le profil courant
+    // Important: ne pas modifier le token d'auth lors d'une simple mise à jour de profil.
     if (isCurrentArtist) {
-      const mockToken = `mock-${updated.id}`;
-      api.setToken(mockToken);
-      localStorage.setItem('ga_token', mockToken);
-      localStorage.setItem('token', mockToken);
-      setAuthUser({ user: updated, token: mockToken });
-      try { setArtistId(String(updated.id)); } catch (e) {}
+      // Met à jour uniquement les données utilisateur dans le contexte sans toucher au token
+      setAuthUser({ user: updated });
+      try { setArtistId(String(updated.id)); } catch (e) { console.error(e); }
       localStorage.setItem("artistId", updated.id);
     }
 
     setShowEdit(false);
   }
+
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  async function handleMediaUpload(file) {
+    if (!file) return;
+    try {
+      const fd = new FormData();
+      fd.append('file', file);
+      const res = await api.uploadArtistMedia(artist.id, fd);
+      // backend: { media: { id, title, url, ... } }
+      if (res && res.media) {
+        const m = res.media;
+        setArtist((a) => ({ ...a, media: [...(a.media||[]), { id: m.id, url: m.url, title: m.title || file.name, mime: file.type, createdAt: m.createdAt || new Date().toISOString() }] }));
+        setMessage('Upload réussi.');
+      }
+    } catch (err) {
+      console.error('upload error', err);
+      setMessage('Upload échoué.');
+    }
+  }
+async function shareMediaToMarketplace(mediaId, title = 'Œuvre', price = 0) {
+  if (!api.getToken || !api.getToken()) { setMessage('Connexion requise pour mettre en vente.'); alert('Veuillez vous connecter.'); return; }
+  // sanity check: validate token with server
+  try {
+    await api.getMe();
+  } catch (err) {
+    console.warn('token validation failed', err);
+    setMessage('Connexion invalide. Veuillez vous reconnecter.');
+    alert('Veuillez vous reconnecter.');
+    return;
+  }
+  try {
+    const payload = { artistId: artist.id, mediaId, title, price };
+    const res = await api.createListing(payload);
+    if (res && res.listing) setMessage('Partagé sur le marketplace.');
+    else setMessage(res?.error || 'Échec du partage.');
+  } catch (e) {
+    console.error('createListing error', e);
+    setMessage(e?.response?.data?.error || e?.message || 'Échec du partage.');
+  }
+}
 
   if (loading) {
     return <p style={{ padding: 20 }}>Chargement du profil...</p>;
@@ -314,11 +366,18 @@ export default function ArtistProfile() {
         <div style={styles.resourcesCard}>
           <h3>Ressources & Portfolio</h3>
           <div style={styles.galleryGrid}>
-            {artist.artworks.map((a) => (
-              <div key={a.id} style={styles.thumb} onClick={() => window.open(a.src || a.image, '_blank')}>
-                {a.type === 'image' && (<img src={a.src || a.image} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />)}
-                {a.type === 'video' && (<video src={a.src} style={{ width: '100%', height: '100%', objectFit: 'cover' }} controls />)}
+            {([...(artist.media||[]), ...(artist.artworks||[])]).map((a) => (
+              <div key={a.id} style={styles.thumb} onClick={() => window.open(a.url || a.src || a.image, '_blank')}>
+                {(!a.type || a.type === 'image') && (<img src={a.url || a.src || a.image} alt={a.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />)}
+                {a.type === 'video' && (<video src={a.url || a.src} style={{ width: '100%', height: '100%', objectFit: 'cover' }} controls />)}
                 {a.type === 'audio' && (<div style={{ padding: 8 }}>🎵 {a.title || 'Audio'}</div>)}
+
+                {isCurrentArtist && (
+                  <div style={{ position: 'absolute', bottom: 6, left: 6, display: 'flex', gap: 6 }}>
+                    <button style={styles.smallButton} onClick={(e) => { e.stopPropagation(); shareMediaToMarketplace(a.id, a.title || 'Œuvre', 1); }}>➕ Mettre en vente</button>
+                    <button style={styles.smallButton} onClick={async (e) => { e.stopPropagation(); if (!api.getToken || !api.getToken()) { setMessage('Connexion requise pour partager.'); alert('Veuillez vous connecter.'); return; } try { await api.getMe(); } catch (err) { setMessage('Veuillez vous reconnecter.'); alert('Veuillez vous reconnecter.'); return; } api.shareToPortal({ artistId: artist.id, mediaId: a.id, title: a.title || 'Partage' }).then(() => setMessage('Partagé sur le portail.')).catch((err) => { console.error('portal share error', err); setMessage(err?.response?.data?.error || 'Échec du partage.'); }); }}>🌍 Partager</button>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -347,20 +406,22 @@ export default function ArtistProfile() {
           {isCurrentArtist && (
             <div style={{ marginTop: 12 }}>
               <h4>Ajouter un média (image, vidéo courte, audio)</h4>
-              <form onSubmit={(e) => { e.preventDefault(); const f = e.target.file.files[0]; const title = e.target.title.value || f?.name; const kind = e.target.kind.value; if (f) handleUploadFile(f, title, kind); e.target.reset(); }}>
+              <form onSubmit={(e) => { e.preventDefault(); const title = e.target.title.value || (selectedFile && selectedFile.name); const kind = e.target.kind.value; if (selectedFile) { if (api.getToken && api.getToken()) { handleMediaUpload(selectedFile); } else { handleUploadFile(selectedFile, title, kind); } setSelectedFile(null); e.target.reset(); } else { setMessage('Veuillez sélectionner un fichier avant de télécharger.'); } }}>
                 <input name="title" placeholder="Titre (optionnel)" style={{ marginRight: 8 }} />
                 <select name="kind" defaultValue="image" style={{ marginRight: 8 }}>
                   <option value="image">Image</option>
                   <option value="video">Vidéo courte</option>
                   <option value="audio">Audio</option>
                 </select>
-                <input name="file" type="file" accept="image/*,video/*,audio/*" style={{ marginRight: 8 }} />
+                <input name="file" type="file" accept="image/*,video/*,audio/*" style={{ marginRight: 8 }} onChange={(e)=> setSelectedFile(e.target.files && e.target.files[0])} />
                 <button type="submit">Télécharger</button>
               </form>
             </div>
           )}
         </div>
       </div>
+
+      {message && <div style={{ padding: 12, background: '#fff5c7', borderRadius: 6, margin: '12px 0' }}>{message}</div>}
 
       {/* Bloc C - Outils & Services GlobalArtPro */}
       <div style={styles.servicesSection}>
@@ -493,6 +554,7 @@ export default function ArtistProfile() {
 }
 
 const styles = {
+  editInput: { width: "100%", padding: "0.6em", borderRadius: 6, border: "1px solid #ccc", background: "#fff", color: "#111", },
   page: { padding: '20px', maxWidth: 1100, margin: '0 auto', color: '#111', fontFamily: 'system-ui, sans-serif' },
   headerGrid: { display: 'grid', gridTemplateColumns: '1fr 420px', gap: 20, alignItems: 'start', marginBottom: 24 },
   identityCard: { display: 'flex', gap: 12, alignItems: 'flex-start', background: '#fff', padding: 16, borderRadius: 12, boxShadow: '0 6px 18px rgba(0,0,0,0.06)' },
@@ -534,7 +596,7 @@ const styles = {
   },
   dropzone: { border: '2px dashed #ddd', borderRadius: 10, padding: 12, display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: 90, cursor: 'pointer', background: '#fafafa' },
   modalRow: { display: 'flex', gap: 12, marginBottom: 12, alignItems: 'center' },
-  modalInput: { flex: 1, padding: 10, borderRadius: 8, border: '1px solid #ddd' },
+  modalInput: { flex: 1, padding: 10, borderRadius: 8, border: '1px solid #ddd', background: '#fff', color: '#111', caretColor: '#111', WebkitTextFillColor: '#111' },
   modalButtons: { display: 'flex', gap: 10, justifyContent: 'flex-end', marginTop: 12 },
   saveButton: { padding: '10px 14px', background: '#ffd700', border: 'none', borderRadius: 8, cursor: 'pointer', fontWeight: 700 },
   cancelButton: { padding: '10px 14px', background: '#eee', border: '1px solid #ddd', borderRadius: 8, cursor: 'pointer' },

@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion as _motion, AnimatePresence } from "framer-motion";
 
 export default function ModalPremium({ open, onClose, title, children }) {
   return (
@@ -7,7 +7,7 @@ export default function ModalPremium({ open, onClose, title, children }) {
       {open && (
         <>
           {/* Overlay */}
-          <motion.div
+          <_motion.div
             className="fixed inset-0 bg-black/60 z-40"
             onClick={onClose}
             initial={{ opacity: 0 }}
@@ -16,7 +16,7 @@ export default function ModalPremium({ open, onClose, title, children }) {
           />
 
           {/* Modal */}
-          <motion.div
+          <_motion.div
             className="fixed z-50 top-1/2 left-1/2 w-[90%] max-w-[480px] 
                        -translate-x-1/2 -translate-y-1/2
                        rounded-xl bg-white shadow-2xl p-6"
@@ -54,7 +54,7 @@ export default function ModalPremium({ open, onClose, title, children }) {
                 Fermer
               </button>
             </div>
-          </motion.div>
+          </_motion.div>
         </>
       )}
     </AnimatePresence>

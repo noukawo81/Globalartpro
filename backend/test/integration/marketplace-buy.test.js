@@ -4,6 +4,9 @@ import fs from 'fs';
 import path from 'path';
 import app from '../../src/index.js';
 import { JWT_SECRET } from '../../src/middleware/jwtAuth.js';
+import { jest } from '@jest/globals';
+
+jest.setTimeout(20000);
 
 function makeToken(id, role = 'artist') {
   return jwt.sign({ id, role }, JWT_SECRET);

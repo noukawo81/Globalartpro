@@ -11,7 +11,6 @@ import React, { useState, useEffect } from "react";
  */
 export default function AuctionWidget({
   auctionId = "AUC-2025-02-001",
-  startPrice = 500,
   currentBid = 750,
   endDate = "2025-02-28T23:59:59Z",
   paymentMethods = ["ARTC", "π", "EUR"],

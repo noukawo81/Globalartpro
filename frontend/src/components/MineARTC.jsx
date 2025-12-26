@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { api } from "../services/api";
+import { useAuth } from '@/core/hooks/useAuth.js';
 import "./MineARTC.css";
 
 export default function MineARTC() {
-  const user = JSON.parse(localStorage.getItem("ga_user") || "{}");
+  const { user: authUser } = useAuth();
+  const user = authUser || JSON.parse(localStorage.getItem("currentUser") || "{}") || {};
   const userId = user?.id || null;
 
   // balances
@@ -87,6 +89,14 @@ export default function MineARTC() {
   const startMining = async () => {
     if (!userId) return alert("Connecte-toi d'abord.");
     if (miningState === "Actif") return;
+    // Ensure user is authenticated (token present)
+    const token = api.getToken && api.getToken();
+    if (!token) {
+      alert('Vous devez être connecté pour démarrer le minage.');
+      setMiningMessage('Connexion requise pour démarrer le minage.');
+      return;
+    }
+
     // Initiate mining session
     const sessionDurationMs = 24 * 60 * 60 * 1000; // 24 hours
     setMiningMessage("Démarrage en cours...");
@@ -115,7 +125,17 @@ export default function MineARTC() {
       }
     } catch (err) {
       console.error('startMining error', err);
-      setMiningMessage('Impossible de démarrer la session (erreur serveur)');
+      const status = err?.response?.status;
+      const serverErr = err?.response?.data?.error || err?.message;
+      if (status === 401) {
+        setMiningMessage('Non autorisé (401) — reconnectez-vous et réessayez.');
+        alert('Erreur 401 : accès non autorisé. Veuillez vous reconnecter.');
+        // clear invalid token to force re-login
+        try { api.clearToken(); } catch (e) { console.error(e); }
+      } else {
+        setMiningMessage(serverErr || 'Impossible de démarrer la session (erreur serveur)');
+        alert(serverErr || 'Impossible de démarrer la session (erreur serveur)');
+      }
     }
   };
 

@@ -54,7 +54,9 @@ export default function PortalCulture() {
         setIsLoggedIn(true);
         setUserName(userData.name || "Visiteur");
         setHasVIP(localStorage.getItem("vipPass") === "true");
-      } catch {}
+      } catch {
+        // ignore parse errors
+      }
     }
   }, []);
 
@@ -746,9 +748,9 @@ export default function PortalCulture() {
     </div>
   );
 }
-const btnStyleAlt = { background: "#16c784", border: "none", color: "#fff", padding: "8px 12px", borderRadius: 6, cursor: "pointer" };
+const _btnStyleAlt = { background: "#16c784", border: "none", color: "#fff", padding: "8px 12px", borderRadius: 6, cursor: "pointer" };
 // ...existing code...
-async function handlePurchasePi(id) {
+async function _handlePurchasePi(id) {
   // crée une "invoice" côté backend
   const res = await fetch(`/api/create-pi-invoice`, {
     method: "POST",

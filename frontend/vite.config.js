@@ -1,3 +1,4 @@
+/* eslint-env node */
 // ...existing code...
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
@@ -8,7 +9,7 @@ export default defineConfig({
   
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),   // Alias officiel GLOBALARTPRO
+      '@': path.resolve(process.cwd(), 'src'),   // Alias officiel GLOBALARTPRO
     },
   },
 

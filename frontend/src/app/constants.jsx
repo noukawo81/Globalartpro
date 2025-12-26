@@ -7,7 +7,7 @@ const ENV = {
 
   // Auth
   JWT_STORAGE_KEY: "ga_token",
-  USER_STORAGE_KEY: "ga_user",
+  USER_STORAGE_KEY: "currentUser",
 
   // Features
   ENABLE_MINING: true,

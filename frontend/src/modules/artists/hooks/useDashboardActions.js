@@ -2,6 +2,7 @@
  * Hook personnalisé pour gérer les actions du Dashboard Artiste
  * Centralise la navigation et les appels API
  */
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 export const useDashboardActions = () => {

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import walletAPI from '@/modules/wallet/services/wallet.api.js';
+import { useAuth } from '@/core/hooks/useAuth.js';
 
 export default function WalletNFT() {
   const [nfts, setNfts] = useState([]);
-  const userId = localStorage.getItem('ga_user_id') || 'guest-000';
+  const { user: authUser } = useAuth();
+  const storedUser = authUser || JSON.parse(localStorage.getItem('currentUser') || '{}');
+  const userId = storedUser?.id || 'guest-000';
 
   useEffect(() => {
     async function load() {
