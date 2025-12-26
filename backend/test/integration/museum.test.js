@@ -5,6 +5,9 @@ import path from 'path';
 import app from '../../src/index.js';
 import { JWT_SECRET } from '../../src/middleware/jwtAuth.js';
 
+// Increase timeout for potentially slow filesystem-based tests
+jest.setTimeout(60000);
+
 function makeToken(id, role = 'visitor') {
   return jwt.sign({ id, role }, JWT_SECRET);
 }
