@@ -259,7 +259,7 @@ const GAPStudioHome = () => {
       <header>
         <div className="logo">GAP</div>
         <div>
-          <h1>STUDIO—IA</h1>
+          <h1 className="brand-title">STUDIO—IA</h1>
           <p>Image · Son · Texte · NFT — Studio IA orienté art & culture mondiale</p>
         </div>
 
@@ -308,7 +308,7 @@ const GAPStudioHome = () => {
 
                 {/* Simplified UX: Import seed + single Generate NFT action when an image is imported */}
                 {(!seedImage || createdNFT) ? (
-                  <label className="ghost" style={{ cursor: 'pointer' }}>
+                  <label className="ghost gold" style={{ cursor: 'pointer' }}>
                     📷 Import seed
                     <input type="file" accept="image/*" style={{ display: 'none' }} onChange={(e) => handleUploadFile(e.target.files && e.target.files[0])} />
                   </label>
@@ -317,7 +317,7 @@ const GAPStudioHome = () => {
                 {/* If there's a seed image and NFT not yet created, show only Generate NFT button */}
                 {seedImage && !createdNFT ? (
                   <>
-                    <button className="btn" onClick={handleGenerateNFT} disabled={loading}>{loading ? 'Génération…' : 'Générer NFT'}</button>
+                    <button className="btn gold" onClick={handleGenerateNFT} disabled={loading}>{loading ? 'Génération…' : 'Générer NFT'}</button>
                     <button className="ghost" onClick={() => { setSeedImage(null); setImageUrl(null); }}>Annuler</button>
                   </>
                 ) : null}
@@ -348,10 +348,10 @@ const GAPStudioHome = () => {
                 )}
 
                 {createdNFT && (
-                  <div style={{ marginTop: 8, padding: 8, background: '#fff6', borderRadius: 8 }}>
+                  <div className="nft-generated nft-seal" style={{ marginTop: 8 }}>
                     <strong>NFT généré</strong> — id: {createdNFT.id} — statut: {createdNFT.status}
                     <div style={{ marginTop: 6 }}>
-                      <button className="btn" onClick={() => handleSell(createdNFT)}>Vendre</button>
+                      <button className="btn gold" onClick={() => handleSell(createdNFT)}>Vendre</button>
                     </div>
                   </div>
                 )}

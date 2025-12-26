@@ -1,33 +1,109 @@
-/* ============================================
-   GLOBAL STYLES
-   ============================================ */
+/* Cosmic Black · Art & Excellence theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Cinzel:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap');
+
 :root {
-  --primary: #5a4fff;
-  --primary-dark: #3d36c7;
-  --accent: #ffb300;
-  --bg: #f5f6fa;
-  --bg-dark: #1c1c28;
-  --text: #222;
-  --text-light: #666;
-  --white: #fff;
+  /* Palette */
+  --bg-primary: #0B0D10; /* deep cosmic black */
+  --panel: #12151C; /* glossy panel */
+  --gold-soft: #C9A24D;
+  --gold-bright: #E6C97A;
+  --text-main: #EDEDED;
+  --text-muted: #9CA3AF;
+  --success: #2ECC71;
+  --warning: #F5A623;
+
+  /* Layout */
   --radius: 12px;
-  --transition: 0.25s ease;
+  --card-radius: 14px;
+  --transition: 220ms ease;
+  --slow-transition: 420ms ease;
+
+  /* Typography */
+  --title-font: 'Playfair Display', 'Cinzel', serif;
+  --ui-font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --mono-font: 'Space Grotesk', ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono';
 }
 
 body {
   margin: 0;
-  background: var(--bg);
-  font-family: "Inter", sans-serif;
-  color: var(--text);
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(255,255,255,0.02), transparent), var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--ui-font);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height: 100vh;
+}
+
+/* Subtle star field (very faint) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 120px 120px;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* ============================================
    LAYOUT PRINCIPAL
    ============================================ */
-.gapstudio-container {
+.wrap {
+  position: relative;
+  padding: 24px;
+  z-index: 1;
+}
+
+header {
   display: flex;
-  height: 100vh;
-  overflow: hidden;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color: var(--gold-soft);
+  font-weight: 700;
+  font-family: var(--title-font);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.brand-title {
+  font-family: var(--title-font);
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin: 0;
+  color: var(--text-main);
+}
+
+header p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+header .badge {
+  background: rgba(255,255,255,0.03);
+  color: var(--text-main);
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+header .ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-main);
+  padding: 8px 12px;
+  border-radius: 8px;
 }
 
 /* ============================================
@@ -86,16 +162,75 @@ body {
 }
 
 /* ============================================
-   FORMULAIRE DE GÉNÉRATION
+   CARDS / PANELS
    ============================================ */
-.gapstudio-form {
-  background: var(--white);
-  padding: 25px;
-  border-radius: var(--radius);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.008));
+  border: 1px solid rgba(255,255,255,0.03);
+  padding: 18px;
+  border-radius: var(--card-radius);
+  box-shadow: 0 6px 24px rgba(2,6,10,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  color: var(--text-main);
+  transition: box-shadow var(--slow-transition), transform var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 40px rgba(2,6,10,0.7), 0 0 18px rgba(201,162,77,0.03);
+}
+
+.title h2 {
+  font-family: var(--title-font);
+  font-size: 18px;
+  margin: 0 0 6px 0;
+}
+
+.muted { color: var(--text-muted); }
+.muted-block { color: var(--text-muted); background: rgba(255,255,255,0.02); padding: 10px; border-radius: 8px; }
+
+.field { background: transparent; border: 1px solid rgba(255,255,255,0.04); padding: 10px 12px; border-radius: 8px; color: var(--text-main); }
+.field.small { padding: 8px 10px; width: auto; }
+
+.row { display:flex; gap:8px; align-items:center; }
+
+/* Buttons: Ghost (outlined gold), Btn (solid black with gold border & hover glow) */
+.btn {
+  background: var(--panel);
+  color: var(--text-main);
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.04);
+  cursor: pointer;
+  font-weight: 600;
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.btn.gold {
+  border-color: rgba(201,162,77,0.9);
+  box-shadow: 0 0 0 0 rgba(201,162,77,0); /* initial */
+}
+
+.btn.gold:hover {
+  box-shadow: 0 6px 24px rgba(230,201,122,0.09), 0 0 12px rgba(230,201,122,0.12);
+  transform: translateY(-2px);
+  border-color: var(--gold-bright);
+}
+
+.ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-main);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.ghost.gold {
+  border-color: rgba(201,162,77,0.7);
+}
+
+.ghost.gold:hover {
+  box-shadow: 0 6px 20px rgba(201,162,77,0.06);
+  border-color: var(--gold-bright);
 }
 
 .gapstudio-form label {
@@ -161,28 +296,49 @@ select.field {
   background: #e4e6f0;
 }
 
-/* ============================================
-   RESULT / PREVIEW
-   ============================================ */
-.gapstudio-preview {
-  margin-top: 30px;
-  padding: 20px;
-  background: var(--white);
-  border-radius: var(--radius);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+/* PREVIEW / PROJECTOR */
+.preview.card {
+  padding: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.008));
+  border-radius: 12px;
 }
 
-.gapstudio-preview h3 {
-  margin-top: 0;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.gapstudio-preview img {
+.preview img {
   width: 100%;
-  border-radius: var(--radius);
-  margin-top: 15px;
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(2,6,10,0.7), inset 0 -6px 40px rgba(255,255,255,0.02);
+  display: block;
 }
+
+/* NFT generated seal animation */
+.nft-generated {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(201,162,77,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(201,162,77,0.06);
+  display: inline-block;
+}
+
+/* subtle seal pop */
+@keyframes seal-pop {
+  0% { transform: scale(0.96); opacity: 0; }
+  50% { transform: scale(1.04); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.nft-seal { animation: seal-pop 520ms cubic-bezier(.2,.9,.3,1) both; }
+
+/* Loader - gold thin ring */
+.loader-gold {
+  width: 34px; height: 34px; border-radius: 50%;
+  border: 3px solid rgba(255,255,255,0.06);
+  border-top: 3px solid rgba(201,162,77,0.9);
+  animation: spin 1.2s linear infinite;
+}
+
+/* thumbs */
+.thumbs img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255,255,255,0.03); box-shadow: 0 6px 18px rgba(0,0,0,0.6); cursor: pointer; }
 
 /* ============================================
    GRID FOR ART DISPLAY
