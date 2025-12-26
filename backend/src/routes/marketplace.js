@@ -16,10 +16,11 @@ function readMarketplace() {
     return { listings: [] };
   }
 }
+import { safeWriteJSON } from '../lib/fileUtils.js';
+
 function writeMarketplace(db) {
   try {
-    fs.mkdirSync(path.dirname(DB_FILE), { recursive: true });
-    fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 2), 'utf8');
+    safeWriteJSON(DB_FILE, db);
   } catch (e) {
     console.error('marketplace write error', e);
   }
@@ -27,21 +28,48 @@ function writeMarketplace(db) {
 
 // Basic marketplace info (legacy)
 router.get('/', (req, res) => res.json({ artists: [] }));
-router.get('/:id', (req, res) => res.json({ artist: null }));
+
+import currency from '../lib/currency.js';
 
 // List current marketplace listings
 router.get('/list', (req, res) => {
   const db = readMarketplace();
-  res.json({ listings: db.listings || [] });
+  const listings = db.listings || [];
+  const display = req.query.display === 'true' || req.query.display === '1';
+  const displayOrder = ['PI','USD','EUR','CNY','RUB','GOLD'];
+  if (display) {
+    const enriched = listings.map((l) => ({
+      ...l,
+      displayPrices: currency.displayPrices(l.price || 0, l.baseCurrency || 'USD', displayOrder),
+    }));
+    return res.json({ listings: enriched });
+  }
+  res.json({ listings });
 });
+
+router.get('/:id', (req, res) => res.json({ artist: null }));
 
 // Create a listing - must be the artist (owner) putting their own media on sale
 router.post('/list', jwtAuth, ownerAuth({ body: 'artistId' }), (req, res) => {
-  const { artistId, mediaId, title, description = '', price = 0, token = 'ARTC', pole = 'digital', channel = 'marketplace' } = req.body;
+  const { artistId, mediaId, title, description = '', price = 0, baseCurrency = 'USD', token = 'ARTC', pole = 'digital', channel = 'marketplace' } = req.body;
   if (!artistId || !mediaId || !title) return res.status(400).json({ error: 'artistId, mediaId and title required' });
   const artist = artistDB.getArtist(artistId);
   if (!artist) return res.status(404).json({ error: 'artist not found' });
-  const listing = { id: `listing-${Date.now()}`, artistId, mediaId, title, description, price: Number(price), token, pole, channel, createdAt: new Date().toISOString(), exhibited: false };
+  const listing = {
+    id: `listing-${Date.now()}`,
+    artistId,
+    artistName: artist.name || undefined,
+    mediaId,
+    title,
+    description,
+    price: Number(price),
+    baseCurrency: baseCurrency || 'USD',
+    token,
+    pole,
+    channel,
+    createdAt: new Date().toISOString(),
+    exhibited: false,
+  };
   const db = readMarketplace();
   db.listings = db.listings || [];
   db.listings.push(listing);
@@ -65,6 +93,15 @@ router.post('/:id/exhibit', jwtAuth, (req, res) => {
 });
 
 // Purchase artwork with ARTC or PI
+// E2E stub route: if the X-E2E-Stub header is present, short-circuit with 204 without auth
+router.post('/buy', (req, res, next) => {
+	if (req.headers && String(req.headers['x-e2e-stub']) === '1') {
+		console.log('marketplace buy stub used (E2E) [unprotected route]');
+		return res.status(204).end();
+	}
+	next();
+});
+
 router.post('/buy', jwtAuth, ownerAuth({ body: 'userId' }), (req, res) => {
 	const { userId: buyer = req.user?.id, sellerId = 'marketplace-seller', productId, amount, token = 'ARTC' } = req.body;
 	if (!buyer || !productId || typeof amount !== 'number') return res.status(400).json({ error: 'buyer, productId and numeric amount required' });

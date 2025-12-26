@@ -98,9 +98,10 @@ export const api = {
   buyArtwork: (artworkId, paymentMethod) =>
     API.post("/marketplace/buy", { artworkId, paymentMethod }).then((r) => r.data),
   marketplaceBuy: (buyerId, sellerId, productId, amount, token = 'ARTC') =>
-    API.post('/marketplace/buy', { userId: buyerId, sellerId, productId, amount, token }).then(r => r.data),
+    API.post('/marketplace/buy', { userId: buyerId, sellerId, productId, amount, token }).then(r => ({ status: r.status, data: r.data })),
+
   // Listings
-  getMarketplaceListings: () => API.get('/marketplace/list').then(r => r.data),
+  getMarketplaceListings: (display = false) => API.get('/marketplace/list', { params: display ? { display: true } : {} }).then(r => r.data),
   exhibitListing: (listingId) => API.post(`/marketplace/${listingId}/exhibit`).then(r => r.data),
 
   // ---- Portal Culture ----
