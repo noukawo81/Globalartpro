@@ -93,13 +93,13 @@ router.post('/:id/exhibit', jwtAuth, (req, res) => {
 });
 
 // Purchase artwork with ARTC or PI
-// E2E stub route: if the X-E2E-Stub header is present, short-circuit with 204 without auth
+// E2E stub route: if NODE_ENV === 'test' and the X-E2E-Stub header is present, short-circuit with 204 without auth
 router.post('/buy', (req, res, next) => {
-	if (req.headers && String(req.headers['x-e2e-stub']) === '1') {
-		console.log('marketplace buy stub used (E2E) [unprotected route]');
-		return res.status(204).end();
-	}
-	next();
+  if (process.env.NODE_ENV === 'test' && req.headers && String(req.headers['x-e2e-stub']) === '1') {
+    console.log('marketplace buy stub used (E2E) [test-only]');
+    return res.status(204).end();
+  }
+  next();
 });
 
 router.post('/buy', jwtAuth, ownerAuth({ body: 'userId' }), (req, res) => {
