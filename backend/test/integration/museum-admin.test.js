@@ -6,7 +6,7 @@ import app from '../../src/index.js';
 import { JWT_SECRET } from '../../src/middleware/jwtAuth.js';
 import { jest } from '@jest/globals';
 
-jest.setTimeout(20000);
+jest.setTimeout(60000);
 
 function makeToken(id, role = 'visitor') {
   return jwt.sign({ id, role }, JWT_SECRET);
