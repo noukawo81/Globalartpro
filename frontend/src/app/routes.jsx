@@ -14,6 +14,7 @@ import MarketplaceHome from "@/modules/marketplace/pages/MarketplaceHome.jsx";
 import ProductPage from "@/modules/marketplace/pages/ProductPage.jsx";
 
 import GAPStudioHome from "@/modules/gapstudio/pages/GAPStudioHome.jsx";
+import GAPStudioDocs from "@/modules/gapstudio/pages/GAPStudioDocs.jsx";
 import StudioDashboard from "@/modules/gapstudio/pages/StudioDashboard.jsx";
 
 import UserDashboard from "@/modules/dashboard/pages/UserDashboard.jsx";
@@ -25,6 +26,7 @@ import PortalCulture from "@/modules/culture/pages/PortalCulture.jsx";
 
 /* Museum */
 import MuseumHome from "@/modules/museum/pages/MuseumHome.jsx";
+import MuseumGlobe from "@/modules/museum/pages/MuseumGlobe.jsx";
 import MuseumItem from "@/modules/museum/pages/MuseumItem.jsx";
 import WalletHome from "@/modules/wallet/pages/WalletHome.jsx";
 import WalletTransactions from "@/modules/wallet/pages/WalletTransactions.jsx";
@@ -67,10 +69,12 @@ export default function AppRoutes() {
         <Route path="/product/:id" element={<ProductPage />} />
 
         <Route path="/gapstudio" element={<GAPStudioHome />} />
+        <Route path="/gapstudio/docs" element={<GAPStudioDocs />} />
         <Route path="/gapstudio/dashboard" element={<StudioDashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
 
         <Route path="/museum" element={<MuseumHome />} />
+        <Route path="/museum/globe" element={<MuseumGlobe />} />
         <Route path="/museum/:id" element={<MuseumItem />} />
 
         <Route path="/legacy/:page" element={<LegacyIframe />} />

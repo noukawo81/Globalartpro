@@ -41,7 +41,10 @@ export default function MuseumHome() {
 
   return (
     <div style={{ padding: 20 }}>
-      <h2>Galerie — Œuvres exposées</h2>
+      <div style={{ display:'flex', alignItems:'center', gap:12 }}>
+        <h2 style={{ margin:0 }}>Galerie — Œuvres exposées</h2>
+        <a href="/museum/globe" className="ghost" style={{ marginLeft: 'auto' }}>Voir le Globe</a>
+      </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 12, marginTop: 12 }}>
         {items.map((it) => (
           <MuseumCard key={it.id} item={it} onLike={handleLike} />
