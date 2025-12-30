@@ -1,0 +1,29 @@
+name: CI Monitor - issue permission test
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  issues: write
+
+jobs:
+  issue-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create and close test issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const title = `CI Monitor permission test — ${new Date().toISOString()}`;
+            const issue = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body: 'This is an automated test to validate repository issue permissions for the CI monitor workflow. It will be closed automatically.'
+            });
+            console.log(`Created issue #${issue.data.number}: ${issue.data.html_url}`);
+            // Close it immediately to avoid noise
+            await github.rest.issues.update({ owner: context.repo.owner, repo: context.repo.repo, issue_number: issue.data.number, state: 'closed' });
+            console.log('Issue closed');
