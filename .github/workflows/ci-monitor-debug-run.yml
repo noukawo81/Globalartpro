@@ -4,9 +4,10 @@ on:
   workflow_dispatch:
     inputs:
       run_id:
-        description: 'Workflow run ID to inspect (required)'
-        required: true
+        description: 'Workflow run ID to inspect (optional; if omitted the workflow will pick the most recent failing run)'
+        required: false
         default: ''
+
 
 permissions:
   issues: write
