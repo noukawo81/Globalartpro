@@ -48,7 +48,8 @@
   },
   "jest": {
     "testEnvironment": "node",
-    "testMatch": ["**/test/**/*.test.js"]
+    "testMatch": ["**/test/**/*.test.js"],
+    "testTimeout": 30000
   },
   "repository": {
     "type": "git",

@@ -5,6 +5,7 @@ import path from 'path';
 import app from '../../src/index.js';
 import { JWT_SECRET } from '../../src/middleware/jwtAuth.js';
 import { jest } from '@jest/globals';
+import { safeWriteJSON } from '../../src/lib/fileUtils.js';
 
 jest.setTimeout(60000);
 
@@ -38,7 +39,13 @@ beforeAll(() => {
   // extra items with specific tag/category for tests
   if (!mdb.items.find(it=>it.id === 'm-cat-1')) mdb.items.push({ id: 'm-cat-1', title: 'Cat Spec', artistId: 'artist-x', status: 'public', category: 'photographie', tags: ['special','archive'], createdAt: new Date().toISOString() });
   if (!mdb.items.find(it=>it.id === 'm-tag-1')) mdb.items.push({ id: 'm-tag-1', title: 'Tag Spec', artistId: 'artist-x', status: 'public', category: 'mixed', tags: ['rituel','identity'], createdAt: new Date().toISOString() });
-  fs.writeFileSync(mfile, JSON.stringify(mdb, null, 2), 'utf8');
+  // use safeWriteJSON to avoid file locking issues on some platforms
+  try {
+    safeWriteJSON(mfile, mdb);
+  } catch (e) {
+    // fallback
+    fs.writeFileSync(mfile, JSON.stringify(mdb, null, 2), 'utf8');
+  }
 });
 
 describe('Museum Admin endpoints', () => {

@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import app from '../../src/index.js';
 import { JWT_SECRET } from '../../src/middleware/jwtAuth.js';
+import { safeWriteJSON } from '../../src/lib/fileUtils.js';
 function makeToken(id, role = 'artist') {
   return jwt.sign({ id, role }, JWT_SECRET);
 }
@@ -15,8 +16,13 @@ beforeAll(() => {
   db.accounts = db.accounts || {};
   db.accounts['user-test-1'] = { userId: 'user-test-1', balances: { ARTC: 100, PI: 0, IA: 0 }, createdAt: new Date().toISOString() };
   db.accounts['user-test-2'] = { userId: 'user-test-2', balances: { ARTC: 0, PI: 0, IA: 0 }, createdAt: new Date().toISOString() };
-  fs.mkdirSync(path.dirname(dbFile), { recursive: true });
-  fs.writeFileSync(dbFile, JSON.stringify(db, null, 2), 'utf8');
+  try {
+    fs.mkdirSync(path.dirname(dbFile), { recursive: true });
+    safeWriteJSON(dbFile, db);
+  } catch (e) {
+    // fallback to synchronous write if safeWriteJSON fails for some reason
+    try { fs.writeFileSync(dbFile, JSON.stringify(db, null, 2), 'utf8'); } catch (err) { console.warn('wallet test seed write failed', err && err.message); }
+  }
 });
 
 describe('Wallet transfer ownership', () => {

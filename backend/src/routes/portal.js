@@ -15,10 +15,11 @@ function readPosts() {
     return { posts: [] };
   }
 }
+import { safeWriteJSON } from '../lib/fileUtils.js';
+
 function writePosts(db) {
   try {
-    fs.mkdirSync(path.dirname(DB_FILE), { recursive: true });
-    fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 2), 'utf8');
+    safeWriteJSON(DB_FILE, db);
   } catch (e) {
     console.error('portal write error', e);
   }

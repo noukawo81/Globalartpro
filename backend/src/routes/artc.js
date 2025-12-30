@@ -14,10 +14,11 @@ function readDB() {
     return { accounts: {}, transactions: [], miningEvents: [], lastMine: {}, miningSessions: {} };
   }
 }
+import { safeWriteJSON } from '../lib/fileUtils.js';
+
 function writeDB(db) {
   try {
-    fs.mkdirSync(path.dirname(DB_FILE), { recursive: true });
-    fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 2), 'utf8');
+    safeWriteJSON(DB_FILE, db);
   } catch (e) {
     console.error('artc write error', e);
   }

@@ -1,23 +1,6 @@
 {
+  "ok": 1,
   "accounts": {
-    "guest-000": {
-      "userId": "guest-000",
-      "balances": {
-        "ARTC": 10,
-        "PI": 0,
-        "IA": 100
-      },
-      "createdAt": "2025-12-13T00:34:29.736Z"
-    },
-    "ggkjjvfcdklkjvfghhhhggghhggjj": {
-      "userId": "ggkjjvfcdklkjvfghhhhggghhggjj",
-      "balances": {
-        "ARTC": 10,
-        "PI": 0,
-        "IA": 100
-      },
-      "createdAt": "2025-12-13T00:34:29.756Z"
-    },
     "user-test-1": {
       "userId": "user-test-1",
       "balances": {
@@ -25,7 +8,136 @@
         "PI": 0,
         "IA": 0
       },
-      "createdAt": "2025-12-25T20:02:33.908Z"
+      "createdAt": "2025-12-29T22:32:14.053Z"
+    },
+    "artist-test-1": {
+      "userId": "artist-test-1",
+      "balances": {
+        "ARTC": 9.38,
+        "PI": 0,
+        "IA": 0
+      },
+      "createdAt": "2025-12-29T22:32:14.054Z"
+    },
+    "platform": {
+      "userId": "platform",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0.5,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-28T23:48:43.588Z"
+    },
+    "network": {
+      "userId": "network",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0.12,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-28T23:48:43.705Z"
+    },
+    "user-1766966067645": {
+      "userId": "user-1766966067645",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 10,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-28T23:54:28.814Z"
+    },
+    "user-1766966068514": {
+      "userId": "user-1766966068514",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 10,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-28T23:54:28.908Z"
+    },
+    "user-1766966317055": {
+      "userId": "user-1766966317055",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 10,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-28T23:58:38.807Z"
+    },
+    "user-1766966318423": {
+      "userId": "user-1766966318423",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 10,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-28T23:58:39.967Z"
+    },
+    "user-1766967298482": {
+      "userId": "user-1766967298482",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 100,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T00:15:00.681Z"
+    },
+    "user-1766967299980": {
+      "userId": "user-1766967299980",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 19.380000000000003,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T00:15:01.105Z"
     },
     "user-test-2": {
       "userId": "user-test-2",
@@ -34,1488 +146,5399 @@
         "PI": 0,
         "IA": 0
       },
-      "createdAt": "2025-12-25T20:02:22.521Z"
+      "createdAt": "2025-12-29T22:28:03.871Z"
     },
-    "artist-test-1": {
-      "userId": "artist-test-1",
+    "user-1766967350010": {
+      "userId": "user-1766967350010",
       "balances": {
-        "ARTC": 10,
+        "USD": 0,
         "PI": 0,
-        "IA": 0
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 8,
+        "IA": 100
       },
-      "createdAt": "2025-12-25T20:02:33.908Z"
+      "passes": [
+        {
+          "id": "pass-1766967351944-585",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1766967351944,
+          "end": 1769559351944,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 0
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T00:15:51.613Z"
+    },
+    "test-user-1": {
+      "userId": "test-user-1",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 8,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T00:16:52.240Z"
+    },
+    "user-1766967547981": {
+      "userId": "user-1766967547981",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T00:19:09.256Z"
+    },
+    "user-1766967549106": {
+      "userId": "user-1766967549106",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 19.380000000000003,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T00:19:09.643Z"
+    },
+    "user-1766967647580": {
+      "userId": "user-1766967647580",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T00:20:51.964Z"
+    },
+    "user-1766967649879": {
+      "userId": "user-1766967649879",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T00:20:53.460Z"
+    },
+    "user-1766967712369": {
+      "userId": "user-1766967712369",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T00:21:53.857Z"
+    },
+    "user-1766967713636": {
+      "userId": "user-1766967713636",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T00:21:56.573Z"
+    },
+    "user-1766967834392": {
+      "userId": "user-1766967834392",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0,
+        "IA": 100
+      },
+      "passes": [
+        {
+          "id": "pass-1766967835188-669",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1766967835188,
+          "end": 1769559835188,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 0
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T00:23:55.044Z"
+    },
+    "user-1766967864873": {
+      "userId": "user-1766967864873",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T00:24:25.882Z"
+    },
+    "user-1766967865770": {
+      "userId": "user-1766967865770",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T00:24:26.136Z"
+    },
+    "user-1766698983801": {
+      "userId": "user-1766698983801",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 15,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T00:31:31.984Z"
+    },
+    "user-1766990781544": {
+      "userId": "user-1766990781544",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0,
+        "IA": 100
+      },
+      "passes": [
+        {
+          "id": "pass-1766990781660-211",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1766990781660,
+          "end": 1769582781660,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 0
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T06:46:21.642Z"
+    },
+    "user-1766990800360": {
+      "userId": "user-1766990800360",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T06:46:41.751Z"
+    },
+    "user-1766990801627": {
+      "userId": "user-1766990801627",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T06:46:41.968Z"
+    },
+    "recharge-user-1": {
+      "userId": "recharge-user-1",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 10,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T08:33:55.814Z"
+    },
+    "user-1766999515500": {
+      "userId": "user-1766999515500",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T09:11:56.819Z"
+    },
+    "user-1766999516710": {
+      "userId": "user-1766999516710",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T09:11:57.014Z"
+    },
+    "user-1766999529902": {
+      "userId": "user-1766999529902",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0,
+        "IA": 100
+      },
+      "passes": [
+        {
+          "id": "pass-1766999530194-46",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1766999530194,
+          "end": 1769591530194,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 0
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T09:12:10.167Z"
+    },
+    "user-1767000086894": {
+      "userId": "user-1767000086894",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T09:21:28.229Z"
+    },
+    "user-1767000088085": {
+      "userId": "user-1767000088085",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T09:21:28.483Z"
+    },
+    "user-1767000187548": {
+      "userId": "user-1767000187548",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T09:23:09.649Z"
+    },
+    "user-1767000189195": {
+      "userId": "user-1767000189195",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T09:23:11.322Z"
+    },
+    "user-1767000236808": {
+      "userId": "user-1767000236808",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0,
+        "IA": 100
+      },
+      "passes": [
+        {
+          "id": "pass-1767000238298-733",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1767000238298,
+          "end": 1769592238298,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 0
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T09:23:58.192Z"
+    },
+    "user-1767000515148": {
+      "userId": "user-1767000515148",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0,
+        "IA": 100
+      },
+      "passes": [
+        {
+          "id": "pass-1767000515478-467",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1767000515478,
+          "end": 1769592515478,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 2
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T09:28:35.447Z"
+    },
+    "user-1767000732366": {
+      "userId": "user-1767000732366",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0,
+        "IA": 100
+      },
+      "passes": [
+        {
+          "id": "pass-1767000734497-444",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1767000734497,
+          "end": 1769592734497,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 0
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T09:32:14.415Z"
+    },
+    "user-1767000769498": {
+      "userId": "user-1767000769498",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T09:32:53.463Z"
+    },
+    "user-1767000771670": {
+      "userId": "user-1767000771670",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T09:33:02.060Z"
+    },
+    "user-1767001078873": {
+      "userId": "user-1767001078873",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0,
+        "IA": 100
+      },
+      "passes": [
+        {
+          "id": "pass-1767001079387-443",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1767001079387,
+          "end": 1769593079387,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 0
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T09:37:59.319Z"
+    },
+    "user-1767001123088": {
+      "userId": "user-1767001123088",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T09:38:50.480Z"
+    },
+    "user-1767001129007": {
+      "userId": "user-1767001129007",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T09:38:51.408Z"
+    },
+    "user-1767001529872": {
+      "userId": "user-1767001529872",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0,
+        "IA": 100
+      },
+      "passes": [
+        {
+          "id": "pass-1767001530601-307",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1767001530601,
+          "end": 1769593530601,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 0
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T09:45:30.498Z"
+    },
+    "user-1767001564924": {
+      "userId": "user-1767001564924",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T09:46:07.313Z"
+    },
+    "user-1767001566975": {
+      "userId": "user-1767001566975",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T09:46:08.109Z"
+    },
+    "user-1767001877141": {
+      "userId": "user-1767001877141",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0,
+        "IA": 100
+      },
+      "passes": [
+        {
+          "id": "pass-1767001877541-335",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1767001877541,
+          "end": 1769593877541,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 0
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T09:51:17.440Z"
+    },
+    "user-1767001923527": {
+      "userId": "user-1767001923527",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T09:52:07.606Z"
+    },
+    "user-1767001926909": {
+      "userId": "user-1767001926909",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T09:52:08.853Z"
+    },
+    "user-1767042033846": {
+      "userId": "user-1767042033846",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T21:00:39.966Z"
+    },
+    "user-1767042039293": {
+      "userId": "user-1767042039293",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T21:00:47.659Z"
+    },
+    "user-1767042170371": {
+      "userId": "user-1767042170371",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0,
+        "IA": 100
+      },
+      "passes": [
+        {
+          "id": "pass-1767042173119-325",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1767042173119,
+          "end": 1769634173119,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 0
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T21:02:52.827Z"
+    },
+    "user-1767042970655": {
+      "userId": "user-1767042970655",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T21:16:18.187Z"
+    },
+    "user-1767042976539": {
+      "userId": "user-1767042976539",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T21:16:22.168Z"
+    },
+    "user-1767043043594": {
+      "userId": "user-1767043043594",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0,
+        "IA": 100
+      },
+      "passes": [
+        {
+          "id": "pass-1767043048182-838",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1767043048182,
+          "end": 1769635048182,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 0
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T21:17:25.501Z"
+    },
+    "user-1767043537102": {
+      "userId": "user-1767043537102",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T21:25:41.544Z"
+    },
+    "user-1767043540703": {
+      "userId": "user-1767043540703",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T21:25:45.812Z"
+    },
+    "user-1767043556449": {
+      "userId": "user-1767043556449",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0,
+        "IA": 100
+      },
+      "passes": [
+        {
+          "id": "pass-1767043557210-189",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1767043557209,
+          "end": 1769635557209,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 0
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T21:25:56.933Z"
+    },
+    "user-1767044786426": {
+      "userId": "user-1767044786426",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0,
+        "IA": 100
+      },
+      "passes": [
+        {
+          "id": "pass-1767044789738-794",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1767044789738,
+          "end": 1769636789738,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 0
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T21:46:27.814Z"
+    },
+    "user-1767044988860": {
+      "userId": "user-1767044988860",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T21:50:10.661Z"
+    },
+    "user-1767045007839": {
+      "userId": "user-1767045007839",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T21:50:41.235Z"
+    },
+    "user-1767045773100": {
+      "userId": "user-1767045773100",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T22:03:01.116Z"
+    },
+    "user-1767045778650": {
+      "userId": "user-1767045778650",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T22:03:07.632Z"
+    },
+    "user-1767045883494": {
+      "userId": "user-1767045883494",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0,
+        "IA": 100
+      },
+      "passes": [
+        {
+          "id": "pass-1767045886477-390",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1767045886477,
+          "end": 1769637886477,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 0
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T22:04:45.183Z"
+    },
+    "user-1767047346823": {
+      "userId": "user-1767047346823",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 0,
+        "IA": 100
+      },
+      "passes": [
+        {
+          "id": "pass-1767047354960-212",
+          "type": "genesis",
+          "name": "Genesis Pass",
+          "desc": "Le commencement créatif. 3 NFT gratuits / période, génération texte.",
+          "start": 1767047354960,
+          "end": 1769639354960,
+          "period": "monthly",
+          "limits": {
+            "freeNFT": 0
+          },
+          "active": true
+        }
+      ],
+      "createdAt": "2025-12-29T22:29:13.374Z"
+    },
+    "user-1767047504039": {
+      "userId": "user-1767047504039",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 90,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T22:31:47.682Z"
+    },
+    "user-1767047506764": {
+      "userId": "user-1767047506764",
+      "balances": {
+        "USD": 0,
+        "PI": 0,
+        "EUR": 0,
+        "CNY": 0,
+        "RUB": 0,
+        "GOLD": 0,
+        "ARTC": 9.38,
+        "IA": 100
+      },
+      "passes": [],
+      "createdAt": "2025-12-29T22:31:54.004Z"
     }
   },
+  "audit": [
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1766966068514",
+      "listingId": "listing-1766966068855",
+      "title": "For Sale",
+      "ts": "2025-12-28T23:54:28.882Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1766966318423",
+      "listingId": "listing-1766966319020",
+      "title": "For Sale",
+      "ts": "2025-12-28T23:58:39.454Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1766967299980",
+      "listingId": "listing-1766967300890",
+      "title": "For Sale",
+      "ts": "2025-12-29T00:15:00.957Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1766967310016",
+      "title": "Œuvre Test",
+      "ts": "2025-12-29T00:15:10.051Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1766967310408",
+      "title": "Test 2",
+      "ts": "2025-12-29T00:15:10.910Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1766967312339",
+      "title": "Test 3",
+      "ts": "2025-12-29T00:15:12.581Z"
+    },
+    {
+      "type": "marketplace_exhibit",
+      "listingId": "listing-1766967312339",
+      "admin": "globalart-admin",
+      "ts": "2025-12-29T00:15:12.927Z"
+    },
+    {
+      "type": "portal_share",
+      "artistId": "artist-test-1",
+      "postId": "post-1766967374612",
+      "ts": "2025-12-29T00:16:14.852Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1766967398149",
+      "listingId": "listing-1766967402668",
+      "title": "Price Test",
+      "ts": "2025-12-29T00:16:42.842Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1766967549106",
+      "listingId": "listing-1766967549444",
+      "title": "For Sale",
+      "ts": "2025-12-29T00:19:09.492Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1766967649879",
+      "listingId": "listing-1766967652582",
+      "title": "For Sale",
+      "ts": "2025-12-29T00:20:53.065Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1766967713636",
+      "listingId": "listing-1766967714640",
+      "title": "For Sale",
+      "ts": "2025-12-29T00:21:55.878Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1766967811510",
+      "title": "Œuvre Test",
+      "ts": "2025-12-29T00:23:31.954Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1766967812838",
+      "title": "Test 2",
+      "ts": "2025-12-29T00:23:33.055Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1766967813366",
+      "title": "Test 3",
+      "ts": "2025-12-29T00:23:33.412Z"
+    },
+    {
+      "type": "marketplace_exhibit",
+      "listingId": "listing-1766967813366",
+      "admin": "globalart-admin",
+      "ts": "2025-12-29T00:23:33.539Z"
+    },
+    {
+      "type": "portal_share",
+      "artistId": "artist-test-1",
+      "postId": "post-1766967841658",
+      "ts": "2025-12-29T00:24:01.772Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1766967848552",
+      "listingId": "listing-1766967849034",
+      "title": "Price Test",
+      "ts": "2025-12-29T00:24:09.552Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1766967865770",
+      "listingId": "listing-1766967866015",
+      "title": "For Sale",
+      "ts": "2025-12-29T00:24:26.039Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1766990766629",
+      "title": "Œuvre Test",
+      "ts": "2025-12-29T06:46:06.752Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1766990767122",
+      "title": "Test 2",
+      "ts": "2025-12-29T06:46:07.265Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1766990767638",
+      "title": "Test 3",
+      "ts": "2025-12-29T06:46:07.675Z"
+    },
+    {
+      "type": "marketplace_exhibit",
+      "listingId": "listing-1766990767638",
+      "admin": "globalart-admin",
+      "ts": "2025-12-29T06:46:08.229Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1766990771804",
+      "listingId": "listing-1766990775303",
+      "title": "Price Test",
+      "ts": "2025-12-29T06:46:15.354Z"
+    },
+    {
+      "type": "portal_share",
+      "artistId": "artist-test-1",
+      "postId": "post-1766990790985",
+      "ts": "2025-12-29T06:46:31.119Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1766990801627",
+      "listingId": "listing-1766990801890",
+      "title": "For Sale",
+      "ts": "2025-12-29T06:46:41.920Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1766999495809",
+      "listingId": "listing-1766999496362",
+      "title": "Price Test",
+      "ts": "2025-12-29T09:11:36.443Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1766999502094",
+      "title": "Œuvre Test",
+      "ts": "2025-12-29T09:11:42.170Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1766999502531",
+      "title": "Test 2",
+      "ts": "2025-12-29T09:11:42.568Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1766999503021",
+      "title": "Test 3",
+      "ts": "2025-12-29T09:11:43.661Z"
+    },
+    {
+      "type": "marketplace_exhibit",
+      "listingId": "listing-1766999503021",
+      "admin": "globalart-admin",
+      "ts": "2025-12-29T09:11:45.118Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1766999516710",
+      "listingId": "listing-1766999516922",
+      "title": "For Sale",
+      "ts": "2025-12-29T09:11:56.943Z"
+    },
+    {
+      "type": "portal_share",
+      "artistId": "artist-test-1",
+      "postId": "post-1766999534452",
+      "ts": "2025-12-29T09:12:14.617Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767000088085",
+      "listingId": "listing-1767000088398",
+      "title": "For Sale",
+      "ts": "2025-12-29T09:21:28.437Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767000140905",
+      "listingId": "listing-1767000141720",
+      "title": "Price Test",
+      "ts": "2025-12-29T09:22:21.858Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767000174960",
+      "title": "Œuvre Test",
+      "ts": "2025-12-29T09:22:55.540Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767000176272",
+      "title": "Test 2",
+      "ts": "2025-12-29T09:22:56.425Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767000176899",
+      "title": "Test 3",
+      "ts": "2025-12-29T09:22:57.248Z"
+    },
+    {
+      "type": "marketplace_exhibit",
+      "listingId": "listing-1767000176899",
+      "admin": "globalart-admin",
+      "ts": "2025-12-29T09:22:57.698Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767000189195",
+      "listingId": "listing-1767000191048",
+      "title": "For Sale",
+      "ts": "2025-12-29T09:23:11.130Z"
+    },
+    {
+      "type": "portal_share",
+      "artistId": "artist-test-1",
+      "postId": "post-1767000268326",
+      "ts": "2025-12-29T09:24:28.518Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767000771670",
+      "listingId": "listing-1767000775611",
+      "title": "For Sale",
+      "ts": "2025-12-29T09:32:56.294Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767000795931",
+      "title": "Œuvre Test",
+      "ts": "2025-12-29T09:33:15.976Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767000796210",
+      "title": "Test 2",
+      "ts": "2025-12-29T09:33:16.274Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767000796479",
+      "title": "Test 3",
+      "ts": "2025-12-29T09:33:16.619Z"
+    },
+    {
+      "type": "marketplace_exhibit",
+      "listingId": "listing-1767000796479",
+      "admin": "globalart-admin",
+      "ts": "2025-12-29T09:33:17.025Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767000842574",
+      "listingId": "listing-1767000844601",
+      "title": "Price Test",
+      "ts": "2025-12-29T09:34:04.840Z"
+    },
+    {
+      "type": "portal_share",
+      "artistId": "artist-test-1",
+      "postId": "post-1767000851546",
+      "ts": "2025-12-29T09:34:11.644Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767001129007",
+      "listingId": "listing-1767001131068",
+      "title": "For Sale",
+      "ts": "2025-12-29T09:38:51.161Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767001166836",
+      "listingId": "listing-1767001167567",
+      "title": "Price Test",
+      "ts": "2025-12-29T09:39:27.787Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767001222658",
+      "title": "Œuvre Test",
+      "ts": "2025-12-29T09:40:22.798Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767001223121",
+      "title": "Test 2",
+      "ts": "2025-12-29T09:40:23.183Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767001223560",
+      "title": "Test 3",
+      "ts": "2025-12-29T09:40:23.599Z"
+    },
+    {
+      "type": "marketplace_exhibit",
+      "listingId": "listing-1767001223560",
+      "admin": "globalart-admin",
+      "ts": "2025-12-29T09:40:23.810Z"
+    },
+    {
+      "type": "portal_share",
+      "artistId": "artist-test-1",
+      "postId": "post-1767001227810",
+      "ts": "2025-12-29T09:40:28.628Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767001566975",
+      "listingId": "listing-1767001567573",
+      "title": "For Sale",
+      "ts": "2025-12-29T09:46:07.756Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767001579534",
+      "listingId": "listing-1767001580248",
+      "title": "Price Test",
+      "ts": "2025-12-29T09:46:20.287Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767001585660",
+      "title": "Œuvre Test",
+      "ts": "2025-12-29T09:46:26.784Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767001591696",
+      "title": "Test 2",
+      "ts": "2025-12-29T09:46:31.808Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767001592765",
+      "title": "Test 3",
+      "ts": "2025-12-29T09:46:32.994Z"
+    },
+    {
+      "type": "marketplace_exhibit",
+      "listingId": "listing-1767001592765",
+      "admin": "globalart-admin",
+      "ts": "2025-12-29T09:46:33.310Z"
+    },
+    {
+      "type": "portal_share",
+      "artistId": "artist-test-1",
+      "postId": "post-1767001624310",
+      "ts": "2025-12-29T09:47:04.639Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767001896439",
+      "title": "Œuvre Test",
+      "ts": "2025-12-29T09:51:38.190Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767001900811",
+      "title": "Test 2",
+      "ts": "2025-12-29T09:51:42.971Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767001906306",
+      "title": "Test 3",
+      "ts": "2025-12-29T09:51:46.564Z"
+    },
+    {
+      "type": "marketplace_exhibit",
+      "listingId": "listing-1767001906306",
+      "admin": "globalart-admin",
+      "ts": "2025-12-29T09:51:47.267Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767001926909",
+      "listingId": "listing-1767001928316",
+      "title": "For Sale",
+      "ts": "2025-12-29T09:52:08.518Z"
+    },
+    {
+      "type": "portal_share",
+      "artistId": "artist-test-1",
+      "postId": "post-1767001948403",
+      "ts": "2025-12-29T09:52:28.742Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767001993531",
+      "listingId": "listing-1767001995047",
+      "title": "Price Test",
+      "ts": "2025-12-29T09:53:15.708Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767041957225",
+      "title": "Œuvre Test",
+      "ts": "2025-12-29T20:59:17.379Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767041959732",
+      "title": "Test 2",
+      "ts": "2025-12-29T20:59:20.135Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767041961919",
+      "title": "Test 3",
+      "ts": "2025-12-29T20:59:22.581Z"
+    },
+    {
+      "type": "marketplace_exhibit",
+      "listingId": "listing-1767041961919",
+      "admin": "globalart-admin",
+      "ts": "2025-12-29T20:59:24.452Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767041975672",
+      "listingId": "listing-1767041980152",
+      "title": "Price Test",
+      "ts": "2025-12-29T20:59:50.961Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767042039293",
+      "listingId": "listing-1767042042373",
+      "title": "For Sale",
+      "ts": "2025-12-29T21:00:44.365Z"
+    },
+    {
+      "type": "portal_share",
+      "artistId": "artist-test-1",
+      "postId": "post-1767042213832",
+      "ts": "2025-12-29T21:03:34.231Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767042976539",
+      "listingId": "listing-1767042979969",
+      "title": "For Sale",
+      "ts": "2025-12-29T21:16:20.793Z"
+    },
+    {
+      "type": "portal_share",
+      "artistId": "artist-test-1",
+      "postId": "post-1767043071494",
+      "ts": "2025-12-29T21:17:51.778Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767043081620",
+      "title": "Œuvre Test",
+      "ts": "2025-12-29T21:18:01.815Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767043082713",
+      "title": "Test 2",
+      "ts": "2025-12-29T21:18:03.017Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767043086792",
+      "title": "Test 3",
+      "ts": "2025-12-29T21:18:07.769Z"
+    },
+    {
+      "type": "marketplace_exhibit",
+      "listingId": "listing-1767043086792",
+      "admin": "globalart-admin",
+      "ts": "2025-12-29T21:18:10.885Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767043540703",
+      "listingId": "listing-1767043544280",
+      "title": "For Sale",
+      "ts": "2025-12-29T21:25:44.626Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767043601629",
+      "title": "Œuvre Test",
+      "ts": "2025-12-29T21:26:41.862Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767043606539",
+      "title": "Test 2",
+      "ts": "2025-12-29T21:26:47.494Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767043609913",
+      "title": "Test 3",
+      "ts": "2025-12-29T21:26:51.093Z"
+    },
+    {
+      "type": "marketplace_exhibit",
+      "listingId": "listing-1767043609913",
+      "admin": "globalart-admin",
+      "ts": "2025-12-29T21:26:54.972Z"
+    },
+    {
+      "type": "portal_share",
+      "artistId": "artist-test-1",
+      "postId": "post-1767043764323",
+      "ts": "2025-12-29T21:29:25.008Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767043878643",
+      "listingId": "listing-1767043880196",
+      "title": "Price Test",
+      "ts": "2025-12-29T21:31:21.500Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767044869373",
+      "title": "Œuvre Test",
+      "ts": "2025-12-29T21:47:49.556Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767044873097",
+      "title": "Test 2",
+      "ts": "2025-12-29T21:47:56.034Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767044898671",
+      "title": "Test 3",
+      "ts": "2025-12-29T21:48:21.213Z"
+    },
+    {
+      "type": "marketplace_exhibit",
+      "listingId": "listing-1767044898671",
+      "admin": "globalart-admin",
+      "ts": "2025-12-29T21:48:23.709Z"
+    },
+    {
+      "type": "portal_share",
+      "artistId": "artist-test-1",
+      "postId": "post-1767044933895",
+      "ts": "2025-12-29T21:48:55.541Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767045007839",
+      "listingId": "listing-1767045013195",
+      "title": "For Sale",
+      "ts": "2025-12-29T21:50:14.509Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767045125321",
+      "listingId": "listing-1767045127862",
+      "title": "Price Test",
+      "ts": "2025-12-29T21:52:09.153Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767045778650",
+      "listingId": "listing-1767045784814",
+      "title": "For Sale",
+      "ts": "2025-12-29T22:03:05.722Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767045931255",
+      "title": "Œuvre Test",
+      "ts": "2025-12-29T22:05:31.468Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767045933458",
+      "title": "Test 2",
+      "ts": "2025-12-29T22:05:33.792Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767045934765",
+      "title": "Test 3",
+      "ts": "2025-12-29T22:05:34.967Z"
+    },
+    {
+      "type": "marketplace_exhibit",
+      "listingId": "listing-1767045934765",
+      "admin": "globalart-admin",
+      "ts": "2025-12-29T22:05:37.074Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767046098999",
+      "listingId": "listing-1767046103230",
+      "title": "Price Test",
+      "ts": "2025-12-29T22:08:24.428Z"
+    },
+    {
+      "type": "portal_share",
+      "artistId": "artist-test-1",
+      "postId": "post-1767046182879",
+      "ts": "2025-12-29T22:09:43.038Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767047269253",
+      "listingId": "listing-1767047271987",
+      "title": "Price Test",
+      "ts": "2025-12-29T22:27:52.599Z"
+    },
+    {
+      "type": "portal_share",
+      "artistId": "artist-test-1",
+      "postId": "post-1767047327692",
+      "ts": "2025-12-29T22:28:48.207Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767047452622",
+      "title": "Œuvre Test",
+      "ts": "2025-12-29T22:30:53.553Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767047455803",
+      "title": "Test 2",
+      "ts": "2025-12-29T22:30:56.776Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "artist-test-1",
+      "listingId": "listing-1767047468037",
+      "title": "Test 3",
+      "ts": "2025-12-29T22:31:13.665Z"
+    },
+    {
+      "type": "marketplace_exhibit",
+      "listingId": "listing-1767047468037",
+      "admin": "globalart-admin",
+      "ts": "2025-12-29T22:31:27.116Z"
+    },
+    {
+      "type": "marketplace_list_create",
+      "artistId": "user-1767047506764",
+      "listingId": "listing-1767047511599",
+      "title": "For Sale",
+      "ts": "2025-12-29T22:31:52.231Z"
+    }
+  ],
   "transactions": [
     {
-      "id": "dep-1765586145664",
-      "accountId": "guest-000",
-      "type": "DEPOSIT",
+      "id": "tx-rech-1766967300745",
+      "accountId": "user-1766967298482",
+      "type": "RECHARGE",
       "token": "ARTC",
-      "amount": 200,
-      "datetime": "2025-12-13T00:35:45.665Z",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated)",
+      "datetime": "2025-12-29T00:15:00.745Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967301127",
+      "accountId": "user-1766967298482",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1766967300890",
+      "datetime": "2025-12-29T00:15:01.127Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967301128-in",
+      "accountId": "user-1766967299980",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1766967300890 (net after fees)",
+      "datetime": "2025-12-29T00:15:01.128Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967301128-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1766967300890",
+      "datetime": "2025-12-29T00:15:01.128Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967301128-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1766967300890",
+      "datetime": "2025-12-29T00:15:01.128Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967333594",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Send to user-test-2",
+      "datetime": "2025-12-29T00:15:33.594Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967333594-in",
+      "accountId": "user-test-2",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Receive from user-test-1",
+      "datetime": "2025-12-29T00:15:33.594Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-pass-1766967351944",
+      "accountId": "user-1766967350010",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T00:15:51.944Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1766967355315",
+      "accountId": "user-1766967350010",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T00:15:55.315Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1766967357391",
+      "accountId": "user-1766967350010",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T00:15:57.391Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1766967361212",
+      "accountId": "user-1766967350010",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T00:16:01.212Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-nft-1766967363843",
+      "accountId": "user-1766967350010",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -2,
+      "description": "GAP Studio NFT creation - img-1766967352461-4034",
+      "datetime": "2025-12-29T00:16:03.843Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-nft-1766967412755",
+      "accountId": "test-user-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -2,
+      "description": "GAP Studio NFT creation - img-1766967411064-3621",
+      "datetime": "2025-12-29T00:16:52.755Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1766967549333",
+      "accountId": "user-1766967547981",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T00:19:09.333Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967549753",
+      "accountId": "user-1766967547981",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1766967549444",
+      "datetime": "2025-12-29T00:19:09.753Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967549753-in",
+      "accountId": "user-1766967549106",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1766967549444 (net after fees)",
+      "datetime": "2025-12-29T00:19:09.753Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967549753-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1766967549444",
+      "datetime": "2025-12-29T00:19:09.753Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967549753-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1766967549444",
+      "datetime": "2025-12-29T00:19:09.753Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1766967652283",
+      "accountId": "user-1766967647580",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T00:20:52.283Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967653867",
+      "accountId": "user-1766967647580",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1766967652582",
+      "datetime": "2025-12-29T00:20:53.867Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967653867-in",
+      "accountId": "user-1766967649879",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1766967652582 (net after fees)",
+      "datetime": "2025-12-29T00:20:53.867Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967653867-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1766967652582",
+      "datetime": "2025-12-29T00:20:53.867Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967653867-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1766967652582",
+      "datetime": "2025-12-29T00:20:53.867Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1766967713962",
+      "accountId": "user-1766967712369",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T00:21:53.962Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967718324",
+      "accountId": "user-1766967712369",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1766967714640",
+      "datetime": "2025-12-29T00:21:58.324Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967718324-in",
+      "accountId": "user-1766967713636",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1766967714640 (net after fees)",
+      "datetime": "2025-12-29T00:21:58.324Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967718324-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1766967714640",
+      "datetime": "2025-12-29T00:21:58.324Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967718324-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1766967714640",
+      "datetime": "2025-12-29T00:21:58.324Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967827540",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Send to user-test-2",
+      "datetime": "2025-12-29T00:23:47.540Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967827540-in",
+      "accountId": "user-test-2",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Receive from user-test-1",
+      "datetime": "2025-12-29T00:23:47.540Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-pass-1766967835188",
+      "accountId": "user-1766967834392",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T00:23:55.188Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1766967835639",
+      "accountId": "user-1766967834392",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T00:23:55.639Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1766967835744",
+      "accountId": "user-1766967834392",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T00:23:55.744Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1766967835875",
+      "accountId": "user-1766967834392",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T00:23:55.875Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-nft-1766967855982",
+      "accountId": "test-user-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -2,
+      "description": "GAP Studio NFT creation - img-1766967855786-7323",
+      "datetime": "2025-12-29T00:24:15.982Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1766967865919",
+      "accountId": "user-1766967864873",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T00:24:25.919Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967866168",
+      "accountId": "user-1766967864873",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1766967866015",
+      "datetime": "2025-12-29T00:24:26.168Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967866168-in",
+      "accountId": "user-1766967865770",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1766967866015 (net after fees)",
+      "datetime": "2025-12-29T00:24:26.168Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967866168-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1766967866015",
+      "datetime": "2025-12-29T00:24:26.168Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967866168-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1766967866015",
+      "datetime": "2025-12-29T00:24:26.168Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967869640",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought prod-1",
+      "datetime": "2025-12-29T00:24:29.640Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967869640-in",
+      "accountId": "artist-test-1",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale prod-1 (net after fees)",
+      "datetime": "2025-12-29T00:24:29.640Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967869640-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for prod-1",
+      "datetime": "2025-12-29T00:24:29.640Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766967869640-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for prod-1",
+      "datetime": "2025-12-29T00:24:29.640Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "dep-1766968447204",
+      "accountId": "user-1766698983801",
+      "type": "DEPOSIT",
+      "token": "PI",
+      "amount": 0.00005,
+      "datetime": "2025-12-29T00:34:07.206Z",
       "status": "PENDING"
     },
     {
-      "id": "tx-1765669905230",
+      "id": "tx-rech-1766968559974",
+      "accountId": "user-1766698983801",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 5,
+      "description": "Recharge ARTC (simulated)",
+      "datetime": "2025-12-29T00:35:59.974Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766990750004",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Send to user-test-2",
-      "datetime": "2025-12-13T23:51:45.230Z",
+      "datetime": "2025-12-29T06:45:50.004Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765669905230-in",
+      "id": "tx-1766990750004-in",
       "accountId": "user-test-2",
       "type": "CREDIT",
       "token": "ARTC",
       "amount": 10,
       "description": "Receive from user-test-1",
-      "datetime": "2025-12-13T23:51:45.230Z",
+      "datetime": "2025-12-29T06:45:50.004Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765669971372",
-      "accountId": "user-test-1",
+      "id": "tx-pass-1766990781660",
+      "accountId": "user-1766990781544",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T06:46:21.660Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1766990782011",
+      "accountId": "user-1766990781544",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T06:46:22.011Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1766990782128",
+      "accountId": "user-1766990781544",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T06:46:22.128Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1766990782391",
+      "accountId": "user-1766990781544",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T06:46:22.391Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-nft-1766990788192",
+      "accountId": "test-user-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -2,
+      "description": "GAP Studio NFT creation - img-1766990788046-6359",
+      "datetime": "2025-12-29T06:46:28.192Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1766990801815",
+      "accountId": "user-1766990800360",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T06:46:41.815Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766990801983",
+      "accountId": "user-1766990800360",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
-      "description": "Send to user-test-2",
-      "datetime": "2025-12-13T23:52:51.372Z",
+      "description": "Bought listing-1766990801890",
+      "datetime": "2025-12-29T06:46:41.983Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765669971373-in",
-      "accountId": "user-test-2",
+      "id": "tx-1766990801983-in",
+      "accountId": "user-1766990801627",
       "type": "CREDIT",
       "token": "ARTC",
-      "amount": 10,
-      "description": "Receive from user-test-1",
-      "datetime": "2025-12-13T23:52:51.373Z",
+      "amount": 9.38,
+      "description": "Sale listing-1766990801890 (net after fees)",
+      "datetime": "2025-12-29T06:46:41.983Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765670140661",
+      "id": "tx-1766990801983-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1766990801890",
+      "datetime": "2025-12-29T06:46:41.983Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766990801983-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1766990801890",
+      "datetime": "2025-12-29T06:46:41.983Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766990804382",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Bought prod-1",
-      "datetime": "2025-12-13T23:55:40.661Z",
+      "datetime": "2025-12-29T06:46:44.382Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765670140661-in",
+      "id": "tx-1766990804382-in",
       "accountId": "artist-test-1",
       "type": "CREDIT",
       "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-13T23:55:40.661Z",
+      "amount": 9.38,
+      "description": "Sale prod-1 (net after fees)",
+      "datetime": "2025-12-29T06:46:44.382Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765670145437",
+      "id": "tx-1766990804382-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for prod-1",
+      "datetime": "2025-12-29T06:46:44.382Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766990804382-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for prod-1",
+      "datetime": "2025-12-29T06:46:44.382Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1766997237839",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 50,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T08:33:57.839Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1766997239513",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T08:33:59.513Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1766999468931",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 50,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:11:08.931Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1766999469686",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:11:09.686Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766999509086",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Send to user-test-2",
-      "datetime": "2025-12-13T23:55:45.437Z",
+      "datetime": "2025-12-29T09:11:49.086Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765670145437-in",
+      "id": "tx-1766999509086-in",
       "accountId": "user-test-2",
       "type": "CREDIT",
       "token": "ARTC",
       "amount": 10,
       "description": "Receive from user-test-1",
-      "datetime": "2025-12-13T23:55:45.437Z",
+      "datetime": "2025-12-29T09:11:49.086Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765670217669",
+      "id": "tx-rech-1766999516839",
+      "accountId": "user-1766999515500",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:11:56.839Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766999517036",
+      "accountId": "user-1766999515500",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1766999516922",
+      "datetime": "2025-12-29T09:11:57.036Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766999517036-in",
+      "accountId": "user-1766999516710",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1766999516922 (net after fees)",
+      "datetime": "2025-12-29T09:11:57.036Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766999517036-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1766999516922",
+      "datetime": "2025-12-29T09:11:57.036Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766999517036-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1766999516922",
+      "datetime": "2025-12-29T09:11:57.036Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-pass-1766999530194",
+      "accountId": "user-1766999529902",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T09:12:10.194Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1766999530501",
+      "accountId": "user-1766999529902",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:12:10.501Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1766999530688",
+      "accountId": "user-1766999529902",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:12:10.688Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1766999530875",
+      "accountId": "user-1766999529902",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:12:10.875Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766999540751",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought prod-1",
+      "datetime": "2025-12-29T09:12:20.751Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766999540751-in",
+      "accountId": "artist-test-1",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale prod-1 (net after fees)",
+      "datetime": "2025-12-29T09:12:20.751Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766999540752-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for prod-1",
+      "datetime": "2025-12-29T09:12:20.752Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1766999540752-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for prod-1",
+      "datetime": "2025-12-29T09:12:20.752Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-nft-1766999583679",
+      "accountId": "test-user-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -2,
+      "description": "GAP Studio NFT creation - img-1766999583403-1883",
+      "datetime": "2025-12-29T09:13:03.679Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767000088319",
+      "accountId": "user-1767000086894",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:21:28.319Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000088509",
+      "accountId": "user-1767000086894",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1767000088398",
+      "datetime": "2025-12-29T09:21:28.509Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000088509-in",
+      "accountId": "user-1767000088085",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1767000088398 (net after fees)",
+      "datetime": "2025-12-29T09:21:28.509Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000088509-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1767000088398",
+      "datetime": "2025-12-29T09:21:28.509Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000088509-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1767000088398",
+      "datetime": "2025-12-29T09:21:28.509Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000132974",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought prod-1",
+      "datetime": "2025-12-29T09:22:12.974Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000132974-in",
+      "accountId": "artist-test-1",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale prod-1 (net after fees)",
+      "datetime": "2025-12-29T09:22:12.974Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000132974-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for prod-1",
+      "datetime": "2025-12-29T09:22:12.974Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000132974-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for prod-1",
+      "datetime": "2025-12-29T09:22:12.974Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-nft-1767000155656",
+      "accountId": "test-user-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -2,
+      "description": "GAP Studio NFT creation - img-1767000154702-3203",
+      "datetime": "2025-12-29T09:22:35.656Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767000189708",
+      "accountId": "user-1767000187548",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:23:09.708Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000191368",
+      "accountId": "user-1767000187548",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1767000191048",
+      "datetime": "2025-12-29T09:23:11.368Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000191368-in",
+      "accountId": "user-1767000189195",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1767000191048 (net after fees)",
+      "datetime": "2025-12-29T09:23:11.368Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000191368-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1767000191048",
+      "datetime": "2025-12-29T09:23:11.368Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000191368-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1767000191048",
+      "datetime": "2025-12-29T09:23:11.368Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767000220929",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 50,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:23:40.929Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767000225858",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:23:45.858Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-pass-1767000238298",
+      "accountId": "user-1767000236808",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T09:23:58.298Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767000239356",
+      "accountId": "user-1767000236808",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:23:59.356Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767000239739",
+      "accountId": "user-1767000236808",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:23:59.739Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767000243441",
+      "accountId": "user-1767000236808",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:24:03.441Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000261019",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Send to user-test-2",
-      "datetime": "2025-12-13T23:56:57.669Z",
+      "datetime": "2025-12-29T09:24:21.019Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765670217669-in",
+      "id": "tx-1767000261019-in",
       "accountId": "user-test-2",
       "type": "CREDIT",
       "token": "ARTC",
       "amount": 10,
       "description": "Receive from user-test-1",
-      "datetime": "2025-12-13T23:56:57.669Z",
+      "datetime": "2025-12-29T09:24:21.019Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765670222975",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
+      "id": "tx-rech-1767000511326",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
       "token": "ARTC",
-      "amount": -10,
-      "description": "Bought prod-1",
-      "datetime": "2025-12-13T23:57:02.975Z",
+      "amount": 50,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:28:31.326Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765670222975-in",
-      "accountId": "artist-test-1",
-      "type": "CREDIT",
-      "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-13T23:57:02.975Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1765670304647",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Bought prod-1",
-      "datetime": "2025-12-13T23:58:24.647Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1765670304647-in",
-      "accountId": "artist-test-1",
-      "type": "CREDIT",
+      "id": "tx-rech-1767000511485",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
       "token": "ARTC",
       "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-13T23:58:24.647Z",
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:28:31.485Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765670307369",
+      "id": "tx-pass-1767000515478",
+      "accountId": "user-1767000515148",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T09:28:35.478Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767000515982",
+      "accountId": "user-1767000515148",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:28:35.982Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767000724079",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 50,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:32:04.080Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767000724246",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:32:04.246Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-pass-1767000734497",
+      "accountId": "user-1767000732366",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T09:32:14.497Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767000738030",
+      "accountId": "user-1767000732366",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:32:18.030Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767000739522",
+      "accountId": "user-1767000732366",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:32:19.522Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767000740233",
+      "accountId": "user-1767000732366",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:32:20.233Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000759812",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Send to user-test-2",
-      "datetime": "2025-12-13T23:58:27.369Z",
+      "datetime": "2025-12-29T09:32:39.812Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765670307369-in",
+      "id": "tx-1767000759812-in",
       "accountId": "user-test-2",
       "type": "CREDIT",
       "token": "ARTC",
       "amount": 10,
       "description": "Receive from user-test-1",
-      "datetime": "2025-12-13T23:58:27.369Z",
+      "datetime": "2025-12-29T09:32:39.812Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765670381617",
+      "id": "tx-rech-1767000774015",
+      "accountId": "user-1767000769498",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:32:54.015Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000782162",
+      "accountId": "user-1767000769498",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1767000775611",
+      "datetime": "2025-12-29T09:33:02.163Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000782163-in",
+      "accountId": "user-1767000771670",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1767000775611 (net after fees)",
+      "datetime": "2025-12-29T09:33:02.163Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000782163-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1767000775611",
+      "datetime": "2025-12-29T09:33:02.164Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000782164-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1767000775611",
+      "datetime": "2025-12-29T09:33:02.164Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000788666",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Bought prod-1",
-      "datetime": "2025-12-13T23:59:41.617Z",
+      "datetime": "2025-12-29T09:33:08.666Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765670381617-in",
+      "id": "tx-1767000788667-in",
       "accountId": "artist-test-1",
       "type": "CREDIT",
       "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-13T23:59:41.617Z",
+      "amount": 9.38,
+      "description": "Sale prod-1 (net after fees)",
+      "datetime": "2025-12-29T09:33:08.667Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765670386522",
+      "id": "tx-1767000788667-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for prod-1",
+      "datetime": "2025-12-29T09:33:08.667Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767000788667-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for prod-1",
+      "datetime": "2025-12-29T09:33:08.667Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767001071792",
+      "accountId": "test-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:37:51.792Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-nft-1767001071960",
+      "accountId": "test-user-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -2,
+      "description": "GAP Studio NFT creation - img-1767001071573-2870",
+      "datetime": "2025-12-29T09:37:51.960Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-pass-1767001079387",
+      "accountId": "user-1767001078873",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T09:37:59.387Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767001081835",
+      "accountId": "user-1767001078873",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:38:01.835Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767001084089",
+      "accountId": "user-1767001078873",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:38:04.089Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767001096145",
+      "accountId": "user-1767001078873",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:38:16.147Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767001130880",
+      "accountId": "user-1767001123088",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:38:50.880Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001131539",
+      "accountId": "user-1767001123088",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1767001131068",
+      "datetime": "2025-12-29T09:38:51.539Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001131539-in",
+      "accountId": "user-1767001129007",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1767001131068 (net after fees)",
+      "datetime": "2025-12-29T09:38:51.539Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001131540-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1767001131068",
+      "datetime": "2025-12-29T09:38:51.540Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001131540-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1767001131068",
+      "datetime": "2025-12-29T09:38:51.540Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767001199006",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 50,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:39:59.006Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767001199553",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:39:59.553Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001207903",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Send to user-test-2",
-      "datetime": "2025-12-13T23:59:46.522Z",
+      "datetime": "2025-12-29T09:40:07.903Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765670386523-in",
+      "id": "tx-1767001207903-in",
       "accountId": "user-test-2",
       "type": "CREDIT",
       "token": "ARTC",
       "amount": 10,
       "description": "Receive from user-test-1",
-      "datetime": "2025-12-13T23:59:46.523Z",
+      "datetime": "2025-12-29T09:40:07.903Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765725098687",
+      "id": "tx-1767001235248",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought prod-1",
+      "datetime": "2025-12-29T09:40:35.248Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001235248-in",
+      "accountId": "artist-test-1",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale prod-1 (net after fees)",
+      "datetime": "2025-12-29T09:40:35.248Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001235248-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for prod-1",
+      "datetime": "2025-12-29T09:40:35.248Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001235248-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for prod-1",
+      "datetime": "2025-12-29T09:40:35.248Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-pass-1767001530601",
+      "accountId": "user-1767001529872",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T09:45:30.601Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767001531131",
+      "accountId": "user-1767001529872",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:45:31.131Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767001531374",
+      "accountId": "user-1767001529872",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:45:31.374Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767001531542",
+      "accountId": "user-1767001529872",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:45:31.542Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767001567430",
+      "accountId": "user-1767001564924",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:46:07.430Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001568174",
+      "accountId": "user-1767001564924",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1767001567573",
+      "datetime": "2025-12-29T09:46:08.174Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001568174-in",
+      "accountId": "user-1767001566975",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1767001567573 (net after fees)",
+      "datetime": "2025-12-29T09:46:08.174Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001568174-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1767001567573",
+      "datetime": "2025-12-29T09:46:08.174Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001568174-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1767001567573",
+      "datetime": "2025-12-29T09:46:08.174Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767001597410",
+      "accountId": "test-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:46:37.410Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-nft-1767001597860",
+      "accountId": "test-user-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -2,
+      "description": "GAP Studio NFT creation - img-1767001596933-1854",
+      "datetime": "2025-12-29T09:46:37.860Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001606983",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Send to user-test-2",
-      "datetime": "2025-12-14T15:11:38.687Z",
+      "datetime": "2025-12-29T09:46:46.983Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765725098687-in",
+      "id": "tx-1767001606983-in",
       "accountId": "user-test-2",
       "type": "CREDIT",
       "token": "ARTC",
       "amount": 10,
       "description": "Receive from user-test-1",
-      "datetime": "2025-12-14T15:11:38.687Z",
+      "datetime": "2025-12-29T09:46:46.983Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765725105567",
+      "id": "tx-rech-1767001616986",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 50,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:46:56.986Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767001617408",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:46:57.408Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001633788",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Bought prod-1",
-      "datetime": "2025-12-14T15:11:45.567Z",
+      "datetime": "2025-12-29T09:47:13.788Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765725105567-in",
+      "id": "tx-1767001633788-in",
       "accountId": "artist-test-1",
       "type": "CREDIT",
       "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-14T15:11:45.567Z",
+      "amount": 9.38,
+      "description": "Sale prod-1 (net after fees)",
+      "datetime": "2025-12-29T09:47:13.788Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765725236065",
+      "id": "tx-1767001633788-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for prod-1",
+      "datetime": "2025-12-29T09:47:13.788Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001633788-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for prod-1",
+      "datetime": "2025-12-29T09:47:13.788Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-pass-1767001877541",
+      "accountId": "user-1767001877141",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T09:51:17.541Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767001877905",
+      "accountId": "user-1767001877141",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:51:17.905Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767001878223",
+      "accountId": "user-1767001877141",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:51:18.223Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767001878711",
+      "accountId": "user-1767001877141",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T09:51:18.711Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767001927833",
+      "accountId": "user-1767001923527",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:52:07.833Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001929125",
+      "accountId": "user-1767001923527",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1767001928316",
+      "datetime": "2025-12-29T09:52:09.125Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001929125-in",
+      "accountId": "user-1767001926909",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1767001928316 (net after fees)",
+      "datetime": "2025-12-29T09:52:09.125Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001929125-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1767001928316",
+      "datetime": "2025-12-29T09:52:09.125Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001929125-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1767001928316",
+      "datetime": "2025-12-29T09:52:09.125Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767001937489",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 50,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:52:17.489Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767001937769",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:52:17.769Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001941902",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Send to user-test-2",
-      "datetime": "2025-12-14T15:13:56.065Z",
+      "datetime": "2025-12-29T09:52:21.902Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765725236065-in",
+      "id": "tx-1767001941902-in",
       "accountId": "user-test-2",
       "type": "CREDIT",
       "token": "ARTC",
       "amount": 10,
       "description": "Receive from user-test-1",
-      "datetime": "2025-12-14T15:13:56.065Z",
+      "datetime": "2025-12-29T09:52:21.902Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765725242185",
+      "id": "tx-1767001982489",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Bought prod-1",
-      "datetime": "2025-12-14T15:14:02.185Z",
+      "datetime": "2025-12-29T09:53:02.489Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765725242185-in",
+      "id": "tx-1767001982489-in",
       "accountId": "artist-test-1",
       "type": "CREDIT",
       "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-14T15:14:02.185Z",
+      "amount": 9.38,
+      "description": "Sale prod-1 (net after fees)",
+      "datetime": "2025-12-29T09:53:02.489Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765727241749",
+      "id": "tx-1767001982489-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for prod-1",
+      "datetime": "2025-12-29T09:53:02.489Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767001982489-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for prod-1",
+      "datetime": "2025-12-29T09:53:02.489Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767002023824",
+      "accountId": "test-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T09:53:43.824Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-nft-1767002024386",
+      "accountId": "test-user-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -2,
+      "description": "GAP Studio NFT creation - img-1767002023060-3568",
+      "datetime": "2025-12-29T09:53:44.386Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767042017401",
+      "accountId": "test-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:00:17.401Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-nft-1767042020183",
+      "accountId": "test-user-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -2,
+      "description": "GAP Studio NFT creation - img-1767042016698-8568",
+      "datetime": "2025-12-29T21:00:20.183Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767042040224",
+      "accountId": "user-1767042033846",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:00:40.224Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767042049842",
+      "accountId": "user-1767042033846",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1767042042373",
+      "datetime": "2025-12-29T21:00:49.842Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767042049842-in",
+      "accountId": "user-1767042039293",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1767042042373 (net after fees)",
+      "datetime": "2025-12-29T21:00:49.842Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767042049843-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1767042042373",
+      "datetime": "2025-12-29T21:00:49.843Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767042049843-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1767042042373",
+      "datetime": "2025-12-29T21:00:49.843Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-pass-1767042173119",
+      "accountId": "user-1767042170371",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T21:02:53.119Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767042175930",
+      "accountId": "user-1767042170371",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T21:02:55.930Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767042177812",
+      "accountId": "user-1767042170371",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T21:02:57.812Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767042180373",
+      "accountId": "user-1767042170371",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T21:03:00.373Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767042236726",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought prod-1",
+      "datetime": "2025-12-29T21:03:56.726Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767042236726-in",
+      "accountId": "artist-test-1",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale prod-1 (net after fees)",
+      "datetime": "2025-12-29T21:03:56.726Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767042236726-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for prod-1",
+      "datetime": "2025-12-29T21:03:56.726Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767042236726-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for prod-1",
+      "datetime": "2025-12-29T21:03:56.726Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767042247449",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 50,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:04:07.449Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767042248671",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:04:08.671Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767042951886",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Send to user-test-2",
-      "datetime": "2025-12-14T15:47:21.749Z",
+      "datetime": "2025-12-29T21:15:51.886Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765727241749-in",
+      "id": "tx-1767042951887-in",
       "accountId": "user-test-2",
       "type": "CREDIT",
       "token": "ARTC",
       "amount": 10,
       "description": "Receive from user-test-1",
-      "datetime": "2025-12-14T15:47:21.749Z",
+      "datetime": "2025-12-29T21:15:51.887Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765727247114",
+      "id": "tx-rech-1767042979126",
+      "accountId": "user-1767042970655",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:16:19.126Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767042982649",
+      "accountId": "user-1767042970655",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1767042979969",
+      "datetime": "2025-12-29T21:16:22.649Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767042982649-in",
+      "accountId": "user-1767042976539",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1767042979969 (net after fees)",
+      "datetime": "2025-12-29T21:16:22.649Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767042982649-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1767042979969",
+      "datetime": "2025-12-29T21:16:22.649Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767042982649-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1767042979969",
+      "datetime": "2025-12-29T21:16:22.649Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-pass-1767043048182",
+      "accountId": "user-1767043043594",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T21:17:28.182Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767043056939",
+      "accountId": "user-1767043043594",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T21:17:36.939Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767043058967",
+      "accountId": "user-1767043043594",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T21:17:38.967Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767043061081",
+      "accountId": "user-1767043043594",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T21:17:41.081Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767043152626",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Bought prod-1",
-      "datetime": "2025-12-14T15:47:27.114Z",
+      "datetime": "2025-12-29T21:19:12.626Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1765727247114-in",
+      "id": "tx-1767043152626-in",
       "accountId": "artist-test-1",
       "type": "CREDIT",
       "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-14T15:47:27.114Z",
+      "amount": 9.38,
+      "description": "Sale prod-1 (net after fees)",
+      "datetime": "2025-12-29T21:19:12.626Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766506860741",
+      "id": "tx-1767043152626-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for prod-1",
+      "datetime": "2025-12-29T21:19:12.626Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767043152626-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for prod-1",
+      "datetime": "2025-12-29T21:19:12.626Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767043164750",
+      "accountId": "test-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:19:24.750Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-nft-1767043166967",
+      "accountId": "test-user-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -2,
+      "description": "GAP Studio NFT creation - img-1767043162945-9610",
+      "datetime": "2025-12-29T21:19:26.967Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767043220282",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 50,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:20:20.282Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767043220791",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:20:20.791Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767043542633",
+      "accountId": "user-1767043537102",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:25:42.633Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767043546668",
+      "accountId": "user-1767043537102",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1767043544280",
+      "datetime": "2025-12-29T21:25:46.668Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767043546668-in",
+      "accountId": "user-1767043540703",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1767043544280 (net after fees)",
+      "datetime": "2025-12-29T21:25:46.668Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767043546668-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1767043544280",
+      "datetime": "2025-12-29T21:25:46.668Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767043546668-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1767043544280",
+      "datetime": "2025-12-29T21:25:46.668Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-pass-1767043557210",
+      "accountId": "user-1767043556449",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T21:25:57.210Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767043567409",
+      "accountId": "user-1767043556449",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T21:26:07.409Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767043599006",
+      "accountId": "user-1767043556449",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T21:26:39.006Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767043604248",
+      "accountId": "user-1767043556449",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T21:26:44.248Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767043647679",
+      "accountId": "test-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:27:27.679Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-nft-1767043649760",
+      "accountId": "test-user-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -2,
+      "description": "GAP Studio NFT creation - img-1767043644823-7715",
+      "datetime": "2025-12-29T21:27:29.760Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767043704617",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought prod-1",
+      "datetime": "2025-12-29T21:28:24.617Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767043704617-in",
+      "accountId": "artist-test-1",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale prod-1 (net after fees)",
+      "datetime": "2025-12-29T21:28:24.617Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767043704617-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for prod-1",
+      "datetime": "2025-12-29T21:28:24.617Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767043704617-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for prod-1",
+      "datetime": "2025-12-29T21:28:24.617Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767043788845",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Send to user-test-2",
-      "datetime": "2025-12-23T16:21:00.741Z",
+      "datetime": "2025-12-29T21:29:48.845Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766506860741-in",
+      "id": "tx-1767043788845-in",
       "accountId": "user-test-2",
       "type": "CREDIT",
       "token": "ARTC",
       "amount": 10,
       "description": "Receive from user-test-1",
-      "datetime": "2025-12-23T16:21:00.741Z",
+      "datetime": "2025-12-29T21:29:48.845Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766506869327",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
+      "id": "tx-rech-1767043811098",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
       "token": "ARTC",
-      "amount": -10,
-      "description": "Bought prod-1",
-      "datetime": "2025-12-23T16:21:09.327Z",
+      "amount": 50,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:30:11.098Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766506869327-in",
-      "accountId": "artist-test-1",
-      "type": "CREDIT",
-      "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-23T16:21:09.327Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766531125090",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Bought prod-1",
-      "datetime": "2025-12-23T23:05:25.090Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766531125090-in",
-      "accountId": "artist-test-1",
-      "type": "CREDIT",
+      "id": "tx-rech-1767043815178",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
       "token": "ARTC",
       "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-23T23:05:25.090Z",
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:30:15.178Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766531140201",
+      "id": "tx-pass-1767044789738",
+      "accountId": "user-1767044786426",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T21:46:29.738Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767044812412",
+      "accountId": "user-1767044786426",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T21:46:52.412Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767044815786",
+      "accountId": "user-1767044786426",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T21:46:55.786Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767044820116",
+      "accountId": "user-1767044786426",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T21:47:00.116Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767044846518",
+      "accountId": "test-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:47:26.518Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-nft-1767044850522",
+      "accountId": "test-user-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -2,
+      "description": "GAP Studio NFT creation - img-1767044844903-4494",
+      "datetime": "2025-12-29T21:47:30.522Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767044924681",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Send to user-test-2",
-      "datetime": "2025-12-23T23:05:40.201Z",
+      "datetime": "2025-12-29T21:48:44.681Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766531140201-in",
+      "id": "tx-1767044924681-in",
       "accountId": "user-test-2",
       "type": "CREDIT",
       "token": "ARTC",
       "amount": 10,
       "description": "Receive from user-test-1",
-      "datetime": "2025-12-23T23:05:40.201Z",
+      "datetime": "2025-12-29T21:48:44.681Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766531575270",
+      "id": "tx-rech-1767045011287",
+      "accountId": "user-1767044988860",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:50:11.287Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767045041731",
+      "accountId": "user-1767044988860",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1767045013195",
+      "datetime": "2025-12-29T21:50:41.731Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767045041731-in",
+      "accountId": "user-1767045007839",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1767045013195 (net after fees)",
+      "datetime": "2025-12-29T21:50:41.731Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767045041731-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1767045013195",
+      "datetime": "2025-12-29T21:50:41.731Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767045041731-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1767045013195",
+      "datetime": "2025-12-29T21:50:41.731Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767045046748",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 50,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:50:46.748Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767045047322",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T21:50:47.323Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767045782331",
+      "accountId": "user-1767045773100",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T22:03:02.331Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767045788801",
+      "accountId": "user-1767045773100",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought listing-1767045784814",
+      "datetime": "2025-12-29T22:03:08.805Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767045788805-in",
+      "accountId": "user-1767045778650",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale listing-1767045784814 (net after fees)",
+      "datetime": "2025-12-29T22:03:08.805Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767045788805-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1767045784814",
+      "datetime": "2025-12-29T22:03:08.806Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767045788806-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for listing-1767045784814",
+      "datetime": "2025-12-29T22:03:08.806Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767045868045",
+      "accountId": "user-test-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -10,
+      "description": "Bought prod-1",
+      "datetime": "2025-12-29T22:04:28.046Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767045868046-in",
+      "accountId": "artist-test-1",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 9.38,
+      "description": "Sale prod-1 (net after fees)",
+      "datetime": "2025-12-29T22:04:28.047Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767045868047-plat",
+      "accountId": "platform",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.5,
+      "description": "Platform fee for prod-1",
+      "datetime": "2025-12-29T22:04:28.047Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767045868047-net",
+      "accountId": "network",
+      "type": "CREDIT",
+      "token": "ARTC",
+      "amount": 0.12,
+      "description": "Network fee for prod-1",
+      "datetime": "2025-12-29T22:04:28.047Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-pass-1767045886477",
+      "accountId": "user-1767045883494",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T22:04:46.477Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767045888871",
+      "accountId": "user-1767045883494",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T22:04:48.871Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767045893532",
+      "accountId": "user-1767045883494",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T22:04:53.532Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767045896768",
+      "accountId": "user-1767045883494",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T22:04:56.768Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767045992338",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 50,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T22:06:32.338Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767045996353",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T22:06:36.354Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767046030744",
+      "accountId": "test-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T22:07:10.744Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-nft-1767046043102",
+      "accountId": "test-user-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -2,
+      "description": "GAP Studio NFT creation - img-1767046028260-8791",
+      "datetime": "2025-12-29T22:07:23.103Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767046150326",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Send to user-test-2",
-      "datetime": "2025-12-23T23:12:55.270Z",
+      "datetime": "2025-12-29T22:09:10.326Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766531575270-in",
+      "id": "tx-1767046150326-in",
       "accountId": "user-test-2",
       "type": "CREDIT",
       "token": "ARTC",
       "amount": 10,
       "description": "Receive from user-test-1",
-      "datetime": "2025-12-23T23:12:55.270Z",
+      "datetime": "2025-12-29T22:09:10.326Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766531612721",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
+      "id": "tx-rech-1767047253403",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
       "token": "ARTC",
-      "amount": -10,
-      "description": "Bought prod-1",
-      "datetime": "2025-12-23T23:13:32.721Z",
+      "amount": 50,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T22:27:33.403Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766531612721-in",
-      "accountId": "artist-test-1",
-      "type": "CREDIT",
-      "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-23T23:13:32.721Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766535490098",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Bought prod-1",
-      "datetime": "2025-12-24T00:18:10.098Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766535490098-in",
-      "accountId": "artist-test-1",
-      "type": "CREDIT",
+      "id": "tx-rech-1767047253643",
+      "accountId": "recharge-user-1",
+      "type": "RECHARGE",
       "token": "ARTC",
       "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-24T00:18:10.098Z",
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T22:27:33.643Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766535505708",
+      "id": "tx-1767047285878",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Send to user-test-2",
-      "datetime": "2025-12-24T00:18:25.708Z",
+      "datetime": "2025-12-29T22:28:05.878Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766535505708-in",
+      "id": "tx-1767047285878-in",
       "accountId": "user-test-2",
       "type": "CREDIT",
       "token": "ARTC",
       "amount": 10,
       "description": "Receive from user-test-1",
-      "datetime": "2025-12-24T00:18:25.708Z",
+      "datetime": "2025-12-29T22:28:05.878Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766537886987",
-      "accountId": "user-test-1",
+      "id": "tx-rech-1767047319838",
+      "accountId": "test-user-1",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 10,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T22:28:39.838Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-nft-1767047320507",
+      "accountId": "test-user-1",
+      "type": "DEBIT",
+      "token": "ARTC",
+      "amount": -2,
+      "description": "GAP Studio NFT creation - img-1767047318149-8998",
+      "datetime": "2025-12-29T22:28:40.507Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-pass-1767047354960",
+      "accountId": "user-1767047346823",
+      "type": "PASS",
+      "token": "USD",
+      "amount": 0,
+      "description": "Activate pass genesis",
+      "datetime": "2025-12-29T22:29:14.960Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767047377608",
+      "accountId": "user-1767047346823",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T22:29:37.608Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767047380641",
+      "accountId": "user-1767047346823",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T22:29:40.641Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-passcons-1767047383444",
+      "accountId": "user-1767047346823",
+      "type": "PASS_CONSUME",
+      "token": "USD",
+      "amount": 0,
+      "description": "Genesis free NFT consumption",
+      "datetime": "2025-12-29T22:29:43.444Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-rech-1767047509601",
+      "accountId": "user-1767047504039",
+      "type": "RECHARGE",
+      "token": "ARTC",
+      "amount": 100,
+      "description": "Recharge ARTC (simulated set)",
+      "datetime": "2025-12-29T22:31:49.601Z",
+      "status": "CONFIRMED"
+    },
+    {
+      "id": "tx-1767047514269",
+      "accountId": "user-1767047504039",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
-      "description": "Send to user-test-2",
-      "datetime": "2025-12-24T00:58:06.987Z",
+      "description": "Bought listing-1767047511599",
+      "datetime": "2025-12-29T22:31:54.269Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766537886987-in",
-      "accountId": "user-test-2",
+      "id": "tx-1767047514269-in",
+      "accountId": "user-1767047506764",
       "type": "CREDIT",
       "token": "ARTC",
-      "amount": 10,
-      "description": "Receive from user-test-1",
-      "datetime": "2025-12-24T00:58:06.987Z",
+      "amount": 9.38,
+      "description": "Sale listing-1767047511599 (net after fees)",
+      "datetime": "2025-12-29T22:31:54.269Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766537925864",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Bought prod-1",
-      "datetime": "2025-12-24T00:58:45.864Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766537925864-in",
-      "accountId": "artist-test-1",
+      "id": "tx-1767047514269-plat",
+      "accountId": "platform",
       "type": "CREDIT",
       "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-24T00:58:45.864Z",
+      "amount": 0.5,
+      "description": "Platform fee for listing-1767047511599",
+      "datetime": "2025-12-29T22:31:54.269Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766539351190",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Bought prod-1",
-      "datetime": "2025-12-24T01:22:31.190Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766539351190-in",
-      "accountId": "artist-test-1",
+      "id": "tx-1767047514269-net",
+      "accountId": "network",
       "type": "CREDIT",
       "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-24T01:22:31.190Z",
+      "amount": 0.12,
+      "description": "Network fee for listing-1767047511599",
+      "datetime": "2025-12-29T22:31:54.269Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766539366094",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Send to user-test-2",
-      "datetime": "2025-12-24T01:22:46.094Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766539366094-in",
-      "accountId": "user-test-2",
-      "type": "CREDIT",
-      "token": "ARTC",
-      "amount": 10,
-      "description": "Receive from user-test-1",
-      "datetime": "2025-12-24T01:22:46.094Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766539908223",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Send to user-test-2",
-      "datetime": "2025-12-24T01:31:48.223Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766539908223-in",
-      "accountId": "user-test-2",
-      "type": "CREDIT",
-      "token": "ARTC",
-      "amount": 10,
-      "description": "Receive from user-test-1",
-      "datetime": "2025-12-24T01:31:48.223Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766539931607",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Bought prod-1",
-      "datetime": "2025-12-24T01:32:11.607Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766539931607-in",
-      "accountId": "artist-test-1",
-      "type": "CREDIT",
-      "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-24T01:32:11.607Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766540165210",
+      "id": "tx-1767047536301",
       "accountId": "user-test-1",
       "type": "DEBIT",
       "token": "ARTC",
       "amount": -10,
       "description": "Bought prod-1",
-      "datetime": "2025-12-24T01:36:05.211Z",
+      "datetime": "2025-12-29T22:32:16.301Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766540165211-in",
+      "id": "tx-1767047536301-in",
       "accountId": "artist-test-1",
       "type": "CREDIT",
       "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-24T01:36:05.211Z",
+      "amount": 9.38,
+      "description": "Sale prod-1 (net after fees)",
+      "datetime": "2025-12-29T22:32:16.301Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766540931850",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Bought prod-1",
-      "datetime": "2025-12-24T01:48:51.850Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766540931850-in",
-      "accountId": "artist-test-1",
+      "id": "tx-1767047536301-plat",
+      "accountId": "platform",
       "type": "CREDIT",
       "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-24T01:48:51.850Z",
+      "amount": 0.5,
+      "description": "Platform fee for prod-1",
+      "datetime": "2025-12-29T22:32:16.301Z",
       "status": "CONFIRMED"
     },
     {
-      "id": "tx-1766540970641",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Send to user-test-2",
-      "datetime": "2025-12-24T01:49:30.646Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766540970648-in",
-      "accountId": "user-test-2",
+      "id": "tx-1767047536301-net",
+      "accountId": "network",
       "type": "CREDIT",
       "token": "ARTC",
-      "amount": 10,
-      "description": "Receive from user-test-1",
-      "datetime": "2025-12-24T01:49:30.648Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766685555623",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Send to user-test-2",
-      "datetime": "2025-12-25T17:59:15.623Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766685555623-in",
-      "accountId": "user-test-2",
-      "type": "CREDIT",
-      "token": "ARTC",
-      "amount": 10,
-      "description": "Receive from user-test-1",
-      "datetime": "2025-12-25T17:59:15.623Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766685608148",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Bought prod-1",
-      "datetime": "2025-12-25T18:00:08.148Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766685608148-in",
-      "accountId": "artist-test-1",
-      "type": "CREDIT",
-      "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-25T18:00:08.148Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766686940068",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Bought prod-1",
-      "datetime": "2025-12-25T18:22:20.068Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766686940068-in",
-      "accountId": "artist-test-1",
-      "type": "CREDIT",
-      "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-25T18:22:20.068Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766686961743",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Send to user-test-2",
-      "datetime": "2025-12-25T18:22:41.743Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766686961743-in",
-      "accountId": "user-test-2",
-      "type": "CREDIT",
-      "token": "ARTC",
-      "amount": 10,
-      "description": "Receive from user-test-1",
-      "datetime": "2025-12-25T18:22:41.743Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766692942914",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Send to user-test-2",
-      "datetime": "2025-12-25T20:02:22.925Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766692942925-in",
-      "accountId": "user-test-2",
-      "type": "CREDIT",
-      "token": "ARTC",
-      "amount": 10,
-      "description": "Receive from user-test-1",
-      "datetime": "2025-12-25T20:02:22.925Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766692954624",
-      "accountId": "user-test-1",
-      "type": "DEBIT",
-      "token": "ARTC",
-      "amount": -10,
-      "description": "Bought prod-1",
-      "datetime": "2025-12-25T20:02:34.624Z",
-      "status": "CONFIRMED"
-    },
-    {
-      "id": "tx-1766692954624-in",
-      "accountId": "artist-test-1",
-      "type": "CREDIT",
-      "token": "ARTC",
-      "amount": 10,
-      "description": "Sale prod-1",
-      "datetime": "2025-12-25T20:02:34.624Z",
+      "amount": 0.12,
+      "description": "Network fee for prod-1",
+      "datetime": "2025-12-29T22:32:16.301Z",
       "status": "CONFIRMED"
     }
   ],
   "nfts": [],
-  "audit": [
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766506821031",
-      "title": "Œuvre Test",
-      "ts": "2025-12-23T16:20:21.895Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766506825282",
-      "title": "Test 2",
-      "ts": "2025-12-23T16:20:25.293Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766506828100",
-      "title": "Test 3",
-      "ts": "2025-12-23T16:20:28.110Z"
-    },
-    {
-      "type": "marketplace_exhibit",
-      "listingId": "listing-1766506828100",
-      "admin": "globalart-admin",
-      "ts": "2025-12-23T16:20:30.040Z"
-    },
-    {
-      "type": "portal_share",
-      "artistId": "artist-test-1",
-      "postId": "post-1766506836433",
-      "ts": "2025-12-23T16:20:36.444Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766531044255",
-      "title": "Œuvre Test",
-      "ts": "2025-12-23T23:04:04.272Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766531044936",
-      "title": "Test 2",
-      "ts": "2025-12-23T23:04:05.004Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766531045666",
-      "title": "Test 3",
-      "ts": "2025-12-23T23:04:05.730Z"
-    },
-    {
-      "type": "marketplace_exhibit",
-      "listingId": "listing-1766531045666",
-      "admin": "globalart-admin",
-      "ts": "2025-12-23T23:04:06.979Z"
-    },
-    {
-      "type": "portal_share",
-      "artistId": "artist-test-1",
-      "postId": "post-1766531152451",
-      "ts": "2025-12-23T23:05:52.480Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766531528968",
-      "title": "Œuvre Test",
-      "ts": "2025-12-23T23:12:08.984Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766531529563",
-      "title": "Test 2",
-      "ts": "2025-12-23T23:12:09.657Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766531543214",
-      "title": "Test 3",
-      "ts": "2025-12-23T23:12:23.226Z"
-    },
-    {
-      "type": "marketplace_exhibit",
-      "listingId": "listing-1766531543214",
-      "admin": "globalart-admin",
-      "ts": "2025-12-23T23:12:35.439Z"
-    },
-    {
-      "type": "portal_share",
-      "artistId": "artist-test-1",
-      "postId": "post-1766531633505",
-      "ts": "2025-12-23T23:13:53.514Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766535410263",
-      "title": "Œuvre Test",
-      "ts": "2025-12-24T00:16:50.284Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766535411031",
-      "title": "Test 2",
-      "ts": "2025-12-24T00:16:51.060Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766535412181",
-      "title": "Test 3",
-      "ts": "2025-12-24T00:16:52.187Z"
-    },
-    {
-      "type": "marketplace_exhibit",
-      "listingId": "listing-1766535412181",
-      "admin": "globalart-admin",
-      "ts": "2025-12-24T00:16:54.258Z"
-    },
-    {
-      "type": "portal_share",
-      "artistId": "artist-test-1",
-      "postId": "post-1766535468767",
-      "ts": "2025-12-24T00:17:48.785Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766537899887",
-      "title": "Œuvre Test",
-      "ts": "2025-12-24T00:58:19.909Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766537900735",
-      "title": "Test 2",
-      "ts": "2025-12-24T00:58:20.784Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766537901704",
-      "title": "Test 3",
-      "ts": "2025-12-24T00:58:21.727Z"
-    },
-    {
-      "type": "marketplace_exhibit",
-      "listingId": "listing-1766537901704",
-      "admin": "globalart-admin",
-      "ts": "2025-12-24T00:58:22.056Z"
-    },
-    {
-      "type": "portal_share",
-      "artistId": "artist-test-1",
-      "postId": "post-1766537941384",
-      "ts": "2025-12-24T00:59:01.398Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766539414773",
-      "title": "Œuvre Test",
-      "ts": "2025-12-24T01:23:34.802Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766539415418",
-      "title": "Test 2",
-      "ts": "2025-12-24T01:23:35.437Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766539417130",
-      "title": "Test 3",
-      "ts": "2025-12-24T01:23:37.182Z"
-    },
-    {
-      "type": "marketplace_exhibit",
-      "listingId": "listing-1766539417130",
-      "admin": "globalart-admin",
-      "ts": "2025-12-24T01:23:37.562Z"
-    },
-    {
-      "type": "portal_share",
-      "artistId": "artist-test-1",
-      "postId": "post-1766539728671",
-      "ts": "2025-12-24T01:28:48.691Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766539854328",
-      "title": "Œuvre Test",
-      "ts": "2025-12-24T01:30:54.428Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766539855871",
-      "title": "Test 2",
-      "ts": "2025-12-24T01:30:55.881Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766539857428",
-      "title": "Test 3",
-      "ts": "2025-12-24T01:30:57.532Z"
-    },
-    {
-      "type": "marketplace_exhibit",
-      "listingId": "listing-1766539857428",
-      "admin": "globalart-admin",
-      "ts": "2025-12-24T01:30:58.047Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766541068664",
-      "title": "Œuvre Test",
-      "ts": "2025-12-24T01:51:08.680Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766541069374",
-      "title": "Test 2",
-      "ts": "2025-12-24T01:51:09.404Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766541070217",
-      "title": "Test 3",
-      "ts": "2025-12-24T01:51:10.227Z"
-    },
-    {
-      "type": "marketplace_exhibit",
-      "listingId": "listing-1766541070217",
-      "admin": "globalart-admin",
-      "ts": "2025-12-24T01:51:10.558Z"
-    },
-    {
-      "type": "portal_share",
-      "artistId": "artist-test-1",
-      "postId": "post-1766541161131",
-      "ts": "2025-12-24T01:52:41.232Z"
-    },
-    {
-      "type": "portal_share",
-      "artistId": "artist-test-1",
-      "postId": "post-1766685589579",
-      "ts": "2025-12-25T17:59:49.610Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766685627343",
-      "title": "Œuvre Test",
-      "ts": "2025-12-25T18:00:27.390Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766685628041",
-      "title": "Test 2",
-      "ts": "2025-12-25T18:00:28.049Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766685628999",
-      "title": "Test 3",
-      "ts": "2025-12-25T18:00:29.396Z"
-    },
-    {
-      "type": "marketplace_exhibit",
-      "listingId": "listing-1766685628999",
-      "admin": "globalart-admin",
-      "ts": "2025-12-25T18:00:33.315Z"
-    },
-    {
-      "type": "portal_share",
-      "artistId": "artist-test-1",
-      "postId": "post-1766686879691",
-      "ts": "2025-12-25T18:21:19.712Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766686923684",
-      "title": "Œuvre Test",
-      "ts": "2025-12-25T18:22:03.766Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766686925482",
-      "title": "Test 2",
-      "ts": "2025-12-25T18:22:05.522Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766686927965",
-      "title": "Test 3",
-      "ts": "2025-12-25T18:22:07.977Z"
-    },
-    {
-      "type": "marketplace_exhibit",
-      "listingId": "listing-1766686927965",
-      "admin": "globalart-admin",
-      "ts": "2025-12-25T18:22:09.083Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766692890006",
-      "title": "Œuvre Test",
-      "ts": "2025-12-25T20:01:30.074Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766692892139",
-      "title": "Test 2",
-      "ts": "2025-12-25T20:01:32.159Z"
-    },
-    {
-      "type": "marketplace_list_create",
-      "artistId": "artist-test-1",
-      "listingId": "listing-1766692894308",
-      "title": "Test 3",
-      "ts": "2025-12-25T20:01:34.375Z"
-    },
-    {
-      "type": "marketplace_exhibit",
-      "listingId": "listing-1766692894308",
-      "admin": "globalart-admin",
-      "ts": "2025-12-25T20:01:36.211Z"
-    },
-    {
-      "type": "portal_share",
-      "artistId": "artist-test-1",
-      "postId": "post-1766692982921",
-      "ts": "2025-12-25T20:03:02.947Z"
-    }
-  ],
   "notifications": [
     {
-      "id": "note-1765669905230",
+      "id": "note-1766967300745",
+      "userId": "user-1766967298482",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T00:15:00.745Z",
+      "read": false
+    },
+    {
+      "id": "note-1766967333594",
       "userId": "user-test-1",
       "title": "Paiement envoyé",
       "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-13T23:51:45.230Z",
+      "ts": "2025-12-29T00:15:33.594Z",
       "read": false
     },
     {
-      "id": "note-1765669905230-2",
+      "id": "note-1766967333594-2",
       "userId": "user-test-2",
       "title": "Paiement reçu",
       "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-13T23:51:45.230Z",
+      "ts": "2025-12-29T00:15:33.594Z",
       "read": false
     },
     {
-      "id": "note-1765669971373",
+      "id": "note-1766967549333",
+      "userId": "user-1766967547981",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T00:19:09.333Z",
+      "read": false
+    },
+    {
+      "id": "note-1766967652283",
+      "userId": "user-1766967647580",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T00:20:52.283Z",
+      "read": false
+    },
+    {
+      "id": "note-1766967713962",
+      "userId": "user-1766967712369",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T00:21:53.962Z",
+      "read": false
+    },
+    {
+      "id": "note-1766967827540",
       "userId": "user-test-1",
       "title": "Paiement envoyé",
       "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-13T23:52:51.373Z",
+      "ts": "2025-12-29T00:23:47.540Z",
       "read": false
     },
     {
-      "id": "note-1765669971373-2",
+      "id": "note-1766967827540-2",
       "userId": "user-test-2",
       "title": "Paiement reçu",
       "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-13T23:52:51.373Z",
+      "ts": "2025-12-29T00:23:47.540Z",
       "read": false
     },
     {
-      "id": "note-1765670145437",
+      "id": "note-1766967865919",
+      "userId": "user-1766967864873",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T00:24:25.919Z",
+      "read": false
+    },
+    {
+      "id": "note-1766968447206",
+      "userId": "user-1766698983801",
+      "title": "Dépôt demandé",
+      "message": "Demande de dépôt 0.00005 PI en attente",
+      "ts": "2025-12-29T00:34:07.206Z",
+      "read": false
+    },
+    {
+      "id": "note-1766968559974",
+      "userId": "user-1766698983801",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 5 ARTC (simulé)",
+      "ts": "2025-12-29T00:35:59.974Z",
+      "read": false
+    },
+    {
+      "id": "note-1766990750004",
       "userId": "user-test-1",
       "title": "Paiement envoyé",
       "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-13T23:55:45.437Z",
+      "ts": "2025-12-29T06:45:50.004Z",
       "read": false
     },
     {
-      "id": "note-1765670145437-2",
+      "id": "note-1766990750004-2",
       "userId": "user-test-2",
       "title": "Paiement reçu",
       "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-13T23:55:45.437Z",
+      "ts": "2025-12-29T06:45:50.004Z",
       "read": false
     },
     {
-      "id": "note-1765670217669",
+      "id": "note-1766990801815",
+      "userId": "user-1766990800360",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T06:46:41.815Z",
+      "read": false
+    },
+    {
+      "id": "note-1766997237839",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 50 ARTC (simulé)",
+      "ts": "2025-12-29T08:33:57.839Z",
+      "read": false
+    },
+    {
+      "id": "note-1766997239513",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T08:33:59.513Z",
+      "read": false
+    },
+    {
+      "id": "note-1766999468935",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 50 ARTC (simulé)",
+      "ts": "2025-12-29T09:11:08.935Z",
+      "read": false
+    },
+    {
+      "id": "note-1766999469687",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T09:11:09.687Z",
+      "read": false
+    },
+    {
+      "id": "note-1766999509086",
       "userId": "user-test-1",
       "title": "Paiement envoyé",
       "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-13T23:56:57.669Z",
+      "ts": "2025-12-29T09:11:49.086Z",
       "read": false
     },
     {
-      "id": "note-1765670217669-2",
+      "id": "note-1766999509086-2",
       "userId": "user-test-2",
       "title": "Paiement reçu",
       "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-13T23:56:57.669Z",
+      "ts": "2025-12-29T09:11:49.086Z",
       "read": false
     },
     {
-      "id": "note-1765670307369",
+      "id": "note-1766999516840",
+      "userId": "user-1766999515500",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T09:11:56.840Z",
+      "read": false
+    },
+    {
+      "id": "note-1767000088319",
+      "userId": "user-1767000086894",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T09:21:28.319Z",
+      "read": false
+    },
+    {
+      "id": "note-1767000189708",
+      "userId": "user-1767000187548",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T09:23:09.708Z",
+      "read": false
+    },
+    {
+      "id": "note-1767000220930",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 50 ARTC (simulé)",
+      "ts": "2025-12-29T09:23:40.930Z",
+      "read": false
+    },
+    {
+      "id": "note-1767000225858",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T09:23:45.858Z",
+      "read": false
+    },
+    {
+      "id": "note-1767000261019",
       "userId": "user-test-1",
       "title": "Paiement envoyé",
       "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-13T23:58:27.369Z",
+      "ts": "2025-12-29T09:24:21.019Z",
       "read": false
     },
     {
-      "id": "note-1765670307369-2",
+      "id": "note-1767000261019-2",
       "userId": "user-test-2",
       "title": "Paiement reçu",
       "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-13T23:58:27.369Z",
+      "ts": "2025-12-29T09:24:21.019Z",
       "read": false
     },
     {
-      "id": "note-1765670386523",
+      "id": "note-1767000511326",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 50 ARTC (simulé)",
+      "ts": "2025-12-29T09:28:31.326Z",
+      "read": false
+    },
+    {
+      "id": "note-1767000511485",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T09:28:31.485Z",
+      "read": false
+    },
+    {
+      "id": "note-1767000724080",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 50 ARTC (simulé)",
+      "ts": "2025-12-29T09:32:04.080Z",
+      "read": false
+    },
+    {
+      "id": "note-1767000724246",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T09:32:04.246Z",
+      "read": false
+    },
+    {
+      "id": "note-1767000759812",
       "userId": "user-test-1",
       "title": "Paiement envoyé",
       "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-13T23:59:46.523Z",
+      "ts": "2025-12-29T09:32:39.812Z",
       "read": false
     },
     {
-      "id": "note-1765670386523-2",
+      "id": "note-1767000759812-2",
       "userId": "user-test-2",
       "title": "Paiement reçu",
       "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-13T23:59:46.523Z",
+      "ts": "2025-12-29T09:32:39.812Z",
       "read": false
     },
     {
-      "id": "note-1765725098687",
+      "id": "note-1767000774015",
+      "userId": "user-1767000769498",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T09:32:54.015Z",
+      "read": false
+    },
+    {
+      "id": "note-1767001071793",
+      "userId": "test-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T09:37:51.793Z",
+      "read": false
+    },
+    {
+      "id": "note-1767001130880",
+      "userId": "user-1767001123088",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T09:38:50.880Z",
+      "read": false
+    },
+    {
+      "id": "note-1767001199006",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 50 ARTC (simulé)",
+      "ts": "2025-12-29T09:39:59.006Z",
+      "read": false
+    },
+    {
+      "id": "note-1767001199553",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T09:39:59.553Z",
+      "read": false
+    },
+    {
+      "id": "note-1767001207903",
       "userId": "user-test-1",
       "title": "Paiement envoyé",
       "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-14T15:11:38.687Z",
+      "ts": "2025-12-29T09:40:07.903Z",
       "read": false
     },
     {
-      "id": "note-1765725098687-2",
+      "id": "note-1767001207903-2",
       "userId": "user-test-2",
       "title": "Paiement reçu",
       "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-14T15:11:38.687Z",
+      "ts": "2025-12-29T09:40:07.903Z",
       "read": false
     },
     {
-      "id": "note-1765725236065",
+      "id": "note-1767001567431",
+      "userId": "user-1767001564924",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T09:46:07.431Z",
+      "read": false
+    },
+    {
+      "id": "note-1767001597410",
+      "userId": "test-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T09:46:37.410Z",
+      "read": false
+    },
+    {
+      "id": "note-1767001606983",
       "userId": "user-test-1",
       "title": "Paiement envoyé",
       "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-14T15:13:56.065Z",
+      "ts": "2025-12-29T09:46:46.983Z",
       "read": false
     },
     {
-      "id": "note-1765725236065-2",
+      "id": "note-1767001606983-2",
       "userId": "user-test-2",
       "title": "Paiement reçu",
       "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-14T15:13:56.065Z",
+      "ts": "2025-12-29T09:46:46.983Z",
       "read": false
     },
     {
-      "id": "note-1765727241750",
+      "id": "note-1767001616986",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 50 ARTC (simulé)",
+      "ts": "2025-12-29T09:46:56.986Z",
+      "read": false
+    },
+    {
+      "id": "note-1767001617409",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T09:46:57.409Z",
+      "read": false
+    },
+    {
+      "id": "note-1767001927833",
+      "userId": "user-1767001923527",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T09:52:07.833Z",
+      "read": false
+    },
+    {
+      "id": "note-1767001937489",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 50 ARTC (simulé)",
+      "ts": "2025-12-29T09:52:17.489Z",
+      "read": false
+    },
+    {
+      "id": "note-1767001937770",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T09:52:17.770Z",
+      "read": false
+    },
+    {
+      "id": "note-1767001941902",
       "userId": "user-test-1",
       "title": "Paiement envoyé",
       "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-14T15:47:21.750Z",
+      "ts": "2025-12-29T09:52:21.902Z",
       "read": false
     },
     {
-      "id": "note-1765727241750-2",
+      "id": "note-1767001941902-2",
       "userId": "user-test-2",
       "title": "Paiement reçu",
       "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-14T15:47:21.750Z",
+      "ts": "2025-12-29T09:52:21.902Z",
       "read": false
     },
     {
-      "id": "note-1766506860741",
+      "id": "note-1767002023824",
+      "userId": "test-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T09:53:43.824Z",
+      "read": false
+    },
+    {
+      "id": "note-1767042017401",
+      "userId": "test-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T21:00:17.401Z",
+      "read": false
+    },
+    {
+      "id": "note-1767042040224",
+      "userId": "user-1767042033846",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T21:00:40.224Z",
+      "read": false
+    },
+    {
+      "id": "note-1767042247449",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 50 ARTC (simulé)",
+      "ts": "2025-12-29T21:04:07.449Z",
+      "read": false
+    },
+    {
+      "id": "note-1767042248671",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T21:04:08.671Z",
+      "read": false
+    },
+    {
+      "id": "note-1767042951887",
       "userId": "user-test-1",
       "title": "Paiement envoyé",
       "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-23T16:21:00.742Z",
+      "ts": "2025-12-29T21:15:51.887Z",
       "read": false
     },
     {
-      "id": "note-1766506860742-2",
+      "id": "note-1767042951887-2",
       "userId": "user-test-2",
       "title": "Paiement reçu",
       "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-23T16:21:00.742Z",
+      "ts": "2025-12-29T21:15:51.887Z",
       "read": false
     },
     {
-      "id": "note-1766531140201",
+      "id": "note-1767042979126",
+      "userId": "user-1767042970655",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T21:16:19.126Z",
+      "read": false
+    },
+    {
+      "id": "note-1767043164750",
+      "userId": "test-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T21:19:24.750Z",
+      "read": false
+    },
+    {
+      "id": "note-1767043220283",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 50 ARTC (simulé)",
+      "ts": "2025-12-29T21:20:20.283Z",
+      "read": false
+    },
+    {
+      "id": "note-1767043220791",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T21:20:20.791Z",
+      "read": false
+    },
+    {
+      "id": "note-1767043542633",
+      "userId": "user-1767043537102",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T21:25:42.633Z",
+      "read": false
+    },
+    {
+      "id": "note-1767043647679",
+      "userId": "test-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T21:27:27.679Z",
+      "read": false
+    },
+    {
+      "id": "note-1767043788845",
       "userId": "user-test-1",
       "title": "Paiement envoyé",
       "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-23T23:05:40.201Z",
+      "ts": "2025-12-29T21:29:48.845Z",
       "read": false
     },
     {
-      "id": "note-1766531140201-2",
+      "id": "note-1767043788845-2",
       "userId": "user-test-2",
       "title": "Paiement reçu",
       "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-23T23:05:40.201Z",
+      "ts": "2025-12-29T21:29:48.845Z",
       "read": false
     },
     {
-      "id": "note-1766531575270",
+      "id": "note-1767043811098",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 50 ARTC (simulé)",
+      "ts": "2025-12-29T21:30:11.098Z",
+      "read": false
+    },
+    {
+      "id": "note-1767043815178",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T21:30:15.178Z",
+      "read": false
+    },
+    {
+      "id": "note-1767044846518",
+      "userId": "test-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T21:47:26.518Z",
+      "read": false
+    },
+    {
+      "id": "note-1767044924681",
       "userId": "user-test-1",
       "title": "Paiement envoyé",
       "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-23T23:12:55.270Z",
+      "ts": "2025-12-29T21:48:44.681Z",
       "read": false
     },
     {
-      "id": "note-1766531575270-2",
+      "id": "note-1767044924681-2",
       "userId": "user-test-2",
       "title": "Paiement reçu",
       "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-23T23:12:55.270Z",
+      "ts": "2025-12-29T21:48:44.681Z",
       "read": false
     },
     {
-      "id": "note-1766535505708",
+      "id": "note-1767045011287",
+      "userId": "user-1767044988860",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T21:50:11.287Z",
+      "read": false
+    },
+    {
+      "id": "note-1767045046748",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 50 ARTC (simulé)",
+      "ts": "2025-12-29T21:50:46.748Z",
+      "read": false
+    },
+    {
+      "id": "note-1767045047323",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T21:50:47.323Z",
+      "read": false
+    },
+    {
+      "id": "note-1767045782332",
+      "userId": "user-1767045773100",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T22:03:02.332Z",
+      "read": false
+    },
+    {
+      "id": "note-1767045992338",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 50 ARTC (simulé)",
+      "ts": "2025-12-29T22:06:32.338Z",
+      "read": false
+    },
+    {
+      "id": "note-1767045996354",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T22:06:36.354Z",
+      "read": false
+    },
+    {
+      "id": "note-1767046030744",
+      "userId": "test-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T22:07:10.744Z",
+      "read": false
+    },
+    {
+      "id": "note-1767046150326",
       "userId": "user-test-1",
       "title": "Paiement envoyé",
       "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-24T00:18:25.708Z",
+      "ts": "2025-12-29T22:09:10.326Z",
       "read": false
     },
     {
-      "id": "note-1766535505709-2",
+      "id": "note-1767046150326-2",
       "userId": "user-test-2",
       "title": "Paiement reçu",
       "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-24T00:18:25.709Z",
+      "ts": "2025-12-29T22:09:10.326Z",
       "read": false
     },
     {
-      "id": "note-1766537886987",
+      "id": "note-1767047253403",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 50 ARTC (simulé)",
+      "ts": "2025-12-29T22:27:33.403Z",
+      "read": false
+    },
+    {
+      "id": "note-1767047253644",
+      "userId": "recharge-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T22:27:33.644Z",
+      "read": false
+    },
+    {
+      "id": "note-1767047285878",
       "userId": "user-test-1",
       "title": "Paiement envoyé",
       "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-24T00:58:06.987Z",
+      "ts": "2025-12-29T22:28:05.878Z",
       "read": false
     },
     {
-      "id": "note-1766537886987-2",
+      "id": "note-1767047285878-2",
       "userId": "user-test-2",
       "title": "Paiement reçu",
       "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-24T00:58:06.987Z",
+      "ts": "2025-12-29T22:28:05.878Z",
       "read": false
     },
     {
-      "id": "note-1766539366094",
-      "userId": "user-test-1",
-      "title": "Paiement envoyé",
-      "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-24T01:22:46.094Z",
+      "id": "note-1767047319838",
+      "userId": "test-user-1",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 10 ARTC (simulé)",
+      "ts": "2025-12-29T22:28:39.838Z",
       "read": false
     },
     {
-      "id": "note-1766539366094-2",
-      "userId": "user-test-2",
-      "title": "Paiement reçu",
-      "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-24T01:22:46.094Z",
-      "read": false
-    },
-    {
-      "id": "note-1766539908223",
-      "userId": "user-test-1",
-      "title": "Paiement envoyé",
-      "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-24T01:31:48.223Z",
-      "read": false
-    },
-    {
-      "id": "note-1766539908223-2",
-      "userId": "user-test-2",
-      "title": "Paiement reçu",
-      "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-24T01:31:48.223Z",
-      "read": false
-    },
-    {
-      "id": "note-1766540970648",
-      "userId": "user-test-1",
-      "title": "Paiement envoyé",
-      "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-24T01:49:30.648Z",
-      "read": false
-    },
-    {
-      "id": "note-1766540970648-2",
-      "userId": "user-test-2",
-      "title": "Paiement reçu",
-      "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-24T01:49:30.648Z",
-      "read": false
-    },
-    {
-      "id": "note-1766685555623",
-      "userId": "user-test-1",
-      "title": "Paiement envoyé",
-      "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-25T17:59:15.623Z",
-      "read": false
-    },
-    {
-      "id": "note-1766685555623-2",
-      "userId": "user-test-2",
-      "title": "Paiement reçu",
-      "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-25T17:59:15.623Z",
-      "read": false
-    },
-    {
-      "id": "note-1766686961743",
-      "userId": "user-test-1",
-      "title": "Paiement envoyé",
-      "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-25T18:22:41.743Z",
-      "read": false
-    },
-    {
-      "id": "note-1766686961743-2",
-      "userId": "user-test-2",
-      "title": "Paiement reçu",
-      "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-25T18:22:41.743Z",
-      "read": false
-    },
-    {
-      "id": "note-1766692942925",
-      "userId": "user-test-1",
-      "title": "Paiement envoyé",
-      "message": "Vous avez envoyé 10 ARTC à user-test-2",
-      "ts": "2025-12-25T20:02:22.925Z",
-      "read": false
-    },
-    {
-      "id": "note-1766692942925-2",
-      "userId": "user-test-2",
-      "title": "Paiement reçu",
-      "message": "Vous avez reçu 10 ARTC de user-test-1",
-      "ts": "2025-12-25T20:02:22.925Z",
+      "id": "note-1767047509602",
+      "userId": "user-1767047504039",
+      "title": "Recharge ARTC",
+      "message": "Votre compte a été crédité de 100 ARTC (simulé)",
+      "ts": "2025-12-29T22:31:49.602Z",
       "read": false
     }
   ]

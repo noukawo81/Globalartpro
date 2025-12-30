@@ -1,0 +1,13 @@
+name: CI Fail — on demand (intentional)
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  fail:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail intentionally
+        run: |
+          echo "Intentional fail to test CI Monitor";
+          exit 1

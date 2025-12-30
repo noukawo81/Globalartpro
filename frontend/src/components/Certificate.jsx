@@ -18,7 +18,7 @@ export default function Certificate() {
           value={nftId}
           onChange={(e) => setNftId(e.target.value)}
           placeholder="Entrez l'ID de votre NFT"
-          style={{ width: "100%", padding: "0.8rem", marginTop: "0.5rem", borderRadius: "6px", border: "1px solid #ccc", boxSizing: "border-box" }}
+          style={{ width: "100%", padding: "0.8rem", marginTop: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }}
         />
         <button onClick={generateCertificate} style={{ marginTop: "1rem", padding: "0.8rem 1.5rem", background: "#16c784", color: "#fff", border: "none", borderRadius: "6px", cursor: "pointer" }}>
           Générer le certificat

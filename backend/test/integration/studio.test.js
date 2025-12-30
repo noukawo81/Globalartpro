@@ -1,6 +1,8 @@
 import request from 'supertest';
 import app from '../../src/index.js';
 import fs from 'fs';
+import jwt from 'jsonwebtoken';
+import { JWT_SECRET } from '../../src/middleware/jwtAuth.js';
 
 // small base64 1x1 PNG
 const tinyPng = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=';
@@ -13,6 +15,10 @@ describe('Studio API', () => {
     expect(imp.body.ok).toBe(true);
     expect(imp.body.image).toBeDefined();
     const imageId = imp.body.image.id;
+
+    // ensure the user has ARTC balance to create an NFT
+    const token = jwt.sign({ id: userId }, JWT_SECRET);
+    await request(app).post('/api/wallet/recharge').set('Authorization', `Bearer ${token}`).send({ userId, amount: 10 });
 
     const gen = await request(app).post('/api/studio/generate-nft').send({ userId, imageId, title: 'Test NFT', description: 'desc' });
     expect(gen.status).toBe(200);
