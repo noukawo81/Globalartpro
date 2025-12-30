@@ -20,7 +20,7 @@ beforeAll(() => {
   if (!adb.artists.find(a => String(a.id) === 'artist-test-1')) {
     adb.artists.push({ id: 'artist-test-1', name: 'Test Seller' });
     fs.mkdirSync(path.dirname(artistFile), { recursive: true });
-    fs.writeFileSync(artistFile, JSON.stringify(adb, null, 2), 'utf8');
+  try { safeWriteJSON(artistFile, adb); } catch (e) { try { fs.writeFileSync(artistFile, JSON.stringify(adb, null, 2), 'utf8'); } catch (err) { console.warn('artist seed write failed', err && err.message); } }
   }
 });
 

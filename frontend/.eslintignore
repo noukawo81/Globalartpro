@@ -1,6 +1,0 @@
-# Ignore legacy public scripts and test helpers
-public/legacy/
-scripts/
-dist/
-node_modules/
-.vite/

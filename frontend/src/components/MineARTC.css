@@ -1,9 +1,0 @@
-.artc-mining-card{background:linear-gradient(180deg,#071029,#0b1220);padding:16px;border-radius:12px;color:#e6eef8;border:1px solid rgba(255,255,255,0.04)}
-.artc-mining-card .mining-logo{width:60px;height:60px;border-radius:999px;object-fit:cover;border:2px solid rgba(255,255,255,0.06)}
-.artc-mining-card h3{font-size:1.05rem;margin:0}
-.balance-row{font-size:0.98rem;color:#cfe9ff}
-.btn-mine{padding:8px 12px;border-radius:8px;border:none;cursor:pointer;background:#047857;color:#fff;font-weight:700}
-.btn-mine.active{background:#065f46;opacity:0.95}
-.mining-message{font-size:0.95rem}
-.mining-info{font-size:0.9rem}
-@media (max-width:640px){.artc-mining-card{padding:12px}.artc-mining-card .mining-logo{width:48px;height:48px}}

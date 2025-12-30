@@ -11,11 +11,46 @@ import gapstudioRoutes from './routes/gapstudio.js';
 import artistsRoutes from './routes/artists.js';
 import marketplaceRoutes from './routes/marketplace.js';
 import museumRoutes from './routes/museum.js';
+import studioRoutes from './routes/studio.js';
+import chatRoutes from './routes/chat.js';
 
 // Route registrations - group by responsibility
 
 const app = express();
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:5173' }));
+// CORS: allow dev localhost ports dynamically and respect CLIENT_URL in prod
+const allowedClient = process.env.CLIENT_URL;
+app.use(cors({
+  origin: (origin, cb) => {
+    // allow non-browser requests like curl (no origin)
+    if (!origin) return cb(null, true);
+    if (allowedClient && origin === allowedClient) return cb(null, true);
+    // Accept both http and https on any localhost port during development
+    if (/^https?:\/\/localhost(:\d+)?$/.test(origin)) return cb(null, true);
+    return cb(new Error('Not allowed by CORS'), false);
+  },
+}));
+
+// Development: remove overly-strict CSP headers to avoid noisy report-only logs in dev
+app.use((req, res, next) => {
+  if (process.env.NODE_ENV !== 'production') {
+    try { res.removeHeader('Content-Security-Policy'); } catch (_) {}
+    // Intentionally do NOT set a report-only CSP header in development to keep dev console noise minimal.
+    // If you need to enable report-only behavior for debugging, set `DEV_ALLOWED_FRAME_ANCESTORS` and
+    // re-add the header manually (see docs). The endpoint /api/debug/csp-report remains available to accept reports.
+  }
+  next();
+});
+
+// Debug: accept CSP report POSTs to /api/debug/csp-report (dev use)
+app.post('/api/debug/csp-report', express.json(), (req, res) => {
+  try {
+    console.log('CSP report:', JSON.stringify(req.body).slice(0, 1000));
+  } catch (e) {
+    console.warn('CSP report log failed', e?.message);
+  }
+  res.status(204).end();
+});
+
 app.use(express.json({ limit: '50mb' }));
 // Core auth & wallet routes first
 app.use('/api/auth', authRoutes);
@@ -30,8 +65,16 @@ app.use('/api/artists', artistsRoutes);
 // Portal & notifications
 app.use('/api/portal', portalRoutes);
 app.use('/api/notifications', notificationsRoutes);
+// Chat (simple 1-to-1 text chat)
+app.use('/api/chat', chatRoutes);
+// Museum globe (concentric globe collection) - register BEFORE generic /api/museum to avoid route shadowing
+import museumGlobeRoutes from './routes/museum_globe.js';
+app.use('/api/museum/globe', museumGlobeRoutes);
 // Museum (fallback JSON store for local dev)
 app.use('/api/museum', museumRoutes);
+
+// GAP Studio routes (image import, generate-nft, gallery)
+app.use('/api/studio', studioRoutes);
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', db: 'memory-based' }));
 
@@ -55,6 +98,26 @@ app.get('/api/debug/routes', (req, res) => {
     res.status(500).json({ error: e.message });
   }
 });
+
+// Test-time route dump for debugging
+if (process.env.NODE_ENV === 'test') {
+  try {
+    const flat = [];
+    if (app._router && app._router.stack) {
+      app._router.stack.forEach((layer) => {
+        if (layer.route && layer.route.path) flat.push(layer.route.path);
+        else if (layer.name === 'router' && layer.handle && layer.handle.stack) {
+          layer.handle.stack.forEach((l) => { if (l.route && l.route.path) flat.push(l.route.path); });
+        }
+      });
+      console.log('TEST REGISTERED ROUTES:', flat);
+    } else {
+      console.log('TEST REGISTERED ROUTES: none (app._router missing)');
+    }
+  } catch (e) {
+    console.warn('test route dump failed', e.message);
+  }
+}
 
 const PORT = process.env.PORT || 3000;
 // Export app for tests; only start server if not running under tests

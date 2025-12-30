@@ -5,10 +5,6 @@ import path from 'path';
 import app from '../../src/index.js';
 import { JWT_SECRET } from '../../src/middleware/jwtAuth.js';
 
-// Increase Jest timeout for integration tests that may touch file I/O or slow ops
-import { jest } from '@jest/globals';
-jest.setTimeout(20000);
-
 // Helpers
 function makeToken(id, role = 'artist') {
   return jwt.sign({ id, role }, JWT_SECRET);
@@ -23,7 +19,7 @@ beforeAll(() => {
   if (!db.artists.find(a => String(a.id) === 'artist-test-1')) {
     db.artists.push({ id: 'artist-test-1', name: 'Test Artist' });
     fs.mkdirSync(path.dirname(dbFile), { recursive: true });
-    fs.writeFileSync(dbFile, JSON.stringify(db, null, 2), 'utf8');
+  try { safeWriteJSON(dbFile, db); } catch (e) { try { fs.writeFileSync(dbFile, JSON.stringify(db, null, 2), 'utf8'); } catch (err) { console.warn('artist test seed write failed', err && err.message); } }
   }
 });
 

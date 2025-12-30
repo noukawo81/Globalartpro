@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from '@/services/api.js';
+import ChatModal from '@/components/ChatModal.jsx';
 import { useAuth } from "@/core/hooks/useAuth.js";
 
 export default function ArtistList() {
   const [tab, setTab] = useState("signup");
   const navigate = useNavigate();
-  const { login, setArtistId } = useAuth();
+  const { login, setArtistId, artistId } = useAuth();
+  const [openChat, setOpenChat] = React.useState(false);
 
   // Signup controlled form
   const [signup, setSignup] = useState({
@@ -25,7 +27,11 @@ export default function ArtistList() {
   const [loginForm, setLoginForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
 
-
+  function saveUserToStorage(user) {
+    const list = JSON.parse(localStorage.getItem("artists") || "[]");
+    list.push(user);
+    localStorage.setItem("artists", JSON.stringify(list));
+  }
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -43,10 +49,10 @@ export default function ArtistList() {
         const serverToken = res?.token || null;
         if (serverUser && serverUser.id && serverToken) {
           api.setToken(serverToken);
-          try { localStorage.setItem('ga_token', serverToken); } catch (e) { console.error(e); }
-          try { localStorage.setItem('artistId', serverUser.id); } catch (e) { console.error(e); }
-          try { localStorage.setItem('currentUser', JSON.stringify(serverUser)); } catch (e) { console.error(e); }
-          try { setArtistId(String(serverUser.id)); } catch (e) { console.error(e); }
+          try { localStorage.setItem('ga_token', serverToken); } catch (e) {}
+          try { localStorage.setItem('artistId', serverUser.id); } catch (e) {}
+          try { localStorage.setItem('currentUser', JSON.stringify(serverUser)); } catch (e) {}
+          try { setArtistId(String(serverUser.id)); } catch (e) {}
           login({ user: serverUser, token: serverToken });
           navigate(`/artist/${serverUser.id}`);
         } else {
@@ -72,11 +78,11 @@ export default function ArtistList() {
         const obj = { id: serverUser.id, name: serverUser.name || serverUser.email, email: serverUser.email };
         if (idx >= 0) list[idx] = { ...list[idx], ...obj }; else list.push(obj);
         localStorage.setItem('artists', JSON.stringify(list));
-      } catch (e) { console.error(e); }
+      } catch (e) {}
       // Persist token & artistId before updating auth context to avoid race
       api.setToken(res.token);
       localStorage.setItem('artistId', serverUser.id);
-      try { setArtistId(String(serverUser.id)); } catch (e) { console.error(e); }
+      try { setArtistId(String(serverUser.id)); } catch (e) {}
       localStorage.setItem('ga_token', res.token);
       localStorage.setItem('currentUser', JSON.stringify(serverUser));
       login(res);
@@ -98,11 +104,11 @@ export default function ArtistList() {
     const id = `dev-user-${Date.now()}`;
     const user = { id, name: 'Mode Démo', email: loginForm.email || 'dev@example.com', role: 'artist' };
     const token = `mock-${Date.now()}`;
-    try { api.setToken(token); } catch (e) { console.error(e); }
-    try { localStorage.setItem('ga_token', token); } catch (e) { console.error(e); }
-    try { localStorage.setItem('currentUser', JSON.stringify(user)); } catch (e) { console.error(e); }
-    try { localStorage.setItem('artistId', id); } catch (e) { console.error(e); }
-    try { setArtistId(String(id)); } catch (e) { console.error(e); }
+    try { api.setToken(token); } catch (e) {}
+    try { localStorage.setItem('ga_token', token); } catch (e) {}
+    try { localStorage.setItem('currentUser', JSON.stringify(user)); } catch (e) {}
+    try { localStorage.setItem('artistId', id); } catch (e) {}
+    try { setArtistId(String(id)); } catch (e) {}
     // Upsert into local artists list
     try {
       const list = JSON.parse(localStorage.getItem('artists') || '[]');
@@ -110,7 +116,7 @@ export default function ArtistList() {
       const obj = { id, name: user.name, email: user.email };
       if (idx >= 0) list[idx] = { ...list[idx], ...obj }; else list.push(obj);
       localStorage.setItem('artists', JSON.stringify(list));
-    } catch (e) { console.error(e); }
+    } catch (e) {}
     login({ user, token });
     navigate(`/artist/${id}`);
   };
@@ -120,6 +126,10 @@ export default function ArtistList() {
       <div style={styles.container}>
 
         <h2 style={styles.title}>Espace Artiste – GlobalArtPro</h2>
+
+        <div style={{ marginBottom: 12 }}>
+          <button onClick={() => setOpenChat(true)} style={{ padding: '8px 12px', borderRadius: 8, background: '#0b5cff', color: '#fff', border: 'none' }}>Contacter un artiste</button>
+        </div>
 
         {/* Onglets */}
         <div style={styles.tabs}>
@@ -277,6 +287,11 @@ export default function ArtistList() {
           </form>
         )}
 
+        <div style={{ marginTop: 18 }}>
+          <small style={{ color: '#aaa' }}>Tip: vous pouvez entrer un `dev-user-...` en mode démo pour commencer une conversation.</small>
+        </div>
+
+        {openChat && <ChatModal open={openChat} onClose={() => setOpenChat(false)} />}
       </div>
     </div>
   );

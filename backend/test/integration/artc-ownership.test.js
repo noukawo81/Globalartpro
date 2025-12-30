@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import app from '../../src/index.js';
 import { JWT_SECRET } from '../../src/middleware/jwtAuth.js';
+import { safeWriteJSON } from '../../src/lib/fileUtils.js';
 
 function makeToken(id, role = 'artist') { return jwt.sign({ id, role }, JWT_SECRET); }
 
@@ -12,7 +13,7 @@ beforeAll(() => {
   const db = { accounts: {}, transactions: [], miningEvents: [], lastMine: {}, miningSessions: {} };
   db.accounts['user-test-1'] = { userId: 'user-test-1', balance: 10, createdAt: new Date().toISOString() };
   fs.mkdirSync(path.dirname(dbFile), { recursive: true });
-  fs.writeFileSync(dbFile, JSON.stringify(db, null, 2), 'utf8');
+  try { safeWriteJSON(dbFile, db); } catch (e) { try { fs.writeFileSync(dbFile, JSON.stringify(db, null, 2), 'utf8'); } catch (err) { console.warn('artc test seed write failed', err && err.message); } }
 });
 
 describe('ARTC routes ownership', () => {
@@ -51,7 +52,7 @@ describe('ARTC routes ownership', () => {
     const db = JSON.parse(fs.readFileSync(file, 'utf8'));
     db.miningSessions = db.miningSessions || {};
     db.miningSessions['user-test-1'] = { userId: 'user-test-1', start: Date.now() - 2000, end: Date.now() - 1000, status: 'active', claimed: false };
-    fs.writeFileSync(file, JSON.stringify(db, null, 2), 'utf8');
+    try { safeWriteJSON(file, db); } catch (e) { try { fs.writeFileSync(file, JSON.stringify(db, null, 2), 'utf8'); } catch (err) { console.warn('artc test seed write failed', err && err.message); } }
 
     const res = await request(app)
       .post('/api/artc/claim')

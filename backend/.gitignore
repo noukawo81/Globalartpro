@@ -1,2 +1,6 @@
 .env
 node_modules/
+data/uploads/
+data/studio/uploads/
+backend-nohup.log
+backend.log

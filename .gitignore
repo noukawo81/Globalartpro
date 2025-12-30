@@ -11,3 +11,11 @@ npm-debug.log*
 # Build
 dist/
 build/
+
+# Local data uploads and logs
+backend.log
+backend-nohup.log
+/data/studio/uploads/
+/data/uploads/
+**/data/studio/uploads/
+**/data/uploads/
