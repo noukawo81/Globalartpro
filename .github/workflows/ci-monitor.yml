@@ -12,6 +12,20 @@ jobs:
     runs-on: ubuntu-latest
     # we always run the script and check the conclusion in JS to avoid event timing issues
     steps:
+      - name: DIAG: Log incoming event payload (debug)
+        uses: actions/github-script@v6
+        continue-on-error: true
+        with:
+          script: |
+            // Diagnostic step: always log the incoming payload and available context keys
+            try {
+              console.log('DIAG: context keys:', Object.keys(context || {}));
+              console.log('DIAG: github.event keys:', Object.keys(github && github.event ? github.event : {}));
+              console.log('DIAG: raw payload (truncated):', JSON.stringify(context.payload).slice(0, 2000));
+            } catch (d) {
+              console.error('DIAG: failed to log payload', d && d.message ? d.message : d);
+            }
+
       - name: Notify PRs or create issue about failed run
         uses: actions/github-script@v6
         with:
