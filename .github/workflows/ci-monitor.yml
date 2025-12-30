@@ -1,0 +1,55 @@
+name: CI Monitor - notify on failure
+
+on:
+  workflow_run:
+    types: [completed]
+
+permissions:
+  issues: write
+jobs:
+  notify_on_failure:
+    name: Notify on failure
+    runs-on: ubuntu-latest
+    # we always run the script and check the conclusion in JS to avoid event timing issues
+    steps:
+      - name: Notify PRs or create issue about failed run
+        uses: actions/github-script@v6
+        with:
+          script: |
+            try {
+              console.log('CI Monitor: incoming event payload (workflow_run):', JSON.stringify((context.payload && context.payload.workflow_run) || github.event?.workflow_run || {}));
+              const run = (context.payload && context.payload.workflow_run) || github.event?.workflow_run || {};
+              if (!run || run.conclusion !== 'failure') {
+                console.log('Run conclusion is not failure (or run missing); no action needed.');
+              } else {
+                const owner = context.repo.owner;
+                const repo = context.repo.repo;
+                const body = `⚠️ **CI run failed**: **${run.name || '<unknown>'}**\n- Conclusion: **${run.conclusion || '<unknown>'}**\n- Branch: **${run.head_branch || '<unknown>'}**\n- Commit: ${run.head_sha || '<unknown>'}\n- [Voir le run](${run.html_url || ''})`;
+
+                // If the run is associated to PRs, comment each PR. Otherwise create an issue.
+                const prs = (run && run.pull_requests) || [];
+                if (prs.length > 0) {
+                  for (const pr of prs) {
+                    await github.rest.issues.createComment({ owner, repo, issue_number: pr.number, body });
+                  }
+                  console.log(`Commented on ${prs.length} PR(s)`);
+                } else {
+                  await github.rest.issues.create({ owner, repo, title: `CI failure: ${run.name || '<unknown>'} on ${run.head_branch || '<unknown>'}`, body: body + "\n\n(Automated alert created because no PR was associated with the run.)" });
+                  console.log('Created an issue for failed run');
+                }
+              }
+            } catch (e) {
+              console.error('CI Monitor script error:', e && e.message ? e.message : e);
+              try { console.error('Full context payload:', JSON.stringify(context.payload)); } catch (_) { console.error('Could not stringify context.payload'); }
+              // swallow the error so the monitor itself does not fail and become red
+            }
+      - name: Optional Slack notification (if SLACK_WEBHOOK_URL set)
+        if: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          payload=$(jq -n --arg text "⚠️ CI run *${{ github.event.workflow_run.name }}* failed on branch ${{ github.event.workflow_run.head_branch }}. <${{ github.event.workflow_run.html_url }}|Voir le run>." '{text: $text}')
+          curl -s -X POST -H 'Content-type: application/json' --data "$payload" "${{ secrets.SLACK_WEBHOOK_URL }}"
+
+# Notes:
+# - This workflow listens to all workflow runs. You can restrict the monitored workflows
+#   by adding `workflows: [ 'my-backend-tests', 'e2e-museum-globe' ]` under `workflow_run`.
+# - To enable Slack notifications, add `SLACK_WEBHOOK_URL` in repository secrets.
