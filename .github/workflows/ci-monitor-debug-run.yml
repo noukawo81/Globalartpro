@@ -1,0 +1,49 @@
+name: CI Monitor Debug Run
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'Workflow run ID to inspect (required)'
+        required: true
+        default: ''
+
+permissions:
+  issues: write
+  actions: read
+
+jobs:
+  debug_run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run monitor logic against provided run id
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const runId = parseInt(core.getInput('run_id'));
+            if (!runId) {
+              core.setFailed('run_id input is required');
+              return;
+            }
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            console.log(`Fetching run ${runId} for ${owner}/${repo}`);
+            const { data: run } = await github.rest.actions.getWorkflowRun({ owner, repo, run_id: runId });
+            console.log('Fetched run:', JSON.stringify(run, null, 2).slice(0, 10000));
+            if (!run || run.conclusion !== 'failure') {
+              console.log('Run is not a failure; nothing to do.');
+              return;
+            }
+
+            const body = `⚠️ **CI run failed**: **${run.name || '<unknown>'}**\n- Conclusion: **${run.conclusion || '<unknown>'}**\n- Branch: **${run.head_branch || '<unknown>'}**\n- Commit: ${run.head_sha || '<unknown>'}\n- [Voir le run](${run.html_url || ''})`;
+            const prs = run.pull_requests || [];
+            if (prs.length > 0) {
+              for (const pr of prs) {
+                console.log(`Commenting on PR ${pr.number}`);
+                await github.rest.issues.createComment({ owner, repo, issue_number: pr.number, body });
+              }
+              console.log(`Commented on ${prs.length} PR(s)`);
+            } else {
+              const issue = await github.rest.issues.create({ owner, repo, title: `CI failure: ${run.name || '<unknown>'} on ${run.head_branch || '<unknown>'}`, body: body + "\n\n(Automated debug run)" });
+              console.log('Created issue:', issue.data.html_url);
+            }
