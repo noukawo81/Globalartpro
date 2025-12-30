@@ -11,6 +11,7 @@ export default function NavigationBar() {
         <Link to="/">Accueil</Link>
         <Link to="/artists">Artistes</Link>
         <Link to="/marketplace">Marketplace</Link>
+        <Link to="/museum">Galerie</Link>
         <Link to="/gapstudio">GAP Studio</Link>
         <Link to="/wallet">Portefeuille</Link>
         <Link to="/portal-culture">Salon VIP</Link>

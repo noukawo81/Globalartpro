@@ -2,8 +2,27 @@ import express from 'express';
 import jwtAuth from '../middleware/jwtAuth.js';
 import ownerAuth from '../middleware/ownerAuth.js';
 import { readDB, writeDB, ensureAccount, logAudit } from '../lib/walletDB.js';
+import fs from 'fs';
+import path from 'path';
 
 const router = express.Router();
+const DB_FILE = path.resolve(process.cwd(), 'data', 'portal_posts.json');
+
+function readPosts() {
+  try {
+    return JSON.parse(fs.readFileSync(DB_FILE, 'utf8'));
+  } catch {
+    return { posts: [] };
+  }
+}
+function writePosts(db) {
+  try {
+    fs.mkdirSync(path.dirname(DB_FILE), { recursive: true });
+    fs.writeFileSync(DB_FILE, JSON.stringify(db, null, 2), 'utf8');
+  } catch (e) {
+    console.error('portal write error', e);
+  }
+}
 
 // Buy portal premium
 router.post('/buy', jwtAuth, ownerAuth({ body: 'userId' }), (req, res) => {
@@ -19,6 +38,25 @@ router.post('/buy', jwtAuth, ownerAuth({ body: 'userId' }), (req, res) => {
   writeDB(db);
   // simulate granting access
   res.json({ ok: true, granted: true, balance: db.accounts[userId].balances });
+});
+
+// Share an artist media to the portal cultural feed
+router.post('/share', jwtAuth, ownerAuth({ body: 'artistId' }), (req, res) => {
+  const { artistId, mediaId, title, description = '', link = null } = req.body;
+  if (!artistId || !mediaId || !title) return res.status(400).json({ error: 'artistId, mediaId and title required' });
+  const post = { id: `post-${Date.now()}`, artistId, mediaId, title, description, link, createdAt: new Date().toISOString() };
+  const db = readPosts();
+  db.posts = db.posts || [];
+  db.posts.unshift(post); // newest first
+  writePosts(db);
+  logAudit({ type: 'portal_share', artistId, postId: post.id });
+  res.status(201).json({ post });
+});
+
+// Get portal posts (public)
+router.get('/posts', (req, res) => {
+  const db = readPosts();
+  res.json({ posts: db.posts || [] });
 });
 
 export default router;

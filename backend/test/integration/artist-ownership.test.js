@@ -5,6 +5,10 @@ import path from 'path';
 import app from '../../src/index.js';
 import { JWT_SECRET } from '../../src/middleware/jwtAuth.js';
 
+// Increase Jest timeout for integration tests that may touch file I/O or slow ops
+import { jest } from '@jest/globals';
+jest.setTimeout(20000);
+
 // Helpers
 function makeToken(id, role = 'artist') {
   return jwt.sign({ id, role }, JWT_SECRET);

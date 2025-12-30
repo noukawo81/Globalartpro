@@ -477,12 +477,7 @@ const styles = {
     marginTop: "0.5em",
   },
 
-  feesInfo: {
-    background: "rgba(255,255,255,0.05)",
-    padding: "1em",
-    borderRadius: "8px",
-    marginTop: "0.5em",
-  },
+
 
   formButtons: {
     display: "grid",

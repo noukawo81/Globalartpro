@@ -12,7 +12,7 @@ export default function DashboardAnalytics({ data = [] }) {
   const c = 2 * Math.PI * r;
 
   let offset = 0;
-  const segments = data.map((d, i) => {
+  const segments = data.map((d) => {
     const val = d.value || 0;
     const pct = total === 0 ? 0 : val / total;
     const dash = pct * c;
@@ -34,7 +34,7 @@ export default function DashboardAnalytics({ data = [] }) {
           {/* Background ring */}
           <circle cx={cx} cy={cy} r={r} fill="none" stroke="#eef2ff" strokeWidth={28} />
 
-          {segments.map((s, i) => (
+          {segments.map((s) => (
             <circle
               key={s.id}
               cx={cx}

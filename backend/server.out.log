@@ -1,0 +1,2 @@
+[dotenv@17.2.3] injecting env (12) from .env -- tip: 👥 sync secrets across teammates & machines: https://dotenvx.com/ops
+Express server started on port 3000 (PID: 28412)

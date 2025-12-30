@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./GAPStudioHome.css"; // styles séparés
 import gapstudioApi from "../services/gapstudio.api";
 
@@ -22,11 +23,12 @@ const GAPStudioHome = () => {
   const [textResult, setTextResult] = useState("");
   const [mintMessage, setMintMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [createdNFT, setCreatedNFT] = useState(null);
 
 
 
   // Theme (light/dark)
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, _setDarkMode] = useState(false);
   useEffect(() => {
     if (darkMode) document.body.classList.add('gap-dark');
     else document.body.classList.remove('gap-dark');
@@ -153,15 +155,58 @@ const GAPStudioHome = () => {
     if (!file) return;
     const reader = new FileReader();
     reader.onload = (e) => {
+      // simplified UX: show imported image immediately and hide other action buttons
       setSeedImage(e.target.result);
+      setImageUrl(e.target.result);
     };
     reader.readAsDataURL(file);
+  };
+
+  // Import -> Generate NFT (server-side internal NFT, no blockchain)
+  const handleGenerateNFT = async () => {
+    const stored = localStorage.getItem('currentUser');
+    const user = stored ? JSON.parse(stored) : null;
+    const userId = user?.id || 'guest';
+    if (!seedImage && !imageUrl) return alert('Importez d’abord une image.');
+    try {
+      setLoading(true);
+      // 1) upload/import image to backend
+      const imp = await gapstudioApi.importImage({ userId, imageData: seedImage || imageUrl });
+      if (!imp || !imp.image || !imp.image.id) throw new Error('Import failed');
+      // 2) generate internal NFT
+      const g = await gapstudioApi.generateNFT({ userId, imageId: imp.image.id, title: prompt || 'GAP Studio NFT', description: prompt || '' });
+      if (!g || !g.nft) throw new Error('NFT generation failed');
+      // Add NFT to local gallery state for immediate UX
+      const nft = g.nft;
+      const next = [ { id: nft.id, url: nft.image, title: nft.title, date: nft.date, status: nft.status }, ...gallery].slice(0, 100);
+      setGallery(next);
+      localStorage.setItem('gap_gallery', JSON.stringify(next));
+      setCreatedNFT(nft);
+      alert('NFT généré et ajouté à votre galerie (statut: ' + nft.status + ')');
+      // automatically set imageUrl to the NFT image
+      setImageUrl(nft.image);
+    } catch (err) {
+      console.error(err);
+      alert('Erreur lors de la génération NFT: ' + (err.message || err));
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Sell NFT (navigate to marketplace with pre-fill)
+  const navigate = useNavigate();
+  const handleSell = (nft) => {
+    try {
+      const prefill = { title: nft.title || '', description: nft.description || '', media: nft.image, nftId: nft.id };
+      localStorage.setItem('prefillListing', JSON.stringify(prefill));
+      navigate('/marketplace');
+    } catch (e) { console.error(e); }
   };
 
   // copy prompt
   // removed copyPrompt per request
 
-  const usePreset = (p) => {
+  const applyPreset = (p) => {
     setPrompt(p.prompt);
     setStyle('digital');
   };
@@ -214,7 +259,7 @@ const GAPStudioHome = () => {
       <header>
         <div className="logo">GAP</div>
         <div>
-          <h1>STUDIO—IA</h1>
+          <h1 className="brand-title">STUDIO—IA</h1>
           <p>Image · Son · Texte · NFT — Studio IA orienté art & culture mondiale</p>
         </div>
 
@@ -250,7 +295,7 @@ const GAPStudioHome = () => {
 
             <div style={{ display: 'flex', gap: 8, marginBottom: 8, alignItems: 'center' }}>
               <select className="field small" defaultValue="" onChange={(e) => {
-                const id = e.target.value; if (!id) return; const p = PRESETS.find(x => x.id === id); if (p) usePreset(p);
+                const id = e.target.value; if (!id) return; const p = PRESETS.find(x => x.id === id); if (p) applyPreset(p);
               }}>
                 <option value="">Choisir un preset...</option>
                 {PRESETS.map(p => (
@@ -260,23 +305,32 @@ const GAPStudioHome = () => {
 
               <div style={{ display: 'flex', gap: 8, marginLeft: 'auto', alignItems: 'center' }}>
                 <button className="ghost" onClick={() => { if (recording) stopRecording(); else startRecording(); }}>{recording ? 'Stop' : '🎙️ Enregistrer'}</button>
-                <label className="ghost" style={{ cursor: 'pointer' }}>
-                  📷 Import seed
-                  <input type="file" accept="image/*" style={{ display: 'none' }} onChange={(e) => handleUploadFile(e.target.files && e.target.files[0])} />
-                </label>
-                <button className="ghost" onClick={() => { if (gallery.length) setImageUrl(gallery[0].url); else alert('Galerie vide'); }}>Galerie</button>
+
+                {/* Simplified UX: Import seed + single Generate NFT action when an image is imported */}
+                {(!seedImage || createdNFT) ? (
+                  <label className="ghost gold" style={{ cursor: 'pointer' }}>
+                    📷 Import seed
+                    <input type="file" accept="image/*" style={{ display: 'none' }} onChange={(e) => handleUploadFile(e.target.files && e.target.files[0])} />
+                  </label>
+                ) : null}
+
+                {/* If there's a seed image and NFT not yet created, show only Generate NFT button */}
+                {seedImage && !createdNFT ? (
+                  <>
+                    <button className="btn gold" onClick={handleGenerateNFT} disabled={loading}>{loading ? 'Génération…' : 'Générer NFT'}</button>
+                    <button className="ghost" onClick={() => { setSeedImage(null); setImageUrl(null); }}>Annuler</button>
+                  </>
+                ) : null}
+
+                {/* If NFT created, offer Sell button */}
+                {createdNFT ? (
+                  <button className="btn" onClick={() => handleSell(createdNFT)}>Vendre</button>
+                ) : (
+                  // otherwise show a quick gallery button
+                  <button className="ghost" onClick={() => { if (gallery.length) setImageUrl(gallery[0].url); else alert('Galerie vide'); }}>Galerie</button>
+                )}
               </div>
             </div>
-
-            <textarea
-              className="field"
-              rows={3}
-              placeholder="Décris ton image..."
-              value={prompt}
-              onChange={(e) => setPrompt(e.target.value)}
-              style={{ color: '#111', background: '#fff' }}
-            />
-
             <div className="row">
               <input type="number" min={128} max={4096} className="field small" value={width} onChange={(e) => setWidth(Number(e.target.value))} />
               <input type="number" min={128} max={4096} className="field small" value={height} onChange={(e) => setHeight(Number(e.target.value))} />
@@ -292,14 +346,24 @@ const GAPStudioHome = () => {
                 {imageUrl && !loading && (
                   <img src={imageUrl} alt="preview" />
                 )}
+
+                {createdNFT && (
+                  <div className="nft-generated nft-seal" style={{ marginTop: 8 }}>
+                    <strong>NFT généré</strong> — id: {createdNFT.id} — statut: {createdNFT.status}
+                    <div style={{ marginTop: 6 }}>
+                      <button className="btn gold" onClick={() => handleSell(createdNFT)}>Vendre</button>
+                    </div>
+                  </div>
+                )}
+
               </div>
 
               {imageUrl && !loading && (
                 <div style={{ display: "flex", gap: "8px", marginTop: "10px", alignItems: 'center' }}>
                   <button className="ghost" onClick={downloadImage}>Télécharger</button>
-                  <button className="ghost" onClick={addToGallery}>Ajouter à Gallery</button>
-                  <button className="ghost" onClick={handleMintNFT}>Minter (NFT)</button>
-                  {mintMessage && <span style={{ marginLeft: 8 }}>{mintMessage}</span>}
+                  {createdNFT ? (
+                    <button className="btn" onClick={() => handleSell(createdNFT)}>Vendre</button>
+                  ) : null}
                 </div>
               )}
             </div>

@@ -9,6 +9,28 @@ const API = axios.create({
   timeout: 60000,
 });
 
+// Global response interceptor: handle network errors and 401 Unauthorized centrally
+API.interceptors.response.use(
+  (res) => res,
+  (err) => {
+    // Network / connection error (no response from server)
+    if (!err || !err.response) {
+      console.error('API network error or server unreachable', err);
+      alert("Impossible de contacter le serveur backend (http://localhost:3000).\nVérifiez qu'il est démarré: `cd backend && npm run dev`.");
+      return Promise.reject(err);
+    }
+    const status = err?.response?.status;
+    if (status === 401) {
+      // Clear stored token and axios header
+      try { localStorage.removeItem('ga_token'); } catch (err) { console.error(err); }
+      try { delete API.defaults.headers.common['Authorization']; } catch (err) { console.error(err); }
+      // Friendly prompt
+      alert('Session expirée ou non autorisée (401). Veuillez vous reconnecter.');
+    }
+    return Promise.reject(err);
+  }
+);
+
 // ============ API Object ============
 export const api = {
   // ---- Auth ----
@@ -38,13 +60,24 @@ export const api = {
   getArtists: () => API.get("/artists").then((r) => r.data),
   getArtist: (id) => API.get(`/artists/${id}`).then((r) => r.data),
   updateArtist: (id, payload) => API.put(`/artists/${id}`, payload).then((r) => r.data),
-  uploadArtistMedia: (id, formData) => API.post(`/artists/${id}/media`, formData, { headers: { 'Content-Type': 'multipart/form-data' } }).then((r) => r.data),
+  uploadArtistMedia: (id, formData) => API.post(`/artists/${id}/media`, formData).then((r) => r.data),
+  createListing: (payload) => API.post('/marketplace/list', payload).then(r => r.data),
   generateInvite: (id) => API.post(`/artists/${id}/invite`).then((r) => r.data),
   getArtworks: () => API.get("/artworks").then((r) => r.data),
+  // Auth helpers
+  getMe: () => API.get('/auth/me').then(r => r.data),
 
   // ---- ARTC (Mining & Token) ----
   getARTCBalance: (userId) => 
     API.get("/artc/balance", { params: { userId } }).then((r) => r.data),
+
+  // ---- Wallet / Multi-currency balance ----
+  getWalletBalance: (userId) =>
+    API.get('/wallet/balance', { params: { userId } }).then((r) => r.data),
+
+  // ---- Passes ----
+  getPasses: (userId) => API.get('/wallet/passes', { params: { userId } }).then(r => r.data),
+  buyPass: (userId, passType, period = 'monthly', currency = 'USD') => API.post('/wallet/buy-pass', { userId, passType, period, currency }).then(r => r.data),
 
   mineARTC: (userId) => 
     API.post("/artc/mine", { userId }).then((r) => r.data),
@@ -69,15 +102,28 @@ export const api = {
   createDonation: (amount, currency = "pi") =>
     API.post("/donations/create", { amount, currency }).then((r) => r.data),
 
+  // ---- Recharge ARTC (dev helper) ----
+  rechargeARTC: (userId, amount) =>
+    API.post('/wallet/recharge', { userId, amount }).then(r => r.data),
+
   // ---- Marketplace ----
   buyArtwork: (artworkId, paymentMethod) =>
     API.post("/marketplace/buy", { artworkId, paymentMethod }).then((r) => r.data),
   marketplaceBuy: (buyerId, sellerId, productId, amount, token = 'ARTC') =>
-    API.post('/marketplace/buy', { userId: buyerId, sellerId, productId, amount, token }).then(r => r.data),
+    API.post('/marketplace/buy', { userId: buyerId, sellerId, productId, amount, token }).then(r => ({ status: r.status, data: r.data })),
+
+  // Listings
+  getMarketplaceListings: (display = false) => API.get('/marketplace/list', { params: display ? { display: true } : {} }).then(r => r.data),
+  exhibitListing: (listingId) => API.post(`/marketplace/${listingId}/exhibit`).then(r => r.data),
 
   // ---- Portal Culture ----
   portalBuy: (userId, token = 'PI', amount = 0.00005) =>
     API.post('/portal/buy', { userId, token, amount }).then(r => r.data),
+  // Share a media to the cultural portal feed
+  shareToPortal: (payload) =>
+    API.post('/portal/share', payload).then(r => r.data),
+  getPortalPosts: () =>
+    API.get('/portal/posts').then(r => r.data),
 
   getOrders: (userId) =>
     API.get("/marketplace/orders", { params: { userId } }).then((r) => r.data),
@@ -88,6 +134,42 @@ export const api = {
 
   getGenerationResult: (id) =>
     API.get(`/gapstudio/result/${id}`).then((r) => r.data),
+
+  // ---- Museum (Galerie) ----
+  getMuseum: (params = {}) =>
+    API.get('/museum', { params }).then((r) => r.data),
+
+  // ---- Museum Globe (Concentric world view) ----
+  getMuseumGlobe: (params = {}) =>
+    API.get('/museum/globe', { params }).then((r) => r.data),
+
+  getMuseumItem: (id) =>
+    API.get(`/museum/${id}`).then((r) => r.data),
+
+  likeMuseumItem: (id) =>
+    API.post(`/museum/${id}/like`).then((r) => r.data),
+
+  commentMuseumItem: (id, content, parentId = null) =>
+    API.post(`/museum/${id}/comment`, { content, parentId }).then((r) => r.data),
+
+  exhibitMuseumItem: (id) =>
+    API.post(`/museum/${id}/exhibit`).then((r) => r.data),
+
+  // Admin
+  adminGetMuseum: (params = {}) =>
+    API.get('/museum/admin/list', { params }).then((r) => r.data),
+
+  adminUpdateMuseumItem: (id, payload) =>
+    API.put(`/museum/admin/${id}`, payload).then((r) => r.data),
+
+  adminToggleVisibility: (id) =>
+    API.post(`/museum/admin/${id}/toggle-visibility`).then((r) => r.data),
+
+  adminArchiveItem: (id) =>
+    API.post(`/museum/admin/${id}/archive`).then((r) => r.data),
+
+  adminDeleteItem: (id) =>
+    API.delete(`/museum/admin/${id}`).then((r) => r.data),
 
   // ---- Certificates ----
   generateCertificate: (holderName, certLevel) =>

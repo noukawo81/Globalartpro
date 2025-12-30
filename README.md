@@ -1,3 +1,5 @@
+[![CI](https://github.com/noukawo81/Globalartpro/actions/workflows/ci-backend.yml/badge.svg?branch=main)](https://github.com/noukawo81/Globalartpro/actions/workflows/ci-backend.yml) [![Main workflow (main)](https://github.com/noukawo81/Globalartpro/actions/workflows/ci-backend.yml/badge.svg?branch=main)](https://github.com/noukawo81/Globalartpro/actions/workflows/ci-backend.yml)
+
 # 🌍 GlobalArtPro – Official Policies
 
 Bienvenue sur le dépôt officiel des documents juridiques de **GlobalArtPro**,  
