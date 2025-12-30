@@ -20,13 +20,22 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const runId = parseInt(core.getInput('run_id'));
-            if (!runId) {
-              core.setFailed('run_id input is required');
-              return;
-            }
+            const inputRunId = core.getInput('run_id');
+            let runId = parseInt(inputRunId);
             const owner = context.repo.owner;
             const repo = context.repo.repo;
+            if (!runId) {
+              console.log('No run_id provided; finding the most recent failing workflow run in the repo...');
+              const runsResp = await github.rest.actions.listWorkflowRunsForRepo({ owner, repo, per_page: 20 });
+              const runs = runsResp.data.workflow_runs || [];
+              const failing = runs.find(r => r.conclusion === 'failure');
+              if (!failing) {
+                console.log('No recent failing run found; aborting.');
+                return;
+              }
+              runId = failing.id;
+              console.log(`Selected failing run id ${runId} (name: ${failing.name}, head_branch: ${failing.head_branch})`);
+            }
             console.log(`Fetching run ${runId} for ${owner}/${repo}`);
             const { data: run } = await github.rest.actions.getWorkflowRun({ owner, repo, run_id: runId });
             console.log('Fetched run:', JSON.stringify(run, null, 2).slice(0, 10000));
